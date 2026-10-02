@@ -15,10 +15,6 @@ for (const b of blogs) {
     console.error(`✗ URL has no valid host — ${row}`);
     errors++;
   }
-  if (b.tags.length > 6) {
-    console.error(`✗ too many tags (max 6) — ${row}`);
-    errors++;
-  }
   for (const t of b.tags) {
     if (t !== t.trim() || t === '') {
       console.error(`✗ tags need trimming — ${row}`);

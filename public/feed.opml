@@ -1234,4 +1234,5 @@
 <outline text=水鱼博客 title=水鱼博客 type="rss" xmlUrl=https://blog.waterfish.ren/rss/feed.xml htmlUrl=https://blog.waterfish.ren/>
 <outline text=0x7c14'blog title=0x7c14'blog type="rss" xmlUrl=https://tomorin.cyou/rss.xml htmlUrl=https://tomorin.cyou//>
 <outline text=智客 title=智客 type="rss" xmlUrl=https://zicq.com/sitemap.xml htmlUrl=https://zicq.com//>
+<outline text=sjdhome blog title=sjdhome blog type="rss" xmlUrl=https://sjdhome.com/blog/atom.xml htmlUrl=https://sjdhome.com/blog//>
 </body></opml>

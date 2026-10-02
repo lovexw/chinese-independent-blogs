@@ -61,6 +61,12 @@ const rssFixes = {}; // hostKey -> newRss
 const dead = []; // { url, name, reason }
 const kept = []; // alive-but-fussy (bot-blocked / insecure TLS)
 
+// historical memory: previous fixes stay valid (their urls are now healthy, so they
+// won't be re-derived); merge them in so sync-upstream can keep blocking old addresses
+const prevFixes = readJson(path.join(DATA_DIR, 'fixes.json'), {});
+Object.assign(urlFixes, prevFixes.urlFixes || {});
+Object.assign(rssFixes, prevFixes.rssFixes || {});
+
 let t0 = Date.now();
 await runPool(
   failures,
