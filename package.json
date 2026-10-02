@@ -1,25 +1,18 @@
 {
-  "name": "indie-chinese-blogs",
-  "version": "1.0.0",
-  "description": "[![](https://badgen.net/badge/icon/telegram?icon=telegram&label)](https://t.me/indieBlogs) [![](https://badgen.net/badge/icon/patrons/orange?icon=patreon&label)](https://www.patreon.com/timqian)",
-  "main": "script.js",
+  "name": "chinese-independent-blogs",
+  "version": "2.0.0",
+  "description": "中文独立博客列表 · 展示站点与数据维护管线（源自 timqian/chinese-independent-blogs）",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "node scripts/check-links.mjs",
+    "fix": "node scripts/fix-dead.mjs",
+    "rss": "node scripts/rss-refresh.mjs",
+    "rss:full": "node scripts/rss-refresh.mjs --fix-missing",
+    "sync": "node scripts/sync-upstream.mjs",
+    "build": "node scripts/build.mjs",
+    "audit": "npm run check && npm run fix && npm run rss && npm run build",
+    "serve": "node scripts/serve.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/timqian/indie-chinese-blogs.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/timqian/indie-chinese-blogs/issues"
-  },
-  "homepage": "https://github.com/timqian/indie-chinese-blogs#readme",
-  "dependencies": {
-    "graphql": "^16.8.1",
-    "graphql-request": "^4.3.0",
-    "markdown-table": "^1.1.3"
-  }
+  "license": "MIT",
+  "private": true
 }

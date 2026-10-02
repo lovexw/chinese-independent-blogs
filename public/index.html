@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中文独立博客列表 · 每一座孤岛都值得被发现</title>
+  <meta name="description" content="收录中文互联网上的独立博客，定期检测链接可达性，通过 RSS 同步每个博客的最后更新时间。支持搜索与标签筛选。" />
+  <meta name="theme-color" content="#faf9f6" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="8" cy="8" r="1"/><circle cx="16" cy="16" r="1"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.06.78 2.14 0 1.54-.02 2.79-.02 3.17 0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.8V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3.8c0 .5.2 1 .5 1.4l1.2 1.6a1 1 0 0 1-.8 1.6H8.1a1 1 0 0 1-.8-1.6l1.2-1.6c.3-.4.5-.9.5-1.4Z"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./">
+        <span class="seal">博</span>
+        <span>中文独立博客列表</span>
+      </a>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="randomBtn" title="随机逛一个博客" aria-label="随机逛一个博客">
+        <svg><use href="#i-dice"/></svg><span class="btn-txt">随机逛逛</span>
+      </button>
+      <a class="icon-btn" id="ghLink" href="https://github.com/lovexw/chinese-independent-blogs" target="_blank" rel="noopener" title="GitHub 仓库" aria-label="GitHub 仓库">
+        <svg><use href="#i-github"/></svg>
+      </a>
+      <button class="icon-btn" id="themeBtn" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg id="themeIcon"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <span class="kicker">每周自动巡检链接 · RSS 同步更新时间</span>
+    <h1>中文独立博客列表<br /><em>每一座孤岛都值得被发现</em></h1>
+    <p class="lead">
+      收录仍在活跃写作的中文独立博客。列表会定期检测所有站点的可达性，
+      通过 RSS 同步每个博客的最近更新时间，方便你找到仍在生长的那一批。
+    </p>
+    <div class="stats" id="stats" aria-live="polite">
+      <div class="stat"><div class="num" id="stTotal">–</div><div class="label">收录博客</div></div>
+      <div class="stat"><div class="num" id="stRss">–</div><div class="label">提供 RSS 订阅</div></div>
+      <div class="stat"><div class="num accent" id="stActive">–</div><div class="label">近 30 天有更新</div></div>
+      <div class="stat"><div class="num" id="stSync">–</div><div class="label">数据同步于</div></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="wrap">
+      <div class="toolbar-row">
+        <div class="searchbox">
+          <svg><use href="#i-search"/></svg>
+          <input id="searchInput" type="search" placeholder="搜索博客名称、域名或标签…" autocomplete="off" spellcheck="false" aria-label="搜索博客" />
+          <span class="kbd">/</span>
+        </div>
+        <select class="sortsel" id="sortSel" aria-label="排序方式">
+          <option value="default">编辑推荐排序</option>
+          <option value="recent">最近更新优先</option>
+          <option value="stale">久未更新优先</option>
+          <option value="name">按名称</option>
+        </select>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="标签筛选"></div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="result-meta">
+      <span id="resultCount"></span>
+      <span class="dots"></span>
+      <span>列表每周自动巡检 · 失效博客自动归档</span>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" style="display:none">
+      <div class="big">🏝️</div>
+      <div>没有找到匹配的博客，换一个关键词试试</div>
+      <button id="clearBtn">清除筛选条件</button>
+    </div>
+    <div id="sentinel"></div>
+  </main>
+
+  <footer>
+    <div class="wrap foot-row">
+      <span>源自 <a href="https://github.com/timqian/chinese-independent-blogs" target="_blank" rel="noopener">timqian/chinese-independent-blogs</a>，感谢原作者与所有提交者。</span>
+      <a id="opmlA" href="feed.opml" target="_blank" rel="noopener">OPML 一键订阅</a>
+      <a id="csvA" href="blogs.csv" target="_blank" rel="noopener">CSV 数据</a>
+      <span id="footSync"></span>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="回到顶部"><svg><use href="#i-up"/></svg></button>
+  <div id="toast" role="status"></div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

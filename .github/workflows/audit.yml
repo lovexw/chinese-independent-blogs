@@ -1,0 +1,73 @@
+name: Weekly audit & sync
+
+# 每周自动执行：
+#  1. 增量同步上游（timqian）新增博客（只增不删）
+#  2. 全量链接体检 + 失效修复 + RSS 时间刷新
+#  3. 重建 CSV / README / OPML / 站点数据，自动提交
+#  4. 部署到 Cloudflare Pages（配置好 secrets 后自动生效）
+
+on:
+  schedule:
+    - cron: "17 2 * * 1" # 每周一 UTC 02:17（北京时间周一 10:17）
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sync upstream (additive only)
+        run: node scripts/sync-upstream.mjs
+
+      - name: Link health check
+        run: node scripts/check-links.mjs
+
+      - name: Fix dead links via variants
+        run: node scripts/fix-dead.mjs
+
+      - name: Refresh RSS last-update times
+        run: node scripts/rss-refresh.mjs
+
+      - name: Rebuild artifacts & site data
+        run: node scripts/build.mjs
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "chore: weekly audit & sync $(date -u +%F)" -m "Auto-updated by GitHub Actions: upstream sync, link audit, RSS refresh."
+            git push
+          fi
+
+  deploy:
+    needs: audit
+    runs-on: ubuntu-latest
+    if: ${{ vars.CLOUDFLARE_ENABLED == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=chinese-independent-blogs --commit-dirty=true
