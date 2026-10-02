@@ -126,10 +126,11 @@ await runPool(
         checkedAt: new Date().toISOString(),
       };
     } else {
-      // feed temporarily unreachable: keep any previously known rss, only drop the date
+      // feed temporarily unreachable: keep any previously known rss and date
+      // (a week-old date is fine to display; re-derive it when the feed responds again)
       results[key] = {
         rss: prev[key]?.rss || '',
-        lastUpdate: null,
+        lastUpdate: prev[key]?.lastUpdate || null,
         checkedAt: new Date().toISOString(),
       };
     }
