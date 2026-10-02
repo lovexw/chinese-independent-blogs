@@ -72,21 +72,25 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 ## 6. CI（GitHub Actions）
 
 - `audit.yml`（每周一 UTC 02:17 ≈ 北京 10:17，可手动 workflow_dispatch 触发）：
-  同步上游 → 体检 → 修复 → 刷新 RSS 时间 → 重建 → 自动 commit → （可选）部署。
+  同步上游 → 体检 → 修复 → 刷新 RSS 时间 → 可疑检测 → 重建 → 自动 commit → **push 后 Cloudflare Pages 自动部署**（Git 集成，无需 secrets）。
 - `pr_lint.yml`：PR 触发 `node scripts/lint.mjs`。
-- 可选自动部署：仓库 Variables 加 `CLOUDFLARE_ENABLED=true` + Secrets 加 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 即启用；未配置时只提交不部署，不会报错。
 
-## 7. 部署
+## 7. 部署（已绑定 Git，全自动）
 
-- 当前：Cloudflare Pages **直传**（wrangler pages deploy public），项目 `chinese-independent-blogs`。
-- 本地重新部署命令：
-  ```bash
-  export CLOUDFLARE_ACCOUNT_ID=edbcf0ec7c3ee185334d13d9077ef6e9
-  node /usr/local/lib/node_modules/wrangler/bin/wrangler.js pages deploy public \
-    --project-name=chinese-independent-blogs --branch=main --commit-dirty=true
-  ```
-- 也可改为 Git 集成（Dashboard 连仓库，输出目录 `public`），见 `docs/DEPLOY.md`。
+**当前状态：Cloudflare Pages 项目 `chinese-independent-blogs` 已通过 GitHub App 绑定 `lovexw/chinese-independent-blogs`（生产分支 `main`，输出目录 `public`，无构建命令）。push 到 main 即自动部署，无需任何手动操作。**
+
+- 绑定方式：GitHub App（Cloudflare Pages）已有该仓库授权；项目经由 API 以 `source: github` 方式创建（直传项目无法转 Git 绑定，是删除后同名重建的，`chinese-independent-blogs.pages.dev` 域名不变）。
+- PR 会生成预览部署（preview deployments 开启，对所有分支生效）。
+- 若需本地临时部署：Git 绑定的项目**拒绝 wrangler 直传**，请直接 push 或在 Dashboard 手动重试部署。
+- 若要改构建配置：Dashboard → Pages → 项目 → Settings → Builds & deployments（构建命令留空、输出目录 `public` 即可，public/ 已预构建提交进仓库）。
+- 绑定自定义域名：Dashboard → Pages → 项目 → Custom domains。
 - 换了站点域名要同步更新 `data/site-url.txt`（README 顶部链接用它）。
+
+### 如果绑定失效（例如仓库改名/转移）怎么恢复
+
+1. 确认 GitHub App（Cloudflare Pages）仍授权该仓库：<https://github.com/apps/cloudflare-pages> → Configure → Repository access
+2. Dashboard 删除 Pages 项目，重新 Connect to Git，或用 API 以 `source: github` 重建同名项目（构建配置：无构建命令、输出目录 `public`）
+3. push 任意提交触发首次部署
 
 ## 8. 站点前端（public/）
 
@@ -109,3 +113,4 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | --- | --- |
 | 2026-10-02 | 首次全量体检（1493→1309，归档 182 死链，修复 49 地址）；站点上线；CI 建立 |
 | 2026-10-02 | 分页改造（100/页）、标签完整显示、可疑内容检测（287 个待人工核验）、断点续传 |
+| 2026-10-02 | **Cloudflare Pages 绑定 GitHub 仓库**（直传项目删除后同名重建，域名不变），push 即自动部署 |

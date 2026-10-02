@@ -4,7 +4,7 @@ name: Weekly audit & sync
 #  1. 增量同步上游（timqian）新增博客（只增不删）
 #  2. 全量链接体检 + 失效修复 + RSS 时间刷新
 #  3. 重建 CSV / README / OPML / 站点数据，自动提交
-#  4. 部署到 Cloudflare Pages（配置好 secrets 后自动生效）
+#  4. push 到 main 后 Cloudflare Pages 会自动重新部署（Git 集成）
 
 on:
   schedule:
@@ -58,19 +58,3 @@ jobs:
             git commit -m "chore: weekly audit & sync $(date -u +%F)" -m "Auto-updated by GitHub Actions: upstream sync, link audit, RSS refresh."
             git push
           fi
-
-  deploy:
-    needs: audit
-    runs-on: ubuntu-latest
-    if: ${{ vars.CLOUDFLARE_ENABLED == 'true' }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=chinese-independent-blogs --commit-dirty=true

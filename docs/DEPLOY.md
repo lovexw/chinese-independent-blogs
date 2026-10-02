@@ -1,47 +1,27 @@
-# 部署到 Cloudflare
+# 部署说明
 
-站点是**纯静态**的（`public/` 目录，零依赖、零外部请求），有两种部署方式，任选其一。
+**当前状态：本项目已通过 GitHub App 绑定 Cloudflare Pages（项目 `chinese-independent-blogs`，生产分支 `main`，输出目录 `public`）。push 到 `main` 自动部署，无需手动操作；PR 自动生成预览部署。**
 
-## 方式 A：连接 Git 仓库（推荐，全自动）
+以下内容仅在需要重建绑定或调整配置时有用。
 
-1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
-2. 选择本仓库（`lovexw/chinese-independent-blogs`），分支 `main`
-3. 构建设置：
-   - Framework preset: **None**
-   - Build command: 留空（`public/` 已是构建产物；如需现场重建可填 `node scripts/build.mjs`）
-   - Build output directory: `public`
-4. 保存并部署，之后每次 push 到 `main` 会自动重新部署
+## 绑定信息
 
-## 方式 B：GitHub Actions 自动部署（wrangler 直传）
+| 项 | 值 |
+| --- | --- |
+| Pages 项目名 | `chinese-independent-blogs` |
+| Git 仓库 | `lovexw/chinese-independent-blogs` |
+| 生产分支 | `main` |
+| 构建命令 | （留空，`public/` 已预构建提交进仓库） |
+| 构建输出目录 | `public` |
+| 预览部署 | 所有分支 |
 
-在仓库 **Settings → Secrets and variables → Actions** 中添加：
-
-| 类型 | 名称 | 说明 |
-| --- | --- | --- |
-| Secret | `CLOUDFLARE_API_TOKEN` | 在 Cloudflare → My Profile → API Tokens 创建，使用 "Edit Cloudflare Workers" 模板并追加 `Cloudflare Pages: Edit` 权限 |
-| Secret | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare 控制台右侧栏可见 |
-| Variable | `CLOUDFLARE_ENABLED` | 值设为 `true`，作为部署开关 |
-
-配置完成后：
-
-- 每周一的定时巡检（`.github/workflows/audit.yml`）会自动：同步上游新增博客 → 全量链接体检 → 修复失效地址 → 刷新 RSS 更新时间 → 提交 → 部署
-- 也可以在 Actions 页面手动触发 "Weekly audit & sync"
-
-## 本地部署（可选）
-
-```bash
-npx wrangler pages deploy public --project-name=chinese-independent-blogs
-```
-
-## 绑定自定义域名
+## 自定义域名
 
 Pages 项目 → **Custom domains** 添加你的域名，按提示加 CNAME 记录即可。
 
-## 数据刷新节奏
+## 若需重建绑定
 
-| 内容 | 频率 | 执行者 |
-| --- | --- | --- |
-| 上游新增博客同步 | 每周 | `scripts/sync-upstream.mjs` |
-| 链接可达性体检 | 每周 | `scripts/check-links.mjs` + `fix-dead.mjs` |
-| RSS 最后更新时间 | 每周 | `scripts/rss-refresh.mjs` |
-| README / OPML / 站点数据重建 | 每周（或 push 时手动 `npm run build`） | `scripts/build.mjs` |
+1. 确认 GitHub App 授权：<https://github.com/apps/cloudflare-pages> → Configure → Repository access
+2. 注意：**直传（Direct Upload）创建的 Pages 项目无法转为 Git 绑定**，需要删除后以 Git 方式重建（同名重建可保留 `*.pages.dev` 域名）
+3. push 任意提交触发首次部署；详见 `MAINTENANCE.md` §7
+
