@@ -49,29 +49,36 @@ async function curlOk(url) {
 
 // pass 2: for every url that failed pass 1 — check DNS, try host variants
 // (www <-> blog <-> apex, http <-> https), and fix RSS accordingly.
+// Resumable via data/fixes.partial.json (re-run after interruption to continue).
 const results = readJson(path.join(DATA_DIR, 'check-results.json'), {});
 const blogs = loadBlogs();
 const byUrl = new Map(blogs.map((b) => [b.url.replace(/\/+$/, ''), b]));
 
-const failures = Object.entries(results).filter(([, r]) => !r.ok).map(([u]) => u);
-console.log(`pass2: re-checking ${failures.length} failed urls with variants`);
+const PARTIAL = path.join(DATA_DIR, 'fixes.partial.json');
+const FRESH = process.argv.includes('--fresh');
+const partial = FRESH
+  ? { urlFixes: {}, rssFixes: {}, dead: [], kept: [], done: [] }
+  : readJson(PARTIAL, { urlFixes: {}, rssFixes: {}, dead: [], kept: [], done: [] });
+if (FRESH && fs.existsSync(PARTIAL)) fs.unlinkSync(PARTIAL);
+const doneSet = new Set(partial.done);
 
-const urlFixes = {}; // oldUrl -> newUrl
-const rssFixes = {}; // hostKey -> newRss
-const dead = []; // { url, name, reason }
-const kept = []; // alive-but-fussy (bot-blocked / insecure TLS)
+const urlFixes = partial.urlFixes; // oldUrl -> newUrl (this run)
+const rssFixes = partial.rssFixes; // hostKey -> newRss (this run)
+const dead = partial.dead; // { url, name, reason }
+const kept = partial.kept; // alive-but-fussy (bot-blocked / insecure TLS)
 
-// historical memory: previous fixes stay valid (their urls are now healthy, so they
-// won't be re-derived); merge them in so sync-upstream can keep blocking old addresses
-const prevFixes = readJson(path.join(DATA_DIR, 'fixes.json'), {});
-Object.assign(urlFixes, prevFixes.urlFixes || {});
-Object.assign(rssFixes, prevFixes.rssFixes || {});
+const failures = Object.entries(results)
+  .filter(([, r]) => !r.ok)
+  .map(([u]) => u)
+  .filter((u) => !doneSet.has(u));
+console.log(`pass2: re-checking ${failures.length} failed urls with variants (${doneSet.size} already done)`);
 
 let t0 = Date.now();
 await runPool(
   failures,
   15,
   async (oldUrl) => {
+    doneSet.add(oldUrl);
     const blog = byUrl.get(oldUrl);
     const host = hostOf(oldUrl);
     const name = blog?.name || oldUrl;
@@ -146,12 +153,30 @@ await runPool(
     return !!newUrl;
   },
   {
-    onProgress: (done, total) =>
-      console.log(
-        `pass2 progress ${done}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - fixes=${Object.keys(urlFixes).length} dead=${dead.length}`
-      ),
+    onProgress: (n, total) => {
+      if (n % 25 === 0) {
+        partial.done = [...doneSet];
+        writeJson(PARTIAL, partial); // checkpoint: safe to kill at any time
+        console.log(
+          `pass2 progress ${n}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - fixes=${Object.keys(urlFixes).length} dead=${dead.length}`
+        );
+      }
+    },
   }
 );
 
-writeJson(path.join(DATA_DIR, 'fixes.json'), { urlFixes, rssFixes, dead, kept, checkedAt: new Date().toISOString() });
-console.log(`PASS2 DONE fixes=${Object.keys(urlFixes).length} rssFixes=${Object.keys(rssFixes).length} dead=${dead.length} keptAlive=${kept.length}`);
+// historical memory: fixes from previous runs stay valid (their urls are healthy now,
+// so they won't be re-derived); merge them in so sync-upstream keeps blocking old addresses
+const prevFixes = readJson(path.join(DATA_DIR, 'fixes.json'), {});
+const finalFixes = {
+  urlFixes: { ...(prevFixes.urlFixes || {}), ...urlFixes },
+  rssFixes: { ...(prevFixes.rssFixes || {}), ...rssFixes },
+  dead,
+  kept,
+  checkedAt: new Date().toISOString(),
+};
+writeJson(path.join(DATA_DIR, 'fixes.json'), finalFixes);
+try { fs.unlinkSync(PARTIAL); } catch {}
+console.log(
+  `PASS2 DONE fixes=${Object.keys(finalFixes.urlFixes).length} rssFixes=${Object.keys(finalFixes.rssFixes).length} dead=${dead.length} keptAlive=${kept.length}`
+);

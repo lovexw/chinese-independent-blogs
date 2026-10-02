@@ -1332,6 +1332,7 @@
 
 - 每次构建都会重新检测全部链接；无法访问且无可用替代地址的博客会从列表移除，并归档在 [data/offline.json](./data/offline.json)。
 - 域名仍在但原地址失效的博客，会自动尝试 `www. / blog. / 裸域` 等常见变体地址，命中后同步替换其 RSS 订阅链接。
+- 自动检测无法判断的可疑博客（空页面、人机验证、跳转到其他网站、域名停放等）汇总在 [docs/manual-review.md](./docs/manual-review.md)，供人工二次核验。
 - 上游新增的博客会通过 [scripts/sync-upstream.mjs](./scripts/sync-upstream.mjs) 定期增量同步（只增不删，已有条目的修复保持不变）。
 
 ## 如何提交
@@ -1345,6 +1346,8 @@
 npm run build        # 检测链接 -> 修复失效 -> 刷新 RSS 时间 -> 生成站点数据
 npm run serve        # 本地预览展示站点
 ```
+
+> 维护者 / AI 接手请先阅读 [MAINTENANCE.md](./MAINTENANCE.md)：包含数据流、断点续传说明与历史决策。
 
 ## 部署
 

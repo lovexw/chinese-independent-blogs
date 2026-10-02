@@ -1,23 +1,38 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { DATA_DIR, loadBlogs, probe, runPool, hostOf, withScheme, writeJson } from './lib.mjs';
+import { DATA_DIR, loadBlogs, probe, runPool, hostOf, withScheme, writeJson, readJson } from './lib.mjs';
+
+// Resumable: progress is flushed to data/check-results.partial.json every 50 checks;
+// if the run is interrupted, simply re-run the same command and it continues where it
+// stopped. Use `node scripts/check-links.mjs --fresh` to ignore the checkpoint.
+
+const PARTIAL = path.join(DATA_DIR, 'check-results.partial.json');
+const FINAL = path.join(DATA_DIR, 'check-results.json');
+const FRESH = process.argv.includes('--fresh');
 
 const results = {};
-const inPath = process.argv[2];
+if (!FRESH) {
+  const partial = readJson(PARTIAL, null);
+  if (partial) console.log(`resuming: ${Object.keys(partial).length} urls already checked`);
+  Object.assign(results, partial || {});
+} else if (fs.existsSync(PARTIAL)) {
+  fs.unlinkSync(PARTIAL);
+}
+
+const inPath = process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : null;
 let urls;
 
 if (inPath) {
   urls = JSON.parse(fs.readFileSync(inPath, 'utf8'));
   console.log(`checking ${urls.length} urls from ${inPath}`);
 } else {
-  const prev = fs.existsSync(path.join(DATA_DIR, 'check-results.json'))
-    ? JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'check-results.json'), 'utf8'))
-    : {};
-  Object.assign(results, prev); // keep old results for urls we skip? no — we re-check all below
   const blogs = loadBlogs();
   urls = [...new Set(blogs.map((b) => b.url.replace(/\/+$/, '')).filter(Boolean))];
   console.log(`checking ${urls.length} unique blog urls`);
 }
+
+urls = urls.filter((u) => !(u in results));
+console.log(`${urls.length} urls left to check`);
 
 let t0 = Date.now();
 await runPool(
@@ -46,14 +61,18 @@ await runPool(
     return ok;
   },
   {
-    onProgress: (done, total) =>
-      console.log(
-        `progress ${done}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - ${Object.values(results).filter((x) => x.ok).length} ok`
-      ),
+    onProgress: (done, total) => {
+      if (done % 50 === 0) {
+        writeJson(PARTIAL, results); // checkpoint: safe to kill at any time
+        console.log(
+          `progress ${done}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - ${Object.values(results).filter((x) => x.ok).length} ok`
+        );
+      }
+    },
   }
 );
 
-t0 = Date.now();
-writeJson(path.join(DATA_DIR, 'check-results.json'), results);
+writeJson(FINAL, results);
+try { fs.unlinkSync(PARTIAL); } catch {}
 const ok = Object.values(results).filter((x) => x.ok).length;
-console.log(`DONE ok=${ok} fail=${Object.keys(results).length - ok} in ${t0 - 0}ms`);
+console.log(`DONE ok=${ok} fail=${Object.keys(results).length - ok} in ${Math.round((Date.now() - t0) / 1000)}s`);

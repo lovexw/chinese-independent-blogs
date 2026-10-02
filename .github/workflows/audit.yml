@@ -41,6 +41,9 @@ jobs:
       - name: Refresh RSS last-update times
         run: node scripts/rss-refresh.mjs
 
+      - name: Flag suspicious blogs for manual review
+        run: node scripts/flag-suspicious.mjs
+
       - name: Rebuild artifacts & site data
         run: node scripts/build.mjs
 

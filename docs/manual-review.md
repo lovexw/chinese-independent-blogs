@@ -1,0 +1,320 @@
+# 人工核验清单（自动检测无法确定的可疑博客）
+
+> 由 `scripts/flag-suspicious.mjs` 于 2026-10-02 生成。
+> 自动检查只能看到 HTTP 状态码，以下博客存在自动化无法判断的情况，请人工打开确认。
+> 核验后：若确认失效 → 从 `blogs-original.csv` 删除该行；若正常 → 无需处理；
+> 也可以直接在仓库提 Issue 备注结论。
+
+## 跳转到其他网站（50）
+
+- [ ] [DIYGod - 写代码是热爱，写到世界充满爱!](https://diygod.me) — https://diygod.me ｜ HTTP 跳转到 diygod.cc (https://diygod.cc/)；最终落在 diygod.cc (https://diygod.cc/)
+- [ ] [xiaix's Blog](https://xiaix.me) — https://xiaix.me ｜ HTTP 跳转到 runtushare.net (https://runtushare.net/)；最终落在 runtushare.net (https://runtushare.net/)
+- [ ] [人人都是产品经理——iamsujie](http://iamsujie.com) — http://iamsujie.com ｜ HTTP 跳转到 blog.csdn.net (https://blog.csdn.net/iamsujie)；最终落在 blog.csdn.net (https://blog.csdn.net/iamsujie)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [余海峯 David 物理喵 phycat](https://hfdavidyu.com) — https://hfdavidyu.com ｜ HTTP 跳转到 indocairjuara.com (https://indocairjuara.com/)；最终落在 indocairjuara.com (https://indocairjuara.com/)
+- [ ] [谢益辉](https://yihui.name/cn) — https://yihui.name/cn ｜ HTTP 跳转到 yihui.org (https://yihui.org/cn/)；最终落在 yihui.org (https://yihui.org/cn/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [五分钟学算法](https://www.cxyxiaowu.com) — https://www.cxyxiaowu.com ｜ HTTP 跳转到 www.algomooc.com (https://www.algomooc.com/)；最终落在 www.algomooc.com (https://www.algomooc.com/)
+- [ ] [Yuexun's Blog](https://yuexun.me) — https://yuexun.me ｜ HTTP 跳转到 yuexunj.com (https://yuexunj.com/)；最终落在 yuexunj.com (https://yuexunj.com/)
+- [ ] [Claude's Blog](https://claude-ray.github.io) — https://claude-ray.github.io ｜ HTTP 跳转到 claude-ray.com (https://claude-ray.com/)；最终落在 claude-ray.com (https://claude-ray.com/)
+- [ ] [Yiran's Blog](https://zdyxry.github.io) — https://zdyxry.github.io ｜ HTTP 跳转到 blog.zhouyiran.link (http://blog.zhouyiran.link/)；最终落在 blog.zhouyiran.link (http://blog.zhouyiran.link/)
+- [ ] [TonyHe 的博客](https://www.ouorz.com) — https://www.ouorz.com ｜ HTTP 跳转到 lipeng.ac (https://lipeng.ac/)；最终落在 lipeng.ac (https://lipeng.ac/)
+- [ ] [未知的世界](http://lulalap.com) — http://lulalap.com ｜ HTTP 跳转到 philoli.com (https://philoli.com/)；最终落在 philoli.com (https://philoli.com/)
+- [ ] [Chino's Workspace](https://chinomars.github.io) — https://chinomars.github.io ｜ HTTP 跳转到 chinomars.com (http://chinomars.com/)；最终落在 chinomars.com (http://chinomars.com/)
+- [ ] [weirane's blog](https://weirane.github.io) — https://weirane.github.io ｜ HTTP 跳转到 blog.ruo-chen.wang (https://blog.ruo-chen.wang/)；最终落在 blog.ruo-chen.wang (https://blog.ruo-chen.wang/)
+- [ ] [格物致知](https://liqiang.io) — https://liqiang.io ｜ HTTP 跳转到 tongwd.org (https://tongwd.org/)；最终落在 tongwd.org (https://tongwd.org/)；页面内容疑似域名停放/出售页
+- [ ] [Rapiz's Blog](https://rapiz.me) — https://rapiz.me ｜ HTTP 跳转到 blog.yqiao.me (https://blog.yqiao.me/)；最终落在 blog.yqiao.me (https://blog.yqiao.me/)
+- [ ] [琚致远](https://wineso.me/blog) — https://wineso.me/blog ｜ HTTP 跳转到 juzhiyuan.me (https://juzhiyuan.me/)；最终落在 juzhiyuan.me (https://juzhiyuan.me/)
+- [ ] [Luyu Huang's Tech Blog](https://luyuhuang.github.io) — https://luyuhuang.github.io ｜ HTTP 跳转到 luyuhuang.tech (https://luyuhuang.tech/)；最终落在 luyuhuang.tech (https://luyuhuang.tech/)
+- [ ] [Yuko's Blog](https://yuukoamamiya.github.io) — https://yuukoamamiya.github.io ｜ HTTP 跳转到 blog.amamiyayuuko.com (https://blog.amamiyayuuko.com/)；最终落在 blog.amamiyayuuko.com (https://blog.amamiyayuuko.com/)
+- [ ] [陈仓颉](https://imzm.im) — https://imzm.im ｜ HTTP 跳转到 jefftay.com (https://jefftay.com/)；最终落在 jefftay.com (https://jefftay.com/)
+- [ ] [小猪](https://xiaozhu.dev) — https://xiaozhu.dev ｜ HTTP 跳转到 runtushare.net (https://runtushare.net/)；最终落在 runtushare.net (https://runtushare.net/)
+- [ ] [Scvoet](https://scvoet.me) — https://scvoet.me ｜ HTTP 跳转到 gbslot303.com (https://gbslot303.com/)；最终落在 gbslot303.com (https://gbslot303.com/)
+- [ ] [Fat Blog - 挺肥的博客](https://tingfei.space) — https://tingfei.space ｜ HTTP 跳转到 runtushare.net (https://runtushare.net/)；最终落在 runtushare.net (https://runtushare.net/)
+- [ ] [Anillc's blog](https://anillc.cn) — https://anillc.cn ｜ HTTP 跳转到 blog.anil.lc (https://blog.anil.lc/)；最终落在 blog.anil.lc (https://blog.anil.lc/)
+- [ ] [Mokeyjay's Blog](https://www.mokeyjay.com) — https://www.mokeyjay.com ｜ HTTP 跳转到 mok.moe (https://mok.moe/)；最终落在 mok.moe (https://mok.moe/)
+- [ ] [Aemon's Blog](https://aemoncao.github.io) — https://aemoncao.github.io ｜ HTTP 跳转到 blog.aemon.space (http://blog.aemon.space/)；最终落在 blog.aemon.space (http://blog.aemon.space/)
+- [ ] [涛叔](https://taoshu.in) — https://taoshu.in ｜ HTTP 跳转到 tao.zz.ac (https://tao.zz.ac/)；最终落在 tao.zz.ac (https://tao.zz.ac/)
+- [ ] [BBing's Blog](https://www.bbing.com.cn) — https://www.bbing.com.cn ｜ HTTP 跳转到 imcbc.cn (https://imcbc.cn/)；最终落在 imcbc.cn (https://imcbc.cn/)
+- [ ] [罗二德](https://Lorde627.xyz) — https://Lorde627.xyz ｜ HTTP 跳转到 runtushare.net (https://runtushare.net/)；最终落在 runtushare.net (https://runtushare.net/)
+- [ ] [conge](https://conge.github.io) — https://conge.github.io ｜ HTTP 跳转到 conge.livingwithfcs.org (https://conge.livingwithfcs.org/)；最终落在 conge.livingwithfcs.org (https://conge.livingwithfcs.org/)
+- [ ] [nickChenyx](https://nickchenyx.github.io) — https://nickchenyx.github.io ｜ HTTP 跳转到 www.voidchen.com (http://www.voidchen.com/)；最终落在 www.voidchen.com (http://www.voidchen.com/)
+- [ ] [MegaMU个人站](https://megamu.icu) — https://megamu.icu ｜ HTTP 跳转到 runtushare.net (https://runtushare.net/)；最终落在 runtushare.net (https://runtushare.net/)
+- [ ] [Cubik的小站](http://cubik65536.top) — http://cubik65536.top ｜ HTTP 跳转到 www.qubik65536.top (https://www.qubik65536.top/)；最终落在 www.qubik65536.top (https://www.qubik65536.top/)
+- [ ] [好工具周刊](https://bestxtools.github.io) — https://bestxtools.github.io ｜ HTTP 跳转到 bestxtools.com (https://bestxtools.com/)；最终落在 bestxtools.com (https://bestxtools.com/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [运维咖啡吧](https://blog.ops-coffee.cn) — https://blog.ops-coffee.cn ｜ HTTP 跳转到 blog.ops-coffee.com (https://blog.ops-coffee.com/)；最终落在 blog.ops-coffee.com (https://blog.ops-coffee.com/)
+- [ ] [Shiroha白羽的博客](https://hukeqing.github.io) — https://hukeqing.github.io ｜ HTTP 跳转到 blog.mauve.icu (https://blog.mauve.icu/)；最终落在 blog.mauve.icu (https://blog.mauve.icu/)
+- [ ] [ImCaO's Blog](https://www.imcao.cn) — https://www.imcao.cn ｜ HTTP 跳转到 blog.imcao.com (https://blog.imcao.com/)；最终落在 blog.imcao.com (https://blog.imcao.com/)
+- [ ] [杨宝强的技术笔记](https://bqyang.top) — https://bqyang.top ｜ HTTP 跳转到 qemow.com (https://qemow.com/go/3115960?subid1=bqyang.top)；最终落在 qemow.com (https://qemow.com/go/3115960?subid1=bqyang.top)；页面可见文字仅 3 字符，疑似空页
+- [ ] [xiongxinwei的个人博客](https://nsddd.top) — https://nsddd.top ｜ HTTP 跳转到 cubxxw.com (https://cubxxw.com/)；最终落在 cubxxw.com (https://cubxxw.com/)
+- [ ] [Ethan's Blog](https://ethan-phu.github.io) — https://ethan-phu.github.io ｜ HTTP 跳转到 blog.ethan-ai.cn (http://blog.ethan-ai.cn/)；最终落在 blog.ethan-ai.cn (http://blog.ethan-ai.cn/)
+- [ ] [Yi's Blog](https://ycao.top) — https://ycao.top ｜ HTTP 跳转到 ycao.net (https://ycao.net/)；最终落在 ycao.net (https://ycao.net/)
+- [ ] [Jing Blog](https://jingine.com) — https://jingine.com ｜ HTTP 跳转到 jaketao.com (https://jaketao.com/)；最终落在 jaketao.com (https://jaketao.com/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [Dr3@m's Blog](https://blog.ctftools.com) — https://blog.ctftools.com ｜ HTTP 跳转到 dr34m.cn (https://dr34m.cn/)；最终落在 dr34m.cn (https://dr34m.cn/)
+- [ ] [有（冇）用](https://usefulness.info) — https://usefulness.info ｜ HTTP 跳转到 usefulness.notion.site (https://usefulness.notion.site/)；最终落在 usefulness.notion.site (https://usefulness.notion.site/)；页面可见文字仅 95 字符，疑似空页
+- [ ] [HikariLan's Blog](https://my.minecraft.kim) — https://my.minecraft.kim ｜ HTTP 跳转到 blog.hikarilan.life (https://blog.hikarilan.life/)；最终落在 blog.hikarilan.life (https://blog.hikarilan.life/)
+- [ ] [Ryan' Lab](https://blog.gaoran.xyz) — https://blog.gaoran.xyz ｜ HTTP 跳转到 gaoran.cc (https://gaoran.cc/)；最终落在 gaoran.cc (https://gaoran.cc/)
+- [ ] [月夜Moonlight](https://moonlt.site) — https://moonlt.site ｜ HTTP 跳转到 moonlites.org (https://moonlites.org/)；最终落在 moonlites.org (https://moonlites.org/)；页面可见文字仅 83 字符，疑似空页
+- [ ] [纸鹿摸鱼处](https://blog.zhilu.cyou) — https://blog.zhilu.cyou ｜ HTTP 跳转到 blog.zhilu.site (https://blog.zhilu.site/)；最终落在 blog.zhilu.site (https://blog.zhilu.site/)
+- [ ] [映屿](https://www.glowisle.me) — https://www.glowisle.me ｜ HTTP 跳转到 blog.verdant.ee (https://blog.verdant.ee/)；最终落在 blog.verdant.ee (https://blog.verdant.ee/)
+- [ ] [QingCCL](https://qingccl.github.io) — https://qingccl.github.io ｜ HTTP 跳转到 qingccl.com (https://qingccl.com/)；最终落在 qingccl.com (https://qingccl.com/)
+- [ ] [ChangYo's Blog](https://changyo.pages.dev) — https://changyo.pages.dev ｜ HTTP 跳转到 changyo.me (https://changyo.me/)；最终落在 changyo.me (https://changyo.me/)
+
+## JS 跳转到其他网站（8）
+
+- [ ] [CallMeSoul](https://callmesoul.cn) — https://callmesoul.cn ｜ JS 跳转到 https://yujinglobal.top/DU62c6
+- [ ] [沈维燕的个人博客](https://shen.bioitee.com) — https://shen.bioitee.com ｜ JS 跳转到 http://en./
+- [ ] [木小丰的博客](https://lesofn.com/) — https://lesofn.com/ ｜ JS 跳转到 https://www.baidu.com
+- [ ] [冯兄话吉博客](https://fengmengzhao.github.io/) — https://fengmengzhao.github.io/ ｜ JS 跳转到 https://blog.learnbyteaching.xyz/
+- [ ] [富录-前端开发](https://www.arbays.com/) — https://www.arbays.com/ ｜ JS 跳转到 https://www.baidu.com
+- [ ] [QAIU's Blog](https://blog.qaiu.top/) — https://blog.qaiu.top/ ｜ JS 跳转到 https://www.baidu.com
+- [ ] [我不是咕咕鸽](https://blog.laoda.de/) — https://blog.laoda.de/ ｜ JS 跳转到 https://www.baidu.com
+- [ ] [謝懿Shine©的AI博客](http://xieyi.org/) — http://xieyi.org/ ｜ JS 跳转到 https://www.spaceship.com/auth/
+
+## 人机验证 / 反爬拦截（65）
+
+- [ ] [人人都是产品经理——iamsujie](http://iamsujie.com) — http://iamsujie.com ｜ HTTP 跳转到 blog.csdn.net (https://blog.csdn.net/iamsujie)；最终落在 blog.csdn.net (https://blog.csdn.net/iamsujie)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [谢益辉](https://yihui.name/cn) — https://yihui.name/cn ｜ HTTP 跳转到 yihui.org (https://yihui.org/cn/)；最终落在 yihui.org (https://yihui.org/cn/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [好工具周刊](https://bestxtools.github.io) — https://bestxtools.github.io ｜ HTTP 跳转到 bestxtools.com (https://bestxtools.com/)；最终落在 bestxtools.com (https://bestxtools.com/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [Jing Blog](https://jingine.com) — https://jingine.com ｜ HTTP 跳转到 jaketao.com (https://jaketao.com/)；最终落在 jaketao.com (https://jaketao.com/)；HTTP 200：页面含人机验证/反爬特征
+- [ ] [依云's Blog](https://blog.lilydjwg.me) — https://blog.lilydjwg.me ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [技术小黑屋](https://droidyue.com) — https://droidyue.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [INTJer](https://arminli.com) — https://arminli.com ｜ HTTP 402：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Mr. PM 下午先生](https://mrpm.cc) — https://mrpm.cc ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [SEO 网站优化及网站推广](https://seo.g2soft.net) — https://seo.g2soft.net ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [维基萌](https://www.wikimoe.com) — https://www.wikimoe.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [王二的个人网站](https://wangyulue.com) — https://wangyulue.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [beyond stars](https://beyondstars.xyz) — https://beyondstars.xyz ｜ HTTP 456：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Nero的博客](https://www.neroht.com) — https://www.neroht.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [甜欣屋](https://www.tcxx.info) — https://www.tcxx.info ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [皮皮凛基地](https://owomoe.net) — https://owomoe.net ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [懒得勤快的博客](https://masuit.com) — https://masuit.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [极客玩家大白](https://geekplayers.com) — https://geekplayers.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [teobler](https://teobler.com) — https://teobler.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [墨守](https://moshou.me) — https://moshou.me ｜ HTTP 402：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Robotkang](https://robotkang.cc) — https://robotkang.cc ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Zikin的独立博客](https://zikin.org) — https://zikin.org ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [RUNNINGJ](https://runningj.top) — https://runningj.top ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [飞翔沫沫情博客](https://fxkjnj.com) — https://fxkjnj.com ｜ HTTP 416：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [ocero的博客](https://oceroblogentry.metalstudio.top) — https://oceroblogentry.metalstudio.top ｜ HTTP 402：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [且炼时光](https://linshenkx.cn) — https://linshenkx.cn ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Kris Yan](https://blog.krisyan.dev) — https://blog.krisyan.dev ｜ HTTP 429：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [类库大魔王的挖井日记](https://blog.ismisv.com) — https://blog.ismisv.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [LanYunのBlog](https://lanyundev.com) — https://lanyundev.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [文明](http://home.cse.ust.hk/~zjiangaj/blog) — http://home.cse.ust.hk/~zjiangaj/blog ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [WuHJ's Personel Site](https://hjwu.cc) — https://hjwu.cc ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Moby](https://isfalse.pro) — https://isfalse.pro ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [小杜的技术博客](http://www.xiaodu0.com) — http://www.xiaodu0.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Kerry的学习笔记](https://kerrynotes.com) — https://kerrynotes.com ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Dort 的博客](https://blog.dort.me) — https://blog.dort.me ｜ HTTP 403：程序化访问被拒绝（可能有人机验证或反爬）
+- [ ] [Lenix Blog](https://blog.p2hp.com/) — https://blog.p2hp.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Garan no dou](https://blog.ibireme.com/) — https://blog.ibireme.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [刘悦的技术博客](https://v3u.cn) — https://v3u.cn ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Josherich的博客](https://www.josherich.me/) — https://www.josherich.me/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Lyric](https://quaily.com/lyric) — https://quaily.com/lyric ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [吕小荣的网志](https://mednoter.com/) — https://mednoter.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [oldj's blog](https://oldj.net) — https://oldj.net ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [chattymoney(跟我一起来谈钱)](https://chattymoney.com/) — https://chattymoney.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Platform Thinking +](https://pt.plus) — https://pt.plus ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [重归混沌的BLOG](https://blog.gotocoding.com) — https://blog.gotocoding.com ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [fivestone - 同一种调调](https://blog.fivest.one/) — https://blog.fivest.one/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [LoRexxar's Blog](https://lorexxar.cn/) — https://lorexxar.cn/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [fieldnotes](https://anthropology.fivest.one/) — https://anthropology.fivest.one/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Richie的时光机](https://riichiie.net) — https://riichiie.net ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [EdNovas的小站](https://ednovas.xyz) — https://ednovas.xyz ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [算法进阶](https://github.com/aialgorithm/Blog) — https://github.com/aialgorithm/Blog ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [雪猫社](https://www.yukicat.net/) — https://www.yukicat.net/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [翻身猫](https://www.zy99.net) — https://www.zy99.net ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [dsy4567 的小站](https://dsy4567.github.io/blog.html) — https://dsy4567.github.io/blog.html ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [夕泥](https://dnspod.qcloud.com/static/webblock.html?d=xinies.cn) — https://dnspod.qcloud.com/static/webblock.html?d=xinies.cn ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [柴郡猫](https://www.cheshirex.com) — https://www.cheshirex.com ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [大小碗诗话](https://christianpoet.github.io) — https://christianpoet.github.io ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [王光卫博客](https://www.guangweiblog.com/) — https://www.guangweiblog.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [WSH](https://wsh233.cn) — https://wsh233.cn ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [帽之岛 - Hat's Land](https://www.hats-land.com) — https://www.hats-land.com ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Golden Territory金色疆域](https://dogeas.club) — https://dogeas.club ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [ICDYCT我能你也行](https://zelikk.blogspot.com/) — https://zelikk.blogspot.com/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [zhecydn的博客站](https://blog.zhecydn.asia/) — https://blog.zhecydn.asia/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Jake Blog](https://jaketao.com/blog) — https://jaketao.com/blog ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [Abyss的小屋](https://www.rsnocsi.cn/) — https://www.rsnocsi.cn/ ｜ HTTP 200：页面含人机验证/反爬特征
+- [ ] [毛英龙的数字花园](http://blog.rnm.gv.uy/) — http://blog.rnm.gv.uy/ ｜ HTTP 200：页面含人机验证/反爬特征
+
+## 疑似域名停放（36）
+
+- [ ] [格物致知](https://liqiang.io) — https://liqiang.io ｜ HTTP 跳转到 tongwd.org (https://tongwd.org/)；最终落在 tongwd.org (https://tongwd.org/)；页面内容疑似域名停放/出售页
+- [ ] [爱写代码的小书童](https://zofun.github.io/) — https://zofun.github.io/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Deepzz's Blog](https://deepzz.com) — https://deepzz.com ｜ 页面内容疑似域名停放/出售页
+- [ ] [Allen's Blog](https://www.capallen.top) — https://www.capallen.top ｜ 页面内容疑似域名停放/出售页
+- [ ] [桑弧蓬矢射四方](https://iphyer.github.io/) — https://iphyer.github.io/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [掘墓人的小铲子](https://juemuren4449.com/) — https://juemuren4449.com/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [MiaoTony's Blog](https://miaotony.xyz/) — https://miaotony.xyz/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [以梦为马](https://lhymwm.github.io) — https://lhymwm.github.io ｜ 页面内容疑似域名停放/出售页
+- [ ] [Simple code Simple life](http://halberd.cn/) — http://halberd.cn/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [lowinli's blog](https://lowin.li/) — https://lowin.li/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [icy's blog](https://icys.top/) — https://icys.top/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [浮云翩迁之间](https://blognas.hwb0307.com) — https://blognas.hwb0307.com ｜ 页面内容疑似域名停放/出售页
+- [ ] [子恒的博客](http://blog.chestnutheng.cn/) — http://blog.chestnutheng.cn/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Fanta's Blog](http://fantalovelife.club:8181/) — http://fantalovelife.club:8181/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Wrong.wang](https://wrong.wang/blog/) — https://wrong.wang/blog/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [AlexSJC 的博客](https://www.c3c.one/) — https://www.c3c.one/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [布袋青年](https://great-jin.github.io) — https://great-jin.github.io ｜ 页面内容疑似域名停放/出售页
+- [ ] [秋澪Akimio](https://blog.akimio.top/) — https://blog.akimio.top/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [SRE运维博客](https://www.cnsre.cn) — https://www.cnsre.cn ｜ 页面内容疑似域名停放/出售页
+- [ ] [十月遗忘诗](https://greniray.org) — https://greniray.org ｜ 页面内容疑似域名停放/出售页
+- [ ] [ZLA 小站](https://www.zla.pub/) — https://www.zla.pub/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [雷蒙三十](https://raymondhouch.com/) — https://raymondhouch.com/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [编程随想的博客](https://program-think.blogspot.com) — https://program-think.blogspot.com ｜ 页面内容疑似域名停放/出售页
+- [ ] [HugeTerry-Den](http://hugeterry.cn/) — http://hugeterry.cn/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Wener's Live & Life](https://wener.me/) — https://wener.me/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [皓子的小站](https://howiehz.top/) — https://howiehz.top/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [distjr_'s blog](https://blog.distjr.top/) — https://blog.distjr.top/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [叶泯希](https://blog.418121.xyz/) — https://blog.418121.xyz/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Flowable中文博客](https://flowable.me/blog/) — https://flowable.me/blog/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [Huan's Blog](https://blog.huan99.com) — https://blog.huan99.com ｜ 页面内容疑似域名停放/出售页
+- [ ] [unixetc](https://unixetc.com/) — https://unixetc.com/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [猫涅的技术博客](https://www.maonie.top/) — https://www.maonie.top/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [ABB00717's Blog](https://blog.abb00717.com/) — https://blog.abb00717.com/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [fengc's Blog](https://fengcblog.880200.xyz/) — https://fengcblog.880200.xyz/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [初然忆](https://www.imcry.vip/) — https://www.imcry.vip/ ｜ 页面内容疑似域名停放/出售页
+- [ ] [BotForge Notes](http://blog.notlove.me/) — http://blog.notlove.me/ ｜ 页面内容疑似域名停放/出售页
+
+## 疑似空页面（104）
+
+- [ ] [杨宝强的技术笔记](https://bqyang.top) — https://bqyang.top ｜ HTTP 跳转到 qemow.com (https://qemow.com/go/3115960?subid1=bqyang.top)；最终落在 qemow.com (https://qemow.com/go/3115960?subid1=bqyang.top)；页面可见文字仅 3 字符，疑似空页
+- [ ] [有（冇）用](https://usefulness.info) — https://usefulness.info ｜ HTTP 跳转到 usefulness.notion.site (https://usefulness.notion.site/)；最终落在 usefulness.notion.site (https://usefulness.notion.site/)；页面可见文字仅 95 字符，疑似空页
+- [ ] [月夜Moonlight](https://moonlt.site) — https://moonlt.site ｜ HTTP 跳转到 moonlites.org (https://moonlites.org/)；最终落在 moonlites.org (https://moonlites.org/)；页面可见文字仅 83 字符，疑似空页
+- [ ] [但行好事，莫问前程](https://windard.com) — https://windard.com ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [思圆笔记](https://hintsnet.com/) — https://hintsnet.com/ ｜ 页面可见文字仅 5 字符，疑似空页
+- [ ] [MouT.me](https://mout.me) — https://mout.me ｜ 页面可见文字仅 68 字符，疑似空页
+- [ ] [EGOIST 博客](http://egoist.proselog.com/) — http://egoist.proselog.com/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [小胡子哥的个人网站](https://www.barretlee.com) — https://www.barretlee.com ｜ 页面可见文字仅 148 字符，疑似空页
+- [ ] [王垠的博客](https://www.yinwang.org/) — https://www.yinwang.org/ ｜ 页面可见文字仅 18 字符，疑似空页
+- [ ] [bang's blog](https://blog.cnbang.net/) — https://blog.cnbang.net/ ｜ 页面可见文字仅 120 字符，疑似空页
+- [ ] [炸裂志](https://zh.fyi/) — https://zh.fyi/ ｜ 页面可见文字仅 11 字符，疑似空页
+- [ ] [己羊的梦](http://blog.jiyang00.cn/) — http://blog.jiyang00.cn/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [沐凉](https://blog.lacia.cn) — https://blog.lacia.cn ｜ 页面可见文字仅 12 字符，疑似空页
+- [ ] [杂货屋](http://sword.studio/) — http://sword.studio/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [张佳圆](https://jiayuanzhang.com/) — https://jiayuanzhang.com/ ｜ 页面可见文字仅 26 字符，疑似空页
+- [ ] [ITBOB'S BLOG](https://www.itbob.cn/) — https://www.itbob.cn/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [啊哈呵嗨的博客](https://gylidian.js.org) — https://gylidian.js.org ｜ 页面可见文字仅 21 字符，疑似空页
+- [ ] [薛定喵君的博客](http://blog.xuedingmiao.com/) — http://blog.xuedingmiao.com/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [杯酒故事](https://beijiu.ink) — https://beijiu.ink ｜ 页面可见文字仅 52 字符，疑似空页
+- [ ] [Yuechuan Blog](https://yuechuanx.top/) — https://yuechuanx.top/ ｜ 页面可见文字仅 8 字符，疑似空页
+- [ ] [HashTang 的个人空间](https://www.hxkj.vip) — https://www.hxkj.vip ｜ 页面可见文字仅 119 字符，疑似空页
+- [ ] [静かな森](https://innei.ren/) — https://innei.ren/ ｜ 页面可见文字仅 120 字符，疑似空页
+- [ ] [Beyond the Void](https://www.byvoid.com/) — https://www.byvoid.com/ ｜ 页面可见文字仅 23 字符，疑似空页
+- [ ] [影留](https://leftshadow.com) — https://leftshadow.com ｜ 页面可见文字仅 71 字符，疑似空页
+- [ ] [一个坏掉的番茄](https://tomotoes.com/) — https://tomotoes.com/ ｜ 页面可见文字仅 23 字符，疑似空页
+- [ ] [老张说思路](https://www.aceact.com) — https://www.aceact.com ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [狂奔的骆驼](http://blog.geektcp.com/) — http://blog.geektcp.com/ ｜ 页面可见文字仅 143 字符，疑似空页
+- [ ] [木匣子](https://mutoo.im) — https://mutoo.im ｜ 页面可见文字仅 102 字符，疑似空页
+- [ ] [挥舞思绪的博客](https://asazero.blogspot.com/) — https://asazero.blogspot.com/ ｜ 页面可见文字仅 154 字符，疑似空页
+- [ ] [豌豆(没有荚)](https://wandoer.com) — https://wandoer.com ｜ 页面可见文字仅 98 字符，疑似空页
+- [ ] [Gowhich](https://www.gowhich.com) — https://www.gowhich.com ｜ 页面可见文字仅 112 字符，疑似空页
+- [ ] [愤怒的蜂鸟](https://peon.top) — https://peon.top ｜ 页面可见文字仅 47 字符，疑似空页
+- [ ] [kirito的博客](http://blog.kirito41dd.cn/) — http://blog.kirito41dd.cn/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [牧云云的博客](http://muyunyun.cn/blog/) — http://muyunyun.cn/blog/ ｜ 页面可见文字仅 11 字符，疑似空页
+- [ ] [winter's Blog](http://winterchen.com/) — http://winterchen.com/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [Enoch2090](https://www.enoch2090.me/) — https://www.enoch2090.me/ ｜ 页面可见文字仅 96 字符，疑似空页
+- [ ] [没喝的](https://blog.nodr.ink/) — https://blog.nodr.ink/ ｜ 页面可见文字仅 144 字符，疑似空页
+- [ ] [叶寻的博客](https://cyrusyip.org/) — https://cyrusyip.org/ ｜ 页面可见文字仅 24 字符，疑似空页
+- [ ] [crblog](https://blog.cal1.cn/) — https://blog.cal1.cn/ ｜ 页面可见文字仅 22 字符，疑似空页
+- [ ] [墨菲易](https://murphyyi.com/) — https://murphyyi.com/ ｜ 页面可见文字仅 74 字符，疑似空页
+- [ ] [花束渲染](https://bouquetrender.space/) — https://bouquetrender.space/ ｜ 页面可见文字仅 138 字符，疑似空页
+- [ ] [芍芋之家](http://shoyu.top/) — http://shoyu.top/ ｜ 页面可见文字仅 152 字符，疑似空页
+- [ ] [叶开博客](https://qq.md/) — https://qq.md/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [ChenYFanのBlog](https://eurekac.cn/) — https://eurekac.cn/ ｜ 页面可见文字仅 199 字符，疑似空页
+- [ ] [Shiau](https://shiau.xyz) — https://shiau.xyz ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [Ziv Log](https://zivlog.io/) — https://zivlog.io/ ｜ 页面可见文字仅 10 字符，疑似空页
+- [ ] [途中的树](https://zkpeace.com) — https://zkpeace.com ｜ 页面可见文字仅 49 字符，疑似空页
+- [ ] [读写错误](https://ioerr.github.io/) — https://ioerr.github.io/ ｜ 页面可见文字仅 149 字符，疑似空页
+- [ ] [3号实验室](https://www.labno3.com/) — https://www.labno3.com/ ｜ 页面可见文字仅 136 字符，疑似空页
+- [ ] [偕臧的小站](http://ifmet.cn/) — http://ifmet.cn/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [Marwin's Blog](http://marwin.cn/) — http://marwin.cn/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [旅行者的随想](https://besscroft.com/) — https://besscroft.com/ ｜ 页面可见文字仅 19 字符，疑似空页
+- [ ] [XTAO's Tech Blog](https://xiaotaoguo.com) — https://xiaotaoguo.com ｜ 页面可见文字仅 192 字符，疑似空页
+- [ ] [闲趣日评](http://blog.xqrp.com/) — http://blog.xqrp.com/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [蟹壳](https://shellc.cn) — https://shellc.cn ｜ 页面可见文字仅 143 字符，疑似空页
+- [ ] [喵二の小博客](https://www.miaoer.net/) — https://www.miaoer.net/ ｜ 页面可见文字仅 24 字符，疑似空页
+- [ ] [乔克叔叔的床边故事](https://lifeodyssey.github.io/) — https://lifeodyssey.github.io/ ｜ 页面可见文字仅 64 字符，疑似空页
+- [ ] [xuetengfei'Blog](https://xuetengfei.github.io/) — https://xuetengfei.github.io/ ｜ 页面可见文字仅 76 字符，疑似空页
+- [ ] [zStack](https://noicdi.com/) — https://noicdi.com/ ｜ 页面可见文字仅 45 字符，疑似空页
+- [ ] [禅房花木](http://jdqiong.cn/) — http://jdqiong.cn/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [jujimeizuo's Blog](http://www.jujimeizuo.cn/blog/) — http://www.jujimeizuo.cn/blog/ ｜ 页面可见文字仅 8 字符，疑似空页
+- [ ] [星空下的YZY](http://226yzy.com/) — http://226yzy.com/ ｜ 页面可见文字仅 1 字符，疑似空页
+- [ ] [TimochanのBlog](https://www.timochan.cn) — https://www.timochan.cn ｜ 页面可见文字仅 57 字符，疑似空页
+- [ ] [文轩的Blog](https://allanware.github.io/zh/) — https://allanware.github.io/zh/ ｜ 页面可见文字仅 139 字符，疑似空页
+- [ ] [胡正](http://www.huzheng.org/) — http://www.huzheng.org/ ｜ 页面可见文字仅 112 字符，疑似空页
+- [ ] [是非题](https://www.shifeiti.com) — https://www.shifeiti.com ｜ 页面可见文字仅 86 字符，疑似空页
+- [ ] [Jim Luo's blog](https://www.jimmieluo.com/) — https://www.jimmieluo.com/ ｜ 页面可见文字仅 25 字符，疑似空页
+- [ ] [zguishen's blog](https://zguishen.com) — https://zguishen.com ｜ 页面可见文字仅 147 字符，疑似空页
+- [ ] [静水深流的博客](https://slbyml.github.io/) — https://slbyml.github.io/ ｜ 页面可见文字仅 28 字符，疑似空页
+- [ ] [一派胡言](https://yipai.me) — https://yipai.me ｜ 页面可见文字仅 4 字符，疑似空页
+- [ ] [小赵博客 - XiaoZhao233](https://blog.xiaozhao233.top) — https://blog.xiaozhao233.top ｜ 页面可见文字仅 156 字符，疑似空页
+- [ ] [Mathor's Blog](http://wmathor.com/) — http://wmathor.com/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [Mythsman](https://blog.mythsman.com/) — https://blog.mythsman.com/ ｜ 页面可见文字仅 55 字符，疑似空页
+- [ ] [vegetable1024的博客](https://blog.oi-liu.com/) — https://blog.oi-liu.com/ ｜ 页面可见文字仅 27 字符，疑似空页
+- [ ] [范明明](https://blog.fanmingming.com/) — https://blog.fanmingming.com/ ｜ 页面可见文字仅 70 字符，疑似空页
+- [ ] [Sixty's Den](https://www.sixtyden.com/) — https://www.sixtyden.com/ ｜ 页面可见文字仅 35 字符，疑似空页
+- [ ] [Ripple's blog](https://hiripple.com) — https://hiripple.com ｜ 页面可见文字仅 34 字符，疑似空页
+- [ ] [识文解意的爱书人](http://yyy.zone/) — http://yyy.zone/ ｜ 页面可见文字仅 3 字符，疑似空页
+- [ ] [质数人生](https://2357.life) — https://2357.life ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [哈尔的城堡](https://hallee.me) — https://hallee.me ｜ 页面可见文字仅 76 字符，疑似空页
+- [ ] [元否的研究室](https://www.happyfou.com/) — https://www.happyfou.com/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [AabyssZG's Blog](https://blog.zgsec.cn) — https://blog.zgsec.cn ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [krkr2(beta)](https://www.krkr2.xyz/) — https://www.krkr2.xyz/ ｜ 页面可见文字仅 174 字符，疑似空页
+- [ ] [Mox的笔记库](https://mocusez.site) — https://mocusez.site ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [云无心天天向上](https://yangk.net/blog/) — https://yangk.net/blog/ ｜ 页面可见文字仅 11 字符，疑似空页
+- [ ] [小橡树指北](http://growingoak.top/) — http://growingoak.top/ ｜ 页面可见文字仅 33 字符，疑似空页
+- [ ] [胡说](https://zhangyingwei.com/) — https://zhangyingwei.com/ ｜ 页面可见文字仅 13 字符，疑似空页
+- [ ] [肘子的 Swift 记事本](https://fatbobman.com/) — https://fatbobman.com/ ｜ 页面可见文字仅 137 字符，疑似空页
+- [ ] [A small world of unnamedtat](https://unnamedtat.xyz) — https://unnamedtat.xyz ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [阮超民的个人网站](https://www.ruanchaomin.com/) — https://www.ruanchaomin.com/ ｜ 页面可见文字仅 42 字符，疑似空页
+- [ ] [LT-Space](http://www.lter.space/) — http://www.lter.space/ ｜ 页面可见文字仅 199 字符，疑似空页
+- [ ] [七仔的博客](https://www.baby7blog.com) — https://www.baby7blog.com ｜ 页面可见文字仅 2 字符，疑似空页
+- [ ] [Jame](https://jame.work/) — https://jame.work/ ｜ 页面可见文字仅 166 字符，疑似空页
+- [ ] [gentlelucky](https://blog.gentlelucky.com) — https://blog.gentlelucky.com ｜ 页面可见文字仅 32 字符，疑似空页
+- [ ] [Suni Blog](https://www.yysuni.com/) — https://www.yysuni.com/ ｜ 页面可见文字仅 6 字符，疑似空页
+- [ ] [Luenci的技术博客](https://luenci.com) — https://luenci.com ｜ 页面可见文字仅 22 字符，疑似空页
+- [ ] [ventuss](https://ventuss.xyz) — https://ventuss.xyz ｜ 页面可见文字仅 100 字符，疑似空页
+- [ ] [闪电的自留地](https://blog.lyujp.com) — https://blog.lyujp.com ｜ 页面可见文字仅 175 字符，疑似空页
+- [ ] [wklken](https://wklken.me/) — https://wklken.me/ ｜ 页面可见文字仅 107 字符，疑似空页
+- [ ] [for_the_zero的小站](https://ftz.is-a.dev/) — https://ftz.is-a.dev/ ｜ 页面可见文字仅 10 字符，疑似空页
+- [ ] [Firenze42](https://firenze42.com/zh) — https://firenze42.com/zh ｜ 页面可见文字仅 178 字符，疑似空页
+- [ ] [LX blog](https://blog.liua.us.ci/) — https://blog.liua.us.ci/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [67的博客](https://www.liuqi.cc/) — https://www.liuqi.cc/ ｜ 页面可见文字仅 0 字符，疑似空页
+- [ ] [冉江龙的个人空间](https://www.ranjl.cn/) — https://www.ranjl.cn/ ｜ 页面可见文字仅 4 字符，疑似空页
+
+## 证书异常（32）
+
+- [ ] [追风之影](https://www.devashen.com) — https://www.devashen.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Drcus-迪卡](https://yazhen.me) — https://yazhen.me ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Halfrost's Field](https://halfrost.com) — https://halfrost.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [加菲猫的创客工坊](https://gaficat.com) — https://gaficat.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Matrix67: The Aha Moments](http://www.matrix67.com/blog) — http://www.matrix67.com/blog ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [轶哥博客](https://www.wyr.me) — https://www.wyr.me ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [TCPGNL](https://tcpgnl.com) — https://tcpgnl.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [plusplus7's Blog](https://blog.plusplus7.com) — https://blog.plusplus7.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [深度投资笔记](https://deepinvest.org) — https://deepinvest.org ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [灵感电台 - Jack's art hobby habitat](http://museradio.net) — http://museradio.net ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [czp's blog](https://www.hiczp.com) — https://www.hiczp.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [zjun's blog](https://blog.zjun.info) — https://blog.zjun.info ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [OK Computer「好电脑」](https://wumanho.cn) — https://wumanho.cn ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [小菜学编程](https://fasionchan.com) — https://fasionchan.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [伊藤•博文](https://moc.1tlt1.com) — https://moc.1tlt1.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [流浪天下](https://maie.name) — https://maie.name ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Moeif](https://blog.moeif.com) — https://blog.moeif.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [月落星河Tsukistar](https://www.tsukistar.fun) — https://www.tsukistar.fun ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Cerallin's blog](https://notes.cerallin.top) — https://notes.cerallin.top ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [RBA的技术分享](https://firfor.cn) — https://firfor.cn ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [小祝同学的日常](https://www.zzy2001.com) — https://www.zzy2001.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Yusank's Site](https://yusank.space) — https://yusank.space ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Coding手艺人](https://www.smiletoyou.cn) — https://www.smiletoyou.cn ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [古时的风筝](https://www.moonkite.cn) — https://www.moonkite.cn ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [X·myLog](https://www.xmylog.com) — https://www.xmylog.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [BaofengのBlog](https://blog.bao-feng.top) — https://blog.bao-feng.top ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [8ug.icu](https://www.8ug.icu) — https://www.8ug.icu ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [迦识](https://www.wejias.com) — https://www.wejias.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Qborfy知识库](https://qborfy.com) — https://qborfy.com ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [追逐日落](https://zzrl.cc) — https://zzrl.cc ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [HotaruBlog](https://hotaru.icu) — https://hotaru.icu ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+- [ ] [Fall's Blog](https://fallzhang.top) — https://fallzhang.top ｜ 证书异常（过期/域名不匹配），浏览器访问需点击继续
+

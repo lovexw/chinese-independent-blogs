@@ -73,6 +73,11 @@
           <option value="name">按名称</option>
         </select>
       </div>
+    </div>
+  </div>
+
+  <div class="chipsbar">
+    <div class="wrap">
       <div class="chips" id="chips" role="group" aria-label="标签筛选"></div>
     </div>
   </div>
@@ -89,7 +94,15 @@
       <div>没有找到匹配的博客，换一个关键词试试</div>
       <button id="clearBtn">清除筛选条件</button>
     </div>
-    <div id="sentinel"></div>
+    <nav class="pager" id="pager" aria-label="分页" style="display:none">
+      <button class="pg-btn" id="pgFirst" title="第一页" aria-label="第一页">«</button>
+      <button class="pg-btn" id="pgPrev" title="上一页" aria-label="上一页">‹</button>
+      <span class="pg-status" id="pgStatus"></span>
+      <div class="pg-nums" id="pgNums"></div>
+      <button class="pg-btn" id="pgNext" title="下一页" aria-label="下一页">›</button>
+      <button class="pg-btn" id="pgLast" title="最后一页" aria-label="最后一页">»</button>
+      <span class="pg-jump">跳至 <input id="pgJump" type="number" min="1" aria-label="跳转页码" /> 页</span>
+    </nav>
   </main>
 
   <footer>

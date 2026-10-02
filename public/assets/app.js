@@ -1,7 +1,7 @@
 /* 中文独立博客列表 · showcase app */
 (() => {
   const PIN_HOST = 'xiaowuleyi.com';
-  const CHUNK = 60;
+  const PAGE_SIZE = 100;
 
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
@@ -11,11 +11,15 @@
   const resultCount = document.getElementById('resultCount');
   const toTop = document.getElementById('toTop');
   const toastEl = document.getElementById('toast');
+  const pager = document.getElementById('pager');
+  const pgNums = document.getElementById('pgNums');
+  const pgStatus = document.getElementById('pgStatus');
+  const pgJump = document.getElementById('pgJump');
 
   let all = [];
   let meta = {};
   let state = { q: '', tags: new Set(), sort: 'default' };
-  let rendered = 0;
+  let page = 1;
   let view = [];
   let pinnedCount = 0;
 
@@ -100,9 +104,11 @@
       </article>`;
   }
 
+  /* ---------- filtering & pagination ---------- */
+
   function applyFilter() {
     const q = state.q.trim().toLowerCase();
-    // the owner's blog is pinned before filtering so it always stays on top
+    // the owner's blog is pinned before filtering so it always stays on top of page 1
     const pinned = all.filter(isPinned);
     const pool = all.filter((b) => !isPinned(b));
     const rest = pool.filter((b) => {
@@ -123,31 +129,93 @@
       rest.sort((a, b2) => a.name.localeCompare(b2.name, 'zh-Hans-CN'));
     }
     view = [...pinned, ...rest];
-
-    resultCount.textContent =
-      `共 ${all.length.toLocaleString()} 个博客 · 当前显示 ${view.length} 个` +
-      (state.tags.size ? ` · ${state.tags.size} 个标签` : '') +
-      (q ? ` · 搜索“${state.q.trim()}”` : '');
   }
 
-  function renderChunk(reset = false) {
-    if (reset) {
-      grid.innerHTML = '';
-      rendered = 0;
-    }
-    const frag = document.createElement('template');
-    let html = '';
-    let i = rendered;
-    const end = Math.min(rendered + CHUNK, view.length);
-    for (; i < end; i++) {
-      const b = view[i];
-      html += isPinned(b) ? pinnedHTML(b) : cardHTML(b, i - rendered);
-    }
-    frag.innerHTML = html;
-    grid.appendChild(frag.content);
-    rendered = end;
+  const totalPages = () => Math.max(1, Math.ceil(view.length / PAGE_SIZE));
+
+  function renderPage() {
+    const start = (page - 1) * PAGE_SIZE;
+    const slice = view.slice(start, start + PAGE_SIZE);
+    grid.innerHTML = slice.map((b, i) => (isPinned(b) ? pinnedHTML(b) : cardHTML(b, i))).join('');
+
     const hasResults = view.length > pinnedCount;
     empty.style.display = hasResults ? 'none' : 'block';
+
+    const T = totalPages();
+    pager.style.display = view.length > 0 ? '' : 'none';
+    document.getElementById('pgPrev').disabled = page <= 1;
+    document.getElementById('pgNext').disabled = page >= T;
+    document.getElementById('pgFirst').disabled = page <= 1;
+    document.getElementById('pgLast').disabled = page >= T;
+    pgStatus.textContent = `${page} / ${T}`;
+    pgJump.max = T;
+    if (document.activeElement !== pgJump) pgJump.value = page;
+    renderPgNums(T);
+
+    resultCount.textContent =
+      `共 ${all.length.toLocaleString()} 个博客 · 当前第 ${page}/${T} 页（${view.length} 个结果）` +
+      (state.tags.size ? ` · ${state.tags.size} 个标签` : '') +
+      (state.q.trim() ? ` · 搜索“${state.q.trim()}”` : '');
+  }
+
+  function renderPgNums(T) {
+    const nums = new Set([1, T, page - 1, page, page + 1]);
+    if (page <= 3) [2, 3, 4].forEach((n) => nums.add(n));
+    if (page >= T - 2) [T - 3, T - 2, T - 1].forEach((n) => nums.add(n));
+    const list = [...nums].filter((n) => n >= 1 && n <= T).sort((a, b) => a - b);
+    let html = '';
+    let prevN = 0;
+    for (const n of list) {
+      if (n - prevN > 1) html += `<span class="pg-dots">…</span>`;
+      html += `<button class="pg-num" data-page="${n}" aria-current="${n === page}" ${n === page ? 'aria-label="当前页"' : ''}>${n}</button>`;
+      prevN = n;
+    }
+    pgNums.innerHTML = html;
+  }
+
+  function goToPage(p, { scroll = true } = {}) {
+    const T = totalPages();
+    page = Math.min(Math.max(1, p), T);
+    renderPage();
+    syncHash();
+    if (scroll) {
+      const y = document.querySelector('.chipsbar').getBoundingClientRect().top + window.scrollY - 118;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    }
+  }
+
+  function refresh({ resetPage = true } = {}) {
+    applyFilter();
+    if (resetPage) page = 1;
+    renderPage();
+    syncHash();
+  }
+
+  /* ---------- url hash state (shareable filters) ---------- */
+
+  function syncHash() {
+    const h = new URLSearchParams();
+    if (state.q.trim()) h.set('q', state.q.trim());
+    if (state.tags.size) h.set('tags', [...state.tags].join(','));
+    if (state.sort !== 'default') h.set('sort', state.sort);
+    if (page > 1) h.set('page', String(page));
+    const s = h.toString();
+    history.replaceState(null, '', s ? '#' + s : location.pathname + location.search);
+  }
+
+  function readHash() {
+    const h = new URLSearchParams(location.hash.slice(1));
+    state.q = h.get('q') || '';
+    searchInput.value = state.q;
+    for (const t of (h.get('tags') || '').split(',')) {
+      if (t) state.tags.add(t);
+    }
+    const sort = h.get('sort');
+    if (sort && ['default', 'recent', 'stale', 'name'].includes(sort)) {
+      state.sort = sort;
+      sortSel.value = sort;
+    }
+    page = Math.max(1, parseInt(h.get('page'), 10) || 1);
   }
 
   /* ---------- chips ---------- */
@@ -183,8 +251,7 @@
       btn.setAttribute('aria-pressed', state.tags.has(btn.dataset.tag) ? 'true' : 'false');
     }
     chips.querySelector('#clearChips').style.display = state.tags.size ? '' : 'none';
-    applyFilter();
-    renderChunk(true);
+    refresh();
   }
 
   /* ---------- events ---------- */
@@ -193,15 +260,13 @@
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       state.q = searchInput.value;
-      applyFilter();
-      renderChunk(true);
+      refresh();
     }, 120);
   });
 
   sortSel.addEventListener('change', () => {
     state.sort = sortSel.value;
-    applyFilter();
-    renderChunk(true);
+    refresh();
   });
 
   grid.addEventListener('click', (e) => {
@@ -221,6 +286,20 @@
       );
     }
   });
+
+  pager.addEventListener('click', (e) => {
+    const num = e.target.closest('.pg-num');
+    if (num) return goToPage(parseInt(num.dataset.page, 10));
+    if (e.target.id === 'pgPrev') return goToPage(page - 1);
+    if (e.target.id === 'pgNext') return goToPage(page + 1);
+    if (e.target.id === 'pgFirst') return goToPage(1);
+    if (e.target.id === 'pgLast') return goToPage(totalPages());
+  });
+
+  pgJump.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') goToPage(parseInt(pgJump.value, 10) || 1);
+  });
+  pgJump.addEventListener('change', () => goToPage(parseInt(pgJump.value, 10) || 1));
 
   document.getElementById('clearBtn').addEventListener('click', () => {
     state.q = '';
@@ -252,7 +331,7 @@
   if (saved) setTheme(saved);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== searchInput) {
+    if (e.key === '/' && document.activeElement !== searchInput && document.activeElement !== pgJump) {
       e.preventDefault();
       searchInput.focus();
     }
@@ -270,13 +349,6 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
   }
-
-  /* ---------- infinite scroll ---------- */
-  const sentinel = document.getElementById('sentinel');
-  const io = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && rendered < view.length) renderChunk();
-  }, { rootMargin: '800px 0px' });
-  io.observe(sentinel);
 
   /* ---------- boot ---------- */
   async function boot() {
@@ -300,10 +372,10 @@
     document.getElementById('stSync').title = gen.toISOString().slice(0, 10) + ' 自动同步';
     document.getElementById('footSync').textContent = `数据同步于 ${gen.toISOString().slice(0, 10)}`;
 
-    buildChips();
     pinnedCount = all.filter(isPinned).length;
-    applyFilter();
-    renderChunk(true);
+    buildChips();
+    readHash();
+    syncChips(); // renders without resetting page (page comes from hash)
   }
 
   boot();

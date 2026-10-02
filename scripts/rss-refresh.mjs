@@ -13,14 +13,21 @@ import {
   writeJson,
 } from './lib.mjs';
 
-// usage: node scripts/rss-refresh.mjs [--fix-missing]
+// usage: node scripts/rss-refresh.mjs [--fix-missing] [--fresh]
+// Resumable: progress flushes to data/lastupdate.partial.json every 50 blogs;
+// re-run the same command after an interruption to continue where it stopped.
 const FIX_MISSING = process.argv.includes('--fix-missing');
+const FRESH = process.argv.includes('--fresh');
 
 const outPath = path.join(DATA_DIR, 'lastupdate.json');
+const PARTIAL = path.join(DATA_DIR, 'lastupdate.partial.json');
 const prev = readJson(outPath, {});
-const results = FIX_MISSING ? prev : {};
+const done = FRESH ? {} : readJson(PARTIAL, {}); // keys completed in an interrupted run
+if (Object.keys(done).length) console.log(`resuming: ${Object.keys(done).length} blogs already refreshed`);
+if (FRESH && fs.existsSync(PARTIAL)) fs.unlinkSync(PARTIAL);
 
-const blogs = loadBlogs();
+const results = { ...prev, ...done }; // working copy; each processed blog overwrites its key
+const blogs = loadBlogs().filter((b) => !(hostKey(b.url) in done));
 console.log(`refreshing rss info for ${blogs.length} blogs (fixMissing=${FIX_MISSING})`);
 
 function extractDates(xml) {
@@ -137,13 +144,18 @@ await runPool(
     return !!found;
   },
   {
-    onProgress: (done, total) =>
-      console.log(
-        `progress ${done}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - ${Object.values(results).filter((x) => x.lastUpdate).length} with dates`
-      ),
+    onProgress: (n, total) => {
+      if (n % 50 === 0) {
+        writeJson(PARTIAL, results); // checkpoint: safe to kill at any time
+        console.log(
+          `progress ${n}/${total} (${Math.round((Date.now() - t0) / 1000)}s) - ${Object.values(results).filter((x) => x.lastUpdate).length} with dates`
+        );
+      }
+    },
   }
 );
 
 writeJson(outPath, results);
+try { fs.unlinkSync(PARTIAL); } catch {}
 const withDates = Object.values(results).filter((x) => x.lastUpdate).length;
 console.log(`DONE feeds=${Object.keys(results).length} withDates=${withDates} brokenRssRetried=${fixedRss}`);
