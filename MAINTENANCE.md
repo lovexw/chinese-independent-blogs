@@ -125,3 +125,4 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-02 | **287 个可疑博客深度复核**：删除 11 个确认死站（7 个被抢注跳博彩/SEO 站、2 个停放、2 个失联）、修正 41 个迁移地址（DIYGod→diygod.cc 等）；修复两处误判引擎（Wayback 限流误判、'sedo' 子串误伤），69 个误删恢复保留；现收录 1297，manual-review.md 剩 241 待人工复核 |
 | 2026-10-03 | **沉睡博客降级机制**：默认排序按 活跃→沉睡(2年+)→未知 三层沉底，沉睡卡片带 💤 标注，统计栏新增沉睡数；新增 `scripts/stale-report.mjs` 每周生成 `docs/stale-blogs.md`（当前 148 个确认 2 年+未更新，供维护者酌情剔除，不自动删） |
 | 2026-10-03 | **自定义域名上线**：维护者将 bloghao.com zone 迁入本账号并挂载 `list.bloghao.com` 与 `bloghao.xiaowuleyi.com`（均 active）；站点线上地址定为 `https://list.bloghao.com`（pages.dev 在大陆被 DNS 污染，国内访问务必用自定义域名） |
+| 2026-10-03 | **多信号更新时间审计**（`scripts/update-audit.mjs`，已接入每周 CI）：RSS 地址错位是主要误判源——feed 重推导 + 首页文章日期 + sitemap lastmod 三信号取最大值；评论 feed 与相对日期刻意排除（防假新鲜）。首次全量审计：133 个"复活"（含可能吧 kenengba.com 2024-01→2026-10）、10 个新沉睡、613 个日期修正、115 个 RSS 错位修正；未知数 293→160。审计前 148 沉睡 → 审计后 155（方法与全量证据链见 `docs/update-audit.md` 与 `data/update-audit.json`） |

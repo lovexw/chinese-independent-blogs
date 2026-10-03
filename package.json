@@ -8,6 +8,7 @@
     "fix": "node scripts/fix-dead.mjs",
     "rss": "node scripts/rss-refresh.mjs",
     "rss:full": "node scripts/rss-refresh.mjs --fix-missing",
+    "audit:update": "node scripts/update-audit.mjs --apply && node scripts/update-audit-report.mjs",
     "suspicious": "node scripts/flag-suspicious.mjs",
     "stale": "node scripts/stale-report.mjs",
     "sync": "node scripts/sync-upstream.mjs",

@@ -38,8 +38,11 @@ jobs:
       - name: Fix dead links via variants
         run: node scripts/fix-dead.mjs
 
-      - name: Refresh RSS last-update times
-        run: node scripts/rss-refresh.mjs
+      - name: Multi-signal update audit (feed re-derive + homepage dates + sitemap)
+        run: node scripts/update-audit.mjs --apply
+
+      - name: Update audit report (docs/update-audit.md)
+        run: node scripts/update-audit-report.mjs
 
       - name: Flag suspicious blogs for manual review
         run: node scripts/flag-suspicious.mjs
