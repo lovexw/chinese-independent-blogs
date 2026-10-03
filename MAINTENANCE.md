@@ -77,13 +77,20 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 
 ## 7. 部署（已绑定 Git，全自动）
 
-**当前状态：Cloudflare Pages 项目 `chinese-independent-blogs` 已通过 GitHub App 绑定 `lovexw/chinese-independent-blogs`（生产分支 `main`，输出目录 `public`，无构建命令）。push 到 main 即自动部署，无需任何手动操作。**
+**当前状态：Cloudflare Pages 项目 `chinese-independent-blogs`（账号 0471666@gmail.com）已通过 GitHub App 绑定 `lovexw/chinese-independent-blogs`（生产分支 `main`，输出目录 `public`，无构建命令）。push 到 `main` 即自动部署，无需任何手动操作。**
 
-- 绑定方式：GitHub App（Cloudflare Pages）已有该仓库授权；项目经由 API 以 `source: github` 方式创建（直传项目无法转 Git 绑定，是删除后同名重建的，`chinese-independent-blogs.pages.dev` 域名不变）。
+**自定义域名（均已 active，证书自动签发，DNS 由本账号托管）：**
+
+| 域名 | 用途 |
+| --- | --- |
+| `chinese-independent-blogs.pages.dev` | 默认域名 |
+| `list.bloghao.com` | 主推域名（好记好读；bloghao.com zone 已迁入本账号） |
+| `bloghao.xiaowuleyi.com` | 备用域名 |
+
+- 注意：`*.pages.dev` 在大陆被 DNS 污染，**国内访问请用上面两个自定义域名**。
 - PR 会生成预览部署（preview deployments 开启，对所有分支生效）。
-- 若需本地临时部署：Git 绑定的项目**拒绝 wrangler 直传**，请直接 push 或在 Dashboard 手动重试部署。
+- 若要本地临时部署：Git 绑定的项目**拒绝 wrangler 直传**，请直接 push 或在 Dashboard 手动重试部署。
 - 若要改构建配置：Dashboard → Pages → 项目 → Settings → Builds & deployments（构建命令留空、输出目录 `public` 即可，public/ 已预构建提交进仓库）。
-- 绑定自定义域名：Dashboard → Pages → 项目 → Custom domains。
 - 换了站点域名要同步更新 `data/site-url.txt`（README 顶部链接用它）。
 
 ### 如果绑定失效（例如仓库改名/转移）怎么恢复
@@ -91,6 +98,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 1. 确认 GitHub App（Cloudflare Pages）仍授权该仓库：<https://github.com/apps/cloudflare-pages> → Configure → Repository access
 2. Dashboard 删除 Pages 项目，重新 Connect to Git，或用 API 以 `source: github` 重建同名项目（构建配置：无构建命令、输出目录 `public`）
 3. push 任意提交触发首次部署
+4. 自定义域名的 DNS 记录由 Pages 自动创建/维护（同账号 zone），无需手动加 CNAME
 
 ## 8. 站点前端（public/）
 
@@ -116,3 +124,4 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-02 | **Cloudflare Pages 绑定 GitHub 仓库**（直传项目删除后同名重建，域名不变），push 即自动部署 |
 | 2026-10-02 | **287 个可疑博客深度复核**：删除 11 个确认死站（7 个被抢注跳博彩/SEO 站、2 个停放、2 个失联）、修正 41 个迁移地址（DIYGod→diygod.cc 等）；修复两处误判引擎（Wayback 限流误判、'sedo' 子串误伤），69 个误删恢复保留；现收录 1297，manual-review.md 剩 241 待人工复核 |
 | 2026-10-03 | **沉睡博客降级机制**：默认排序按 活跃→沉睡(2年+)→未知 三层沉底，沉睡卡片带 💤 标注，统计栏新增沉睡数；新增 `scripts/stale-report.mjs` 每周生成 `docs/stale-blogs.md`（当前 148 个确认 2 年+未更新，供维护者酌情剔除，不自动删） |
+| 2026-10-03 | **自定义域名上线**：维护者将 bloghao.com zone 迁入本账号并挂载 `list.bloghao.com` 与 `bloghao.xiaowuleyi.com`（均 active）；站点线上地址定为 `https://list.bloghao.com`（pages.dev 在大陆被 DNS 污染，国内访问务必用自定义域名） |
