@@ -9,6 +9,7 @@
     "rss": "node scripts/rss-refresh.mjs",
     "rss:full": "node scripts/rss-refresh.mjs --fix-missing",
     "suspicious": "node scripts/flag-suspicious.mjs",
+    "stale": "node scripts/stale-report.mjs",
     "sync": "node scripts/sync-upstream.mjs",
     "build": "node scripts/build.mjs",
     "audit": "npm run check && npm run fix && npm run rss && npm run build",

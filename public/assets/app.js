@@ -32,6 +32,11 @@
 
   const isPinned = (b) => hostOf(b.url).includes(PIN_HOST);
 
+  const TWO_YEARS = 2 * 365 * 86400e3;
+  const isStale = (b) => !!b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) >= TWO_YEARS;
+  // priority tier for the default sort: active < stale(2yr+) < unknown
+  const tier = (b) => (!b.lastUpdate ? 2 : isStale(b) ? 1 : 0);
+
   function relTime(iso) {
     if (!iso) return null;
     const t = Date.parse(iso);
@@ -53,9 +58,10 @@
   function cardHTML(b, idx) {
     const upd = relTime(b.lastUpdate);
     const fresh = b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) < 30 * 86400e3;
+    const stale = isStale(b);
     const host = hostOf(b.url);
     const updHTML = upd
-      ? `<span class="upd ${fresh ? 'fresh' : ''}" title="最近更新：${esc(dayOf(b.lastUpdate))}"><span class="dot"></span>${esc(upd)}更新</span>`
+      ? `<span class="upd ${fresh ? 'fresh' : stale ? 'stale' : ''}" title="最近更新：${esc(dayOf(b.lastUpdate))}"><span class="dot"></span>${stale ? '💤 ' : ''}${esc(upd)}更新</span>`
       : `<span class="upd" title="未抓取到 RSS 或 feed 中没有时间"><span class="dot"></span>更新时间未知</span>`;
     const tags = (b.tags || [])
       .slice(0, 4)
@@ -121,7 +127,9 @@
       }
       return true;
     });
-    if (state.sort === 'recent') {
+    if (state.sort === 'default') {
+      rest.sort((a, b2) => tier(a) - tier(b2)); // stable: original order within tiers
+    } else if (state.sort === 'recent') {
       rest.sort((a, b2) => (Date.parse(b2.lastUpdate) || 0) - (Date.parse(a.lastUpdate) || 0));
     } else if (state.sort === 'stale') {
       rest.sort((a, b2) => (Date.parse(a.lastUpdate) || Infinity) - (Date.parse(b2.lastUpdate) || Infinity));
@@ -367,6 +375,7 @@
     document.getElementById('stActive').textContent = all.filter(
       (b) => b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) < 30 * 86400e3
     ).length.toLocaleString();
+    document.getElementById('stStale').textContent = all.filter(isStale).length.toLocaleString();
     const gen = meta.generatedAt ? new Date(meta.generatedAt) : new Date();
     document.getElementById('stSync').textContent = `${gen.getMonth() + 1}/${gen.getDate()}`;
     document.getElementById('stSync').title = gen.toISOString().slice(0, 10) + ' 自动同步';

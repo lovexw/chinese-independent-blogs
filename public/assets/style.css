@@ -490,6 +490,10 @@ button {
 .card .upd.fresh .dot { background: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
 .card .upd.fresh { color: var(--green); }
 
+.card .upd.stale { color: var(--ink-3); opacity: 0.8; }
+
+.stat .num.muted { color: var(--ink-3); }
+
 .card .acts {
   margin-left: auto;
   display: inline-flex;
