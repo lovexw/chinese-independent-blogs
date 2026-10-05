@@ -1,11 +1,11 @@
 Introduction, Address, RSS feed, tags
-透明创业实验, https://blog.t9t.io, https://blog.t9t.io/atom.xml, 创业; 编程; 开源
+透明创业实验, https://t9t.io/blog/zh, https://t9t.io/blog/zh/rss.xml, 创业; 编程; 开源
 阮一峰的网络日志, https://www.ruanyifeng.com/blog/, http://feeds.feedburner.com/ruanyifeng, 创业; 编程; 前端
 酷 壳 – CoolShell, https://coolshell.cn, http://coolshell.cn/feed, 编程
 张鑫旭-鑫空间-鑫生活, https://www.zhangxinxu.com/, http://www.zhangxinxu.com/wordpress/?feed=rss2, 编程; 前端
 Alili丶前端大爆炸, https://alili.tech, https://alili.tech/index.xml, 编程; 前端
 蚊子前端博客, https://www.xiabingbao.com, https://www.xiabingbao.com/atom.xml, 编程; 前端
-DIYGod - 写代码是热爱，写到世界充满爱!, https://diygod.me, https://diygod.me/atom.xml, 编程; 开源
+DIYGod - 写代码是热爱，写到世界充满爱!, https://diygod.cc, https://diygod.cc/feed, 编程; 开源
 MacTalk-池建强的随想录, http://macshuo.com, http://macshuo.com/?feed=rss2, 编程; iOS
 ShrekShao, https://shrekshao.github.io/, http://shrekshao.github.io/feed.xml, 编程
 云风的 BLOG, https://blog.codingnow.com, http://blog.codingnow.com/atom.xml, 编程
@@ -518,7 +518,6 @@ Markon Review, https://markonreview.com/, https://markonreview.com/rss/, 游戏�
 高原石博客, https://www.gaoyuanshi.com, https://www.gaoyuanshi.com/?feed=rss2, 旅行; 摄影; 英语; 留学
 mghio, https://www.mghio.cn, https://www.mghio.cn/atom.xml, 技术; 后端; 随笔; 终身学习者
 侯爷的博客, https://houye.xyz, https://houye.xyz/atom.xml, 记录; 分享
-icodex, https://icodex.me/, , 前端
 Richie的时光机, https://riichiie.net, https://www.riichiie.net/feed/, 生活; 兴趣; 思考; Blog
 本格异想录, https://astrianzheng.cn/, https://astrianzheng.cn/atom.xml, 随笔; 生活; 随想
 木小丰的博客, https://lesofn.com/, https://lesofn.com/atom.xml, 编程; 后端; 架构
@@ -673,7 +672,6 @@ Surmon.me, https://surmon.me, https://surmon.me/rss.xml, 前端; 编程; 思考
 ZhensJoke 飞云算, https://blog.fyun.org, https://blog.fyun.org/feed, 编程; 生活; 折腾
 遥近, https://www.yjdzm.com, , 前端; 编程; 思考
 千古壹号, https://www.qianguyihao.com, https://qianguyihao.com/atom.xml, 前端; 读书笔记; 产品思考; 软件工具; 具体生活
-Kevin Blog, https://blog.kevinzhow.com/, https://blog.kevinzhow.com/rss/, 产品; 技术; 生活
 Tmr Blog, https://blog.xlab.app/, https://blog.xlab.app/atom.xml, 安全; 思考
 小球飞鱼, https://mantyke.icu/, https://mantyke.icu/index.xml, 生活; 笔记; 读书
 素履独行, https://blog.yuanpei.me, https://blog.yuanpei.me/atom.xml, 编程; 生活; 思考
@@ -1492,3 +1490,6 @@ Samadhi — 關於我，未完的筆記, https://samadhi.blog/, https://samadhi.
 0x7c14'blog, https://tomorin.cyou/, https://tomorin.cyou/rss.xml, 技术; 硬件; 生活; 随笔
 狐莘月柒的博客, https://yueqi1sama.github.io/, , 电力电子; 开关电源; 电路设计; 学习笔记
 智客, https://zicq.com/, https://zicq.com/sitemap.xml, 科技; 资讯; AI; 提示词; 开源项目; 极客
+云海札记, https://www.auvetu.com/, https://www.auvetu.com/rss.xml, 生活; 随笔; 写作; 二次元
+科学上网与AI工具指南, https://tanqingbo.cn/, https://tanqingbo.cn/atom.xml, 科学上网; AI; 海外; 教程; 程序员
+AI Notes, https://notes.yachiyo.im/, https://notes.yachiyo.im/rss.xml, AI; 研究; 评论; 科技

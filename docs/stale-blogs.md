@@ -1,11 +1,11 @@
 # 沉睡博客清单（确认 2 年以上未更新）
 
-> 由 `scripts/stale-report.mjs` 于 2026-10-03 生成，每周自动更新。
-> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-10-03（距今 2 年前）。
+> 由 `scripts/stale-report.mjs` 于 2026-10-05 生成，每周自动更新。
+> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-10-05（距今 2 年前）。
 > 这份清单**不会自动删除**，是否剔除由维护者酌情决定；确认要删的，直接删除 `blogs-original.csv` 对应行即可。
-> 另有 160 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
+> 另有 195 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
 
-共 155 个（站点中已自动降低排序优先级并标注 💤）。
+共 153 个（站点中已自动降低排序优先级并标注 💤）。
 
 ## 2016 年
 
@@ -88,7 +88,6 @@
 - [ ] [Sky Watch](https://darksair.org/blog/) — 最后更新 2022-12-27 ｜ RSS: https://darksair.org/blog/feed.xml
 ## 2023 年
 
-- [ ] [橘子味的心](https://www.52xml.cn/) — 最后更新 2023-01-04 ｜ RSS: https://www.52xml.cn/atom.xml
 - [ ] [TimeMachine Notes](https://timemachine.icu/) — 最后更新 2023-01-10 ｜ RSS: https://timemachine.icu/atom.xml
 - [ ] [diss带码](https://dumplingbao.github.io) — 最后更新 2023-01-11 ｜ RSS: https://dumplingbao.github.io/atom.xml
 - [ ] [Wang's Blog](https://vlight.me/) — 最后更新 2023-01-12 ｜ RSS: https://vlight.me/atom.xml
@@ -120,7 +119,6 @@
 - [ ] [Jiayi Liu](https://jiayiliu.me/) — 最后更新 2023-08-21 ｜ RSS: https://jiayiliu.me/index.xml
 - [ ] [TripleZ's Blog](https://blog.triplez.cn) — 最后更新 2023-08-29 ｜ RSS: https://blog.triplez.cn/index.xml
 - [ ] [Captain的博客](https://totapo.netlify.app) — 最后更新 2023-09-03 ｜ RSS: https://totapo.netlify.app/index.xml
-- [ ] [程序猿DD](https://blog.didispace.com/) — 最后更新 2023-09-04 ｜ RSS: https://blog.didispace.com/atom.xml
 - [ ] [ccagml的博客](http://www.ccagml.com) — 最后更新 2023-09-04 ｜ RSS: http://www.ccagml.com/?feed=rss2
 - [ ] [nickChenyx](http://www.voidchen.com/) — 最后更新 2023-09-09 ｜ RSS: http://www.voidchen.com/atom.xml
 - [ ] [Cestlavie's Blog](https://www.cestlavie.moe/) — 最后更新 2023-11-11 ｜ RSS: https://www.cestlavie.moe/index.xml
