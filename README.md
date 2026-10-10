@@ -9,8 +9,8 @@
 | 项目 | 数量 |
 | --- | --- |
 | 收录博客 | 1323 |
-| 提供 RSS | 1252 |
-| 列表维护时间 | 2026-10-05 |
+| 提供 RSS | 1253 |
+| 列表维护时间 | 2026-10-10 |
 
 ## 博客列表
 
@@ -588,7 +588,7 @@
 | [Feed](https://www.tortorse.com/atom.xml) | 愆伏 | https://www.tortorse.com | 产品; 前端; 设计; 杂谈 |
 | [Feed](https://www.librehat.com/feed) | Librehat's Blog | https://www.librehat.com | C++; Qt; Python; Linux; Windows; 网络; 编程; 生活 |
 | [Feed](https://fengmengzhao.github.io/feed.xml) | 冯兄话吉博客 | https://fengmengzhao.github.io/ | Java; Linux; 编程; 生活 |
-| None | 程序猿DD | https://didispace.com/ | Java; Spring; 编程; 思考 |
+| [Feed](https://didispace.com/rss.xml) | 程序猿DD | https://didispace.com/ | Java; Spring; 编程; 思考 |
 | [Feed](https://www.buzhangjiuzhou.com/index.php/feed/) | 步丈九州的博客 | https://www.buzhangjiuzhou.com/ | 博客; 随想 |
 | [Feed](https://www.skyue.com/feed/) | SKYue's Home | https://www.skyue.com/ | 生活; 股票投资; 产品经理; 软件数码 |
 | [Feed](https://www.bbing.com.cn/index.xml) | BBing's Blog | https://imcbc.cn/ | 编程; 随笔 |
