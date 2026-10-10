@@ -1,0 +1,30 @@
+services:
+  cib:
+    build: .
+    image: cib-site:latest
+    container_name: cib-site
+    restart: unless-stopped
+    ports:
+      - "8347:8347"          # 站点访问 http://<server-ip>:8347
+    environment:
+      PORT: "8347"
+      TZ: Asia/Shanghai
+      # 每周一 UTC 02:17 ≈ 北京 10:17（与仓库 CI 节奏一致）
+      AUDIT_CRON: "17 2 * * 1"
+      # 巡检步骤，可裁剪：sync check fix rss suspicious stale audit-update build
+      AUDIT_TASKS: "sync check fix rss suspicious stale audit-update build"
+      # 启动时是否立即跑一轮巡检（首次部署建议 1）
+      AUDIT_ON_START: "0"
+      # 巡检后是否自动 commit+push 到 GitHub（push 后 Cloudflare Pages 自动部署线上）
+      AUTO_PUSH: "1"
+      GIT_REPO: lovexw/chinese-independent-blogs
+      GIT_BRANCH: main
+      # 必填（AUTO_PUSH=1 时）：GitHub PAT，需要 repo 写权限
+      # 创建地址: https://github.com/settings/tokens?type=beta
+      GH_PAT: ${GH_PAT:?set GH_PAT in .env}
+    volumes:
+      - cib-data:/app/data          # 巡检缓存/断点文件持久化
+      - cib-public:/app/public      # 构建产物持久化
+volumes:
+  cib-data:
+  cib-public:
