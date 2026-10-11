@@ -4,36 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>博客收录审核 · bloghao</title>
+<title>博客列表管理后台 · bloghao</title>
 <style>
   :root { --bg:#0f1115; --card:#171a21; --line:#262b36; --fg:#e8eaf0; --dim:#8b93a5; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; --acc:#6ea8fe; }
   @media (prefers-color-scheme: light) { :root { --bg:#f5f6f8; --card:#fff; --line:#e3e6ec; --fg:#1a1d24; --dim:#69718a; } }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
-  .wrap { max-width:880px; margin:0 auto; padding:24px 16px 60px; }
-  h1 { font-size:20px; margin:0 0 4px; }
-  .sub { color:var(--dim); font-size:13px; margin-bottom:20px; }
+  .wrap { max-width:960px; margin:0 auto; padding:20px 16px 60px; }
+  h1 { font-size:19px; margin:0; }
+  .sub { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:10px; flex-wrap:wrap; }
+  .tabs { display:flex; gap:6px; }
+  .tab { cursor:pointer; border:1px solid var(--line); background:transparent; color:var(--dim); padding:6px 14px; border-radius:8px; font-size:14px; }
+  .tab.on { background:var(--acc); border-color:var(--acc); color:#fff; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px; }
-  .head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-  .name { font-weight:600; font-size:16px; }
+  .name { font-weight:600; font-size:15.5px; }
   .grade { font-size:12px; padding:1px 8px; border-radius:99px; }
   .gA { background:rgba(74,222,128,.15); color:var(--ok); } .gB { background:rgba(251,191,36,.15); color:var(--warn); } .gC { background:rgba(248,113,113,.15); color:var(--bad); }
-  .meta { color:var(--dim); font-size:12.5px; margin-top:6px; word-break:break-all; }
+  .meta { color:var(--dim); font-size:12.5px; margin-top:5px; word-break:break-all; }
   .meta a { color:var(--acc); text-decoration:none; }
-  .verdict { margin-top:8px; font-size:13px; }
   .badge { display:inline-block; margin:2px 6px 2px 0; padding:1px 8px; border-radius:6px; font-size:12px; border:1px solid var(--line); color:var(--dim); }
   .badge.ok { color:var(--ok); border-color:rgba(74,222,128,.4); } .badge.bad { color:var(--bad); border-color:rgba(248,113,113,.4); } .badge.warn { color:var(--warn); border-color:rgba(251,191,36,.4); }
-  .acts { margin-top:12px; display:flex; gap:10px; align-items:center; }
-  button { cursor:pointer; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--fg); padding:7px 16px; font-size:14px; }
+  .acts { margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  button { cursor:pointer; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--fg); padding:6px 14px; font-size:13.5px; }
   .primary { background:var(--acc); border-color:var(--acc); color:#fff; }
   .danger { color:var(--bad); border-color:rgba(248,113,113,.5); }
   button:disabled { opacity:.5; cursor:default; }
   .err { color:var(--bad); font-size:13px; white-space:pre-wrap; }
-  input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font-size:15px; }
-  .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-  .empty { text-align:center; color:var(--dim); padding:60px 0; }
-  h2 { font-size:14px; color:var(--dim); font-weight:500; margin:28px 0 10px; }
+  input, select { padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font-size:14px; }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
+  .row input { flex:1; min-width:180px; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  td, th { padding:8px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { color:var(--dim); font-weight:500; font-size:12.5px; }
+  td a { color:var(--acc); text-decoration:none; word-break:break-all; }
+  .empty { text-align:center; color:var(--dim); padding:50px 0; }
+  .stats-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin-bottom:14px; }
+  .scard { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; text-align:center; }
+  .scard .num { font-size:22px; font-weight:700; }
+  .scard .lbl { font-size:12px; color:var(--dim); }
+  .bars { display:flex; align-items:flex-end; gap:3px; height:90px; margin:10px 0 4px; }
+  .bar { flex:1; background:var(--acc); border-radius:3px 3px 0 0; min-height:2px; opacity:.85; position:relative; }
+  .bar:hover::after { content:attr(data-v); position:absolute; bottom:100%; left:50%; transform:translateX(-50%); background:var(--card); border:1px solid var(--line); padding:1px 6px; border-radius:6px; font-size:11px; white-space:nowrap; }
+  .bar-lbls { display:flex; gap:3px; font-size:10px; color:var(--dim); }
+  .bar-lbls span { flex:1; text-align:center; overflow:hidden; }
   .done { font-size:13px; color:var(--dim); padding:8px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:10px; }
+  .checkline { display:flex; gap:6px; align-items:center; font-size:13px; color:var(--dim); }
+  .hidden { display:none; }
 </style>
 </head>
 <body><div class="wrap">
@@ -42,6 +59,7 @@
 <script>
 const $ = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let curTab = 'pending';
 
 async function api(path, body) {
   const r = await fetch(path, body ? { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) } : {});
@@ -52,17 +70,37 @@ async function api(path, body) {
 function renderLogin() {
   const app = document.getElementById('app');
   app.innerHTML = '';
-  const c = $(`<div class="card" style="max-width:360px;margin:80px auto"><h1>博客收录审核</h1><div class="sub">请输入用户名和密码</div><input id="user" placeholder="用户名" autocomplete="username" autofocus><input id="pw" type="password" placeholder="密码" autocomplete="current-password" style="margin-top:10px"><div class="err"></div><div class="acts"><button class="primary" style="flex:1">登录</button></div></div>`);
+  const c = $(`<div class="card" style="max-width:360px;margin:80px auto"><h1>博客列表管理后台</h1><div class="sub">请输入用户名和密码</div><input id="user" placeholder="用户名" autocomplete="username" autofocus><input id="pw" type="password" placeholder="密码" autocomplete="current-password" style="margin-top:10px"><div class="err"></div><div class="acts"><button class="primary" style="flex:1">登录</button></div></div>`);
   app.appendChild(c);
   const doLogin = async () => {
-    const r = await fetch('/admin/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ username: c.querySelector('#user').value, password: c.querySelector('#pw').value }) });
-    if (r.ok) { load(); } else { c.querySelector('.err').textContent = '用户名或密码错误'; }
+    const r = await fetch('admin/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ username: c.querySelector('#user').value, password: c.querySelector('#pw').value }) });
+    if (r.ok) { renderShell(); switchTab('pending'); } else { c.querySelector('.err').textContent = '用户名或密码错误'; }
   };
   c.querySelector('button').onclick = doLogin;
   const onEnter = (e) => { if (e.key === 'Enter') doLogin(); };
   c.querySelector('#user').onkeydown = onEnter;
   c.querySelector('#pw').onkeydown = onEnter;
 }
+
+let shell;
+function renderShell() {
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  shell = $(`<div><div class="topbar"><h1>博客列表管理后台</h1><div class="tabs"><button class="tab on" data-t="pending">待审提交</button><button class="tab" data-t="manage">博客管理</button><button class="tab" data-t="stats">访问统计</button><button id="out">退出</button></div></div><div id="pane"></div></div>`);
+  shell.querySelectorAll('.tab').forEach((b) => b.onclick = () => switchTab(b.dataset.t));
+  shell.querySelector('#out').onclick = async () => { await fetch('admin/logout', { method:'POST' }); renderLogin(); };
+  app.appendChild(shell);
+}
+
+function switchTab(t) {
+  curTab = t;
+  shell.querySelectorAll('.tab').forEach((b) => b.classList.toggle('on', b.dataset.t === t));
+  if (t === 'pending') loadPending();
+  if (t === 'manage') renderManage();
+  if (t === 'stats') loadStats();
+}
+
+// ---------- 待审提交 ----------
 
 function verdictBadges(v) {
   let h = '';
@@ -73,52 +111,149 @@ function verdictBadges(v) {
   return h;
 }
 
-function renderList(data) {
-  const app = document.getElementById('app');
-  app.innerHTML = '';
-  const bar = $(`<div class="topbar"><h1>博客收录审核</h1><button id="out">退出</button></div>`);
-  bar.querySelector('#out').onclick = async () => { await fetch('/admin/logout', { method:'POST' }); renderLogin(); };
-  app.appendChild(bar);
-
+async function loadPending() {
+  const pane = shell.querySelector('#pane');
+  pane.innerHTML = '<div class="empty">加载中…</div>';
+  const data = await api('admin/api/list');
+  pane.innerHTML = '';
   const pend = data.submissions.filter((s) => s.status === 'pending');
-  if (!pend.length) app.appendChild($(`<div class="empty">暂无待审提交 ✓</div>`));
+  if (!pend.length) pane.appendChild($(`<div class="empty">暂无待审提交 ✓</div>`));
   for (const s of pend) {
     const d = new Date(s.ts).toLocaleString('zh-CN');
-    const card = $(`<div class="card"><div class="head"><span class="name">${esc(s.name)}</span><span class="grade g${esc(s.grade)}">${esc(s.grade)} 级</span></div><div class="meta">${esc(s.url)}${s.rss ? ' · <a href="' + esc(s.rss) + '">RSS</a>' : ''}</div>${s.desc ? '<div class="meta">' + esc(s.desc) + '</div>' : ''}${s.tags.length ? '<div class="meta">标签: ' + esc(s.tags.join('；')) + '</div>' : ''}<div class="verdict">${verdictBadges(s.verdict)}</div><div class="meta">IP ${esc(s.ip)} · ${esc(d)}</div><div class="acts"><button class="primary b-ok">通过并上架</button><button class="danger b-no">拒绝</button><span class="err"></span></div></div>`);
+    const card = $(`<div class="card"><div class="head" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="name">${esc(s.name)}</span><span class="grade g${esc(s.grade)}">${esc(s.grade)} 级</span></div><div class="meta">${esc(s.url)}${s.rss ? ' · <a href="' + esc(s.rss) + '">RSS</a>' : ''}</div>${s.desc ? '<div class="meta">' + esc(s.desc) + '</div>' : ''}${s.tags.length ? '<div class="meta">标签: ' + esc(s.tags.join('；')) + '</div>' : ''}<div class="verdict" style="margin-top:8px">${verdictBadges(s.verdict)}</div><div class="meta">IP ${esc(s.ip)} · ${esc(d)}</div><div class="acts"><button class="primary b-ok">通过并上架</button><button class="danger b-no">拒绝</button><span class="err"></span></div></div>`);
     const errEl = card.querySelector('.err');
     card.querySelector('.b-ok').onclick = async (e) => {
       e.target.disabled = true; errEl.textContent = '正在写入列表并重建…';
       try {
-        const r = await api('/admin/api/action', { id: s.id, action: 'approve' });
-        if (r.ok) { load(); } else { errEl.textContent = r.error || '失败'; e.target.disabled = false; }
+        const r = await api('admin/api/action', { id: s.id, action: 'approve' });
+        if (r.ok) { loadPending(); } else { errEl.textContent = r.error || '失败'; e.target.disabled = false; }
       } catch (err) { if (err.message !== 'unauthorized') { errEl.textContent = String(err); e.target.disabled = false; } }
     };
     card.querySelector('.b-no').onclick = async (e) => {
       e.target.disabled = true;
-      await api('/admin/api/action', { id: s.id, action: 'reject' });
-      load();
+      await api('admin/api/action', { id: s.id, action: 'reject' });
+      loadPending();
     };
-    app.appendChild(card);
+    pane.appendChild(card);
   }
-
   const done = data.submissions.filter((s) => s.status !== 'pending').slice(-20).reverse();
   if (done.length) {
-    app.appendChild($(`<h2>最近处理</h2>`));
+    pane.appendChild($(`<h2 style="font-size:14px;color:var(--dim);font-weight:500;margin:26px 0 10px">最近处理</h2>`));
     for (const s of done) {
-      const okm = s.status === 'approved';
-      app.appendChild($(`<div class="done"><span>${okm ? '✅' : '❌'} ${esc(s.name)}</span><span>${esc(new Date(s.reviewedAt || s.ts).toLocaleString('zh-CN'))}</span></div>`));
+      pane.appendChild($(`<div class="done"><span>${s.status === 'approved' ? '✅' : '❌'} ${esc(s.name)}</span><span>${esc(new Date(s.reviewedAt || s.ts).toLocaleString('zh-CN'))}</span></div>`));
     }
   }
 }
 
-async function load() {
-  try {
-    const data = await api('/admin/api/list');
-    renderList(data);
-  } catch {}
+// ---------- 博客管理 ----------
+
+async function renderManage(q) {
+  const pane = shell.querySelector('#pane');
+  pane.innerHTML = '';
+  const box = $(`<div><div class="row"><input id="mq" placeholder="搜索名称 / 域名 / 标签（留空 = 最新 30 个）" value="${esc(q || '')}"><button class="primary" id="mgo">搜索</button></div><div id="mres"><div class="empty">输入关键词或直接点搜索</div></div></div>`);
+  pane.appendChild(box);
+  box.querySelector('#mgo').onclick = () => searchBlogs(box.querySelector('#mq').value.trim());
+  box.querySelector('#mq').onkeydown = (e) => { if (e.key === 'Enter') searchBlogs(box.querySelector('#mq').value.trim()); };
+  if (q !== undefined) searchBlogs(q);
+
+  async function searchBlogs(qq) {
+    const res = box.querySelector('#mres');
+    res.innerHTML = '<div class="empty">搜索中…</div>';
+    const data = await api('admin/api/blogs?q=' + encodeURIComponent(qq));
+    res.innerHTML = '';
+    if (!data.blogs.length) { res.appendChild($(`<div class="empty">没有匹配的博客</div>`)); return; }
+    const tbl = $(`<div class="card" style="padding:8px 12px"><table><thead><tr><th style="width:26%">名称</th><th>地址</th><th style="width:14%">最近更新</th><th style="width:150px">操作</th></tr></thead><tbody></tbody></table></div>`);
+    const tbody = tbl.querySelector('tbody');
+    for (const b of data.blogs) {
+      const tr = $(`<tr><td>${esc(b.name)}</td><td><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.url)}</a>${b.rss ? '<br><span style="color:var(--dim);font-size:12px">RSS: ' + esc(b.rss) + '</span>' : ''}<br><span style="color:var(--dim);font-size:12px">${esc(b.tags.join('；'))}</span></td><td>${b.lastUpdate ? esc(b.lastUpdate.slice(0, 10)) : '<span style="color:var(--dim)">未知</span>'}</td><td><button class="e-btn">编辑</button> <button class="d-btn danger">删除</button></td></tr>`);
+      tr.querySelector('.e-btn').onclick = () => showEditForm(b);
+      tr.querySelector('.d-btn').onclick = () => showDeleteForm(b);
+      tbody.appendChild(tr);
+    }
+    res.appendChild($(`<div class="sub" style="margin:4px 2px 8px">匹配 ${data.total} 个，显示前 ${data.blogs.length} 个</div>`));
+    res.appendChild(tbl);
+  }
+
+  function showEditForm(b) {
+    const old = pane.querySelector('.edit-card');
+    if (old) old.remove();
+    const card = $(`<div class="card edit-card"><div class="name">编辑：${esc(b.name)}</div><div class="row" style="margin-top:10px"><input id="e-name" value="${esc(b.name)}" placeholder="名称"></div><div class="row"><input id="e-url" value="${esc(b.url)}" placeholder="博客地址"></div><div class="row"><input id="e-rss" value="${esc(b.rss)}" placeholder="RSS（可留空）"></div><div class="row"><input id="e-tags" value="${esc(b.tags.join('; '))}" placeholder="标签（; 分隔）"></div><div class="acts"><button class="primary e-save">保存并重建</button><button class="e-cancel">取消</button><span class="err"></span></div></div>`);
+    box.querySelector('#mres').prepend(card);
+    card.querySelector('.e-cancel').onclick = () => card.remove();
+    card.querySelector('.e-save').onclick = async (e) => {
+      e.target.disabled = true;
+      const errEl = card.querySelector('.err');
+      errEl.textContent = '正在保存并重建站点…（约 10 秒）';
+      try {
+        const r = await api('admin/api/edit', { url: b.url, name: card.querySelector('#e-name').value, newUrl: card.querySelector('#e-url').value, rss: card.querySelector('#e-rss').value, tags: card.querySelector('#e-tags').value });
+        if (r.ok) { searchBlogs(box.querySelector('#mq').value.trim()); } else { errEl.textContent = r.error || '失败'; e.target.disabled = false; }
+      } catch (err) { if (err.message !== 'unauthorized') { errEl.textContent = String(err); e.target.disabled = false; } }
+    };
+  }
+
+  function showDeleteForm(b) {
+    const old = pane.querySelector('.edit-card');
+    if (old) old.remove();
+    const card = $(`<div class="card edit-card" style="border-color:rgba(248,113,113,.5)"><div class="name" style="color:var(--bad)">删除：${esc(b.name)}</div><div class="meta" style="margin:6px 0">${esc(b.url)}</div><label class="checkline"><input type="checkbox" id="d-black" checked style="width:auto"> 同时拉黑（写入墓园，上游同步永不回加）</label><div class="acts"><button class="danger d-confirm">确认删除</button><button class="d-cancel">取消</button><span class="err"></span></div></div>`);
+    box.querySelector('#mres').prepend(card);
+    card.querySelector('.d-cancel').onclick = () => card.remove();
+    card.querySelector('.d-confirm').onclick = async (e) => {
+      e.target.disabled = true;
+      const errEl = card.querySelector('.err');
+      errEl.textContent = '正在删除并重建站点…（约 10 秒）';
+      try {
+        const r = await api('admin/api/delete', { url: b.url, name: b.name, blacklist: card.querySelector('#d-black').checked });
+        if (r.ok) { box.querySelector('#mgo').click(); } else { errEl.textContent = r.error || '失败'; e.target.disabled = false; }
+      } catch (err) { if (err.message !== 'unauthorized') { errEl.textContent = String(err); e.target.disabled = false; } }
+    };
+  }
+}
+
+// ---------- 访问统计 ----------
+
+async function loadStats() {
+  const pane = shell.querySelector('#pane');
+  pane.innerHTML = '<div class="empty">加载中…</div>';
+  const { stats } = await api('admin/api/stats');
+  pane.innerHTML = '';
+  const cards = $(`<div class="stats-cards">
+    <div class="scard"><div class="num">${stats.pvToday}</div><div class="lbl">今日浏览</div></div>
+    <div class="scard"><div class="num">${stats.pvYesterday}</div><div class="lbl">昨日浏览</div></div>
+    <div class="scard"><div class="num">${stats.pv7}</div><div class="lbl">近 7 天浏览</div></div>
+    <div class="scard"><div class="num">${stats.pvTotal}</div><div class="lbl">30 天浏览合计</div></div>
+    <div class="scard"><div class="num">${stats.clickTotal}</div><div class="lbl">30 天博客点击</div></div>
+  </div>`);
+  pane.appendChild(cards);
+
+  const chart = $(`<div class="card"><div class="sub" style="margin-bottom:4px">近 14 天浏览量（悬停看数值）</div><div class="bars"></div><div class="bar-lbls"></div></div>`);
+  const last14 = stats.series.slice(-14);
+  const max = Math.max(1, ...last14.map((s) => s.pv));
+  const bars = chart.querySelector('.bars'), lbls = chart.querySelector('.bar-lbls');
+  for (const s of last14) {
+    const bar = $(`<div class="bar" data-v="${s.date}：PV ${s.pv} / 点击 ${s.clicks}" style="height:${Math.max(2, Math.round(s.pv / max * 84))}px"></div>`);
+    bars.appendChild(bar);
+    lbls.appendChild($(`<span>${s.date.slice(5)}</span>`));
+  }
+  pane.appendChild(chart);
+
+  const two = $(`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+    <div class="card"><div class="sub">点击最多的博客（30 天）</div><div class="topc"></div></div>
+    <div class="card"><div class="sub">来路域名 TOP（30 天）</div><div class="topr"></div></div>
+  </div>`);
+  const topc = two.querySelector('.topc'), topr = two.querySelector('.topr');
+  if (!stats.topClicks.length) topc.innerHTML = '<div class="empty" style="padding:20px 0">暂无点击数据</div>';
+  for (const c of stats.topClicks) {
+    topc.appendChild($(`<div class="done"><span>${esc(c.host)}</span><span>${c.total} 次</span></div>`));
+  }
+  if (!stats.topRefs.length) topr.innerHTML = '<div class="empty" style="padding:20px 0">暂无来路数据</div>';
+  for (const r of stats.topRefs) {
+    topr.appendChild($(`<div class="done"><span>${esc(r.host)}</span><span>${r.n}</span></div>`));
+  }
+  pane.appendChild(two);
+  pane.appendChild($(`<div class="sub" style="margin-top:10px">统计口径：列表页 PV + 博客卡片外链点击；匿名聚合计数，不记录 IP 与个人身份。统计自 ${esc(new Date().toISOString().slice(0, 10))} 起累积。</div>`));
 }
 
 // 入口：先探一下是否已登录
-fetch('/admin/api/list').then((r) => { if (r.status === 401) renderLogin(); else load(); }).catch(renderLogin);
+fetch('admin/api/list').then((r) => { if (r.status === 401) renderLogin(); else { renderShell(); switchTab('pending'); } }).catch(renderLogin);
 </script>
 </body></html>

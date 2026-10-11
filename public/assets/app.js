@@ -1,5 +1,23 @@
 /* 中文独立博客列表 · showcase app */
 (() => {
+  // ---- 匿名访问统计：PV + 站外点击（sendBeacon，不采集任何个人信息）----
+  try {
+    const hit = (type, target) => {
+      try {
+        const ref = document.referrer && !document.referrer.includes(location.hostname)
+          ? new URL(document.referrer).hostname.slice(0, 60) : '';
+        navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ type, target: String(target || '').slice(0, 300), ref })], { type: 'application/json' }));
+      } catch {}
+    };
+    hit('pv', location.pathname);
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      if (/^https?:\/\//i.test(href) && !/(bloghao\.com|pages\.dev|127\.0\.0\.1|localhost)/.test(href)) hit('click', href);
+    }, { passive: true });
+  } catch {}
+
   const PIN_HOST = 'xiaowuleyi.com';
   const PAGE_SIZE = 100;
 
