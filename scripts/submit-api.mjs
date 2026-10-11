@@ -530,6 +530,10 @@ function json(res, code, obj, extraHeaders = {}) {
 }
 
 function clientIP(req) {
+  // CF-Connecting-IP 由 Cloudflare 强制覆写（穿透 CF 的流量无法伪造），
+  // 是经 CF 访问的真实访客 IP；Caddy 会清洗不可信的 X-Forwarded-For。
+  const cfip = String(req.headers['cf-connecting-ip'] || '').trim();
+  if (cfip) return cfip.slice(0, 60);
   const xf = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
   return xf || req.socket.remoteAddress || 'unknown';
 }
