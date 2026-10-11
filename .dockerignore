@@ -1,8 +1,9 @@
 .git
-.github
-.wrangler
+.env
 node_modules
-docs
-*.md
-!README.md
+.wrangler
+.DS_Store
+data/submissions.json
+data/submissions.json.tmp
+data/.cib-git.lock
 data/*.partial.json

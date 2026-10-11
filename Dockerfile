@@ -12,19 +12,15 @@ ENV PORT=8347 \
     AUDIT_TASKS="sync check fix rss suspicious stale audit-update build" \
     AUTO_PUSH=1
 
-# 先拷贝清单文件，再拷贝源码（层缓存友好）
-COPY package.json ./
-COPY scripts ./scripts
-COPY blogs-original.csv ./
-COPY data ./data
-COPY public ./public
+# 全量拷贝仓库（.dockerignore 排除 .git/.env/垃圾）：保证镜像工作区与 git HEAD 完全一致，
+# 审核上架的 git pull --rebase 才不会因“未暂存变更”被拒；data/public 运行时被 volume 覆盖
+COPY . .
 
 # 容器内运行时的可变产物目录（配合 volume 持久化）
 RUN mkdir -p /app/data /app/public/data
 
 COPY docker/entrypoint.sh /entrypoint.sh
-COPY docker/audit-job.sh docker/askpass.sh /app/docker/audit-job.sh
-RUN chmod +x /entrypoint.sh /app/docker/audit-job.sh \
+RUN chmod +x /entrypoint.sh /app/docker/audit-job.sh /app/docker/askpass.sh \
     && git config --global --add safe.directory /app
 
 EXPOSE 8347 8348
