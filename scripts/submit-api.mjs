@@ -727,17 +727,17 @@ const server = http.createServer(async (req, res) => {
       if (p === '/admin/api/action' && req.method === 'POST') {
         return await handleAction(req, res);
       }
-      // 博客管理：搜索
+      // 博客管理：全量列表（一次读完 lastupdate，客户端本地过滤 = 毫秒级搜索）
       if (p === '/admin/api/blogs') {
-        const q = clean(u.searchParams.get('q') || '', 60).toLowerCase();
-        const blogs = loadBlogs().map((b) => {
-          const l = luKeyOf(b.url);
-          return { name: b.name, url: b.url, rss: b.rss || '', tags: b.tags, lastUpdate: l };
-        });
-        const hitList = q
-          ? blogs.filter((b) => b.name.toLowerCase().includes(q) || b.url.toLowerCase().includes(q) || b.tags.join(';').toLowerCase().includes(q))
-          : blogs;
-        return json(res, 200, { ok: true, total: hitList.length, blogs: hitList.slice(0, 30) });
+        const lu = readJson(path.join(ROOT, 'data', 'lastupdate.json'), {});
+        const blogs = loadBlogs().map((b) => ({
+          name: b.name,
+          url: b.url,
+          rss: b.rss || '',
+          tags: b.tags,
+          lastUpdate: lu[hostKey(b.url)]?.lastUpdate || null,
+        }));
+        return json(res, 200, { ok: true, total: blogs.length, blogs });
       }
       // 博客管理：编辑
       if (p === '/admin/api/edit' && req.method === 'POST') {
@@ -790,12 +790,6 @@ const server = http.createServer(async (req, res) => {
     if (!res.headersSent) json(res, 500, { ok: false, error: '服务器内部错误' });
   }
 });
-
-function luKeyOf(url) {
-  const k = hostKey(url);
-  const lu = readJson(path.join(ROOT, 'data', 'lastupdate.json'), {});
-  return lu[k]?.lastUpdate || null;
-}
 
 // 容器内监听所有接口（宿主机由 compose 把端口绑到 127.0.0.1，再由 Caddy 对外）
 server.listen(PORT, () => {
