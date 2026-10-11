@@ -25,6 +25,7 @@ const PORT = Number(process.env.PORT || 8348);
 const DB_PATH = path.join(ROOT, 'data', 'submissions.json');
 const LOCK_DIR = path.join(ROOT, 'data', '.cib-git.lock');
 const STATS_PATH = path.join(ROOT, 'data', 'stats.json');
+const SCORES_PATH = path.join(ROOT, 'data', 'scores.json');
 const GIT_BRANCH = process.env.GIT_BRANCH || 'main';
 const ADMIN_USER = process.env.ADMIN_USER || '';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
@@ -361,6 +362,41 @@ function gradeOf(v) {
   return 'B';
 }
 
+// ---------- 博客评分（1-100，60 为新收录基准线；≥80 优先推荐；详见 docs/scoring.md）----------
+
+function loadScores() {
+  return readJson(SCORES_PATH, { updatedAt: null, blogs: {} });
+}
+
+function scoreOf(scores, url) {
+  const e = scores.blogs[hostKey(url)];
+  return e ? { score: e.score ?? 60, auto: e.auto ?? null, reason: e.manual?.reason || '' } : { score: 60, auto: null, reason: '' };
+}
+
+/** 后台人工定分/改分（绝对分）。score=null 表示清除人工评定，回到自动分。 */
+async function setScoreInRepo(targetUrl, score, reason) {
+  const tKey = hostKey(targetUrl);
+  if (score !== null && (!Number.isInteger(score) || score < 1 || score > 100)) {
+    return { ok: false, error: '分数需为 1-100 的整数' };
+  }
+  return applyRepoChange((ours) => {
+    const row = ours.find((b) => hostKey(b.url) === tKey);
+    if (!row) return '未找到该博客（可能已被删除或巡检刚调整）';
+    const sc = loadScores();
+    const e = sc.blogs[tKey] || { auto: 0, autoDetail: [], signals: {} };
+    if (score === null) {
+      delete e.manual;
+    } else {
+      e.manual = { score, reason: String(reason || '').slice(0, 120), by: 'admin', at: new Date().toISOString() };
+    }
+    e.score = score === null ? Math.max(1, Math.min(100, 60 + (e.auto || 0))) : score;
+    sc.blogs[tKey] = e;
+    sc.updatedAt = new Date().toISOString();
+    writeJson(SCORES_PATH, sc);
+    return null;
+  }, `feat: 调整博客评分 ${tKey} → ${score === null ? '自动分' : score + ' 分'}（人工）`);
+}
+
 // ---------- git 操作（审核通过时）----------
 
 function run(cmd, args, opts = {}) {
@@ -439,7 +475,8 @@ async function applyRepoChange(mutate, commitMsg) {
   });
 }
 
-async function approveToRepo(sub) {
+async function approveToRepo(sub, initialScore, scoreReason) {
+  const initScore = Number.isInteger(initialScore) && initialScore >= 1 && initialScore <= 100 ? initialScore : 60;
   return applyRepoChange((ours) => {
     // 复核查重（以最新 CSV 为准）
     const knownKeys = new Set(ours.map((b) => hostKey(b.url)));
@@ -448,8 +485,23 @@ async function approveToRepo(sub) {
       return '该博客已被收录（或巡检刚加入），无需重复添加';
     }
     ours.push({ name: sub.name, url: sub.url, rss: sub.rss || '', tags: sub.tags });
+    // 审核上架即写入初始评分（默认基准 60，审核员可当场给知名博客定高分）
+    const sc = loadScores();
+    const key = hostKey(sub.url);
+    sc.blogs[key] = {
+      ...(sc.blogs[key] || {}),
+      score: initScore,
+      manual: {
+        score: initScore,
+        reason: String(scoreReason || (initScore === 60 ? '新收录默认基准分' : '审核上架初始分')).slice(0, 120),
+        by: 'admin',
+        at: new Date().toISOString(),
+      },
+    };
+    sc.updatedAt = new Date().toISOString();
+    writeJson(SCORES_PATH, sc);
     return null;
-  }, `feat: 新增博客 ${sub.name}（用户提交，人工审核通过）`);
+  }, `feat: 新增博客 ${sub.name}（用户提交，人工审核通过，初始评分 ${initScore} 分）`);
 }
 
 // 后台编辑：按原 url 定位行，替换字段
@@ -473,13 +525,22 @@ async function editInRepo(origUrl, fields) {
     if (fields.url) row.url = fields.url;
     if (fields.rss !== undefined) row.rss = fields.rss;
     if (fields.tags !== undefined) row.tags = fields.tags;
-    // 同步 lastupdate.json 的键（换域名时迁移，删除时清理由 delete 流程处理）
+    // 同步 lastupdate.json 与 scores.json 的键（换域名时迁移，删除时清理由 delete 流程处理）
     const luPath = path.join(ROOT, 'data', 'lastupdate.json');
     const lu = readJson(luPath, {});
     if (fields.url && hostKey(fields.url) !== origKey && lu[origKey]) {
       lu[hostKey(fields.url)] = lu[origKey];
       delete lu[origKey];
       writeJson(luPath, lu);
+    }
+    if (fields.url && hostKey(fields.url) !== origKey) {
+      const sc = loadScores();
+      if (sc.blogs[origKey]) {
+        sc.blogs[hostKey(fields.url)] = sc.blogs[origKey];
+        delete sc.blogs[origKey];
+        sc.updatedAt = new Date().toISOString();
+        writeJson(SCORES_PATH, sc);
+      }
     }
     return null;
   }, `fix: 后台编辑博客 ${fields.name || origUrl}（人工操作）`);
@@ -512,6 +573,12 @@ async function deleteFromRepo(targetUrl, blacklist, name) {
     if (lu[tKey]) {
       delete lu[tKey];
       writeJson(luPath, lu);
+    }
+    const sc = loadScores();
+    if (sc.blogs[tKey]) {
+      delete sc.blogs[tKey];
+      sc.updatedAt = new Date().toISOString();
+      writeJson(SCORES_PATH, sc);
     }
     return null;
   }, `chore: 后台移除博客 ${name || targetUrl}${blacklist ? '（已拉黑）' : ''}（人工操作）`);
@@ -674,7 +741,8 @@ async function handleAction(req, res) {
 
   if (action !== 'approve') return json(res, 400, { ok: false, error: 'unknown action' });
 
-  const r = await approveToRepo(sub);
+  const initScore = body.score != null && body.score !== '' ? parseInt(body.score, 10) : undefined;
+  const r = await approveToRepo(sub, initScore, body.scoreReason);
   sub.reviewedAt = new Date().toISOString();
   sub.status = r.ok ? 'approved' : 'pending';
   if (!r.ok) sub.pushError = r.error;
@@ -753,7 +821,7 @@ const server = http.createServer(async (req, res) => {
 
     if (p.startsWith('/admin')) {
       if (!isAdmin(req)) {
-        if (p === '/admin/api/list' || p === '/admin/api/action' || p === '/admin/api/blogs' || p === '/admin/api/edit' || p === '/admin/api/delete' || p === '/admin/api/stats') {
+        if (p === '/admin/api/list' || p === '/admin/api/action' || p === '/admin/api/blogs' || p === '/admin/api/edit' || p === '/admin/api/delete' || p === '/admin/api/score' || p === '/admin/api/stats') {
           return json(res, 401, { ok: false, error: 'unauthorized' });
         }
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
@@ -769,17 +837,35 @@ const server = http.createServer(async (req, res) => {
       if (p === '/admin/api/action' && req.method === 'POST') {
         return await handleAction(req, res);
       }
-      // 博客管理：全量列表（一次读完 lastupdate，客户端本地过滤 = 毫秒级搜索）
+      // 博客管理：全量列表（一次读完 lastupdate/scores，客户端本地过滤 = 毫秒级搜索）
       if (p === '/admin/api/blogs') {
         const lu = readJson(path.join(ROOT, 'data', 'lastupdate.json'), {});
-        const blogs = loadBlogs().map((b) => ({
-          name: b.name,
-          url: b.url,
-          rss: b.rss || '',
-          tags: b.tags,
-          lastUpdate: lu[hostKey(b.url)]?.lastUpdate || null,
-        }));
+        const sc = loadScores();
+        const blogs = loadBlogs().map((b) => {
+          const s = scoreOf(sc, b.url);
+          return {
+            name: b.name,
+            url: b.url,
+            rss: b.rss || '',
+            tags: b.tags,
+            lastUpdate: lu[hostKey(b.url)]?.lastUpdate || null,
+            score: s.score,
+            scoreAuto: s.auto,
+            scoreReason: s.reason,
+          };
+        });
         return json(res, 200, { ok: true, total: blogs.length, blogs });
+      }
+      // 博客管理：人工评分（绝对分 1-100；score=null 清除人工评定回到自动分）
+      if (p === '/admin/api/score' && req.method === 'POST') {
+        const body = await readJsonBody(req).catch(() => ({}));
+        const targetUrl = clean(body.url, 300);
+        if (!targetUrl) return json(res, 400, { ok: false, error: '缺少定位 url' });
+        const score = body.score === null ? null : parseInt(body.score, 10);
+        if (score !== null && !Number.isInteger(score)) return json(res, 400, { ok: false, error: '分数需为 1-100 的整数' });
+        const r = await setScoreInRepo(targetUrl, score, String(body.reason || '').slice(0, 120));
+        if (!r.ok) return json(res, 500, { ok: false, error: r.error });
+        return json(res, 200, { ok: true, message: `评分已保存（${score === null ? '恢复自动分' : score + ' 分'}），站点重建中` });
       }
       // 博客管理：编辑
       if (p === '/admin/api/edit' && req.method === 'POST') {

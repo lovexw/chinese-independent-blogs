@@ -17,10 +17,12 @@
 blogs-original.csv ──► scripts/build.mjs ──► README.md + feed.opml + public/data/blogs.json + public/blogs.csv + public/feed.opml
        ▲                                        ▲
        │ apply fixes / remove dead / pin        │ read data/lastupdate.json (RSS 更新时间)
+       │                                        │ read data/scores.json (质量评分 → blogs.json 的 score 字段)
        │                                        │
 scripts/check-links.mjs ──► data/check-results.json
 scripts/fix-dead.mjs    ──► data/fixes.json        （urlFixes / rssFixes / dead / kept）
 scripts/rss-refresh.mjs ──► data/lastupdate.json   （rss / lastUpdate / checkedAt）
+scripts/score-refresh.mjs ──► data/scores.json     （1-100 质量评分：自动信号 + 人工评定，见 docs/scoring.md）
 scripts/flag-suspicious.mjs ──► data/suspicious.json + docs/manual-review.md
 scripts/sync-upstream.mjs   ──► 追加新行到 blogs-original.csv
 ```
@@ -34,6 +36,7 @@ node scripts/check-links.mjs        # 全量链接体检（约 3 分钟，可断
 node scripts/fix-dead.mjs           # 失效站点变体修复（约 2-4 分钟，可断点续跑）
 node scripts/rss-refresh.mjs        # 刷新 RSS 最后更新时间（约 3 分钟，可断点续跑）
 node scripts/rss-refresh.mjs --fix-missing   # 同上 + 对失效 RSS 做自动发现（较慢）
+node scripts/score-refresh.mjs      # 刷新博客质量评分（约 1 分钟，含全站测速；人工评定永久保留）
 node scripts/flag-suspicious.mjs    # 内容级可疑检测 → docs/manual-review.md
 node scripts/sync-upstream.mjs      # 上游增量同步（只增不删）
 node scripts/build.mjs              # 重建 CSV/README/OPML/站点数据
@@ -74,6 +77,12 @@ npm run audit                       # = check + fix + rss + build（一条龙）
    - **未来日期钳制（2026-10-11 补充）**：feed/sitemap 里比当前时间晚 2 天以上的日期一律作废（`lib.mjs#clampDate`）——jyzhu.top、youkaichao.github.io 曾用 2199 年日期、iloli.moe 用 +70 天未来文章长期霸榜"最近更新优先"。**维护者政策：伪造/超前更新日期 = 移除 + 永久拉黑（offline.json 墓园，上游同步永不回加）**，2026-10-11 已拉黑 7 个（含 voidking.com、ccgxk.com、jack-liu.com、wiki.eryajf.net 四个 +4~22 天未来日期站）。**同日拉黑 ranjl.cn**：每日 cron 定时机器生成《学习问答》系列（批量 pubDate 秒级相同）刷活跃度，同属"机器活跃度 ≠ 博主活跃度"，一并移除拉黑。
    - 三信号仍取最大值，但先经过上面过滤。
 7. **README.md 与 feed.opml 是生成物**：不要手改，改 `build.mjs` 的模板或改 CSV。
+8. **博客质量评分（2026-10-11 起，勿随意改动设计）**：每个博客 1-100 分，`data/scores.json`（key=hostKey）。
+   60 分为新收录基准线；自动信号（更新频率/RSS/测速/可达/读者点击）由 `score-refresh.mjs` 每周刷新，
+   **`manual` 人工评定字段刷新时永久保留**（知名博客直接 90-100，机器刷活跃的人工调低）。
+   ≥80 前台优先推荐（默认排序推荐块 + ★ 徽标），≥90 精选。后台打分走 `/admin/api/score`
+   （applyRepoChange 全管线：写 scores.json → build → lint → commit → push）。
+   刻意设计：machine-scan 的 cron 指纹**不自动扣分**（8/8 命中为人类定时发布），交人工判断。详见 `docs/scoring.md`。
 
 ## 6. CI（GitHub Actions）
 
@@ -94,7 +103,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 ```
 
 - **部署目录**：服务器 `~/apps/cib`（git clone + `.env` 放 GH_PAT / ADMIN_PASSWORD，600 权限）；改代码后 `git pull && docker compose up -d --build`。
-- **管理后台（已集成进 ops 面板）**：<https://ops.bloghao.com/blog-admin/>（Caddy 把 `/blog-admin/*` 反代到 cib 容器 8348；用户名 `list_admin`，密码在服务器 `~/apps/cib/.env`）。三标签页：待审提交（A/B/C 预判+一键通过/拒绝）、博客管理（全站搜索+编辑+删除可选拉黑入墓园）、访问统计（匿名 PV+外链点击，信标上报，不存 IP）。旧入口 `list.bloghao.com/admin` 301 到新地址。
+- **管理后台（已集成进 ops 面板）**：<https://ops.bloghao.com/blog-admin/>（Caddy 把 `/blog-admin/*` 反代到 cib 容器 8348；用户名 `list_admin`，密码在服务器 `~/apps/cib/.env`）。三标签页：待审提交（A/B/C 预判 + 收录时直接定初始分 + 一键通过/拒绝）、博客管理（全站搜索 + 评分徽章点开即打分 + 档位筛选 + 编辑 + 删除可选拉黑入墓园）、访问统计（匿名 PV+外链点击，信标上报，不存 IP）。支持深色模式、`/` 聚焦搜索、弹窗化操作。旧入口 `list.bloghao.com/admin` 301 到新地址。
 - **用户提交**：<https://list.bloghao.com/submit.html>，防垃圾四层见 `docs/docker.md`；提交队列在服务器数据卷 `data/submissions.json`（含 IP，已 gitignore，永不入库）。
 - **每周巡检**：容器内 crond 触发，接管原 GitHub Actions `audit.yml`（其 schedule 已停用，仅保留 workflow_dispatch 手动备份）。巡检与审核上架用 `data/.cib-git.lock` 目录锁互斥。
 - **坑（务必记住）**：bloghao.com zone 的 SSL 模式是 **Flexible（CF 回源走 80 明文）**。Caddy 里每个新站点的 `http://` 块必须**直接反代**、不能 301 跳 https，否则边缘会陷入自重定向死循环（hub/plaza 的注释就是这个坑，list.bloghao.com 已照做）。
@@ -156,3 +165,4 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-11 | **未来日期作弊清零**：发现 7 个博客用 2199 年或未来 4~70 天的日期霸榜"最近更新优先"（jyzhu.top、youkaichao.github.io、iloli.moe、voidking.com、ccgxk.com、jack-liu.com、wiki.eryajf.net）；判定链补上"未来 2 天以上日期作废"钳制，7 站全部移除并写入墓园永久拉黑（维护者决定）；同日 ranjl.cn 因 cron 机器日更《学习问答》刷活跃度一并移除拉黑 |
 | 2026-10-11 | **机器更新批量扫描**：新增 `scripts/machine-scan.mjs`（cron 秒级指纹 + 标题模板化双指纹，已纳入每周巡检**仅收集证据不自动杀站**）。扫最近 3 天有更新的 165 站：双指纹命中 8 站经内容验尸**全部为人类博客**（定时发布+系列标题会命中双指纹，如体验碎周报/近思录——自动判定不可作杀站依据）；42 待复核中揪出 1 对重复收录（lulalap.com 301 迁移至 philoli.com，RSS 同指一处），已去重，现收录 **1358**。经验：`00:00:00` 整点时间戳=只写日期的约定；杀站必须看正文 |
 | 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |
+| 2026-10-11 | **博客质量评分系统 v2.2.0**：每个博客 1-100 分（60 分新收录基准线），`data/scores.json` + `scripts/score-refresh.mjs`（自动信号：更新频率/RSS/每周 TTFB 测速/可达性/读者点击热度；人工评定永久保留，首批知名博客直接定 90-100：阮一峰 98、酷壳 97 等）。后台三处接入：审核上架可直接定初始分、博客管理页评分徽章点开即打分（含档位筛选与评分规则弹窗）、前台 ≥80 优先推荐 + ★ 徽标 + "评分优先"排序；每周巡检新增 score 步骤；管理后台 UI 全面重设计（深色模式/滑动标签/骨架屏/弹窗化/微交互）。收录 新的原野（sinyalee.com，95 分），现收录 **1359** |

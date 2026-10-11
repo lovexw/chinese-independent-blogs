@@ -8,8 +8,8 @@
 
 | 项目 | 数量 |
 | --- | --- |
-| 收录博客 | 1358 |
-| 提供 RSS | 1287 |
+| 收录博客 | 1359 |
+| 提供 RSS | 1288 |
 | 列表维护时间 | 2026-10-11 |
 
 ## 博客列表
@@ -1376,6 +1376,7 @@
 | [Feed](https://wangyurui.com/feed.xml) | 太隐 | https://wangyurui.com/ | 随笔; 生活 |
 | [Feed](https://haikebang.com/feed.xml) | 骇客邦 | https://haikebang.com/ | 技术; 科技 |
 | [Feed](https://yindongliang.com/index.xml) | LYon's Blog | https://yindongliang.com/ | 技术; 周刊 |
+| [Feed](https://sinyalee.com/blog/?feed=rss2) | 新的原野 | https://sinyalee.com | 生活; 随笔 |
 
 ## 失效与归档
 

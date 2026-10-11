@@ -54,6 +54,9 @@
   const isStale = (b) => !!b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) >= TWO_YEARS;
   // priority tier for the default sort: active < stale(2yr+) < unknown
   const tier = (b) => (!b.lastUpdate ? 2 : isStale(b) ? 1 : 0);
+  // 维护者评分 ≥80 = 优先推荐（默认排序时活跃优质博客提到最前，块内按评分降序）
+  const isRec = (b) => (b.score || 0) >= 80;
+  const rank = (b) => (tier(b) === 0 && isRec(b) ? 0 : tier(b) + 1);
 
   function relTime(iso) {
     if (!iso) return null;
@@ -78,6 +81,9 @@
     const fresh = b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) < 30 * 86400e3;
     const stale = isStale(b);
     const host = hostOf(b.url);
+    const rec = isRec(b)
+      ? `<span class="scorebadge${b.score >= 90 ? ' elite' : ''}" title="维护者评分 ${b.score} 分（${b.score >= 90 ? '精选' : '推荐'}）· ≥80 分优先推荐" aria-label="评分 ${b.score}">★${b.score}</span>`
+      : '';
     const updHTML = upd
       ? `<span class="upd ${fresh ? 'fresh' : stale ? 'stale' : ''}" title="最近更新：${esc(dayOf(b.lastUpdate))}"><span class="dot"></span>${stale ? '💤 ' : ''}${esc(upd)}更新</span>`
       : `<span class="upd" title="未抓取到 RSS 或 feed 中没有时间"><span class="dot"></span>更新时间未知</span>`;
@@ -89,6 +95,7 @@
       <article class="card" style="--d:${Math.min(idx, 14)}">
         <div class="card-top">
           <a class="title" href="${esc(b.url)}" target="_blank" rel="noopener" title="${esc(b.name)}">${esc(b.name)}</a>
+          ${rec}
         </div>
         <div class="host">${esc(host)}</div>
         ${b.desc ? `<div class="desc">${esc(b.desc)}</div>` : ''}
@@ -146,7 +153,14 @@
       return true;
     });
     if (state.sort === 'default') {
-      rest.sort((a, b2) => tier(a) - tier(b2)); // stable: original order within tiers
+      rest.sort((a, b2) => {
+        const ra = rank(a), rb = rank(b2);
+        if (ra !== rb) return ra - rb;
+        if (ra === 0) return (b2.score || 0) - (a.score || 0); // 推荐块内按评分降序
+        return 0; // 其余保持原有订阅热度顺序（稳定排序）
+      });
+    } else if (state.sort === 'score') {
+      rest.sort((a, b2) => (b2.score || 0) - (a.score || 0));
     } else if (state.sort === 'recent') {
       rest.sort((a, b2) => (Date.parse(b2.lastUpdate) || 0) - (Date.parse(a.lastUpdate) || 0));
     } else if (state.sort === 'stale') {
@@ -237,7 +251,7 @@
       if (t) state.tags.add(t);
     }
     const sort = h.get('sort');
-    if (sort && ['default', 'recent', 'stale', 'name'].includes(sort)) {
+    if (sort && ['default', 'recent', 'stale', 'name', 'score'].includes(sort)) {
       state.sort = sort;
       sortSel.value = sort;
     }

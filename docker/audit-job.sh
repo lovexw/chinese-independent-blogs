@@ -1,5 +1,5 @@
 #!/bin/sh
-# 单轮巡检任务：sync → check → fix → rss → suspicious → stale → audit-update → build → (可选 push)
+# 单轮巡检任务：sync → check → fix → rss → score → suspicious → stale → audit-update → build → (可选 push)
 # 可通过 AUDIT_TASKS 环境变量裁剪步骤（逗号分隔，默认全部）
 set -u
 cd /app
@@ -8,7 +8,7 @@ export GIT_TERMINAL_PROMPT=0
 
 log() { echo "[audit-job] $(date '+%F %T') $*"; }
 
-WANT="${AUDIT_TASKS:-sync check fix rss suspicious stale audit-update build}"
+WANT="${AUDIT_TASKS:-sync check fix rss score suspicious stale audit-update build}"
 has() { echo ",$WANT," | grep -q ",$1,"; }
 
 # 断点续传：rss/check/fix 都支持重跑继续；这里不清理 partial，让中断后的下一轮自动续
@@ -16,6 +16,7 @@ if has sync;     then log "step: sync-upstream";     node scripts/sync-upstream.
 if has check;    then log "step: check-links";       node scripts/check-links.mjs       || log "check failed (continue)"; fi
 if has fix;      then log "step: fix-dead";          node scripts/fix-dead.mjs          || log "fix failed (continue)"; fi
 if has rss;      then log "step: rss-refresh";       node scripts/rss-refresh.mjs       || log "rss failed (continue)"; fi
+if has score;    then log "step: score-refresh";     node scripts/score-refresh.mjs     || log "score failed (continue)"; fi
 if has suspicious; then log "step: flag-suspicious"; node scripts/flag-suspicious.mjs   || log "suspicious failed (continue)"; fi
 if has machine-scan; then log "step: machine-scan";  node scripts/machine-scan.mjs --days 7 || log "machine-scan failed (continue)"; fi
 if has stale;    then log "step: stale-report";      node scripts/stale-report.mjs      || log "stale failed (continue)"; fi

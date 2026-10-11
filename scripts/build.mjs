@@ -26,6 +26,7 @@ const PIN_KEY = 'xiaowuleyi.com';
 
 const fixes = readJson(path.join(DATA_DIR, 'fixes.json'), { urlFixes: {}, rssFixes: {}, dead: [] });
 const lastupdate = readJson(path.join(DATA_DIR, 'lastupdate.json'), {});
+const scores = readJson(path.join(DATA_DIR, 'scores.json'), { blogs: {} }).blogs || {};
 
 let blogs = loadBlogs();
 const before = blogs.length;
@@ -210,6 +211,8 @@ if (!APPLY_ONLY) {
     desc: b.desc && b.desc !== b.name ? b.desc : '',
     tags: b.tags,
     lastUpdate: lastupdate[hostKey(b.url)]?.lastUpdate || null,
+    // 质量分（1-100，默认 60 基准；≥80 站点端优先推荐展示）
+    score: scores[hostKey(b.url)]?.score ?? 60,
   }));
   // name vs desc: in the upstream CSV the Introduction column IS the display name.
   writeJson(path.join(ROOT, 'public/data/blogs.json'), {
