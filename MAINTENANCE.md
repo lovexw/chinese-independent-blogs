@@ -92,7 +92,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 - **用户提交**：<https://list.bloghao.com/submit.html>，防垃圾四层见 `docs/docker.md`；提交队列在服务器数据卷 `data/submissions.json`（含 IP，已 gitignore，永不入库）。
 - **每周巡检**：容器内 crond 触发，接管原 GitHub Actions `audit.yml`（其 schedule 已停用，仅保留 workflow_dispatch 手动备份）。巡检与审核上架用 `data/.cib-git.lock` 目录锁互斥。
 - **坑（务必记住）**：bloghao.com zone 的 SSL 模式是 **Flexible（CF 回源走 80 明文）**。Caddy 里每个新站点的 `http://` 块必须**直接反代**、不能 301 跳 https，否则边缘会陷入自重定向死循环（hub/plaza 的注释就是这个坑，list.bloghao.com 已照做）。
-- **hub.bloghao.com 已放弃下线（2026-10-11）**：Caddy 的 hub 站点块与 DNS A 记录均已删除（plaza.bloghao.com 保留，仍指向 8790 面板）。下线前 hub 一直 530（plaza-hub 应用对 hub Host 异常），未再排查。
+- **hub.bloghao.com / plaza.bloghao.com 均已退役（2026-10-11，维护者决定）**：Caddy 站点块与 DNS A 记录均已删除。**广场数据面新位置 = 官网 `bloghao.com/plaza/api/*`**（Caddy strip_prefix 后反代 8790 plaza-hub 容器），以官网为准。
 
 **Cloudflare Pages（保留作回滚通道，未删除）**：项目 `chinese-independent-blogs` 仍绑定 Git，push 到 `main` 仍会自动部署 Pages；`chinese-independent-blogs.pages.dev` 与 `bloghao.xiaowuleyi.com` 仍指向 Pages。
 
