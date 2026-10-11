@@ -1,7 +1,6 @@
 .git
 .env
 node_modules
-.wrangler
 .DS_Store
 data/submissions.json
 data/submissions.json.tmp
