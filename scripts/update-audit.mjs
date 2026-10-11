@@ -11,6 +11,8 @@ import {
   hostOf,
   feedVariants,
   isFeedBody,
+  newestFeedItemDate,
+  sitemapArticleDate,
   readJson,
   writeJson,
 } from './lib.mjs';
@@ -88,15 +90,6 @@ function extractHomeDates(html) {
 
 // ---------------- sitemap ----------------
 
-function maxLastmod(xml) {
-  const dates = [];
-  for (const m of xml.matchAll(/<lastmod>\s*([^<]{8,40})\s*<\/lastmod>/gi)) {
-    const t = Date.parse(m[1].trim());
-    if (!Number.isNaN(t)) dates.push(t);
-  }
-  return dates.length ? new Date(Math.max(...dates)).toISOString() : null;
-}
-
 async function sitemapAudit(siteUrl) {
   const seen = new Set();
   let best = null;
@@ -110,7 +103,8 @@ async function sitemapAudit(siteUrl) {
       try { body = zlib.gunzipSync(body); } catch {}
     }
     const xml = body.toString('utf8');
-    const lm = maxLastmod(xml);
+    // v2：只取真实页面 URL 的 lastmod（排除根路径/应用路由/全体同值的生成戳）
+    const lm = sitemapArticleDate(xml);
     if (lm && (!best || Date.parse(lm) > Date.parse(best.date))) best = { date: lm, url: u };
     if (/<sitemapindex/i.test(xml) && depth < 2) {
       const children = [...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/gi)].map((m) => m[1]).slice(0, 2);
@@ -147,12 +141,9 @@ async function tryFeeds(cands, limit = 6) {
     const r = await probe(feed, { timeout: 18000, wantBody: true, maxBody: 400000 });
     if (r.error || r.status >= 400 || !isFeedBody(r.contentType, r.body)) continue;
     const text = r.body.toString('utf8');
-    const dates = [];
-    for (const m of text.matchAll(/<(?:pubDate|published|updated|dc:date)>([^<]{10,60})</g)) {
-      const t = Date.parse(m[1].trim());
-      if (!Number.isNaN(t)) dates.push(t);
-    }
-    const lastUpdate = dates.length ? new Date(Math.max(...dates)).toISOString() : null;
+    // v2：只取 <entry>/<item> 内部的日期；频道级 <updated>/<lastBuildDate> 常被
+    // 动态程序每次请求盖成"现在"，会让陈年博客永远显示"刚刚更新"
+    const lastUpdate = newestFeedItemDate(text);
     if (!best || (lastUpdate && (!best.lastUpdate || Date.parse(lastUpdate) > Date.parse(best.lastUpdate))))
       best = { rss: feed, lastUpdate };
   }
@@ -212,7 +203,23 @@ if (!APPLY) {
       const sm = await sitemapAudit(finalUrl);
       if (sm) out.signals.sitemap = { date: sm.date, url: sm.url };
 
-      // combine
+      // combine —— 动态盖戳兜底守卫（只对 sitemap 生效）：
+      // sitemap lastmod 是元数据级信号，常被动态程序盖"当前时间"；若它比首页文章日期
+      // 新 1 年以上、又恰好落在最近 60 天内，判定为动态盖戳，丢弃。
+      // feed 条目级日期不设此守卫：feed 的最新条目 = 最后发布（内容级证据），
+      // 且首页解析可能漏日期（JS 渲染等），拿首页去否决真实新文章会错杀活跃博客。
+      const now = Date.now();
+      const homeT = out.signals.home?.date ? Date.parse(out.signals.home.date) : 0;
+      out.dropped = [];
+      for (const src of ['sitemap']) {
+        const s = out.signals[src];
+        if (!s?.date) continue;
+        const t = Date.parse(s.date);
+        if (homeT && t - homeT > 365 * 86400e3 && now - t < 60 * 86400e3) {
+          out.dropped.push({ src, date: s.date, reason: 'newer-than-home-but-fresh-now (dynamic stamp?)' });
+          s.date = null;
+        }
+      }
       const cands = [];
       if (out.signals.feed?.date) cands.push({ date: out.signals.feed.date, src: 'feed' });
       if (out.signals.home?.date) cands.push({ date: out.signals.home.date, src: 'home' });

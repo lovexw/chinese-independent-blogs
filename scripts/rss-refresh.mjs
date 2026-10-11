@@ -9,6 +9,7 @@ import {
   hostOf,
   feedVariants,
   isFeedBody,
+  feedItemDates,
   readJson,
   writeJson,
 } from './lib.mjs';
@@ -31,16 +32,9 @@ const blogs = loadBlogs().filter((b) => !(hostKey(b.url) in done));
 console.log(`refreshing rss info for ${blogs.length} blogs (fixMissing=${FIX_MISSING})`);
 
 function extractDates(xml) {
-  const text = xml.toString('utf8');
-  const dates = [];
-  const re = /<(?:pubDate|published|updated|lastBuildDate|dc:date)>([^<]{10,60})<\/|datetime="([^"]{10,60})"/g;
-  let m;
-  while ((m = re.exec(text)) !== null) {
-    const raw = (m[1] || m[2] || '').trim();
-    const t = Date.parse(raw);
-    if (!Number.isNaN(t)) dates.push(t);
-  }
-  return dates;
+  // v2：只取 <entry>/<item> 内部的日期。频道级 <updated>/<lastBuildDate> 常被动态
+  // 程序（Flask 等）每次请求盖成"现在"，会让陈年博客永远显示"刚刚更新"。
+  return feedItemDates(xml);
 }
 
 let t0 = Date.now();

@@ -67,6 +67,11 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 4. ** kept 类站点**：HTTP 401/402/403/406/407/416/429/456 视为"反爬但活着"（保留在列表）；TLS 证书异常的用 `curl -k` 复核后保留。它们同时会出现在 `docs/manual-review.md` 供人工核验。
 5. **hostKey / rootOf**（lib.mjs）：hostKey = 去掉 `www.` 的主机名（去重键）；rootOf = 近似可注册域（`blog.a.com` 与 `www.a.com` 同根）。同步用"hostKey + root + 墓园 + 旧修复"四重屏蔽。
 6. **人工核验清单**：`docs/manual-review.md` 由 `flag-suspicious.mjs` 生成（跳转/人机验证/停放/空页/证书异常）。人工确认失效后，直接在 CSV 删除该行并提交即可，下次巡检不会复活。
+7. **更新时间判定 v2（2026-10-11，勿回退）**：只信"内容级日期"，不信"生成时间戳"——
+   - **feed 信号只取 `<entry>/<item>` 内部的日期**（`lib.mjs#newestFeedItemDate`）；频道级 `<updated>`/`<lastBuildDate>` 一概不看。动态站点（如 Flask/Werkzeug 渲染的 feed，dongwm.com 即此类）每次请求都把频道级日期盖成"现在"，旧逻辑曾让陈年博客永远显示"刚刚更新"。
+   - **sitemap 信号只取真实页面 URL 的 lastmod**（`lib.mjs#sitemapArticleDate`）：排除站点根路径、应用路由（/auth/*、/tags、/search 等约 30 类前缀）、全体 lastmod 同值的生成器盖戳；`<loc>` 含 HTML 转义的生成器 bug 输出直接丢弃。
+   - **兜底守卫（仅对 sitemap）**：sitemap lastmod 比首页文章日期新 1 年以上、又恰好落在最近 60 天内 → 判定为动态盖戳，丢弃（证据留在 `update-audit.json` 的 `dropped` 字段供人工复核）。**feed 条目级日期不设守卫**：feed 的最新条目 = 最后发布（内容级证据），首页解析可能漏日期（JS 渲染等），拿首页否决真实新文章会错杀活跃博客（zhangxinxu 实测误杀，已修正）。
+   - 三信号仍取最大值，但先经过上面三层过滤。
 7. **README.md 与 feed.opml 是生成物**：不要手改，改 `build.mjs` 的模板或改 CSV。
 
 ## 6. CI（GitHub Actions）
@@ -136,4 +141,5 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-03 | **多信号更新时间审计**（`scripts/update-audit.mjs`，已接入每周 CI）：RSS 地址错位是主要误判源——feed 重推导 + 首页文章日期 + sitemap lastmod 三信号取最大值；评论 feed 与相对日期刻意排除（防假新鲜）。首次全量审计：133 个"复活"（含可能吧 kenengba.com 2024-01→2026-10）、10 个新沉睡、613 个日期修正、115 个 RSS 错位修正；未知数 293→160。审计前 148 沉睡 → 审计后 155（方法与全量证据链见 `docs/update-audit.md` 与 `data/update-audit.json`） |
 | 2026-10-03 | 程序猿DD 博客迁移 blog.didispace.com→didispace.com（新站暂无 RSS，RSS 置空）；移除 2 博客：bang's blog（主机账户被暂停）、哲●科●文Jerkwin（维护者决定移除，站点仍在线）；`sync-upstream` 复活探测增加 cPanel 暂停页识别（suspendedpage.cgi 200 ≠ 复活）；现收录 1295 |
 | 2026-10-11 | 上游周同步（本机手动跑）：新增 69、复活 16、归档 8、去重 1，现收录 1371；`lint` 通过 |
+| 2026-10-11 | **更新时间判定升级 v2**：修复"陈年博客显示刚刚更新"——动态站点（Flask 等）的 feed 频道级 `<updated>` 和 sitemap 应用路由 lastmod 每次抓取都被盖成当前时间，旧逻辑取最大值时被假日期赢过真实文章日期（dongwm.com 即实例：真实 2023-05-16 被显示为"刚刚更新"）。新标准：feed 只取条目级日期、sitemap 过滤根路径/应用路由/同值盖戳、另有"比首页新 1 年+落在近 60 天"兜底守卫；上次审计受影响博客约 12+，全量重跑已纠正（见 §5 第 7 条） |
 | 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |

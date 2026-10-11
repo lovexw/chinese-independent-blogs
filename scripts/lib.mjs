@@ -302,3 +302,80 @@ export function isFeedBody(contentType, body) {
   }
   return false;
 }
+
+// ---------- 更新时间判定 v2（2026-10-11 起）----------
+// 背景：动态站点（如 Flask/Werkzeug 渲染的 feed，见 www.dongwm.com）会在频道级
+// <updated>/<lastBuildDate> 上盖"当前时间"，sitemap 会给 /、/auth/* 等应用路由盖
+// 动态 lastmod——陈年博客因此永远显示"刚刚更新"。新标准只信内容级日期：
+//   feed    → 仅 <entry>/<item> 内部的日期，频道级一概不看
+//   sitemap → 仅真实页面 URL 的 lastmod（排除根路径/应用路由/全体同值的生成戳）
+
+const MIN_DATE_TS = Date.parse('2000-01-01');
+
+export function feedItemDates(xml) {
+  const text = String(xml ?? '');
+  const dates = [];
+  const blocks = [...text.matchAll(/<(?:entry|item)[\s>][\s\S]*?<\/(?:entry|item)>/gi)];
+  // 没有 entry/item 块的 feed 无法给出内容级日期（宁可返回空，也不要频道级假日期）
+  for (const b of blocks) {
+    for (const m of b[0].matchAll(/<(?:pubDate|published|updated|dc:date)>([^<]{10,60})</g)) {
+      const t = Date.parse(m[1].trim());
+      if (!Number.isNaN(t) && t >= MIN_DATE_TS) dates.push(t);
+    }
+    for (const m of b[0].matchAll(/datetime=["']([^"']{10,60})["']/g)) {
+      const t = Date.parse(m[1]);
+      if (!Number.isNaN(t) && t >= MIN_DATE_TS) dates.push(t);
+    }
+  }
+  return dates;
+}
+
+export function newestFeedItemDate(xml) {
+  const ds = feedItemDates(xml);
+  return ds.length ? new Date(Math.max(...ds)).toISOString() : null;
+}
+
+// sitemap 里典型的"非文章"路径：应用/列表/元数据路由，lastmod 常是动态生成时间
+const SITEMAP_META_SEGMENTS = new Set([
+  'auth', 'oauth', 'login', 'register', 'signin', 'signup', 'admin', 'api',
+  'search', 'feed', 'feeds', 'rss', 'atom', 'sitemap', 'tag', 'tags',
+  'topic', 'topics', 'category', 'categories', 'archive', 'archives',
+  'page', 'pages', 'about', 'links', 'friend', 'friends', 'comment',
+  'comments', 'favorite', 'favorites', 'activity', 'activities',
+  'user', 'users', 'member', 'members', 'assets', 'static', 'cdn',
+]);
+
+export function sitemapArticleDate(xml) {
+  const text = String(xml ?? '');
+  const pairs = [];
+  for (const m of text.matchAll(/<url>([\s\S]*?)<\/url>/gi)) {
+    const block = m[1];
+    const loc = block.match(/<loc>\s*([^<]+?)\s*<\/loc>/i)?.[1] || '';
+    const lm = block.match(/<lastmod>\s*([^<]{8,40})\s*<\/lastmod>/i)?.[1];
+    if (!loc || !lm) continue;
+    const t = Date.parse(lm.trim());
+    if (Number.isNaN(t) || t < MIN_DATE_TS) continue;
+    pairs.push({ loc, t });
+  }
+  if (!pairs.length) return null;
+  // 全体 lastmod 同值 = 生成器构建时间戳，不是内容信号
+  if (new Set(pairs.map((p) => p.t)).size === 1) return null;
+  // 排除：站点根路径、应用路由、生成器 bug 输出（loc 含 HTML 转义）
+  const articles = pairs.filter((p) => {
+    if (p.loc.includes('&lt;') || p.loc.includes('<')) return false;
+    let path = '';
+    try {
+      path = new URL(p.loc).pathname;
+    } catch {
+      return false;
+    }
+    path = path.replace(/\/+$/, '');
+    if (path === '') return false; // 站点根
+    const firstSeg = path.split('/')[1]?.toLowerCase() || '';
+    if (SITEMAP_META_SEGMENTS.has(firstSeg)) return false;
+    return true;
+  });
+  const pool = articles.length ? articles : pairs.filter((p) => !p.loc.endsWith('/sitemap.xml'));
+  if (!pool.length) return null;
+  return new Date(Math.max(...pool.map((p) => p.t))).toISOString();
+}
