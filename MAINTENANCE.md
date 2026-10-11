@@ -94,7 +94,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 ```
 
 - **部署目录**：服务器 `~/apps/cib`（git clone + `.env` 放 GH_PAT / ADMIN_PASSWORD，600 权限）；改代码后 `git pull && docker compose up -d --build`。
-- **审核后台**：<https://list.bloghao.com/admin>（用户名 `list_admin`，密码在服务器 `~/apps/cib/.env` 的 `ADMIN_PASSWORD`）。
+- **管理后台（已集成进 ops 面板）**：<https://ops.bloghao.com/blog-admin/>（Caddy 把 `/blog-admin/*` 反代到 cib 容器 8348；用户名 `list_admin`，密码在服务器 `~/apps/cib/.env`）。三标签页：待审提交（A/B/C 预判+一键通过/拒绝）、博客管理（全站搜索+编辑+删除可选拉黑入墓园）、访问统计（匿名 PV+外链点击，信标上报，不存 IP）。旧入口 `list.bloghao.com/admin` 301 到新地址。
 - **用户提交**：<https://list.bloghao.com/submit.html>，防垃圾四层见 `docs/docker.md`；提交队列在服务器数据卷 `data/submissions.json`（含 IP，已 gitignore，永不入库）。
 - **每周巡检**：容器内 crond 触发，接管原 GitHub Actions `audit.yml`（其 schedule 已停用，仅保留 workflow_dispatch 手动备份）。巡检与审核上架用 `data/.cib-git.lock` 目录锁互斥。
 - **坑（务必记住）**：bloghao.com zone 的 SSL 模式是 **Flexible（CF 回源走 80 明文）**。Caddy 里每个新站点的 `http://` 块必须**直接反代**、不能 301 跳 https，否则边缘会陷入自重定向死循环（hub/plaza 的注释就是这个坑，list.bloghao.com 已照做）。

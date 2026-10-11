@@ -73,10 +73,17 @@ curl http://127.0.0.1:8348/api/health  # 提交 API
 | `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET` | 空 | Turnstile 人机验证，配了即启用 |
 | `RATE_IP_DAILY` / `RATE_GLOBAL_DAILY` | 8 / 60 | 提交限频 |
 
-## 审核后台
+## 管理后台（ops.bloghao.com/blog-admin/）
 
-`https://list.bloghao.com/admin`（或 `http://127.0.0.1:8348/admin`），用户名+密码登录，展示待审提交的
-A/B/C 预判与证据（可达性/RSS/可疑信号/提交 IP），一键通过或拒绝。通过后站点数秒内更新。
+后台已集成进 ops.bloghao.com 管理系统（Caddy 把 `/blog-admin/*` 反代到本容器 8348）：
+`https://ops.bloghao.com/blog-admin/`（用户名+密码登录，凭据在 `~/apps/cib/.env`）。旧入口
+`list.bloghao.com/admin` 自动 301 到这里。三个标签页：
+
+- **待审提交**：A/B/C 预判与证据（可达性/RSS/可疑信号/提交 IP），一键通过/拒绝
+- **博客管理**：搜索全站 1358 个收录（名称/域名/标签），**编辑**名称/地址/RSS/标签，**删除**（可勾选"同时拉黑"——写入墓园，上游同步永不回加）
+- **访问统计**：匿名 PV + 博客卡片外链点击计数（前端 sendBeacon 上报，不记录 IP），今日/昨日/7 天/30 天汇总、14 天趋势、点击 TOP 博客、来路域名 TOP
+
+编辑/删除与审核共用同一条 git 流水线（改 CSV → build → lint（失败自动回滚）→ commit → push），站点数秒内更新。
 
 ## 数据持久化
 
