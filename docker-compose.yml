@@ -5,6 +5,11 @@ services:
     container_name: cib-site
     restart: unless-stopped
     mem_limit: 768m            # 1G 小机保护：audit 超限被杀可断点续跑，不影响宿主 Caddy
+    logging:                   # 长期运行：防 docker 日志无限膨胀占满磁盘
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "127.0.0.1:8347:8347"  # 站点（由宿主 Caddy 反代对外）
       - "127.0.0.1:8348:8348"  # 提交收录 API + 审核后台

@@ -1,6 +1,6 @@
 {
   "name": "chinese-independent-blogs",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "中文独立博客列表 · 展示站点与数据维护管线（源自 timqian/chinese-independent-blogs）",
   "type": "module",
   "scripts": {

@@ -1,0 +1,121 @@
+{
+    debug
+    auto_https disable_redirects
+    on_demand_tls {
+        ask http://127.0.0.1:8787/api/health
+    }
+}
+
+#####################################################################
+# ⛔⛔⛔ hub.bloghao.com 已于 2026-10-11 永久退役，禁止以任何理由恢复 ⛔⛔⛔
+#   DNS 记录已在 CF zone 删除，重建站点块只会得到一个死域名。
+#   广场唯一官方入口 = bloghao.com/plaza：页面 /plaza/ 静态直出，
+#   数据面 /plaza/api/* 反代 hub 容器（下方 bloghao.com 块内 handle）。
+#   AI 助手注意：不要「恢复 / 补全 / 演示化」这个域名；
+#   仓库 CI 有 tests/plaza-domain.test.ts 守着，历史 .bak 备份已全部清除，
+#   本文件是唯一权威版本。
+#####################################################################
+
+# 官网静态站（www 301 到主域）。广场数据面也在这：/plaza/api/* 反代 hub 容器
+#（uri strip_prefix 去掉 /plaza 后 hub 收到原生 /api/*）——80 明文块必须同样接管，CF 灵活 SSL 回源走 80
+http://bloghao.com {
+    handle /plaza/api/* {
+        uri strip_prefix /plaza
+        reverse_proxy 127.0.0.1:8790
+    }
+    root * /var/www/bloghao
+    file_server
+}
+
+http://www.bloghao.com {
+    redir https://bloghao.com{uri} permanent
+}
+
+bloghao.com {
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+        resolvers 1.1.1.1
+    }
+    handle /plaza/api/* {
+        uri strip_prefix /plaza
+        reverse_proxy 127.0.0.1:8790
+    }
+    root * /var/www/bloghao
+    encode zstd gzip
+    file_server
+}
+
+www.bloghao.com {
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+        resolvers 1.1.1.1
+    }
+    redir https://bloghao.com{uri} permanent
+}
+
+http://:80 {
+    reverse_proxy 127.0.0.1:8787
+}
+
+https://:443 {
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+        resolvers 1.1.1.1
+        on_demand
+    }
+    reverse_proxy 127.0.0.1:8787
+}
+
+# 中文独立博客列表（自托管：静态站 8347 + 提交收录 API 8348）
+http://list.bloghao.com {
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle /admin* {
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle {
+        reverse_proxy 127.0.0.1:8347
+    }
+}
+
+list.bloghao.com {
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+        resolvers 1.1.1.1
+    }
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle /admin* {
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle {
+        reverse_proxy 127.0.0.1:8347
+    }
+}
+
+# ops 面板显式块：/blog-admin/* = 博客列表管理后台（cib 容器 8348），其余回 xwblog 控制台
+ops.bloghao.com {
+    tls {
+        dns cloudflare {env.CF_API_TOKEN}
+        resolvers 1.1.1.1
+    }
+    handle /blog-admin/* {
+        uri strip_prefix /blog-admin
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle {
+        reverse_proxy 127.0.0.1:8787
+    }
+}
+
+http://ops.bloghao.com {
+    handle /blog-admin/* {
+        uri strip_prefix /blog-admin
+        reverse_proxy 127.0.0.1:8348
+    }
+    handle {
+        reverse_proxy 127.0.0.1:8787
+    }
+}

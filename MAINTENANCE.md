@@ -99,6 +99,15 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 - **每周巡检**：容器内 crond 触发，接管原 GitHub Actions `audit.yml`（其 schedule 已停用，仅保留 workflow_dispatch 手动备份）。巡检与审核上架用 `data/.cib-git.lock` 目录锁互斥。
 - **坑（务必记住）**：bloghao.com zone 的 SSL 模式是 **Flexible（CF 回源走 80 明文）**。Caddy 里每个新站点的 `http://` 块必须**直接反代**、不能 301 跳 https，否则边缘会陷入自重定向死循环（hub/plaza 的注释就是这个坑，list.bloghao.com 已照做）。
 - **hub.bloghao.com / plaza.bloghao.com 均已退役（2026-10-11，维护者决定）**：Caddy 站点块与 DNS A 记录均已删除。**广场数据面新位置 = 官网 `bloghao.com/plaza/api/*`**（Caddy strip_prefix 后反代 8790 plaza-hub 容器），以官网为准。
+- **安全基线（2026-10-11 体检）**：
+  - 所有应用端口只绑 127.0.0.1（8347/8348/8787/8790），对外仅宿主 Caddy 的 80/443；`.env` 600 权限；仓库无明文密钥（`deploy/Caddyfile.prod` 为配置快照，token 走 systemd env）。
+  - 后台登录：用户名+密码（timingSafeEqual）+ HMAC 会话 cookie（HttpOnly/SameSite=Strict/12h/https 下带 Secure）+ **防爆破**（单 IP 失败 5 次锁 15 分钟 + 全站 1 小时 30 次熔断——XFF 可被直连源站伪造，单 IP 锁可被绕，全站熔断兜底）。
+  - 提交接口：蜜罐 + 每 IP 8 次/天 + 全站 60 次/天 + 双重查重 + 人工审核；未来/伪造日期在解析层直接作废。
+  - 已知取舍：`/api/hit` 统计信标无鉴权（可被刷高计数，仅影响统计观感不影响数据正确性，接受）；直连源站可伪造 XFF 刷提交限频（有蜜罐+人工审核兜底，接受）。
+  - 建议（未执行，属 CF 账号层）：CF API Token 与控制台密码如怀疑泄露可在 CF 后台轮换。
+- **备份**：`deploy/backup.sh` 已装入服务器宿主 crontab（每周日 03:17）——cib 数据/产物卷 + xwblog 数据 + Caddyfile 快照到 `~/backups`，保留 6 份。恢复：tar 解包后拷回对应卷。
+- **ops 面板入口补丁**：面板源码在镜像内，导航「博客列表」按钮靠 `~/apps/xwblog/ops-patch/server.js` + compose volume 挂载实现；面板镜像升级后按 `deploy/ops-patch.py` 注释重新打一次。
+- **长期运行**：cib 容器 mem_limit 768m + docker 日志轮转（10m×3）；巡检脚本全部断点续传；数据源是 git 仓库本身（每周审计自动提交 = 异地备份）；swap 2G；磁盘余量 37G+。甲骨文免费实例注意保持一定活跃度（本机跑着 4 个服务 + 每周审计，远高于回收线）。
 
 **Cloudflare Pages（保留作回滚通道，未删除）**：项目 `chinese-independent-blogs` 仍绑定 Git，push 到 `main` 仍会自动部署 Pages；`chinese-independent-blogs.pages.dev` 与 `bloghao.xiaowuleyi.com` 仍指向 Pages。
 
@@ -143,6 +152,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-03 | 程序猿DD 博客迁移 blog.didispace.com→didispace.com（新站暂无 RSS，RSS 置空）；移除 2 博客：bang's blog（主机账户被暂停）、哲●科●文Jerkwin（维护者决定移除，站点仍在线）；`sync-upstream` 复活探测增加 cPanel 暂停页识别（suspendedpage.cgi 200 ≠ 复活）；现收录 1295 |
 | 2026-10-11 | 上游周同步（本机手动跑）：新增 69、复活 16、归档 8、去重 1，现收录 1371；`lint` 通过 |
 | 2026-10-11 | **更新时间判定升级 v2**：修复"陈年博客显示刚刚更新"——动态站点（Flask 等）的 feed 频道级 `<updated>` 和 sitemap 应用路由 lastmod 每次抓取都被盖成当前时间，旧逻辑取最大值时被假日期赢过真实文章日期（dongwm.com 即实例：真实 2023-05-16 被显示为"刚刚更新"）。新标准：feed 只取条目级日期、sitemap 过滤根路径/应用路由/同值盖戳、另有"比首页新 1 年+落在近 60 天"兜底守卫；上次审计受影响博客约 12+，全量重跑已纠正（见 §5 第 7 条） |
+| 2026-10-11 | **版本固化 v2.1.0 + 安全体检 + 长期稳定措施**：登录接口加防爆破（单 IP 5 次锁 15 分钟 + 全站熔断，防 XFF 伪造绕过）；会话 cookie https 下带 Secure；容器加 docker 日志轮转（10m×3）防磁盘膨胀；`deploy/backup.sh` 装入宿主 crontab（每周日备份 cib 数据卷/xwblog 数据/Caddyfile 到 ~/backups 保留 6 份）；`deploy/` 存档生产 Caddyfile 快照与 ops 面板入口补丁再应用脚本；git tag `v2.1.0` |
 | 2026-10-11 | **未来日期作弊清零**：发现 7 个博客用 2199 年或未来 4~70 天的日期霸榜"最近更新优先"（jyzhu.top、youkaichao.github.io、iloli.moe、voidking.com、ccgxk.com、jack-liu.com、wiki.eryajf.net）；判定链补上"未来 2 天以上日期作废"钳制，7 站全部移除并写入墓园永久拉黑（维护者决定）；同日 ranjl.cn 因 cron 机器日更《学习问答》刷活跃度一并移除拉黑 |
 | 2026-10-11 | **机器更新批量扫描**：新增 `scripts/machine-scan.mjs`（cron 秒级指纹 + 标题模板化双指纹，已纳入每周巡检**仅收集证据不自动杀站**）。扫最近 3 天有更新的 165 站：双指纹命中 8 站经内容验尸**全部为人类博客**（定时发布+系列标题会命中双指纹，如体验碎周报/近思录——自动判定不可作杀站依据）；42 待复核中揪出 1 对重复收录（lulalap.com 301 迁移至 philoli.com，RSS 同指一处），已去重，现收录 **1358**。经验：`00:00:00` 整点时间戳=只写日期的约定；杀站必须看正文 |
 | 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |

@@ -200,6 +200,37 @@ function timingSafeEq(a, b) {
   return crypto.timingSafeEqual(ba, bb);
 }
 
+// 登录防爆破：同 IP 连续失败 5 次 → 锁 15 分钟；XFF 可被直连源站伪造，
+// 另设全站熔断：1 小时内失败 ≥30 次 → 全局锁 15 分钟（强随机密码下实际不可爆破）
+const loginFails = new Map(); // ip -> { n, until }
+let globalFail = { n: 0, windowStart: 0, until: 0 };
+function loginBlocked(ip) {
+  const f = loginFails.get(ip);
+  if (f && f.until > Date.now()) return true;
+  if (globalFail.until > Date.now()) return true;
+  return false;
+}
+function recordLoginFail(ip) {
+  const now = Date.now();
+  if (now - globalFail.windowStart > 3600e3) {
+    globalFail = { n: 0, windowStart: now, until: 0 };
+  }
+  globalFail.n++;
+  if (globalFail.n >= 30) {
+    globalFail.until = now + 15 * 60e3;
+    console.warn('[submit-api] GLOBAL login lock 15m (brute-force guard)');
+  }
+  const f = loginFails.get(ip) || { n: 0, until: 0 };
+  f.n++;
+  if (f.n >= 5) {
+    f.until = now + 15 * 60e3;
+    f.n = 0;
+    console.warn(`[submit-api] login locked for ${ip} (15m, brute-force guard)`);
+  }
+  loginFails.set(ip, f);
+  if (loginFails.size > 5000) loginFails.clear();
+}
+
 // ---------- 校验 ----------
 
 const BAD_WORDS = /博彩|赌场|赌博|棋牌|电子游艺|彩票|双色球|ag视讯|威尼斯人|色情|成人|约炮|私服|外挂|代刷|刷单|快排|留痕|蜘蛛池|泛目录|收购域名/i;
@@ -682,14 +713,21 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (p === '/admin/login' && req.method === 'POST') {
+      const ip = clientIP(req);
+      if (loginBlocked(ip)) {
+        return json(res, 429, { ok: false, error: '失败次数过多，请 15 分钟后再试' });
+      }
       const body = await readJsonBody(req).catch(() => ({}));
       const okUser = ADMIN_USER && timingSafeEq(String(body.username ?? ''), ADMIN_USER);
       const okPass = ADMIN_PASSWORD && timingSafeEq(String(body.password ?? ''), ADMIN_PASSWORD);
       if (okUser && okPass) {
+        loginFails.delete(ip);
+        const secure = String(req.headers['x-forwarded-proto'] || '').includes('https') ? '; Secure' : '';
         return json(res, 200, { ok: true }, {
-          'Set-Cookie': `cib_admin=${signSession()}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${SESSION_TTL / 1000}`,
+          'Set-Cookie': `cib_admin=${signSession()}; Path=/; HttpOnly; SameSite=Strict${secure}; Max-Age=${SESSION_TTL / 1000}`,
         });
       }
+      recordLoginFail(ip);
       return json(res, 401, { ok: false, error: '用户名或密码错误' });
     }
 
