@@ -71,7 +71,8 @@ npm run audit                       # = check + fix + rss + build（一条龙）
    - **feed 信号只取 `<entry>/<item>` 内部的日期**（`lib.mjs#newestFeedItemDate`）；频道级 `<updated>`/`<lastBuildDate>` 一概不看。动态站点（如 Flask/Werkzeug 渲染的 feed，dongwm.com 即此类）每次请求都把频道级日期盖成"现在"，旧逻辑曾让陈年博客永远显示"刚刚更新"。
    - **sitemap 信号只取真实页面 URL 的 lastmod**（`lib.mjs#sitemapArticleDate`）：排除站点根路径、应用路由（/auth/*、/tags、/search 等约 30 类前缀）、全体 lastmod 同值的生成器盖戳；`<loc>` 含 HTML 转义的生成器 bug 输出直接丢弃。
    - **兜底守卫（仅对 sitemap）**：sitemap lastmod 比首页文章日期新 1 年以上、又恰好落在最近 60 天内 → 判定为动态盖戳，丢弃（证据留在 `update-audit.json` 的 `dropped` 字段供人工复核）。**feed 条目级日期不设守卫**：feed 的最新条目 = 最后发布（内容级证据），首页解析可能漏日期（JS 渲染等），拿首页否决真实新文章会错杀活跃博客（zhangxinxu 实测误杀，已修正）。
-   - 三信号仍取最大值，但先经过上面三层过滤。
+   - **未来日期钳制（2026-10-11 补充）**：feed/sitemap 里比当前时间晚 2 天以上的日期一律作废（`lib.mjs#clampDate`）——jyzhu.top、youkaichao.github.io 曾用 2199 年日期、iloli.moe 用 +70 天未来文章长期霸榜"最近更新优先"。**维护者政策：伪造/超前更新日期 = 移除 + 永久拉黑（offline.json 墓园，上游同步永不回加）**，2026-10-11 已拉黑 7 个（含 voidking.com、ccgxk.com、jack-liu.com、wiki.eryajf.net 四个 +4~22 天未来日期站）。
+   - 三信号仍取最大值，但先经过上面过滤。
 7. **README.md 与 feed.opml 是生成物**：不要手改，改 `build.mjs` 的模板或改 CSV。
 
 ## 6. CI（GitHub Actions）
@@ -142,4 +143,5 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-03 | 程序猿DD 博客迁移 blog.didispace.com→didispace.com（新站暂无 RSS，RSS 置空）；移除 2 博客：bang's blog（主机账户被暂停）、哲●科●文Jerkwin（维护者决定移除，站点仍在线）；`sync-upstream` 复活探测增加 cPanel 暂停页识别（suspendedpage.cgi 200 ≠ 复活）；现收录 1295 |
 | 2026-10-11 | 上游周同步（本机手动跑）：新增 69、复活 16、归档 8、去重 1，现收录 1371；`lint` 通过 |
 | 2026-10-11 | **更新时间判定升级 v2**：修复"陈年博客显示刚刚更新"——动态站点（Flask 等）的 feed 频道级 `<updated>` 和 sitemap 应用路由 lastmod 每次抓取都被盖成当前时间，旧逻辑取最大值时被假日期赢过真实文章日期（dongwm.com 即实例：真实 2023-05-16 被显示为"刚刚更新"）。新标准：feed 只取条目级日期、sitemap 过滤根路径/应用路由/同值盖戳、另有"比首页新 1 年+落在近 60 天"兜底守卫；上次审计受影响博客约 12+，全量重跑已纠正（见 §5 第 7 条） |
+| 2026-10-11 | **未来日期作弊清零**：发现 7 个博客用 2199 年或未来 4~70 天的日期霸榜"最近更新优先"（jyzhu.top、youkaichao.github.io、iloli.moe、voidking.com、ccgxk.com、jack-liu.com、wiki.eryajf.net）；判定链补上"未来 2 天以上日期作废"钳制，7 站全部移除并写入墓园永久拉黑（维护者决定），现收录 1360 |
 | 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |

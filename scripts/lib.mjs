@@ -311,6 +311,13 @@ export function isFeedBody(contentType, body) {
 //   sitemap → 仅真实页面 URL 的 lastmod（排除根路径/应用路由/全体同值的生成戳）
 
 const MIN_DATE_TS = Date.parse('2000-01-01');
+// 未来日期 = 伪造或定时发布误差；比现在还晚 2 天以上的日期一律作废
+// （jyzhu.top/youkaichao 曾用 2199 年日期长期霸榜"最近更新"，iloli.moe 用 +70 天未来文章）
+const MAX_DATE_TS = Date.now() + 2 * 86400e3;
+
+function clampDate(ts) {
+  return Number.isFinite(ts) && ts >= MIN_DATE_TS && ts <= MAX_DATE_TS ? ts : null;
+}
 
 export function feedItemDates(xml) {
   const text = String(xml ?? '');
@@ -319,12 +326,12 @@ export function feedItemDates(xml) {
   // 没有 entry/item 块的 feed 无法给出内容级日期（宁可返回空，也不要频道级假日期）
   for (const b of blocks) {
     for (const m of b[0].matchAll(/<(?:pubDate|published|updated|dc:date)>([^<]{10,60})</g)) {
-      const t = Date.parse(m[1].trim());
-      if (!Number.isNaN(t) && t >= MIN_DATE_TS) dates.push(t);
+      const t = clampDate(Date.parse(m[1].trim()));
+      if (t !== null) dates.push(t);
     }
     for (const m of b[0].matchAll(/datetime=["']([^"']{10,60})["']/g)) {
-      const t = Date.parse(m[1]);
-      if (!Number.isNaN(t) && t >= MIN_DATE_TS) dates.push(t);
+      const t = clampDate(Date.parse(m[1]));
+      if (t !== null) dates.push(t);
     }
   }
   return dates;
@@ -353,8 +360,8 @@ export function sitemapArticleDate(xml) {
     const loc = block.match(/<loc>\s*([^<]+?)\s*<\/loc>/i)?.[1] || '';
     const lm = block.match(/<lastmod>\s*([^<]{8,40})\s*<\/lastmod>/i)?.[1];
     if (!loc || !lm) continue;
-    const t = Date.parse(lm.trim());
-    if (Number.isNaN(t) || t < MIN_DATE_TS) continue;
+    const t = clampDate(Date.parse(lm.trim()));
+    if (t === null) continue;
     pairs.push({ loc, t });
   }
   if (!pairs.length) return null;
