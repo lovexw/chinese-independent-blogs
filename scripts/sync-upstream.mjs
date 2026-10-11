@@ -57,7 +57,9 @@ for (const b of upstream) {
   if (!key || known.has(key) || knownRoots.has(rootOf(b.url))) continue;
   if (!blocked.has(key)) continue; // only exact-host offline entries qualify
   const r = await probe(b.url, { timeout: 15000 });
-  if (!r.error && r.status < 400) {
+  // cPanel/主机商的暂停页会 302 到 suspendedpage.cgi 后返回 200，不是真复活
+  const suspended = /\/cgi-sys\/suspendedpage\.cgi/i.test(r.finalUrl || '');
+  if (!r.error && r.status < 400 && !suspended) {
     revived.push(b);
     console.log(`REVIVED: ${b.name} ${b.url} is back online`);
   }
