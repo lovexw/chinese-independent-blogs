@@ -34,18 +34,29 @@ if [ ! -d .git ]; then
   exit 0
 fi
 
+# 与「提交收录审核上架」互斥：同一时刻只允许一方动 git
+lock=/app/data/.cib-git.lock
+i=0
+while ! mkdir "$lock" 2>/dev/null; do
+  i=$((i + 1))
+  if [ $i -gt 60 ]; then log "git lock timeout (审核进行中?), push 留到下一轮"; exit 0; fi
+  sleep 5
+done
+
 git add -A
 if git diff --cached --quiet; then
   log "no changes to push"
+  rmdir "$lock" 2>/dev/null
   exit 0
 fi
-git commit -m "chore: automated audit $(date '+%F')" || { log "commit failed"; exit 1; }
+git commit -m "chore: automated audit $(date '+%F')" || { log "commit failed"; rmdir "$lock" 2>/dev/null; exit 1; }
 if git push origin "${GIT_BRANCH:-main}"; then
-  log "pushed to ${GIT_BRANCH:-main} (Cloudflare Pages will deploy)"
+  log "pushed to ${GIT_BRANCH:-main}"
 else
-  # 网络抖动/远端前进：rebase 后重试一次，仍失败就留到下一轮
+  # 网络抖动/远端前进（审核 API 刚推过）：rebase 后重试一次，仍失败就留到下一轮
   log "push failed, retry after 60s"
   sleep 60
   git pull --rebase origin "${GIT_BRANCH:-main}" || log "pull failed"
   git push origin "${GIT_BRANCH:-main}" && log "pushed (retry ok)" || log "push failed again, will retry next round"
 fi
+rmdir "$lock" 2>/dev/null

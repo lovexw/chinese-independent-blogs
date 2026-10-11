@@ -46,5 +46,19 @@ log "cron registered: ${AUDIT_CRON:-17 2 * * 1} (tasks: ${AUDIT_TASKS:-default},
 
 crond -b -l 8
 
+# ---------- 提交收录 API + 审核后台（崩溃自动拉起）----------
+if [ -n "${ADMIN_PASSWORD:-}" ]; then
+  log "starting submit api on port ${API_PORT:-8348}"
+  (
+    while true; do
+      PORT="${API_PORT:-8348}" node scripts/submit-api.mjs >> /proc/1/fd/1 2>&1
+      log "submit api exited, restarting in 5s"
+      sleep 5
+    done
+  ) &
+else
+  log "ADMIN_PASSWORD not set, submit api disabled"
+fi
+
 log "starting site server on port ${PORT:-8347}"
 exec "$@"

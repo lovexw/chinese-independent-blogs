@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>提交博客收录 · 中文独立博客列表</title>
+  <meta name="description" content="把你的中文独立博客提交到列表。提交后会自动检测站点与 RSS 可达性，人工确认后上架。" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#faf9f6" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .form-card { max-width: 640px; margin: 0 auto; }
+    .form-card .card { padding: 28px; }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; margin-bottom: 6px; color: var(--muted, inherit); }
+    .field label b { font-weight: 600; }
+    .field input, .field textarea {
+      width: 100%; padding: 10px 12px; border-radius: 10px;
+      border: 1px solid rgba(128,128,128,.35); background: transparent;
+      color: inherit; font: inherit; font-size: 15px;
+    }
+    .field textarea { resize: vertical; min-height: 64px; }
+    .field input:focus, .field textarea:focus { outline: 2px solid rgba(110,168,254,.6); outline-offset: 0; border-color: transparent; }
+    .hint { font-size: 12.5px; opacity: .65; margin-top: 5px; }
+    .hp { position: absolute; left: -9999px; top: -9999px; height: 0; width: 0; opacity: 0; }
+    .submit-btn {
+      width: 100%; padding: 12px; border-radius: 10px; border: none; cursor: pointer;
+      font: inherit; font-size: 15px; font-weight: 600;
+      background: #6ea8fe; color: #fff; transition: opacity .15s;
+    }
+    .submit-btn:disabled { opacity: .5; cursor: default; }
+    .msg { margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 14px; display: none; }
+    .msg.err { display: block; background: rgba(248,113,113,.12); color: #dc5a5a; }
+    .msg.ok { display: block; background: rgba(74,222,128,.12); color: #3f9d63; }
+    .msg .badges { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .msg .badge { font-size: 12px; padding: 2px 9px; border-radius: 6px; border: 1px solid rgba(128,128,128,.4); opacity: .85; }
+    .rules { font-size: 13px; opacity: .75; line-height: 1.9; margin: 0 0 20px; padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./">
+        <span class="seal">博</span>
+        <span>中文独立博客列表</span>
+      </a>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="themeBtn" title="切换深浅主题" aria-label="切换深浅主题">
+        <svg id="themeIcon"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero wrap" style="padding-bottom:8px">
+    <h1 style="font-size:26px">提交博客收录</h1>
+    <p class="lead" style="font-size:14.5px">
+      提交后会立即自动检测（站点可达性、RSS 可解析性、重复收录），
+      通过<strong>人工确认</strong>后即可上架。每周巡检会持续跟踪所有收录站点的活性。
+    </p>
+  </section>
+
+  <main class="wrap form-card" style="padding-top:8px">
+    <div class="card">
+      <ul class="rules">
+        <li>仅收录<strong>独立博客</strong>：有持续更新的个人/团队写作站点，非公司官网、聚合站、文档站</li>
+        <li>需要原创内容为主；采集站、SEO 站、违规内容站不会被通过</li>
+        <li>同主域只收录一个（如 blog.example.com 与 example.com 视为同一博客）</li>
+        <li>RSS 地址选填；不填的话巡检会尝试自动发现</li>
+      </ul>
+      <form id="f">
+        <div class="field">
+          <label for="name"><b>博客名称</b> *</label>
+          <input id="name" name="name" required maxlength="40" placeholder="例如：阮一峰的网络日志" />
+        </div>
+        <div class="field">
+          <label for="url"><b>博客地址</b> *</label>
+          <input id="url" name="url" required type="url" maxlength="300" placeholder="https://your-blog.com" />
+          <div class="hint">请填写博客首页地址</div>
+        </div>
+        <div class="field">
+          <label for="rss">RSS 地址（选填）</label>
+          <input id="rss" name="rss" type="url" maxlength="300" placeholder="https://your-blog.com/atom.xml" />
+        </div>
+        <div class="field">
+          <label for="desc">一句话简介（选填）</label>
+          <textarea id="desc" name="desc" maxlength="150" placeholder="用一句话介绍这个博客"></textarea>
+        </div>
+        <div class="field">
+          <label for="tags">标签（选填，用 ; 分隔）</label>
+          <input id="tags" name="tags" maxlength="60" placeholder="编程; 生活" />
+        </div>
+        <!-- 蜜罐：对人不可见，机器人会填 -->
+        <div class="hp" aria-hidden="true">
+          <label for="website2">Website</label>
+          <input id="website2" name="website2" tabindex="-1" autocomplete="off" />
+        </div>
+        <div id="tsBox"></div>
+        <button type="submit" class="submit-btn" id="btn">提交收录</button>
+        <div class="msg" id="msg"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="wrap" style="padding:40px 0 60px;text-align:center;opacity:.6;font-size:13px">
+    <a href="./">返回列表</a>
+  </footer>
+
+  <script>
+    // 主题（与列表页共用 cib-theme）
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('cib-theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      var meta = document.querySelector('meta[name=theme-color]');
+      function apply() {
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        if (meta) meta.content = dark ? '#121418' : '#faf9f6';
+        document.getElementById('themeIcon').innerHTML = '<use href="#i-' + (dark ? 'sun' : 'moon') + '"/>';
+      }
+      apply();
+      document.getElementById('themeBtn').onclick = function () {
+        dark = !dark;
+        try { localStorage.setItem('cib-theme', dark ? 'dark' : 'light'); } catch (e) {}
+        apply();
+      };
+    })();
+
+    var turnstileSiteKey = null;
+    fetch('/api/config').then(function (r) { return r.json(); }).then(function (c) {
+      turnstileSiteKey = c.turnstileSiteKey;
+      if (turnstileSiteKey) {
+        var box = document.getElementById('tsBox');
+        box.innerHTML = '<div class="cf-turnstile" data-sitekey="' + turnstileSiteKey + '"></div>';
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        document.head.appendChild(s);
+      }
+    }).catch(function () {});
+
+    var f = document.getElementById('f');
+    var btn = document.getElementById('btn');
+    var msg = document.getElementById('msg');
+
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = '正在检测站点与 RSS…';
+      msg.className = 'msg';
+      msg.style.display = 'none';
+
+      var body = {
+        name: f.name.value.trim(),
+        url: f.url.value.trim(),
+        rss: f.rss.value.trim(),
+        desc: f.desc.value.trim(),
+        tags: f.tags.value.trim(),
+        website2: f.website2.value,
+      };
+      if (turnstileSiteKey && window.turnstile) {
+        body.turnstileToken = window.turnstile.getResponse();
+      }
+
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }).then(function (r) { return r.json().then(function (j) { return { code: r.status, j: j }; }); })
+        .then(function (res) {
+          if (res.code === 200 && res.j.ok) {
+            var v = res.j.verdict || {};
+            var badges = '';
+            badges += '<span class="badge">站点：' + (v.reachable === true ? '可达' : v.reachable === false ? '不可达' : '未检测') + '</span>';
+            badges += '<span class="badge">RSS：' + (v.rssOk === true ? '可解析' : v.rssOk === false ? '暂未解析' : '未填') + '</span>';
+            for (var n of (v.notes || [])) badges += '<span class="badge">' + n.replace(/</g, '&lt;') + '</span>';
+            for (var s of (v.suspicious || [])) badges += '<span class="badge">⚠ ' + s.replace(/</g, '&lt;') + '</span>';
+            msg.className = 'msg ok';
+            msg.innerHTML = res.j.message + '<div class="badges">' + badges + '</div>';
+            f.reset();
+          } else {
+            msg.className = 'msg err';
+            msg.textContent = (res.j && res.j.error) || ('提交失败（HTTP ' + res.code + '）');
+          }
+        })
+        .catch(function () {
+          msg.className = 'msg err';
+          msg.textContent = '网络错误，请稍后重试';
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = '提交收录';
+        });
+    };
+  </script>
+</body>
+</html>

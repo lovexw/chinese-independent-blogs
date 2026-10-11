@@ -4,26 +4,36 @@ services:
     image: cib-site:latest
     container_name: cib-site
     restart: unless-stopped
+    mem_limit: 768m            # 1G 小机保护：audit 超限被杀可断点续跑，不影响宿主 Caddy
     ports:
-      - "8347:8347"          # 站点访问 http://<server-ip>:8347
+      - "127.0.0.1:8347:8347"  # 站点（由宿主 Caddy 反代对外）
+      - "127.0.0.1:8348:8348"  # 提交收录 API + 审核后台
     environment:
       PORT: "8347"
+      API_PORT: "8348"
       TZ: Asia/Shanghai
-      # 每周一 UTC 02:17 ≈ 北京 10:17（与仓库 CI 节奏一致）
+      # 每周一 UTC 02:17 ≈ 北京 10:17（接管原 GitHub Actions audit.yml）
       AUDIT_CRON: "17 2 * * 1"
       # 巡检步骤，可裁剪：sync check fix rss suspicious stale audit-update build
       AUDIT_TASKS: "sync check fix rss suspicious stale audit-update build"
       # 启动时是否立即跑一轮巡检（首次部署建议 1）
       AUDIT_ON_START: "0"
-      # 巡检后是否自动 commit+push 到 GitHub（push 后 Cloudflare Pages 自动部署线上）
+      # 巡检后是否自动 commit+push 到 GitHub
       AUTO_PUSH: "1"
       GIT_REPO: lovexw/chinese-independent-blogs
       GIT_BRANCH: main
-      # 必填（AUTO_PUSH=1 时）：GitHub PAT，需要 repo 写权限
+      # 必填（AUTO_PUSH=1 与审核上架都需要）：GitHub PAT，需要 repo 写权限
       # 创建地址: https://github.com/settings/tokens?type=beta
       GH_PAT: ${GH_PAT:?set GH_PAT in .env}
+      # 审核后台密码（必填，不设则提交 API 不启动）
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
+      # Cloudflare Turnstile 人机验证（可选；留空则依赖蜜罐+限频+人工审核）
+      TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY:-}
+      TURNSTILE_SECRET: ${TURNSTILE_SECRET:-}
+      RATE_IP_DAILY: ${RATE_IP_DAILY:-8}
+      RATE_GLOBAL_DAILY: ${RATE_GLOBAL_DAILY:-60}
     volumes:
-      - cib-data:/app/data          # 巡检缓存/断点文件持久化
+      - cib-data:/app/data          # 巡检缓存/断点/提交队列持久化
       - cib-public:/app/public      # 构建产物持久化
 volumes:
   cib-data:

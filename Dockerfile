@@ -27,7 +27,7 @@ COPY docker/audit-job.sh docker/askpass.sh /app/docker/audit-job.sh
 RUN chmod +x /entrypoint.sh /app/docker/audit-job.sh \
     && git config --global --add safe.directory /app
 
-EXPOSE 8347
+EXPOSE 8347 8348
 
 HEALTHCHECK --interval=5m --timeout=10s --start-period=30s --retries=3 \
   CMD curl -fsS "http://127.0.0.1:${PORT}/" >/dev/null || exit 1

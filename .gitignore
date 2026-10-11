@@ -1,3 +1,8 @@
 node_modules/
 .DS_Store
 data/*.log
+# 用户提交队列含提交者 IP，禁止入库（仅存在于服务器数据卷）
+data/submissions.json
+data/submissions.json.tmp
+data/.cib-git.lock/
+.env
