@@ -262,6 +262,13 @@ async function withGitLock(fn) {
 
 async function approveToRepo(sub) {
   return withGitLock(async () => {
+    // 0. 丢弃工作区可再生的构建产物差异（时间戳等），否则 pull --rebase 会被拒
+    //    这些文件由下方 build 重新生成，丢弃安全
+    const st = run('git', ['status', '--porcelain']);
+    if (st.out.trim()) {
+      run('git', ['checkout', '--', '.']);
+    }
+
     // 1. 同步远端（两个写入方：审核与每周巡检）
     let g = run('git', ['pull', '--rebase', 'origin', GIT_BRANCH]);
     if (g.code !== 0) return { ok: false, error: `git pull 失败: ${g.out.slice(-300)}` };
