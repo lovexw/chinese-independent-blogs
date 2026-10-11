@@ -8,8 +8,8 @@
 
 | 项目 | 数量 |
 | --- | --- |
-| 收录博客 | 1359 |
-| 提供 RSS | 1288 |
+| 收录博客 | 1358 |
+| 提供 RSS | 1287 |
 | 列表维护时间 | 2026-10-11 |
 
 ## 博客列表
@@ -1309,7 +1309,6 @@
 | [Feed](https://www.cxyxiaowu.com/feed) | 五分钟学算法 | https://www.cxyxiaowu.com | 算法; 编程 |
 | [Feed](https://yuexunj.com/rss.xml) | Yuexun's Blog | https://yuexun.me/ | 编程; 前端; 生活 |
 | [Feed](https://www.ouorz.com/feed) | TonyHe 的博客 | https://www.ouorz.com | 编程; 思考; 前端; 笔记; 生活 |
-| [Feed](https://philoli.com/rss.xml) | 未知的世界 | http://lulalap.com/ | 编程; 随笔 |
 | [Feed](https://blog.yqiao.me/feeds/posts/default) | Rapiz's Blog | https://rapiz.me/ | 编程; 随笔 |
 | [Feed](https://wineso.me/index.xml) | 琚致远 | https://wineso.me/blog | 编程; 自由职业; 生活; 思考 |
 | [Feed](https://imzm.im/feed) | 陈仓颉 | https://imzm.im | 生活; 随笔; 摄影 |

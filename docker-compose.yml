@@ -14,8 +14,8 @@ services:
       TZ: Asia/Shanghai
       # 每周一 UTC 02:17 ≈ 北京 10:17（接管原 GitHub Actions audit.yml）
       AUDIT_CRON: "17 2 * * 1"
-      # 巡检步骤，可裁剪：sync check fix rss suspicious stale audit-update build
-      AUDIT_TASKS: "sync check fix rss suspicious stale audit-update build"
+      # 巡检步骤，可裁剪：sync check fix rss suspicious machine-scan stale audit-update build
+      AUDIT_TASKS: "sync check fix rss suspicious machine-scan stale audit-update build"
       # 启动时是否立即跑一轮巡检（首次部署建议 1）
       AUDIT_ON_START: "0"
       # 巡检后是否自动 commit+push 到 GitHub

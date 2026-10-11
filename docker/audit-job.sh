@@ -17,6 +17,7 @@ if has check;    then log "step: check-links";       node scripts/check-links.mj
 if has fix;      then log "step: fix-dead";          node scripts/fix-dead.mjs          || log "fix failed (continue)"; fi
 if has rss;      then log "step: rss-refresh";       node scripts/rss-refresh.mjs       || log "rss failed (continue)"; fi
 if has suspicious; then log "step: flag-suspicious"; node scripts/flag-suspicious.mjs   || log "suspicious failed (continue)"; fi
+if has machine-scan; then log "step: machine-scan";  node scripts/machine-scan.mjs --days 7 || log "machine-scan failed (continue)"; fi
 if has stale;    then log "step: stale-report";      node scripts/stale-report.mjs      || log "stale failed (continue)"; fi
 if has audit-update; then log "step: update-audit";  node scripts/update-audit.mjs --apply && node scripts/update-audit-report.mjs || log "update-audit failed (continue)"; fi
 if has build;    then log "step: build";             node scripts/build.mjs             || log "build failed (abort push)"; fi
