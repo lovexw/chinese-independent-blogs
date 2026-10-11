@@ -20,7 +20,8 @@ cat > .env <<'EOF'
 # GitHub PAT（fine-grained，只授 chinese-independent-blogs 的 Contents: Read and write）
 # 创建地址: https://github.com/settings/tokens?type=beta
 GH_PAT=github_pat_xxxx
-# 审核后台密码（/admin 登录用）
+# 审核后台账号（/admin 登录用）
+ADMIN_USER=list_admin
 ADMIN_PASSWORD=换成强密码
 # 可选：Cloudflare Turnstile 人机验证（防机器人加强）
 # TURNSTILE_SITE_KEY=0x4AAA...
@@ -67,13 +68,14 @@ curl http://127.0.0.1:8348/api/health  # 提交 API
 | `AUTO_PUSH` | `1` | 巡检有变更时自动 commit+push |
 | `GIT_REPO` / `GIT_BRANCH` | lovexw/chinese-independent-blogs / main | 推送目标 |
 | `GH_PAT` | 必填 | GitHub PAT（巡检推送 + 审核上架共用） |
+| `ADMIN_USER` | `list_admin` | `/admin` 审核后台用户名 |
 | `ADMIN_PASSWORD` | 必填 | `/admin` 审核后台密码；不设则提交 API 不启动 |
 | `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET` | 空 | Turnstile 人机验证，配了即启用 |
 | `RATE_IP_DAILY` / `RATE_GLOBAL_DAILY` | 8 / 60 | 提交限频 |
 
 ## 审核后台
 
-`https://list.bloghao.com/admin`（或 `http://127.0.0.1:8348/admin`），密码登录，展示待审提交的
+`https://list.bloghao.com/admin`（或 `http://127.0.0.1:8348/admin`），用户名+密码登录，展示待审提交的
 A/B/C 预判与证据（可达性/RSS/可疑信号/提交 IP），一键通过或拒绝。通过后站点数秒内更新。
 
 ## 数据持久化

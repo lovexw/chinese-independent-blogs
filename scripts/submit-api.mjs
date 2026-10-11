@@ -24,6 +24,7 @@ const PORT = Number(process.env.PORT || 8348);
 const DB_PATH = path.join(ROOT, 'data', 'submissions.json');
 const LOCK_DIR = path.join(ROOT, 'data', '.cib-git.lock');
 const GIT_BRANCH = process.env.GIT_BRANCH || 'main';
+const ADMIN_USER = process.env.ADMIN_USER || '';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET || '';
 const TURNSTILE_SITE_KEY = process.env.TURNSTILE_SITE_KEY || '';
@@ -31,8 +32,8 @@ const RATE_IP_DAILY = Number(process.env.RATE_IP_DAILY || 8);
 const RATE_GLOBAL_DAILY = Number(process.env.RATE_GLOBAL_DAILY || 60);
 const MAX_KEEP = 800; // submissions.json 只保留最近 N 条已处理记录，防止无限增长
 
-if (!ADMIN_PASSWORD) {
-  console.error('[submit-api] ADMIN_PASSWORD 未设置，审核后台将不可用（提交接口仍可用）');
+if (!ADMIN_PASSWORD || !ADMIN_USER) {
+  console.error('[submit-api] ADMIN_USER / ADMIN_PASSWORD 未设置，审核后台将不可用（提交接口仍可用）');
 }
 
 // ---------- 存储 ----------
@@ -68,7 +69,7 @@ function pruneDB(db) {
 const SESSION_TTL = 1000 * 60 * 60 * 12; // 12h
 
 function secret() {
-  return crypto.createHash('sha256').update(`cib-admin:${ADMIN_PASSWORD}`).digest();
+  return crypto.createHash('sha256').update(`cib-admin:${ADMIN_USER}:${ADMIN_PASSWORD}`).digest();
 }
 
 function signSession() {
@@ -107,7 +108,7 @@ function timingSafeEq(a, b) {
 
 // ---------- 校验 ----------
 
-const BAD_WORDS = /博彩|赌场|赌博|棋牌|电子游艺|彩票|双色球|ag视讯|威尼斯人|色情|成人|约炮|隔套路由|私服|外挂|代刷|刷单|快排|留痕|蜘蛛池|泛目录|收购域名|cheng Ren/i;
+const BAD_WORDS = /博彩|赌场|赌博|棋牌|电子游艺|彩票|双色球|ag视讯|威尼斯人|色情|成人|约炮|私服|外挂|代刷|刷单|快排|留痕|蜘蛛池|泛目录|收购域名/i;
 
 function clean(s, maxLen) {
   // 去控制字符与 CSV 破坏字符；收尾空白
@@ -287,7 +288,7 @@ async function approveToRepo(sub) {
     saveBlogs(ours);
 
     // 4. 重建 + 格式校验
-    let build = run('node', ['scripts/build.mjs']);
+    const build = run('node', ['scripts/build.mjs']);
     if (build.code !== 0) {
       fs.writeFileSync(CSV_PATH, before);
       run('node', ['scripts/build.mjs']);
@@ -450,7 +451,7 @@ async function handleSubmit(req, res) {
 
 // ---------- 审核 API ----------
 
-async function handleAction(req, res, urlObj) {
+async function handleAction(req, res) {
   let body;
   try {
     body = await readJsonBody(req);
@@ -480,131 +481,9 @@ async function handleAction(req, res, urlObj) {
   return json(res, 200, { ok: true, message: '已加入列表并重建站点' });
 }
 
-// ---------- 审核后台 UI ----------
+// ---------- 审核后台 UI：独立 HTML 文件（避免嵌套模板的转义地狱）----------
 
-const ADMIN_HTML = `<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>博客收录审核 · bloghao</title>
-<style>
-  :root { --bg:#0f1115; --card:#171a21; --line:#262b36; --fg:#e8eaf0; --dim:#8b93a5; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; --acc:#6ea8fe; }
-  @media (prefers-color-scheme: light) { :root { --bg:#f5f6f8; --card:#fff; --line:#e3e6ec; --fg:#1a1d24; --dim:#69718a; } }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
-  .wrap { max-width:880px; margin:0 auto; padding:24px 16px 60px; }
-  h1 { font-size:20px; margin:0 0 4px; }
-  .sub { color:var(--dim); font-size:13px; margin-bottom:20px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px; }
-  .head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-  .name { font-weight:600; font-size:16px; }
-  .grade { font-size:12px; padding:1px 8px; border-radius:99px; }
-  .gA { background:rgba(74,222,128,.15); color:var(--ok); } .gB { background:rgba(251,191,36,.15); color:var(--warn); } .gC { background:rgba(248,113,113,.15); color:var(--bad); }
-  .meta { color:var(--dim); font-size:12.5px; margin-top:6px; word-break:break-all; }
-  .meta a { color:var(--acc); text-decoration:none; }
-  .verdict { margin-top:8px; font-size:13px; }
-  .badge { display:inline-block; margin:2px 6px 2px 0; padding:1px 8px; border-radius:6px; font-size:12px; border:1px solid var(--line); color:var(--dim); }
-  .badge.ok { color:var(--ok); border-color:rgba(74,222,128,.4); } .badge.bad { color:var(--bad); border-color:rgba(248,113,113,.4); } .badge.warn { color:var(--warn); border-color:rgba(251,191,36,.4); }
-  .acts { margin-top:12px; display:flex; gap:10px; }
-  button { cursor:pointer; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--fg); padding:7px 16px; font-size:14px; }
-  .primary { background:var(--acc); border-color:var(--acc); color:#fff; }
-  .danger { color:var(--bad); border-color:rgba(248,113,113,.5); }
-  button:disabled { opacity:.5; cursor:default; }
-  .err { color:var(--bad); font-size:13px; margin-top:8px; white-space:pre-wrap; }
-  input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font-size:15px; }
-  .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-  .empty { text-align:center; color:var(--dim); padding:60px 0; }
-  h2 { font-size:14px; color:var(--dim); font-weight:500; margin:28px 0 10px; }
-  .done { font-size:13px; color:var(--dim); padding:8px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:10px; }
-</style>
-</head>
-<body><div class="wrap">
-<div id="app"><div class="empty">加载中…</div></div>
-</div>
-<script>
-const $ = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-async function api(path, body) {
-  const r = await fetch(path, body ? { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) } : {});
-  if (r.status === 401) { renderLogin(); throw new Error('unauthorized'); }
-  return r.json();
-}
-
-function renderLogin(err) {
-  const app = document.getElementById('app');
-  app.innerHTML = '';
-  const c = $(<div class="card" style="max-width:360px;margin:80px auto"><h1>博客收录审核</h1><div class="sub">请输入管理密码</div><input id="pw" type="password" placeholder="管理密码" autofocus><div class="err"></div><div class="acts"><button class="primary" style="flex:1">登录</button></div></div>\`');
-  app.appendChild(c);
-  const doLogin = async () => {
-    const r = await fetch('/admin/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ password: c.querySelector('#pw').value }) });
-    if (r.ok) { load(); } else { c.querySelector('.err').textContent = '密码错误'; }
-  };
-  c.querySelector('button').onclick = doLogin;
-  c.querySelector('#pw').onkeydown = (e) => { if (e.key === 'Enter') doLogin(); };
-  if (err) c.querySelector('.err').textContent = err;
-}
-
-function verdictBadges(v) {
-  let h = '';
-  h += v.reachable === true ? '<span class="badge ok">站点可达</span>' : v.reachable === false ? '<span class="badge bad">不可达</span>' : '<span class="badge">未检测</span>';
-  h += v.rssOk === true ? '<span class="badge ok">RSS 正常</span>' : v.rssOk === false ? '<span class="badge warn">RSS 未解析</span>' : '<span class="badge">RSS 未填</span>';
-  for (const s of v.suspicious || []) h += '<span class="badge bad">' + esc(s) + '</span>';
-  for (const n of v.notes || []) h += '<span class="badge">' + esc(n) + '</span>';
-  return h;
-}
-
-function renderList(data) {
-  const app = document.getElementById('app');
-  app.innerHTML = '';
-  const bar = $(<div class="topbar"><h1>博客收录审核</h1><button id="out">退出</button></div>\`');
-  bar.querySelector('#out').onclick = async () => { await fetch('/admin/logout', { method:'POST' }); renderLogin(); };
-  app.appendChild(bar);
-
-  const pend = data.submissions.filter((s) => s.status === 'pending');
-  if (!pend.length) app.appendChild($(<div class="empty">暂无待审提交 ✓</div>\`'));
-  for (const s of pend) {
-    const d = new Date(s.ts).toLocaleString('zh-CN');
-    const card = $(<div class="card"><div class="head"><span class="name">' + esc(s.name) + '</span><span class="grade g' + esc(s.grade) + '">' + esc(s.grade) + ' 级</span></div><div class="meta">' + esc(s.url) + (s.rss ? ' · <a href="' + esc(s.rss) + '">RSS</a>' : '') + '</div>' + (s.desc ? '<div class="meta">' + esc(s.desc) + '</div>' : '') + (s.tags.length ? '<div class="meta">标签: ' + esc(s.tags.join('；')) + '</div>' : '') + '<div class="verdict">' + verdictBadges(s.verdict) + '</div><div class="meta">IP ' + esc(s.ip) + ' · ' + esc(d) + '</div><div class="acts"><button class="primary b-ok">通过并上架</button><button class="danger b-no">拒绝</button><span class="err"></span></div></div>\`');
-    const errEl = card.querySelector('.err');
-    card.querySelector('.b-ok').onclick = async (e) => {
-      e.target.disabled = true; errEl.textContent = '正在写入列表并重建…';
-      try {
-        const r = await api('/admin/api/action', { id: s.id, action: 'approve' });
-        if (r.ok) { load(); } else { errEl.textContent = r.error || '失败'; e.target.disabled = false; }
-      } catch (err) { if (err.message !== 'unauthorized') { errEl.textContent = String(err); e.target.disabled = false; } }
-    };
-    card.querySelector('.b-no').onclick = async (e) => {
-      e.target.disabled = true;
-      await api('/admin/api/action', { id: s.id, action: 'reject' });
-      load();
-    };
-    app.appendChild(card);
-  }
-
-  const done = data.submissions.filter((s) => s.status !== 'pending').slice(-20).reverse();
-  if (done.length) {
-    app.appendChild($(<h2>最近处理</h2>\`'));
-    for (const s of done) {
-      const okm = s.status === 'approved';
-      app.appendChild($(<div class="done"><span>' + (okm ? '✅' : '❌') + ' ' + esc(s.name) + '</span><span>' + esc(new Date(s.reviewedAt || s.ts).toLocaleString('zh-CN')) + '</span></div>\`'));
-    }
-  }
-}
-
-async function load() {
-  try {
-    const data = await api('/admin/api/list');
-    renderList(data);
-  } catch {}
-}
-
-// 入口：先探一下是否已登录
-fetch('/admin/api/list').then((r) => { if (r.status === 401) renderLogin(); else load(); }).catch(renderLogin);
-</script>
-</body></html>`;
+const ADMIN_HTML = fs.readFileSync(new URL('./submit-admin-ui.html', import.meta.url), 'utf8');
 
 // ---------- 路由 ----------
 
@@ -625,12 +504,14 @@ const server = http.createServer(async (req, res) => {
 
     if (p === '/admin/login' && req.method === 'POST') {
       const body = await readJsonBody(req).catch(() => ({}));
-      if (ADMIN_PASSWORD && timingSafeEq(body.password, ADMIN_PASSWORD)) {
+      const okUser = ADMIN_USER && timingSafeEq(String(body.username ?? ''), ADMIN_USER);
+      const okPass = ADMIN_PASSWORD && timingSafeEq(String(body.password ?? ''), ADMIN_PASSWORD);
+      if (okUser && okPass) {
         return json(res, 200, { ok: true }, {
           'Set-Cookie': `cib_admin=${signSession()}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${SESSION_TTL / 1000}`,
         });
       }
-      return json(res, 401, { ok: false, error: '密码错误' });
+      return json(res, 401, { ok: false, error: '用户名或密码错误' });
     }
 
     if (p === '/admin/logout' && req.method === 'POST') {
@@ -653,7 +534,7 @@ const server = http.createServer(async (req, res) => {
         });
       }
       if (p === '/admin/api/action' && req.method === 'POST') {
-        return await handleAction(req, res, u);
+        return await handleAction(req, res);
       }
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
       return res.end(ADMIN_HTML);

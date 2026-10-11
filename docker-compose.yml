@@ -25,7 +25,8 @@ services:
       # 必填（AUTO_PUSH=1 与审核上架都需要）：GitHub PAT，需要 repo 写权限
       # 创建地址: https://github.com/settings/tokens?type=beta
       GH_PAT: ${GH_PAT:?set GH_PAT in .env}
-      # 审核后台密码（必填，不设则提交 API 不启动）
+      # 审核后台账号（必填，不设则提交 API 不启动）
+      ADMIN_USER: ${ADMIN_USER:-list_admin}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
       # Cloudflare Turnstile 人机验证（可选；留空则依赖蜜罐+限频+人工审核）
       TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY:-}
