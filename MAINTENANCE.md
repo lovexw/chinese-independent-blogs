@@ -1,7 +1,7 @@
 # 维护手册（MAINTENANCE）
 
 > 本文档面向后续维护者 / AI 助手。目标是：任何人在任何时间接手，都能在 10 分钟内理解本仓库的结构、数据流、运维方式与历史决策，并且所有长任务断电/中断后都能安全续跑。
-> 最后更新：2026-10-02
+> 最后更新：2026-10-11
 
 ## 1. 这个仓库是什么
 
@@ -75,30 +75,38 @@ npm run audit                       # = check + fix + rss + build（一条龙）
   同步上游 → 体检 → 修复 → 刷新 RSS 时间 → 可疑检测 → 重建 → 自动 commit → **push 后 Cloudflare Pages 自动部署**（Git 集成，无需 secrets）。
 - `pr_lint.yml`：PR 触发 `node scripts/lint.mjs`。
 
-## 7. 部署（已绑定 Git，全自动）
+## 7. 部署（2026-10-11 起自托管于甲骨文 146，CF Pages 转为热备回滚）
 
-**当前状态：Cloudflare Pages 项目 `chinese-independent-blogs`（账号 0471666@gmail.com）已通过 GitHub App 绑定 `lovexw/chinese-independent-blogs`（生产分支 `main`，输出目录 `public`，无构建命令）。push 到 `main` 即自动部署，无需任何手动操作。**
+**当前状态：站点 + 提交收录 API + 每周巡检全部跑在甲骨文 146（us-sanjose-1，x86 Micro 1G，`ubuntu@146.235.227.201`，key 在本机 `~/Documents/SSH/JGW-146-235-227-201.key`）。**
 
-**自定义域名（均已 active，证书自动签发，DNS 由本账号托管）：**
+```
+浏览器 → Cloudflare 橙云代理 → Caddy(146 宿主, 80/443, DNS-01 证书)
+   list.bloghao.com
+   ├─ /            → 127.0.0.1:8347  静态站点（cib-site 容器, serve.mjs）
+   ├─ /api /admin  → 127.0.0.1:8348  提交收录 API + 审核后台（同容器 submit-api.mjs）
+   └─ 容器内 crond 每周一 10:17 跑 docker/audit-job.sh（巡检→build→git push）
+```
 
-| 域名 | 用途 |
-| --- | --- |
-| `chinese-independent-blogs.pages.dev` | 默认域名 |
-| `list.bloghao.com` | 主推域名（好记好读；bloghao.com zone 已迁入本账号） |
-| `bloghao.xiaowuleyi.com` | 备用域名 |
+- **部署目录**：服务器 `~/apps/cib`（git clone + `.env` 放 GH_PAT / ADMIN_PASSWORD，600 权限）；改代码后 `git pull && docker compose up -d --build`。
+- **审核后台**：<https://list.bloghao.com/admin>（密码在服务器 `~/apps/cib/.env` 的 `ADMIN_PASSWORD`）。
+- **用户提交**：<https://list.bloghao.com/submit.html>，防垃圾四层见 `docs/docker.md`；提交队列在服务器数据卷 `data/submissions.json`（含 IP，已 gitignore，永不入库）。
+- **每周巡检**：容器内 crond 触发，接管原 GitHub Actions `audit.yml`（其 schedule 已停用，仅保留 workflow_dispatch 手动备份）。巡检与审核上架用 `data/.cib-git.lock` 目录锁互斥。
+- **坑（务必记住）**：bloghao.com zone 的 SSL 模式是 **Flexible（CF 回源走 80 明文）**。Caddy 里每个新站点的 `http://` 块必须**直接反代**、不能 301 跳 https，否则边缘会陷入自重定向死循环（hub/plaza 的注释就是这个坑，list.bloghao.com 已照做）。
+- **hub.bloghao.com 当前 530**（迁移前已存在的问题，plaza 正常）：plaza-hub 应用对 hub Host 在 80 端口回 404，443 直连握手失败，待排查（与本次迁移无关）。
 
-- 注意：`*.pages.dev` 在大陆被 DNS 污染，**国内访问请用上面两个自定义域名**。
-- PR 会生成预览部署（preview deployments 开启，对所有分支生效）。
-- 若要本地临时部署：Git 绑定的项目**拒绝 wrangler 直传**，请直接 push 或在 Dashboard 手动重试部署。
-- 若要改构建配置：Dashboard → Pages → 项目 → Settings → Builds & deployments（构建命令留空、输出目录 `public` 即可，public/ 已预构建提交进仓库）。
-- 换了站点域名要同步更新 `data/site-url.txt`（README 顶部链接用它）。
+**Cloudflare Pages（保留作回滚通道，未删除）**：项目 `chinese-independent-blogs` 仍绑定 Git，push 到 `main` 仍会自动部署 Pages；`chinese-independent-blogs.pages.dev` 与 `bloghao.xiaowuleyi.com` 仍指向 Pages。
 
-### 如果绑定失效（例如仓库改名/转移）怎么恢复
+### 回滚（如需退回 CF Pages）
 
-1. 确认 GitHub App（Cloudflare Pages）仍授权该仓库：<https://github.com/apps/cloudflare-pages> → Configure → Repository access
-2. Dashboard 删除 Pages 项目，重新 Connect to Git，或用 API 以 `source: github` 重建同名项目（构建配置：无构建命令、输出目录 `public`）
-3. push 任意提交触发首次部署
-4. 自定义域名的 DNS 记录由 Pages 自动创建/维护（同账号 zone），无需手动加 CNAME
+1. 把 `list.bloghao.com` 的 DNS 记录（zone `bloghao.com`，记录 id `9a42bb69-8742…` 完整 id 在 CF Dashboard）从 A `146.235.227.201` 改回 CNAME `chinese-independent-blogs.pages.dev`（保持橙云）
+2. 若边缘不生效，到 Pages 项目 → Custom domains 重新 add `list.bloghao.com`
+3. Pages 内容 = 仓库 `public/`（每次 push 都在自动部署），回滚即恢复
+
+### 如果要在 Pages 时代恢复"纯静态"运维（历史参考）
+
+- Git 绑定的项目**拒绝 wrangler 直传**，请直接 push 或在 Dashboard 手动重试部署
+- 构建配置：无构建命令、输出目录 `public`（public/ 已预构建提交进仓库）
+- 换了站点域名要同步更新 `data/site-url.txt`（README 顶部链接用它）
 
 ## 8. 站点前端（public/）
 
@@ -128,3 +136,4 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-03 | **多信号更新时间审计**（`scripts/update-audit.mjs`，已接入每周 CI）：RSS 地址错位是主要误判源——feed 重推导 + 首页文章日期 + sitemap lastmod 三信号取最大值；评论 feed 与相对日期刻意排除（防假新鲜）。首次全量审计：133 个"复活"（含可能吧 kenengba.com 2024-01→2026-10）、10 个新沉睡、613 个日期修正、115 个 RSS 错位修正；未知数 293→160。审计前 148 沉睡 → 审计后 155（方法与全量证据链见 `docs/update-audit.md` 与 `data/update-audit.json`） |
 | 2026-10-03 | 程序猿DD 博客迁移 blog.didispace.com→didispace.com（新站暂无 RSS，RSS 置空）；移除 2 博客：bang's blog（主机账户被暂停）、哲●科●文Jerkwin（维护者决定移除，站点仍在线）；`sync-upstream` 复活探测增加 cPanel 暂停页识别（suspendedpage.cgi 200 ≠ 复活）；现收录 1295 |
 | 2026-10-11 | 上游周同步（本机手动跑）：新增 69、复活 16、归档 8、去重 1，现收录 1371；`lint` 通过 |
+| 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |

@@ -1,14 +1,9 @@
 name: Weekly audit & sync
 
-# 每周自动执行：
-#  1. 增量同步上游（timqian）新增博客（只增不删）
-#  2. 全量链接体检 + 失效修复 + RSS 时间刷新
-#  3. 重建 CSV / README / OPML / 站点数据，自动提交
-#  4. push 到 main 后 Cloudflare Pages 会自动重新部署（Git 集成）
+# 每周巡检已迁至甲骨文 146 服务器（docker/audit-job.sh，容器内 crond 触发）。
+# 本 workflow 仅保留手动触发作为备份通道（GitHub 侧跑一轮同样的审计）。
 
 on:
-  schedule:
-    - cron: "17 2 * * 1" # 每周一 UTC 02:17（北京时间周一 10:17）
   workflow_dispatch: {}
 
 permissions:

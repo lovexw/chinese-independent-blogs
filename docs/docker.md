@@ -84,6 +84,7 @@ A/B/C 预判与证据（可达性/RSS/可疑信号/提交 IP），一键通过�
 
 ## 与 Cloudflare 的关系
 
-- **DNS**：`list.bloghao.com` A 记录指向服务器，保持 CF 橙云代理（CF 终结 TLS，回源 Caddy）
-- **回滚**：把 DNS 记录改回 CNAME `chinese-independent-blogs.pages.dev` 即回 CF Pages（Pages 项目保留未删）
+- **DNS**：`list.bloghao.com` A 记录指向服务器，保持 CF 橙云代理
+- **⚠ zone SSL 模式是 Flexible（回源走 80 明文）**：Caddy 里新站点的 `http://` 块必须直接反代（本仓库写法），**不能** 301 跳 https，否则边缘自重定向死循环；若未来把 zone 切到 Full，https 块的 DNS-01 证书已就绪，无需改动
+- **回滚**：把 DNS 记录改回 CNAME `chinese-independent-blogs.pages.dev` 即回 CF Pages（Pages 项目保留未删，每次 push 仍自动部署 Pages 内容）
 - 仓库 push 仍会触发 Pages 部署（无妨，回滚通道保持热备）
