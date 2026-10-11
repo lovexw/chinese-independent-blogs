@@ -40,6 +40,11 @@ if [ "${AUTO_PUSH:-0}" = "1" ]; then
   fi
 fi
 
+# 容器内统一忽略文件 mode 差异（镜像 chmod +x 与 git index 不一致会让 rebase 拒绝）
+if [ -d /app/.git ]; then
+  git config --global core.fileMode false || true
+fi
+
 # ---------- 定时任务 ----------
 echo "${AUDIT_CRON:-17 2 * * 1} /bin/sh /app/docker/audit-job.sh >> /proc/1/fd/1 2>&1" | crontab -
 log "cron registered: ${AUDIT_CRON:-17 2 * * 1} (tasks: ${AUDIT_TASKS:-default}, push: ${AUTO_PUSH:-0})"
