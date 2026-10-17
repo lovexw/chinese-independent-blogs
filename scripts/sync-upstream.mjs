@@ -70,6 +70,25 @@ if (revived.length) {
   const revivedUrls = new Set(revived.map((b) => norm(b.url)));
   writeJson(offPath, off.filter((o) => !revivedUrls.has(norm(o.url))));
   ours.push(...revived);
+
+  // 从墓园恢复的博客盖到时间线 revived 上（前台显示 ♻️ 复活，而不是 🆕 新增）：
+  // 它们此前已在列表里出现过，added 归到基线，避免 build 再按"本周新收录"计。
+  const tlPath = path.join(ROOT, 'data', 'timeline.json');
+  const tl = readJson(tlPath, { added: {}, revived: {} });
+  tl.added ||= {};
+  tl.revived ||= {};
+  const today = new Date().toISOString().slice(0, 10);
+  let stamped = 0;
+  for (const b of revived) {
+    const key = hostKey(b.url);
+    if (!key) continue;
+    const prev = tl.revived[key];
+    if (!prev || Date.now() - Date.parse(prev) >= 60 * 86400e3) tl.revived[key] = today;
+    if (!tl.added[key] || Date.now() - Date.parse(tl.added[key]) < 60 * 86400e3) tl.added[key] = '2000-01-01';
+    stamped++;
+  }
+  writeJson(tlPath, tl);
+  console.log(`timeline: marked ${stamped} restored blog(s) as revived`);
 }
 
 // sanity-check the newcomers so a dead-on-arrival row doesn't pollute the list:
