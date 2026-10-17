@@ -90,7 +90,7 @@ curl http://127.0.0.1:8348/api/health  # 提交 API
 ## 数据持久化
 
 - `cib-data` volume：巡检缓存/断点（`data/*.partial.json`）、提交队列（`data/submissions.json`）
-- `cib-public` volume：构建产物，站点实时读取
+- `cib-public` volume：构建产物，站点实时读取。镜像里的静态界面（`index.html`/`submit.html`/`assets/*`）由 entrypoint 每次启动覆盖同步，改版后重建容器即生效（只覆盖界面文件，不碰 `blogs.csv`/`feed.opml`/`data` 等构建产物）
 - 容器重建后 `.git` 由 entrypoint 自动从远端重新 seed（shallow clone），工作区以镜像内容为准
 
 ## 与 Cloudflare 的关系

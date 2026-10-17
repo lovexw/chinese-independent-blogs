@@ -45,6 +45,17 @@ if [ -d /app/.git ]; then
   git config --global core.fileMode false || true
 fi
 
+# ---------- 同步镜像内的静态界面到 public volume ----------
+# 只覆盖界面文件（HTML/CSS/JS/favicon），不动 blogs.csv/feed.opml/data 等构建产物。
+if [ -d /app/public-src ]; then
+  mkdir -p /app/public/assets
+  cp -f /app/public-src/index.html /app/public/index.html 2>/dev/null || true
+  cp -f /app/public-src/submit.html /app/public/submit.html 2>/dev/null || true
+  cp -f /app/public-src/favicon.svg /app/public/favicon.svg 2>/dev/null || true
+  cp -f /app/public-src/assets/* /app/public/assets/ 2>/dev/null || true
+  log "static UI synced from image (index.html / assets)"
+fi
+
 # ---------- 定时任务 ----------
 echo "${AUDIT_CRON:-17 2 * * 1} /bin/sh /app/docker/audit-job.sh >> /proc/1/fd/1 2>&1" | crontab -
 log "cron registered: ${AUDIT_CRON:-17 2 * * 1} (tasks: ${AUDIT_TASKS:-default}, push: ${AUTO_PUSH:-0})"
