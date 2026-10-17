@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { DATA_DIR, loadBlogs, probe, runPool, writeJson } from './lib.mjs';
+import { DATA_DIR, ROOT, loadBlogs, probe, runPool, hostKey, readJson, writeJson } from './lib.mjs';
 
 // 机器更新扫描：识别"cron 定时批量生成内容冒充博主活跃"的站点
 // 双重指纹才算实锤（缺一只算待复核，绝不误伤）：
@@ -14,36 +14,18 @@ const DAYS = (() => {
   return i > -1 ? parseInt(process.argv[i + 1], 10) : 3;
 })();
 const ALL = process.argv.includes('--all');
-const OUT_MD = path.join(ROOT_DIR(), 'docs', 'machine-update-review.md');
+const OUT_MD = path.join(ROOT, 'docs', 'machine-update-review.md');
 const OUT_JSON = path.join(DATA_DIR, 'machine-scan.json');
-function ROOT_DIR() {
-  return path.resolve(new URL('..', import.meta.url).pathname);
-}
 
 const blogs = loadBlogs();
-const lu = readJsonLocal(path.join(DATA_DIR, 'lastupdate.json'), {});
+const lu = readJson(path.join(DATA_DIR, 'lastupdate.json'), {});
 const cutoff = Date.now() - DAYS * 86400e3;
 const cohort = blogs.filter((b) => {
   if (ALL) return true;
-  const t = lu[hostKeyLocal(b.url)]?.lastUpdate ? Date.parse(lu[hostKeyLocal(b.url)].lastUpdate) : 0;
+  const t = lu[hostKey(b.url)]?.lastUpdate ? Date.parse(lu[hostKey(b.url)].lastUpdate) : 0;
   return t >= cutoff;
 });
 console.log(`扫描范围：${cohort.length}/${blogs.length} 个博客（最近 ${DAYS} 天有更新${ALL ? '，实际全量' : ''}）`);
-
-function hostKeyLocal(u) {
-  try {
-    return new URL(u).hostname.toLowerCase().replace(/^www\./, '');
-  } catch {
-    return u;
-  }
-}
-function readJsonLocal(p, fb) {
-  try {
-    return JSON.parse(fs.readFileSync(p, 'utf8'));
-  } catch {
-    return fb;
-  }
-}
 
 function parseItems(xml) {
   const items = [];
@@ -83,7 +65,6 @@ await runPool(cohort, 10, async (blog) => {
     bySec.set(key, days);
   }
   const cronGroups = [...bySec.entries()].filter(([, days]) => days.size >= 2);
-  const cronItems = cronGroups.reduce((n, [, days]) => n + [...days].length, 0);
   const cron = cronGroups.reduce((n, [, days]) => n + [...days].length, 0) >= 3;
 
   // B. 标题模板化：去掉日期/数字后雷同 ≥3 篇
@@ -117,7 +98,9 @@ await runPool(cohort, 10, async (blog) => {
   results.push(evidence);
 });
 
-results.sort((a, b) => (a.verdict.startsWith('CONFIRMED') ? -1 : b.verdict.startsWith('CONFIRMED') ? 1 : 0));
+const verdictRank = (r) =>
+  r.verdict.startsWith('CONFIRMED') ? 0 : r.verdict.startsWith('SUSPECT') ? 1 : 2;
+results.sort((a, b) => verdictRank(a) - verdictRank(b));
 writeJson(OUT_JSON, { scannedAt: new Date().toISOString(), days: ALL ? 'all' : DAYS, results });
 
 const conf = results.filter((r) => r.verdict.startsWith('CONFIRMED'));

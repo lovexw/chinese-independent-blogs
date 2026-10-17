@@ -42,7 +42,7 @@ curl http://127.0.0.1:8348/api/health  # 提交 API
 | --- | --- |
 | `node scripts/serve.mjs` | 静态站点（端口 `PORT`=8347） |
 | `node scripts/submit-api.mjs` | 用户提交收录 API + `/admin` 审核后台（端口 `API_PORT`=8348，崩溃 5s 自动拉起） |
-| `crond` → `docker/audit-job.sh` | 按 `AUDIT_CRON` 巡检：sync → check → fix → rss → suspicious → stale → audit-update → build → push |
+| `crond` → `docker/audit-job.sh` | 按 `AUDIT_CRON` 巡检：sync → check → fix → rss → score → suspicious → machine-scan → audit-update → build → audit-report → stale → push |
 
 三个进程共用一个仓库工作区（`/app`），巡检与审核上架通过 `data/.cib-git.lock` 目录锁互斥。
 

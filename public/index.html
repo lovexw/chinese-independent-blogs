@@ -58,6 +58,7 @@
       <div class="stat"><div class="num" id="stTotal">–</div><div class="label">收录博客</div></div>
       <div class="stat"><div class="num" id="stRss">–</div><div class="label">提供 RSS 订阅</div></div>
       <div class="stat"><div class="num accent" id="stActive">–</div><div class="label">近 30 天有更新</div></div>
+      <div class="stat"><div class="num accent" id="stNew">–</div><div class="label">🆕 本周新增 / ♻️ 复活</div></div>
       <div class="stat"><div class="num muted" id="stStale">–</div><div class="label">💤 沉睡 2 年+</div></div>
       <div class="stat"><div class="num" id="stSync">–</div><div class="label">数据同步于</div></div>
     </div>
@@ -74,6 +75,7 @@
         <select class="sortsel" id="sortSel" aria-label="排序方式">
           <option value="default">编辑推荐排序</option>
           <option value="score">评分优先</option>
+          <option value="new">本周新增优先</option>
           <option value="recent">最近更新优先</option>
           <option value="stale">久未更新优先</option>
           <option value="name">按名称</option>
@@ -115,6 +117,7 @@
     <div class="wrap foot-row">
       <span>源自 <a href="https://github.com/timqian/chinese-independent-blogs" target="_blank" rel="noopener">timqian/chinese-independent-blogs</a>，感谢原作者与所有提交者。</span>
       <a id="opmlA" href="feed.opml" target="_blank" rel="noopener">OPML 一键订阅</a>
+      <a id="recentA" href="recent.xml" target="_blank" rel="noopener">最近更新聚合 RSS</a>
       <a id="csvA" href="blogs.csv" target="_blank" rel="noopener">CSV 数据</a>
       <a href="submit.html">提交收录</a>
       <span id="footSync"></span>

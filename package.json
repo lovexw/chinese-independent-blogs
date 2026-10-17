@@ -1,6 +1,6 @@
 {
   "name": "chinese-independent-blogs",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "中文独立博客列表 · 展示站点与数据维护管线（源自 timqian/chinese-independent-blogs）",
   "type": "module",
   "scripts": {
@@ -9,12 +9,14 @@
     "rss": "node scripts/rss-refresh.mjs",
     "rss:full": "node scripts/rss-refresh.mjs --fix-missing",
     "score": "node scripts/score-refresh.mjs",
-    "audit:update": "node scripts/update-audit.mjs --apply && node scripts/update-audit-report.mjs",
     "suspicious": "node scripts/flag-suspicious.mjs",
+    "machine-scan": "node scripts/machine-scan.mjs --days 7",
     "stale": "node scripts/stale-report.mjs",
     "sync": "node scripts/sync-upstream.mjs",
     "build": "node scripts/build.mjs",
-    "audit": "npm run check && npm run fix && npm run rss && npm run score && npm run build",
+    "audit:update": "node scripts/update-audit.mjs --apply",
+    "audit:report": "node scripts/update-audit-report.mjs",
+    "audit": "npm run sync && npm run check && npm run fix && npm run rss && npm run score && npm run suspicious && npm run machine-scan && npm run audit:update && npm run build && npm run audit:report && npm run stale",
     "serve": "node scripts/serve.mjs"
   },
   "license": "MIT",

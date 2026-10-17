@@ -1,8 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import dns from 'node:dns/promises';
+import { fileURLToPath } from 'node:url';
 
-export const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
+// fileURLToPath handles Windows drive letters (new URL(...).pathname would yield
+// "/C:/..." and path.resolve would turn that into "C:\C:\...").
+export const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 export const DATA_DIR = path.join(ROOT, 'data');
 export const CSV_PATH = path.join(ROOT, 'blogs-original.csv');
 export const UA =
@@ -340,6 +343,69 @@ export function feedItemDates(xml) {
 export function newestFeedItemDate(xml) {
   const ds = feedItemDates(xml);
   return ds.length ? new Date(Math.max(...ds)).toISOString() : null;
+}
+
+// ---------- feed item extraction（用于聚合"最近更新"动态源）----------
+// 与 feedItemDates 同一套内容级日期规则（只信 <entry>/<item> 内部日期、未来日期钳制作废），
+// 额外带上标题与链接，供 build.mjs 生成 public/data/recent.json 与 public/recent.xml 聚合源。
+
+function decodeXmlEntities(s) {
+  return String(s ?? '')
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0*39;|&apos;/g, "'")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&amp;/g, '&')
+    .trim();
+}
+
+function itemLink(block) {
+  // Atom: <link href="..."/>（优先 rel="alternate"）；RSS: <link>…</link>；兜底 <guid>
+  const atom = [...block.matchAll(/<link\b[^>]*\bhref=["']([^"']+)["'][^>]*>/gi)];
+  if (atom.length) {
+    const alt = atom.find((m) => /\brel=["']alternate["']/i.test(m[0])) || atom[0];
+    return decodeXmlEntities(alt[1]);
+  }
+  const rss = block.match(/<link>\s*([\s\S]*?)\s*<\/link>/i)?.[1];
+  if (rss) return decodeXmlEntities(rss);
+  const guid = block.match(/<guid[^>]*>\s*([\s\S]*?)\s*<\/guid>/i)?.[1];
+  if (guid && /^https?:\/\//i.test(guid.trim())) return decodeXmlEntities(guid);
+  return '';
+}
+
+function itemTitle(block) {
+  const t = block.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '';
+  return decodeXmlEntities(t).replace(/\s+/g, ' ').slice(0, 200);
+}
+
+/** Parse a feed into items: {ts, date, title, link} —— 只保留有内容级日期的条目。 */
+export function feedItems(xml) {
+  const text = String(xml ?? '');
+  const items = [];
+  for (const m of text.matchAll(/<(?:entry|item)[\s>][\s\S]*?<\/(?:entry|item)>/gi)) {
+    const block = m[0];
+    let ts = null;
+    for (const d of block.matchAll(/<(?:pubDate|published|updated|dc:date)>([^<]{10,60})</g)) {
+      const t = clampDate(Date.parse(d[1].trim()));
+      if (t !== null) ts = ts === null ? t : Math.max(ts, t);
+    }
+    for (const d of block.matchAll(/datetime=["']([^"']{10,60})["']/g)) {
+      const t = clampDate(Date.parse(d[1]));
+      if (t !== null) ts = ts === null ? t : Math.max(ts, t);
+    }
+    if (ts === null) continue;
+    items.push({ ts, date: new Date(ts).toISOString(), title: itemTitle(block), link: itemLink(block) });
+  }
+  return items;
+}
+
+/** Newest item by content-level date, or null. */
+export function latestFeedItem(xml) {
+  const items = feedItems(xml);
+  if (!items.length) return null;
+  return items.reduce((a, b) => (b.ts > a.ts ? b : a));
 }
 
 // sitemap 里典型的"非文章"路径：应用/列表/元数据路由，lastmod 常是动态生成时间

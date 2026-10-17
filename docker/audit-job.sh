@@ -1,6 +1,7 @@
 #!/bin/sh
-# 单轮巡检任务：sync → check → fix → rss → score → suspicious → stale → audit-update → build → (可选 push)
-# 可通过 AUDIT_TASKS 环境变量裁剪步骤（逗号分隔，默认全部）
+# 单轮巡检任务：sync → check → fix → rss → score → suspicious → machine-scan
+#              → audit-update(apply) → build → audit-report → stale → (可选 push)
+# 可通过 AUDIT_TASKS 环境变量裁剪步骤（空格或逗号分隔均可，默认全部）
 set -u
 cd /app
 export GIT_ASKPASS=/app/docker/askpass.sh
@@ -8,20 +9,29 @@ export GIT_TERMINAL_PROMPT=0
 
 log() { echo "[audit-job] $(date '+%F %T') $*"; }
 
-WANT="${AUDIT_TASKS:-sync check fix rss score suspicious stale audit-update build}"
-has() { echo ",$WANT," | grep -q ",$1,"; }
+# 归一化任务列表：逗号/多空格 → 单空格，便于逐词匹配
+WANT=$(printf '%s' "${AUDIT_TASKS:-sync check fix rss score suspicious machine-scan audit-update build audit-report stale}" | tr ',,' '  ' | tr -s ' ')
+has() { for w in $WANT; do [ "$w" = "$1" ] && return 0; done; return 1; }
 
-# 断点续传：rss/check/fix 都支持重跑继续；这里不清理 partial，让中断后的下一轮自动续
-if has sync;     then log "step: sync-upstream";     node scripts/sync-upstream.mjs     || log "sync failed (continue)"; fi
-if has check;    then log "step: check-links";       node scripts/check-links.mjs       || log "check failed (continue)"; fi
-if has fix;      then log "step: fix-dead";          node scripts/fix-dead.mjs          || log "fix failed (continue)"; fi
-if has rss;      then log "step: rss-refresh";       node scripts/rss-refresh.mjs       || log "rss failed (continue)"; fi
-if has score;    then log "step: score-refresh";     node scripts/score-refresh.mjs     || log "score failed (continue)"; fi
-if has suspicious; then log "step: flag-suspicious"; node scripts/flag-suspicious.mjs   || log "suspicious failed (continue)"; fi
-if has machine-scan; then log "step: machine-scan";  node scripts/machine-scan.mjs --days 7 || log "machine-scan failed (continue)"; fi
-if has stale;    then log "step: stale-report";      node scripts/stale-report.mjs      || log "stale failed (continue)"; fi
-if has audit-update; then log "step: update-audit";  node scripts/update-audit.mjs --apply && node scripts/update-audit-report.mjs || log "update-audit failed (continue)"; fi
-if has build;    then log "step: build";             node scripts/build.mjs             || log "build failed (abort push)"; fi
+# 断点续传：rss/check/fix/update-audit 都支持重跑继续；这里不清理 partial，让中断后的下一轮自动续
+if has sync;         then log "step: sync-upstream";     node scripts/sync-upstream.mjs     || log "sync failed (continue)"; fi
+if has check;        then log "step: check-links";       node scripts/check-links.mjs       || log "check failed (continue)"; fi
+if has fix;          then log "step: fix-dead";          node scripts/fix-dead.mjs          || log "fix failed (continue)"; fi
+if has rss;          then log "step: rss-refresh";       node scripts/rss-refresh.mjs       || log "rss failed (continue)"; fi
+if has score;        then log "step: score-refresh";     node scripts/score-refresh.mjs     || log "score failed (continue)"; fi
+if has suspicious;   then log "step: flag-suspicious";   node scripts/flag-suspicious.mjs   || log "suspicious failed (continue)"; fi
+if has machine-scan; then log "step: machine-scan";      node scripts/machine-scan.mjs --days 7 || log "machine-scan failed (continue)"; fi
+
+# apply 步骤：把多信号审计结论写回 CSV 与 lastupdate.json（必须在 build 之前）
+if has audit-update; then log "step: update-audit --apply"; node scripts/update-audit.mjs --apply || log "update-audit failed (continue)"; fi
+
+# build：产出 README/OPML/CSV/site data/recent/sitemap（依赖上面的数据）
+if has build;        then log "step: build";             node scripts/build.mjs             || log "build failed (abort push)"; fi
+
+# 报告类步骤在 build 之后跑：它们读取 public/data/blogs.json（build 产物），
+# 之前排在这里会读到上一轮的站点数据（已修正）。
+if has audit-report; then log "step: update-audit-report"; node scripts/update-audit-report.mjs || log "update-audit-report failed (continue)"; fi
+if has stale;        then log "step: stale-report";      node scripts/stale-report.mjs      || log "stale failed (continue)"; fi
 
 log "audit round finished"
 

@@ -15,15 +15,18 @@
 
 ```
 blogs-original.csv ──► scripts/build.mjs ──► README.md + feed.opml + public/data/blogs.json + public/blogs.csv + public/feed.opml
-       ▲                                        ▲
-       │ apply fixes / remove dead / pin        │ read data/lastupdate.json (RSS 更新时间)
+       ▲                                        ▲                    + public/data/recent.json + public/recent.xml（聚合最近更新）
+       │ apply fixes / remove dead / pin        │ read data/lastupdate.json (RSS 更新时间 + 每站最新一篇)
        │                                        │ read data/scores.json (质量评分 → blogs.json 的 score 字段)
-       │                                        │
+       │                                        │ read/write data/timeline.json (首次收录/复活 → 前台 🆕/♻️ 高亮)
+       │                                        │ write public/sitemap.xml + public/robots.txt (SEO)
 scripts/check-links.mjs ──► data/check-results.json
 scripts/fix-dead.mjs    ──► data/fixes.json        （urlFixes / rssFixes / dead / kept）
-scripts/rss-refresh.mjs ──► data/lastupdate.json   （rss / lastUpdate / checkedAt）
+scripts/rss-refresh.mjs ──► data/lastupdate.json   （rss / lastUpdate / latest{title,link,date} / checkedAt）
 scripts/score-refresh.mjs ──► data/scores.json     （1-100 质量评分：自动信号 + 人工评定，见 docs/scoring.md）
 scripts/flag-suspicious.mjs ──► data/suspicious.json + docs/manual-review.md
+scripts/machine-scan.mjs    ──► data/machine-scan.json + docs/machine-update-review.md（机器活跃取证，仅收集不杀站）
+scripts/update-audit.mjs    ──► data/update-audit.json（多信号更新时间审计）；--apply 写回 lastupdate.json + CSV
 scripts/sync-upstream.mjs   ──► 追加新行到 blogs-original.csv
 ```
 
@@ -38,12 +41,16 @@ node scripts/rss-refresh.mjs        # 刷新 RSS 最后更新时间（约 3 分�
 node scripts/rss-refresh.mjs --fix-missing   # 同上 + 对失效 RSS 做自动发现（较慢）
 node scripts/score-refresh.mjs      # 刷新博客质量评分（约 1 分钟，含全站测速；人工评定永久保留）
 node scripts/flag-suspicious.mjs    # 内容级可疑检测 → docs/manual-review.md
+node scripts/machine-scan.mjs --days 7  # 机器活跃取证（cron 秒级指纹 + 标题模板化）→ docs/machine-update-review.md
+node scripts/update-audit.mjs --apply   # 多信号更新时间审计：写回 lastupdate.json + CSV（需先跑 rss-refresh）
 node scripts/sync-upstream.mjs      # 上游增量同步（只增不删）
-node scripts/build.mjs              # 重建 CSV/README/OPML/站点数据
+node scripts/build.mjs              # 重建 CSV/README/OPML/站点数据/聚合源/sitemap
 node scripts/lint.mjs               # CSV 格式校验
 node scripts/serve.mjs              # 本地预览 http://127.0.0.1:8347
-npm run audit                       # = check + fix + rss + build（一条龙）
+npm run audit                       # 一条龙 = sync+check+fix+rss+score+suspicious+machine-scan+audit:update+build+audit:report+stale
 ```
+
+> `npm run audit` 与容器内 `docker/audit-job.sh` 的步骤顺序保持一致：**报告类步骤（audit-report/stale）必须排在 build 之后**，否则会读到上一轮的站点数据。
 
 环境注意：本机（macOS）**没有 npm/npx**，只有 `node`（/usr/local/bin/node，v22）。wrangler 用全局安装：
 `node /usr/local/lib/node_modules/wrangler/bin/wrangler.js`（4.81.1，已登录 0471666@gmail.com）。
@@ -83,6 +90,15 @@ npm run audit                       # = check + fix + rss + build（一条龙）
    ≥80 前台优先推荐（默认排序推荐块 + ★ 徽标），≥90 精选。后台打分走 `/admin/api/score`
    （applyRepoChange 全管线：写 scores.json → build → lint → commit → push）。
    刻意设计：machine-scan 的 cron 指纹**不自动扣分**（8/8 命中为人类定时发布），交人工判断。详见 `docs/scoring.md`。
+9. **巡检步骤开关 `AUDIT_TASKS`（2026-10-17 修正）**：默认值在 `Dockerfile` / `docker-compose.yml` / `docker/audit-job.sh` 三处已统一为
+   `sync check fix rss score suspicious machine-scan audit-update build audit-report stale`（空格或逗号分隔均可）。
+   旧 `has()` 用 `grep ",$1,"` 去匹配空格分隔的任务列表 → **恒为 false，每周 cron 实际一步都没跑**（数据因此长期停在部署日）；
+   2026-10-17 改为逐词 `for` 匹配后修复。步骤顺序约束：`audit-update --apply` 必须在 `build` 之前（写回数据）；
+   `audit-report` / `stale` 读 `public/data/blogs.json`（build 产物），**必须在 build 之后**。
+10. **聚合与 SEO（2026-10-17 新增）**：`rss-refresh` 除 `lastUpdate` 外还记录每站最新一篇 `latest{title,link,date}`；
+   `build.mjs` 据此产出 `public/data/recent.json` + `public/recent.xml`（全站聚合 RSS，最多 500 条，按链接去重），
+   并生成 `public/sitemap.xml` + `public/robots.txt`。首次收录/复活时间记在 `data/timeline.json`（`added`/`revived`），
+   前台据此显示 🆕 新增（≤7 天）/ ♻️ 复活（≤30 天）徽标与"本周新增优先"排序。
 
 ## 6. CI（GitHub Actions）
 
@@ -144,7 +160,7 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 - [ ] `docs/manual-review.md` 中 287 个可疑博客等待人工核验（2026-10-02 生成），确认失效的从 CSV 删除。
 - [ ] 博主博客（emlog）的 `rss.php` 服务端 SQL 报错（`gid!=` 语法错误），修好后列表可显示其更新时间。
 - [ ] `lastupdate.json` 覆盖率约 77%；可考虑：feed 超时加大、Wayback Machine 兜底、按域名聚合重试。
-- [ ] 可选增强：站点加 sitemap.txt / RSS 输出聚合（列出所有博客最新文章）、卡片截图预览、按更新时间自动排序的"本周活跃"榜。
+- [ ] 可选增强：卡片截图预览、按更新时间自动排序的"本周活跃"榜（sitemap/聚合 RSS 已于 2026-10-17 完成，见 §5 第 10 条）。
 - [ ] 上游若改 CSV 列结构，需同步改 `lib.mjs#loadBlogs` 和 `sync-upstream.mjs`。
 
 ## 10. 变更日志摘要
@@ -166,3 +182,5 @@ npm run audit                       # = check + fix + rss + build（一条龙）
 | 2026-10-11 | **机器更新批量扫描**：新增 `scripts/machine-scan.mjs`（cron 秒级指纹 + 标题模板化双指纹，已纳入每周巡检**仅收集证据不自动杀站**）。扫最近 3 天有更新的 165 站：双指纹命中 8 站经内容验尸**全部为人类博客**（定时发布+系列标题会命中双指纹，如体验碎周报/近思录——自动判定不可作杀站依据）；42 待复核中揪出 1 对重复收录（lulalap.com 301 迁移至 philoli.com，RSS 同指一处），已去重，现收录 **1358**。经验：`00:00:00` 整点时间戳=只写日期的约定；杀站必须看正文 |
 | 2026-10-11 | **全面自托管上线（甲骨文 146）**：Docker 单容器三进程（静态站 8347 + 提交收录 API 8348 + 每周巡检 crond）；Caddy 挂 `list.bloghao.com`（http/https 双块直反代，绕开 Flexible SSL 回源 80 的坑）；DNS 从 Pages CNAME 切为 A 记录（保持橙云），Pages 解绑自定义域、保留为回滚热备；`audit.yml` 的每周 schedule 停用（巡检迁至服务器）；上线用户提交收录（`submit.html` + 四层防垃圾 + `/admin` 人工审核，审核通过自动写 CSV→build→push）；全链路（提交→审核→上架→push→回滚清理）已验收，现收录 1367 |
 | 2026-10-11 | **博客质量评分系统 v2.2.0**：每个博客 1-100 分（60 分新收录基准线），`data/scores.json` + `scripts/score-refresh.mjs`（自动信号：更新频率/RSS/每周 TTFB 测速/可达性/读者点击热度；人工评定永久保留，首批知名博客直接定 90-100：阮一峰 98、酷壳 97 等）。后台三处接入：审核上架可直接定初始分、博客管理页评分徽章点开即打分（含档位筛选与评分规则弹窗）、前台 ≥80 优先推荐 + ★ 徽标 + "评分优先"排序；每周巡检新增 score 步骤；管理后台 UI 全面重设计（深色模式/滑动标签/骨架屏/弹窗化/微交互）。收录 新的原野（sinyalee.com，95 分），现收录 **1359** |
+| 2026-10-17 | **修复"每周巡检空转"致命 bug**：`docker/audit-job.sh` 的 `has()` 用 `grep ",$1,"` 匹配空格分隔的 `AUDIT_TASKS` → 恒为 false，**部署后每周 cron 一步都没跑**（数据长期停在部署日）。改为逐词匹配并统一三处默认任务列表；`audit-update` 拆成 apply（build 前）与 report（build 后），`stale` 也移到 build 后（原先读的是上一轮站点数据）。 |
+| 2026-10-17 | **v2.3.0 功能与优化**：① 聚合"最近更新"动态源——`rss-refresh` 增记每站最新一篇，`build` 产出 `public/data/recent.json` + `public/recent.xml`（全站合并 RSS）；② SEO——生成 `public/sitemap.xml` + `public/robots.txt`；③ 前台"本周新增/复活"高亮（🆕/♻️ 徽标 + 统计栏 + "本周新增优先"排序，时间线存 `data/timeline.json`）；④ `lib.mjs` 修 Windows 路径 bug（`fileURLToPath`）、`machine-scan.mjs` 去重复代码并修排序、`package.json` 对齐完整 audit 链路。同步上游 + 全量巡检刷新。 |

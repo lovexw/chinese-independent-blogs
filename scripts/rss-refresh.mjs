@@ -9,7 +9,7 @@ import {
   hostOf,
   feedVariants,
   isFeedBody,
-  feedItemDates,
+  latestFeedItem,
   readJson,
   writeJson,
 } from './lib.mjs';
@@ -31,10 +31,16 @@ const results = { ...prev, ...done }; // working copy; each processed blog overw
 const blogs = loadBlogs().filter((b) => !(hostKey(b.url) in done));
 console.log(`refreshing rss info for ${blogs.length} blogs (fixMissing=${FIX_MISSING})`);
 
-function extractDates(xml) {
+function summarize(xml) {
   // v2：只取 <entry>/<item> 内部的日期。频道级 <updated>/<lastBuildDate> 常被动态
   // 程序（Flask 等）每次请求盖成"现在"，会让陈年博客永远显示"刚刚更新"。
-  return feedItemDates(xml);
+  // 同时保留最新一篇的标题/链接，供聚合"最近更新"动态源使用。
+  const it = latestFeedItem(xml);
+  if (!it) return { lastUpdate: null, latest: null };
+  return {
+    lastUpdate: it.date,
+    latest: { title: it.title || '', link: it.link || '', date: it.date },
+  };
 }
 
 let t0 = Date.now();
@@ -48,18 +54,14 @@ await runPool(
     const candidates = [];
     if (blog.rss) candidates.push(blog.rss);
     const tried = new Set();
-    let found = null; // { rss, lastUpdate }
+    let found = null; // { rss, lastUpdate, latest, discovered? }
 
     for (const rss of candidates) {
       if (tried.has(rss)) continue;
       tried.add(rss);
       const r = await probe(rss, { timeout: 18000, wantBody: true, maxBody: 400000 });
       if (!r.error && r.status < 400 && isFeedBody(r.contentType, r.body)) {
-        const dates = extractDates(r.body);
-        found = {
-          rss,
-          lastUpdate: dates.length ? new Date(Math.max(...dates)).toISOString() : null,
-        };
+        found = { rss, ...summarize(r.body) };
         break;
       }
     }
@@ -90,12 +92,7 @@ await runPool(
           tried.add(d);
           const r = await probe(d, { timeout: 15000, wantBody: true, maxBody: 300000 });
           if (!r.error && r.status < 400 && isFeedBody(r.contentType, r.body)) {
-            const dates = extractDates(r.body);
-            found = {
-              rss: d,
-              lastUpdate: dates.length ? new Date(Math.max(...dates)).toISOString() : null,
-              discovered: true,
-            };
+            found = { rss: d, ...summarize(r.body), discovered: true };
             break;
           }
         }
@@ -107,12 +104,7 @@ await runPool(
           tried.add(p);
           const r = await probe(p, { timeout: 12000, wantBody: true, maxBody: 300000 });
           if (!r.error && r.status < 400 && isFeedBody(r.contentType, r.body)) {
-            const dates = extractDates(r.body);
-            found = {
-              rss: p,
-              lastUpdate: dates.length ? new Date(Math.max(...dates)).toISOString() : null,
-              discovered: true,
-            };
+            found = { rss: p, ...summarize(r.body), discovered: true };
             break;
           }
         }
@@ -123,6 +115,7 @@ await runPool(
       results[key] = {
         rss: found.rss,
         lastUpdate: found.lastUpdate,
+        latest: found.latest || null,
         discovered: !!found.discovered,
         checkedAt: new Date().toISOString(),
       };
@@ -132,6 +125,7 @@ await runPool(
       results[key] = {
         rss: prev[key]?.rss || '',
         lastUpdate: prev[key]?.lastUpdate || null,
+        latest: prev[key]?.latest || null,
         checkedAt: new Date().toISOString(),
       };
     }

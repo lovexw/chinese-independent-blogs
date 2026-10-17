@@ -135,6 +135,8 @@ ${siteLine}
 | 提供 RSS | ${withRss} |
 | 列表维护时间 | ${genAt} |
 
+> 订阅聚合源：[recent.xml](./public/recent.xml)（全部博客最新文章的合并 RSS）；一键导入全部订阅：[feed.opml](./feed.opml)。
+
 ## 博客列表
 
 > 排序大致沿用原列表的订阅热度；首位为仓库维护者博客（置顶展示）。
@@ -203,6 +205,32 @@ fs.writeFileSync(
 
 // --- 8. site data ---
 if (!APPLY_ONLY) {
+  // 时间线（首次收录 / 复活）——供前台"本周新增 / 复活"高亮。
+  // added 只在 hostKey 首次出现时写一次；revived 由多信号审计的 revived 判定盖章。
+  const timelinePath = path.join(DATA_DIR, 'timeline.json');
+  const timelineExisted = fs.existsSync(timelinePath);
+  const timeline = readJson(timelinePath, { added: {}, revived: {} });
+  timeline.added ||= {};
+  timeline.revived ||= {};
+  const today = new Date().toISOString().slice(0, 10);
+  // 首次启用时间线（文件此前不存在）时，把现有博客视为"早已收录"的基线，
+  // 否则升级后的第一轮会把整站 1300+ 站点全部误标成"本周新增"。
+  const baseline = timelineExisted ? today : '2000-01-01';
+  for (const b of blogs) {
+    const key = hostKey(b.url);
+    if (key && !timeline.added[key]) timeline.added[key] = baseline;
+  }
+  const audit = readJson(path.join(DATA_DIR, 'update-audit.json'), { decisions: [] });
+  for (const d of audit.decisions || []) {
+    if (d.verdict !== 'revived' || !d.lastUpdate) continue;
+    const key = hostKey(d.url);
+    if (!key) continue;
+    // 已盖过章且在 60 天内的不重复盖（避免同一个"RSS 无日期但首页/sitemap 有日期"的站每周都显示复活）
+    const prev = timeline.revived[key];
+    if (!prev || Date.now() - Date.parse(prev) >= 60 * 86400e3) timeline.revived[key] = today;
+  }
+  writeJson(timelinePath, timeline);
+
   const siteBlogs = blogs.map((b) => ({
     name: b.name,
     url: b.url,
@@ -213,6 +241,8 @@ if (!APPLY_ONLY) {
     lastUpdate: lastupdate[hostKey(b.url)]?.lastUpdate || null,
     // 质量分（1-100，默认 60 基准；≥80 站点端优先推荐展示）
     score: scores[hostKey(b.url)]?.score ?? 60,
+    addedAt: timeline.added[hostKey(b.url)] || null,
+    revivedAt: timeline.revived[hostKey(b.url)] || null,
   }));
   // name vs desc: in the upstream CSV the Introduction column IS the display name.
   writeJson(path.join(ROOT, 'public/data/blogs.json'), {
@@ -223,6 +253,72 @@ if (!APPLY_ONLY) {
   fs.copyFileSync(CSV_PATH, path.join(ROOT, 'public', 'blogs.csv'));
   fs.copyFileSync(path.join(ROOT, 'feed.opml'), path.join(ROOT, 'public', 'feed.opml'));
   console.log(`site data written: public/data/blogs.json (${siteBlogs.length} blogs)`);
+
+  // --- 9. 聚合"最近更新"动态源（data/recent.json + recent.xml）---
+  // 用 rss-refresh 抓到的每个博客最新一篇文章，聚合成全站动态流，供读者订阅。
+  const recentItems = [];
+  const seenRecent = new Set();
+  for (const b of blogs) {
+    const l = lastupdate[hostKey(b.url)]?.latest;
+    if (!l?.date || !l.link || !/^https?:\/\//i.test(l.link)) continue;
+    if (seenRecent.has(l.link)) continue; // 同文重复（镜像/转载）只留一条
+    seenRecent.add(l.link);
+    recentItems.push({
+      blog: b.name,
+      url: b.url,
+      rss: b.rss || '',
+      title: l.title || b.name,
+      link: l.link,
+      date: l.date,
+    });
+  }
+  recentItems.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const recent = recentItems.slice(0, 500);
+  writeJson(path.join(ROOT, 'public/data/recent.json'), {
+    generatedAt: new Date().toISOString(),
+    total: recentItems.length,
+    items: recent,
+  });
+  const rssItem = (r) =>
+    `    <item>\n` +
+    `      <title>${attr(r.title)}</title>\n` +
+    `      <link>${attr(r.link)}</link>\n` +
+    `      <guid isPermaLink="true">${attr(r.link)}</guid>\n` +
+    `      <pubDate>${new Date(r.date).toUTCString()}</pubDate>\n` +
+    `      <source url="${attr(r.rss || r.url)}">${attr(r.blog)}</source>\n` +
+    `    </item>`;
+  const recentXml =
+    `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n` +
+    `    <title>中文独立博客 · 最近更新</title>\n` +
+    `    <link>${attr(siteUrl || 'https://list.bloghao.com')}</link>\n` +
+    `    <description>聚合 ${siteBlogs.length} 个中文独立博客的最新文章</description>\n` +
+    `    <language>zh-CN</language>\n` +
+    `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n` +
+    `${recent.map(rssItem).join('\n')}\n  </channel>\n</rss>\n`;
+  fs.writeFileSync(path.join(ROOT, 'public', 'recent.xml'), recentXml, 'utf8');
+  console.log(`recent feed written: public/data/recent.json + public/recent.xml (${recent.length} items)`);
+
+  // --- 10. SEO：sitemap.xml + robots.txt ---
+  const base = (siteUrl || 'https://list.bloghao.com').replace(/\/+$/, '');
+  const urlEntry = (loc, lastmod, priority) =>
+    `  <url><loc>${attr(loc)}</loc>` +
+    (lastmod ? `<lastmod>${lastmod.slice(0, 10)}</lastmod>` : '') +
+    `<changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
+  const sitemap =
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    urlEntry(base + '/', new Date().toISOString(), '1.0') +
+    '\n' +
+    urlEntry(base + '/submit.html', new Date().toISOString(), '0.6') +
+    '\n' +
+    blogs.map((b) => urlEntry(b.url, lastupdate[hostKey(b.url)]?.lastUpdate || null, '0.5')).join('\n') +
+    '\n</urlset>\n';
+  fs.writeFileSync(path.join(ROOT, 'public', 'sitemap.xml'), sitemap, 'utf8');
+  fs.writeFileSync(
+    path.join(ROOT, 'public', 'robots.txt'),
+    `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\n\nSitemap: ${base}/sitemap.xml\n`,
+    'utf8'
+  );
+  console.log(`SEO written: public/sitemap.xml (${blogs.length + 2} urls) + public/robots.txt`);
 }
 
 console.log('BUILD DONE');

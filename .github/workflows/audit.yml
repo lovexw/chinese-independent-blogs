@@ -2,6 +2,7 @@ name: Weekly audit & sync
 
 # 每周巡检已迁至甲骨文 146 服务器（docker/audit-job.sh，容器内 crond 触发）。
 # 本 workflow 仅保留手动触发作为备份通道（GitHub 侧跑一轮同样的审计）。
+# 步骤顺序与 docker/audit-job.sh 保持一致：报告类步骤放在 build 之后（需读站点产物）。
 
 on:
   workflow_dispatch: {}
@@ -33,17 +34,26 @@ jobs:
       - name: Fix dead links via variants
         run: node scripts/fix-dead.mjs
 
-      - name: Multi-signal update audit (feed re-derive + homepage dates + sitemap)
-        run: node scripts/update-audit.mjs --apply
+      - name: Refresh RSS feeds & last-update times
+        run: node scripts/rss-refresh.mjs
 
-      - name: Update audit report (docs/update-audit.md)
-        run: node scripts/update-audit-report.mjs
+      - name: Refresh quality scores
+        run: node scripts/score-refresh.mjs
 
       - name: Flag suspicious blogs for manual review
         run: node scripts/flag-suspicious.mjs
 
-      - name: Rebuild artifacts & site data
+      - name: Machine-generated content scan
+        run: node scripts/machine-scan.mjs --days 7
+
+      - name: Multi-signal update audit (feed re-derive + homepage dates + sitemap)
+        run: node scripts/update-audit.mjs --apply
+
+      - name: Rebuild artifacts & site data (README/OPML/recent/sitemap)
         run: node scripts/build.mjs
+
+      - name: Update audit report (docs/update-audit.md)
+        run: node scripts/update-audit-report.mjs
 
       - name: Stale blogs report (docs/stale-blogs.md)
         run: node scripts/stale-report.mjs

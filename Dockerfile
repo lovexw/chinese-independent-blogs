@@ -9,7 +9,7 @@ WORKDIR /app
 ENV PORT=8347 \
     TZ=Asia/Shanghai \
     AUDIT_CRON="17 2 * * 1" \
-    AUDIT_TASKS="sync check fix rss suspicious stale audit-update build" \
+    AUDIT_TASKS="sync check fix rss score suspicious machine-scan audit-update build audit-report stale" \
     AUTO_PUSH=1
 
 # 全量拷贝仓库（.dockerignore 排除 .git/.env/垃圾）：保证镜像工作区与 git HEAD 完全一致，

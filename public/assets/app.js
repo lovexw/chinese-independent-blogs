@@ -57,6 +57,9 @@
   // 维护者评分 ≥80 = 优先推荐（默认排序时活跃优质博客提到最前，块内按评分降序）
   const isRec = (b) => (b.score || 0) >= 80;
   const rank = (b) => (tier(b) === 0 && isRec(b) ? 0 : tier(b) + 1);
+  // 本周新增（首次收录 ≤7 天）/ 复活（回归更新 ≤30 天）
+  const isNew = (b) => !!b.addedAt && Date.now() - Date.parse(b.addedAt) < 7 * 86400e3;
+  const isRevived = (b) => !!b.revivedAt && Date.now() - Date.parse(b.revivedAt) < 30 * 86400e3;
 
   function relTime(iso) {
     if (!iso) return null;
@@ -84,6 +87,11 @@
     const rec = isRec(b)
       ? `<span class="scorebadge${b.score >= 90 ? ' elite' : ''}" title="维护者评分 ${b.score} 分（${b.score >= 90 ? '精选' : '推荐'}）· ≥80 分优先推荐" aria-label="评分 ${b.score}">★${b.score}</span>`
       : '';
+    const newBadge = isNew(b)
+      ? `<span class="newbadge" title="本周新收录（${esc(dayOf(b.addedAt))}）">🆕 新增</span>`
+      : isRevived(b)
+        ? `<span class="newbadge revived" title="此前沉睡，最近回归更新（${esc(dayOf(b.revivedAt))}）">♻️ 复活</span>`
+        : '';
     const updHTML = upd
       ? `<span class="upd ${fresh ? 'fresh' : stale ? 'stale' : ''}" title="最近更新：${esc(dayOf(b.lastUpdate))}"><span class="dot"></span>${stale ? '💤 ' : ''}${esc(upd)}更新</span>`
       : `<span class="upd" title="未抓取到 RSS 或 feed 中没有时间"><span class="dot"></span>更新时间未知</span>`;
@@ -95,6 +103,7 @@
       <article class="card" style="--d:${Math.min(idx, 14)}">
         <div class="card-top">
           <a class="title" href="${esc(b.url)}" target="_blank" rel="noopener" title="${esc(b.name)}">${esc(b.name)}</a>
+          ${newBadge}
           ${rec}
         </div>
         <div class="host">${esc(host)}</div>
@@ -161,6 +170,9 @@
       });
     } else if (state.sort === 'score') {
       rest.sort((a, b2) => (b2.score || 0) - (a.score || 0));
+    } else if (state.sort === 'new') {
+      const ts = (x) => Math.max(Date.parse(x.addedAt) || 0, Date.parse(x.revivedAt) || 0);
+      rest.sort((a, b2) => ts(b2) - ts(a));
     } else if (state.sort === 'recent') {
       rest.sort((a, b2) => (Date.parse(b2.lastUpdate) || 0) - (Date.parse(a.lastUpdate) || 0));
     } else if (state.sort === 'stale') {
@@ -251,7 +263,7 @@
       if (t) state.tags.add(t);
     }
     const sort = h.get('sort');
-    if (sort && ['default', 'recent', 'stale', 'name', 'score'].includes(sort)) {
+    if (sort && ['default', 'recent', 'stale', 'name', 'score', 'new'].includes(sort)) {
       state.sort = sort;
       sortSel.value = sort;
     }
@@ -407,6 +419,7 @@
     document.getElementById('stActive').textContent = all.filter(
       (b) => b.lastUpdate && Date.now() - Date.parse(b.lastUpdate) < 30 * 86400e3
     ).length.toLocaleString();
+    document.getElementById('stNew').textContent = all.filter((b) => isNew(b) || isRevived(b)).length.toLocaleString();
     document.getElementById('stStale').textContent = all.filter(isStale).length.toLocaleString();
     const gen = meta.generatedAt ? new Date(meta.generatedAt) : new Date();
     document.getElementById('stSync').textContent = `${gen.getMonth() + 1}/${gen.getDate()}`;

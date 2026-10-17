@@ -288,6 +288,8 @@ for (const b of cur) {
       rss: a.suggestedRss || b.rss || lu[hostKey(b.url)]?.rss || '',
       lastUpdate: a.lastUpdate,
       source: a.source,
+      // 保留 rss-refresh 抓到的"最新一篇"信息（聚合动态源用），此处只修正日期/RSS，不抹掉它
+      latest: lu[hostKey(b.url)]?.latest || null,
       checkedAt: new Date().toISOString(),
     };
     nDate++;
