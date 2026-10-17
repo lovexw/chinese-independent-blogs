@@ -47,12 +47,13 @@ fi
 
 # ---------- 同步镜像内的静态界面到 public volume ----------
 # 只覆盖界面文件（HTML/CSS/JS/favicon），不动 blogs.csv/feed.opml/data 等构建产物。
-if [ -d /app/public-src ]; then
+# 镜像原版放在 /opt/cib-public-src（在 /app 之外，不会被巡检 git 提交）。
+if [ -d /opt/cib-public-src ]; then
   mkdir -p /app/public/assets
-  cp -f /app/public-src/index.html /app/public/index.html 2>/dev/null || true
-  cp -f /app/public-src/submit.html /app/public/submit.html 2>/dev/null || true
-  cp -f /app/public-src/favicon.svg /app/public/favicon.svg 2>/dev/null || true
-  cp -f /app/public-src/assets/* /app/public/assets/ 2>/dev/null || true
+  cp -f /opt/cib-public-src/index.html /app/public/index.html 2>/dev/null || true
+  cp -f /opt/cib-public-src/submit.html /app/public/submit.html 2>/dev/null || true
+  cp -f /opt/cib-public-src/favicon.svg /app/public/favicon.svg 2>/dev/null || true
+  cp -f /opt/cib-public-src/assets/* /app/public/assets/ 2>/dev/null || true
   log "static UI synced from image (index.html / assets)"
 fi
 

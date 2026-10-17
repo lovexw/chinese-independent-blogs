@@ -20,11 +20,11 @@ COPY . .
 RUN mkdir -p /app/data /app/public/data
 
 # 运行期 /app/public 被 cib-public volume 覆盖，镜像里新改的 HTML/CSS/JS 不会自动出现；
-# 这里留一份“镜像原版”静态界面，由 entrypoint 每次启动时同步进 volume（随镜像升级自动生效，
-# 也避免巡检 git add -A 把 volume 里的旧界面当成改动回退提交）。
-RUN mkdir -p /app/public-src/assets \
-    && cp -f /app/public/index.html /app/public/submit.html /app/public/favicon.svg /app/public-src/ \
-    && cp -f /app/public/assets/* /app/public-src/assets/
+# 这里在 /app 之外留一份“镜像原版”静态界面（放 /app 内会被巡检 git add -A 提交进仓库），
+# 由 entrypoint 每次启动时同步进 volume（随镜像升级自动生效，也避免旧界面被当成改动回退提交）。
+RUN mkdir -p /opt/cib-public-src/assets \
+    && cp -f /app/public/index.html /app/public/submit.html /app/public/favicon.svg /opt/cib-public-src/ \
+    && cp -f /app/public/assets/* /opt/cib-public-src/assets/
 
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh /app/docker/audit-job.sh /app/docker/askpass.sh \
