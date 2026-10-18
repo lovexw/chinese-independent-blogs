@@ -1,9 +1,9 @@
 # 沉睡博客清单（确认 2 年以上未更新）
 
-> 由 `scripts/stale-report.mjs` 于 2026-10-17 生成，每周自动更新。
-> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-10-17（距今 2 年前）。
+> 由 `scripts/stale-report.mjs` 于 2026-10-18 生成，每周自动更新。
+> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-10-18（距今 2 年前）。
 > 这份清单**不会自动删除**，是否剔除由维护者酌情决定；确认要删的，直接删除 `blogs-original.csv` 对应行即可。
-> 另有 153 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
+> 另有 151 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
 
 共 182 个（站点中已自动降低排序优先级并标注 💤）。
 
@@ -162,7 +162,7 @@
 - [ ] [tj‘sblog_无聊项目聚集地](https://www.tjsite.cn/) — 最后更新 2024-03-04 ｜ RSS: https://www.tjsite.cn/feed
 - [ ] [WeepingDogel's Blog](https://weepingdogel.github.io/) — 最后更新 2024-03-05 ｜ RSS: https://weepingdogel.github.io/index.xml
 - [ ] [JieJiSS' Blog](https://blog.jiejiss.com) — 最后更新 2024-03-09 ｜ RSS: https://blog.jiejiss.com/atom.xml
-- [ ] [muzing的杂货铺](https://muzing.top/) — 最后更新 2024-03-11
+- [ ] [muzing的杂货铺](http://muzing.top/) — 最后更新 2024-03-11
 - [ ] [世界观察日记](https://fiftysixtimes7.github.io/MyWorldObservationJournal/) — 最后更新 2024-03-13 ｜ RSS: https://fiftysixtimes7.github.io/MyWorldObservationJournal/feeds/all.atom.xml
 - [ ] [政子的博客](https://blog.zhengzi.me) — 最后更新 2024-03-23 ｜ RSS: https://blog.zhengzi.me/atom.xml
 - [ ] [段某人的博客](https://duanmourena.github.io/) — 最后更新 2024-03-23 ｜ RSS: https://duanmourena.github.io/feed.xml
