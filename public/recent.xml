@@ -3,9 +3,1003 @@
   <channel>
     <title>中文独立博客 · 最近更新</title>
     <link>https://list.bloghao.com</link>
-    <description>聚合 1374 个中文独立博客的最新文章</description>
+    <description>聚合 1376 个中文独立博客的最新文章</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 25 Oct 2026 18:34:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 18:33:02 GMT</lastBuildDate>
+    <item>
+      <title>YToo歪兔机场——老牌专线中转机场国际网络加速服务</title>
+      <link>https://masuit.net/p532</link>
+      <guid isPermaLink="true">https://masuit.net/p532</guid>
+      <pubDate>Sun, 01 Nov 2026 18:29:41 GMT</pubDate>
+      <source url="https://masuit.net/rss/">懒得勤快的博客</source>
+    </item>
+    <item>
+      <title>AI Agent 开发学习记（一）：从裸调模型 API 到统一网关</title>
+      <link>https://canyuda.top/posts/20261101304/</link>
+      <guid isPermaLink="true">https://canyuda.top/posts/20261101304/</guid>
+      <pubDate>Sun, 01 Nov 2026 15:18:48 GMT</pubDate>
+      <source url="https://canyuda.top/atom.xml">灿若繁星</source>
+    </item>
+    <item>
+      <title>DIY个人博客网站所需软件分享</title>
+      <link>https://2019527.xyz/</link>
+      <guid isPermaLink="true">https://2019527.xyz/</guid>
+      <pubDate>Sun, 01 Nov 2026 15:00:00 GMT</pubDate>
+      <source url="https://2019527.xyz/feed.xml">王志满律师个人博客</source>
+    </item>
+    <item>
+      <title>👾 100 个 VibeCoding 项目之 飞书任务开成 DSH 会话</title>
+      <link>https://zkpeace.com/blog-cn/posts/52680/</link>
+      <guid isPermaLink="true">https://zkpeace.com/blog-cn/posts/52680/</guid>
+      <pubDate>Sun, 01 Nov 2026 14:48:35 GMT</pubDate>
+      <source url="https://zkpeace.com/blog-cn/atom.xml">途中的树</source>
+    </item>
+    <item>
+      <title>AI 提效了，为什么大部分公司没额外赚到钱</title>
+      <link>https://zxs.io/article/2233</link>
+      <guid isPermaLink="true">https://zxs.io/article/2233</guid>
+      <pubDate>Sun, 01 Nov 2026 14:44:57 GMT</pubDate>
+      <source url="https://zxs.io/feed">XINDOO的博客</source>
+    </item>
+    <item>
+      <title>读《信号与噪声》</title>
+      <link>https://blog.devtang.com/2026/11/01/signal-and-noice-book-summary/</link>
+      <guid isPermaLink="true">https://blog.devtang.com/2026/11/01/signal-and-noice-book-summary/</guid>
+      <pubDate>Sun, 01 Nov 2026 13:32:40 GMT</pubDate>
+      <source url="https://blog.devtang.com/atom.xml">唐巧的博客</source>
+    </item>
+    <item>
+      <title>最新微博：2026 年 11 月 1 日</title>
+      <link>https://www.changhai.org/articles/miscellaneous/blog/202611.php#latest</link>
+      <guid isPermaLink="true">https://www.changhai.org/articles/miscellaneous/blog/202611.php#latest</guid>
+      <pubDate>Sun, 01 Nov 2026 12:27:00 GMT</pubDate>
+      <source url="https://www.changhai.org/feed.xml">卢昌海的个人主页</source>
+    </item>
+    <item>
+      <title>《去月球》15周年</title>
+      <link>https://blog.mcenahle.page/2026/11/01/476/</link>
+      <guid isPermaLink="true">https://blog.mcenahle.page/2026/11/01/476/</guid>
+      <pubDate>Sun, 01 Nov 2026 12:26:40 GMT</pubDate>
+      <source url="https://blog.mcenahle.page/feed.xml">梅之夏</source>
+    </item>
+    <item>
+      <title>每周GIS信息 · 24</title>
+      <link>http://127.0.0.1:5201/post/24</link>
+      <guid isPermaLink="true">http://127.0.0.1:5201/post/24</guid>
+      <pubDate>Sun, 01 Nov 2026 11:57:57 GMT</pubDate>
+      <source url="https://blog.giserlab.cn/rss.xml">GISerLab 地理空间</source>
+    </item>
+    <item>
+      <title>DeepSeek Harness 怎样把模型的一次回答变成可继续执行的任务</title>
+      <link>https://nicksxs.me/2026/11/01/DeepSeek%20Harness%20%E6%80%8E%E6%A0%B7%E6%8A%8A%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E6%AC%A1%E5%9B%9E%E7%AD%94%E5%8F%98%E6%88%90%E5%8F%AF%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BB%BB%E5%8A%A1/</link>
+      <guid isPermaLink="true">https://nicksxs.me/2026/11/01/DeepSeek%20Harness%20%E6%80%8E%E6%A0%B7%E6%8A%8A%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E6%AC%A1%E5%9B%9E%E7%AD%94%E5%8F%98%E6%88%90%E5%8F%AF%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BB%BB%E5%8A%A1/</guid>
+      <pubDate>Sun, 01 Nov 2026 11:45:04 GMT</pubDate>
+      <source url="https://nicksxs.me/atom.xml">Nicksxs's Blog</source>
+    </item>
+    <item>
+      <title>一条分享链接，如何变成别人的 ChatGPT 账户接管入口</title>
+      <link>https://anymesgs.com/article/chatgpt-account-takeover/</link>
+      <guid isPermaLink="true">https://anymesgs.com/article/chatgpt-account-takeover/</guid>
+      <pubDate>Sun, 01 Nov 2026 10:40:52 GMT</pubDate>
+      <source url="https://anymesgs.com/rss.xml">听说了吗？· AI 解读站</source>
+    </item>
+    <item>
+      <title>2026年第44周</title>
+      <link>https://www.skyue.com/26110118.html</link>
+      <guid isPermaLink="true">https://www.skyue.com/26110118.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:33:00 GMT</pubDate>
+      <source url="https://www.skyue.com/feed/">SKYue's Home</source>
+    </item>
+    <item>
+      <title>二六十月雜錄</title>
+      <link>https://white-ceiling.bearblog.dev/9743/</link>
+      <guid isPermaLink="true">https://white-ceiling.bearblog.dev/9743/</guid>
+      <pubDate>Sun, 01 Nov 2026 09:28:17 GMT</pubDate>
+      <source url="https://white-ceiling.bearblog.dev/feed/">鵝庵筆記</source>
+    </item>
+    <item>
+      <title>2026-11-01-学习问答</title>
+      <link>https://www.ranjl.cn/web/articles/2026-11-01-学习记录</link>
+      <guid isPermaLink="true">https://www.ranjl.cn/web/articles/2026-11-01-学习记录</guid>
+      <pubDate>Sun, 01 Nov 2026 09:00:03 GMT</pubDate>
+      <source url="https://www.ranjl.cn/api/feed.xml">冉江龙的个人空间</source>
+    </item>
+    <item>
+      <title>今天去把我的牙装上了</title>
+      <link>https://macshuo.com/?p=2087</link>
+      <guid isPermaLink="true">https://macshuo.com/?p=2087</guid>
+      <pubDate>Sun, 01 Nov 2026 08:47:24 GMT</pubDate>
+      <source url="http://macshuo.com/?feed=rss2">MacTalk-池建强的随想录</source>
+    </item>
+    <item>
+      <title>平均之路：从Attention到TTT</title>
+      <link>https://kexue.fm/archives/11993</link>
+      <guid isPermaLink="true">https://kexue.fm/archives/11993</guid>
+      <pubDate>Sun, 01 Nov 2026 08:36:00 GMT</pubDate>
+      <source url="https://kexue.fm/feed">科学空间</source>
+    </item>
+    <item>
+      <title>Qt for WebAssembly 应用全屏适配</title>
+      <link>https://uwillno.com/blog/qtforwasmfullscreen</link>
+      <guid isPermaLink="true">https://uwillno.com/blog/qtforwasmfullscreen</guid>
+      <pubDate>Sun, 01 Nov 2026 07:44:44 GMT</pubDate>
+      <source url="https://uwillno.com/rss.xml">UWillno's Blog</source>
+    </item>
+    <item>
+      <title>Chuck为什么这个样子？</title>
+      <link>https://www.seis-jun.xyz/blog/2026-11-01-why-chuck-is-like-this.html</link>
+      <guid isPermaLink="true">https://www.seis-jun.xyz/blog/2026-11-01-why-chuck-is-like-this.html</guid>
+      <pubDate>Sun, 01 Nov 2026 07:08:03 GMT</pubDate>
+      <source url="https://www.seis-jun.xyz/atom.xml">seisamuse</source>
+    </item>
+    <item>
+      <title>高德地图的赛博造林</title>
+      <link>https://blog.solazy.me/20261031/</link>
+      <guid isPermaLink="true">https://blog.solazy.me/20261031/</guid>
+      <pubDate>Sun, 01 Nov 2026 07:05:53 GMT</pubDate>
+      <source url="https://blog.solazy.me/feed/">solazy</source>
+    </item>
+    <item>
+      <title>到江西婺源看晒秋</title>
+      <link>https://pinlyu.com/life/jiangxi-wuyuan/</link>
+      <guid isPermaLink="true">https://pinlyu.com/life/jiangxi-wuyuan/</guid>
+      <pubDate>Sun, 01 Nov 2026 06:45:05 GMT</pubDate>
+      <source url="https://pinlyu.com/feed/">频率 - 风卷过的起点</source>
+    </item>
+    <item>
+      <title>怎么翻墙去国外的网站：2026 电脑/手机科学上网全流程教程</title>
+      <link>https://tanqingbo.cn/how-to-fanqiang/</link>
+      <guid isPermaLink="true">https://tanqingbo.cn/how-to-fanqiang/</guid>
+      <pubDate>Sun, 01 Nov 2026 06:30:00 GMT</pubDate>
+      <source url="https://tanqingbo.cn/atom.xml">科学上网与AI工具指南</source>
+    </item>
+    <item>
+      <title>关我辟事 Vol.58：长夜前的绚烂</title>
+      <link>https://blog.douchi.space/spark-joy-digest-2026-10/?utm_source=rss</link>
+      <guid isPermaLink="true">https://blog.douchi.space/spark-joy-digest-2026-10/?utm_source=rss</guid>
+      <pubDate>Sun, 01 Nov 2026 05:54:06 GMT</pubDate>
+      <source url="https://blog.douchi.space/index.xml">椒盐豆豉</source>
+    </item>
+    <item>
+      <title>8月练习小结</title>
+      <link>https://mag267.github.io/2026/08/31/summary-aug26/</link>
+      <guid isPermaLink="true">https://mag267.github.io/2026/08/31/summary-aug26/</guid>
+      <pubDate>Sun, 01 Nov 2026 05:46:36 GMT</pubDate>
+      <source url="https://mag267.github.io/atom.xml">Mag‘s Blog</source>
+    </item>
+    <item>
+      <title>又菜又爱-2026年CTF参赛感受</title>
+      <link>http://www.popsite.cn/2026/11/01/20261101-2026ctf-pain-and-gain/</link>
+      <guid isPermaLink="true">http://www.popsite.cn/2026/11/01/20261101-2026ctf-pain-and-gain/</guid>
+      <pubDate>Sun, 01 Nov 2026 05:02:26 GMT</pubDate>
+      <source url="https://popsite.cn/atom.xml">大江小浪</source>
+    </item>
+    <item>
+      <title>10 个人月烧 310 万美元 tokens，别盯着数字激动，先看它拆掉了哪三堵墙</title>
+      <link>https://www.sagasu.art/posts/spawn-ai-development-workflow-analysis</link>
+      <guid isPermaLink="true">https://www.sagasu.art/posts/spawn-ai-development-workflow-analysis</guid>
+      <pubDate>Sun, 01 Nov 2026 03:32:31 GMT</pubDate>
+      <source url="https://www.sagasu.art/rss.xml">Sagasu</source>
+    </item>
+    <item>
+      <title>立體主義</title>
+      <link>https://blog.aeilot.top/2026/10/31/cubism/</link>
+      <guid isPermaLink="true">https://blog.aeilot.top/2026/10/31/cubism/</guid>
+      <pubDate>Sun, 01 Nov 2026 03:23:37 GMT</pubDate>
+      <source url="https://blog.aeilot.top/index.xml">Louis Aeilot's Blog</source>
+    </item>
+    <item>
+      <title>#23 丹桂飘香的十月月报</title>
+      <link>https://isming.me/2026-10-october-summary/?utm_source=rss</link>
+      <guid isPermaLink="true">https://isming.me/2026-10-october-summary/?utm_source=rss</guid>
+      <pubDate>Sun, 01 Nov 2026 03:22:24 GMT</pubDate>
+      <source url="https://isming.me/index.xml">码农明明桑</source>
+    </item>
+    <item>
+      <title>腾讯云技术架构联盟活动笔记——“云峰论剑” 聊聊当前的前沿研究/产品/实践案例</title>
+      <link>https://blog.frytea.com/archives/32544</link>
+      <guid isPermaLink="true">https://blog.frytea.com/archives/32544</guid>
+      <pubDate>Sun, 01 Nov 2026 03:13:48 GMT</pubDate>
+      <source url="https://www.frytea.com/feed">Frytea's Blog</source>
+    </item>
+    <item>
+      <title>分享一下近期爆火的AI人脸、姿势、服装素材库</title>
+      <link>https://www.liesauer.net/blog/post/1047.html</link>
+      <guid isPermaLink="true">https://www.liesauer.net/blog/post/1047.html</guid>
+      <pubDate>Sun, 01 Nov 2026 03:04:12 GMT</pubDate>
+      <source url="https://www.liesauer.net/blog/feed/">LiesAuer's Blog</source>
+    </item>
+    <item>
+      <title>并发修改下的数据一致性保证</title>
+      <link>https://java4u.cn/backend/3489.html</link>
+      <guid isPermaLink="true">https://java4u.cn/backend/3489.html</guid>
+      <pubDate>Sun, 01 Nov 2026 01:27:11 GMT</pubDate>
+      <source url="https://java4u.cn/feed">Java for You</source>
+    </item>
+    <item>
+      <title>把 GitHub 项目研究做成一个 Skill：附简报模板与检查脚本</title>
+      <link>https://yangxuan.ai/github-research-skill-brief/</link>
+      <guid isPermaLink="true">https://yangxuan.ai/github-research-skill-brief/</guid>
+      <pubDate>Sun, 01 Nov 2026 01:03:56 GMT</pubDate>
+      <source url="https://yangxuan.ai/feed/">杨轩的博客:AI×投资实盘记录</source>
+    </item>
+    <item>
+      <title>币安被盗、群晖被锁：AI打破攻防平衡，普通用户谁来兜底？</title>
+      <link>https://lukefan.com/2026/11/01/ai-cybersecurity-binance-hack-synology-nas-ransomware/</link>
+      <guid isPermaLink="true">https://lukefan.com/2026/11/01/ai-cybersecurity-binance-hack-synology-nas-ransomware/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:30:00 GMT</pubDate>
+      <source url="http://lukefan.com/?feed=rss2">硕鼠的博客站</source>
+    </item>
+    <item>
+      <title>【PrivateVPN怎么样】PrivateVPN中国详细使用测评</title>
+      <link>https://qiangwaikan.com/private-review/</link>
+      <guid isPermaLink="true">https://qiangwaikan.com/private-review/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:01:33 GMT</pubDate>
+      <source url="https://qiangwaikan.com/feed/">墙外看的博客</source>
+    </item>
+    <item>
+      <title>论文解读：DeDoDe，检测与描述解耦的局部特征匹配</title>
+      <link>https://www.vincentqin.tech/blog/dedode/</link>
+      <guid isPermaLink="true">https://www.vincentqin.tech/blog/dedode/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://vincentqin.tech/rss.xml">Realcat</source>
+    </item>
+    <item>
+      <title>周报 #14 – 重新连接</title>
+      <link>https://yinji.org/weekly-14-reconnect.html/</link>
+      <guid isPermaLink="true">https://yinji.org/weekly-14-reconnect.html/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://yinji.org/feed">印记</source>
+    </item>
+    <item>
+      <title>擦边经济火爆不是因为性压抑：关系长不出来，市场把亲密拆开卖（智能路障·围炉夜话）</title>
+      <link>https://ursb.me/reading/r-vzc_4-k91xagau6f/</link>
+      <guid isPermaLink="true">https://ursb.me/reading/r-vzc_4-k91xagau6f/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://ursb.me/reading/feed.xml">Airing's Blog</source>
+    </item>
+    <item>
+      <title>DeepSeek Super-agent 拆解：架构设计与开源插件的实现边界</title>
+      <link>https://blog.javazero.top/2026/11/01/deepseek-superagent-architecture-and-prototype/</link>
+      <guid isPermaLink="true">https://blog.javazero.top/2026/11/01/deepseek-superagent-architecture-and-prototype/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://blog.javazero.top/atom.xml">Java不加糖's Blog</source>
+    </item>
+    <item>
+      <title>十月碎碎念</title>
+      <link>https://auvetu.com/posts/october-fragments-2026/</link>
+      <guid isPermaLink="true">https://auvetu.com/posts/october-fragments-2026/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.auvetu.com/rss.xml">云海札记</source>
+    </item>
+    <item>
+      <title>短剧会让人智商变低吗？</title>
+      <link>https://www.thefox.work//article/40bdc4f4-1160-804e-bc50-dd868fd000bc</link>
+      <guid isPermaLink="true">https://www.thefox.work//article/40bdc4f4-1160-804e-bc50-dd868fd000bc</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.thefox.work/rss/feed.xml">pious fox</source>
+    </item>
+    <item>
+      <title>递归自我改进（RSI）的 Harness 长什么样？英伟达 SoL-Pi 给出了第一份工程答卷</title>
+      <link>https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/</link>
+      <guid isPermaLink="true">https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/</guid>
+      <pubDate>Sat, 31 Oct 2026 22:00:00 GMT</pubDate>
+      <source url="https://tonybai.com/index.xml">Tony Bai</source>
+    </item>
+    <item>
+      <title>PHP 性能优化，以及用 FastCGI 缓存加速 PHP 页面</title>
+      <link>https://dusays.com/posts/895/</link>
+      <guid isPermaLink="true">https://dusays.com/posts/895/</guid>
+      <pubDate>Sat, 31 Oct 2026 20:09:55 GMT</pubDate>
+      <source url="https://dusays.com/atom.xml">杜老师说</source>
+    </item>
+    <item>
+      <title>避免qemu-guest-agent的exec在商家被黑时让你的VPS“飞起来”</title>
+      <link>https://wusiyu.me/prevent-vps-intrusion-from-compromised-host-via-qemu-guest-agent/</link>
+      <guid isPermaLink="true">https://wusiyu.me/prevent-vps-intrusion-from-compromised-host-via-qemu-guest-agent/</guid>
+      <pubDate>Sat, 31 Oct 2026 19:44:57 GMT</pubDate>
+      <source url="https://wusiyu.me/feed/">WuSiYu Blog</source>
+    </item>
+    <item>
+      <title>Chrome DevTools 奇技淫巧</title>
+      <link>https://www.ruanchaomin.com/blog/posts/244</link>
+      <guid isPermaLink="true">https://www.ruanchaomin.com/blog/posts/244</guid>
+      <pubDate>Sat, 31 Oct 2026 19:43:27 GMT</pubDate>
+      <source url="https://www.ruanchaomin.com/rss">阮超民的个人网站</source>
+    </item>
+    <item>
+      <title>冥冥之中被提示要赶紧休息了。</title>
+      <link>https://yezhaner.net/%e5%86%a5%e5%86%a5%e4%b9%8b%e4%b8%ad%e8%a2%ab%e6%8f%90%e7%a4%ba%e8%a6%81%e8%b5%b6%e7%b4%a7%e4%bc%91%e6%81%af%e4%ba%86%e3%80%82.htm</link>
+      <guid isPermaLink="true">https://yezhaner.net/%e5%86%a5%e5%86%a5%e4%b9%8b%e4%b8%ad%e8%a2%ab%e6%8f%90%e7%a4%ba%e8%a6%81%e8%b5%b6%e7%b4%a7%e4%bc%91%e6%81%af%e4%ba%86%e3%80%82.htm</guid>
+      <pubDate>Sat, 31 Oct 2026 16:15:12 GMT</pubDate>
+      <source url="https://yezhaner.net/feed">夜旅者</source>
+    </item>
+    <item>
+      <title>关于压缩的各种探索</title>
+      <link>https://mabbs.github.io/2026/11/01/compress.html</link>
+      <guid isPermaLink="true">https://mabbs.github.io/2026/11/01/compress.html</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="https://mabbs.github.io/atom.xml">Mayx的博客</source>
+    </item>
+    <item>
+      <title>那就好好地告个别吧</title>
+      <link>https://citydatum.cn/archives/3544</link>
+      <guid isPermaLink="true">https://citydatum.cn/archives/3544</guid>
+      <pubDate>Sat, 31 Oct 2026 15:48:24 GMT</pubDate>
+      <source url="https://citydatum.cn/feed">橙树志</source>
+    </item>
+    <item>
+      <title>20261030</title>
+      <link>https://61.life/2026/1030</link>
+      <guid isPermaLink="true">https://61.life/2026/1030</guid>
+      <pubDate>Sat, 31 Oct 2026 15:46:10 GMT</pubDate>
+      <source url="https://61.life/feed/post.xml">61's life</source>
+    </item>
+    <item>
+      <title>还是得从右边下车</title>
+      <link>https://www.imcry.vip/post/2026-10-31-2254/</link>
+      <guid isPermaLink="true">https://www.imcry.vip/post/2026-10-31-2254/</guid>
+      <pubDate>Sat, 31 Oct 2026 14:47:54 GMT</pubDate>
+      <source url="https://www.imcry.vip/index.xml">初然忆</source>
+    </item>
+    <item>
+      <title>[Github] Mika – 开源手机 AI 助理，后台替你操作安卓 App</title>
+      <link>https://warpnav.com/mika-android-ai</link>
+      <guid isPermaLink="true">https://warpnav.com/mika-android-ai</guid>
+      <pubDate>Sat, 31 Oct 2026 14:38:36 GMT</pubDate>
+      <source url="https://warpnav.com/feed">WarpBlog · WarpNav 曲速导航</source>
+    </item>
+    <item>
+      <title>行程轨迹汇总</title>
+      <link>https://kangaroogao.com/posts/dbd5/</link>
+      <guid isPermaLink="true">https://kangaroogao.com/posts/dbd5/</guid>
+      <pubDate>Sat, 31 Oct 2026 13:35:16 GMT</pubDate>
+      <source url="https://kangaroogao.com/atom.xml">Maohang Gao's Blog</source>
+    </item>
+    <item>
+      <title>最优传输几何概念简论</title>
+      <link>https://dreams.plus/blog/2026/0014-zui-you-chuan-shu-ji-he-jian-lun</link>
+      <guid isPermaLink="true">https://dreams.plus/blog/2026/0014-zui-you-chuan-shu-ji-he-jian-lun</guid>
+      <pubDate>Sat, 31 Oct 2026 12:17:23 GMT</pubDate>
+      <source url="https://dreams.plus/rss.xml">但为君故</source>
+    </item>
+    <item>
+      <title>万智牌中文回归迈出第一步：大型赛事于北京开赛</title>
+      <link>https://www.yystv.cn/p/14574</link>
+      <guid isPermaLink="true">https://www.yystv.cn/p/14574</guid>
+      <pubDate>Sat, 31 Oct 2026 11:50:00 GMT</pubDate>
+      <source url="https://www.yystv.cn/rss/feed">游戏研究社</source>
+    </item>
+    <item>
+      <title>个人作品</title>
+      <link>https://sugarat.top/technology/works/</link>
+      <guid isPermaLink="true">https://sugarat.top/technology/works/</guid>
+      <pubDate>Sat, 31 Oct 2026 09:26:02 GMT</pubDate>
+      <source url="https://sugarat.top/feed.rss">粥里有勺糖</source>
+    </item>
+    <item>
+      <title>AI 读得比我懂，我还读原书吗</title>
+      <link>https://moyu.blog/2422.html</link>
+      <guid isPermaLink="true">https://moyu.blog/2422.html</guid>
+      <pubDate>Sat, 31 Oct 2026 09:09:08 GMT</pubDate>
+      <source url="https://moyu.blog/feed">摸鱼小窝</source>
+    </item>
+    <item>
+      <title>OpenMausBot：免费开源多AI Agent协作工具，支持Codex、Claude、Grok，还能部署VPS全天运行</title>
+      <link>https://www.wangdu.site/software/ai/2421.html</link>
+      <guid isPermaLink="true">https://www.wangdu.site/software/ai/2421.html</guid>
+      <pubDate>Sat, 31 Oct 2026 08:08:34 GMT</pubDate>
+      <source url="https://www.wangdu.site/feed">文武科技柜</source>
+    </item>
+    <item>
+      <title>移除了 webmention 功能</title>
+      <link>https://kaix.in/2026/1023/</link>
+      <guid isPermaLink="true">https://kaix.in/2026/1023/</guid>
+      <pubDate>Sat, 31 Oct 2026 07:02:16 GMT</pubDate>
+      <source url="https://kaix.in/feed/">KAIX.IN</source>
+    </item>
+    <item>
+      <title>Chrome 157 的 HTML-in-Canvas 實戰：把網頁字卡畫進 WebGPU，主執行緒少了七成</title>
+      <link>https://koimsurai.com/blog/html-in-canvas-webgpu-worker</link>
+      <guid isPermaLink="true">https://koimsurai.com/blog/html-in-canvas-webgpu-worker</guid>
+      <pubDate>Sat, 31 Oct 2026 06:56:46 GMT</pubDate>
+      <source url="https://koimsurai.com/rss">宙と木 - 一個寫代碼的人，偶爾造點東西</source>
+    </item>
+    <item>
+      <title>2008，没什么搞不定的</title>
+      <link>https://www.tortorse.com/archives/nothing-we-couldnt-handle-2008/</link>
+      <guid isPermaLink="true">https://www.tortorse.com/archives/nothing-we-couldnt-handle-2008/</guid>
+      <pubDate>Sat, 31 Oct 2026 03:26:33 GMT</pubDate>
+      <source url="https://www.tortorse.com/atom.xml">愆伏</source>
+    </item>
+    <item>
+      <title>当下应该如何投资</title>
+      <link>https://happyxiao.com/invest2027/</link>
+      <guid isPermaLink="true">https://happyxiao.com/invest2027/</guid>
+      <pubDate>Sat, 31 Oct 2026 02:57:36 GMT</pubDate>
+      <source url="https://happyxiao.com/feed">happy xiao 的博客</source>
+    </item>
+    <item>
+      <title>Fragments 0x001B</title>
+      <link>https://lenciel.com/2026/10/fragments-0x001b/</link>
+      <guid isPermaLink="true">https://lenciel.com/2026/10/fragments-0x001b/</guid>
+      <pubDate>Sat, 31 Oct 2026 02:17:55 GMT</pubDate>
+      <source url="https://lenciel.com/feed.xml">@Lenciel</source>
+    </item>
+    <item>
+      <title>一人之上，万人之下</title>
+      <link>https://wangyurui.com/posts/yi-ren-zhi-shang-mo-ren-zhi-xia-64f327a9</link>
+      <guid isPermaLink="true">https://wangyurui.com/posts/yi-ren-zhi-shang-mo-ren-zhi-xia-64f327a9</guid>
+      <pubDate>Sat, 31 Oct 2026 01:52:09 GMT</pubDate>
+      <source url="https://wangyurui.com/feed.xml">太隐</source>
+    </item>
+    <item>
+      <title>Ant Design Blazor 体验测评：3 分钟上手，值得推荐给 .NET 团队吗？</title>
+      <link>https://www.coderlog.net/post/ant-design-blazor-review-worth-recommending-dotnet-teams</link>
+      <guid isPermaLink="true">https://www.coderlog.net/post/ant-design-blazor-review-worth-recommending-dotnet-teams</guid>
+      <pubDate>Sat, 31 Oct 2026 01:40:25 GMT</pubDate>
+      <source url="https://coderlog.net/rss.xml">码录集（CoderLog）</source>
+    </item>
+    <item>
+      <title>AI 时代少有人类阅读，我开始建自己的独立站，但真的是 49 年入国军吗</title>
+      <link>https://yishuai.wang/articles/aafbe022-27ee-493b-bf0a-81096cc48ca0</link>
+      <guid isPermaLink="true">https://yishuai.wang/articles/aafbe022-27ee-493b-bf0a-81096cc48ca0</guid>
+      <pubDate>Sat, 31 Oct 2026 00:56:33 GMT</pubDate>
+      <source url="https://yishuai.wang/feed.xml">Yishuai · 作品、文字与日常</source>
+    </item>
+    <item>
+      <title>WorkBuddy.ai 多个任务之间 不共享文件 / Muse.ai 多个任务之间 可以共享文件</title>
+      <link>https://zelikk.blogspot.com/2026/10/workbuddyai-museai.html</link>
+      <guid isPermaLink="true">https://zelikk.blogspot.com/2026/10/workbuddyai-museai.html</guid>
+      <pubDate>Sat, 31 Oct 2026 00:29:26 GMT</pubDate>
+      <source url="https://zelikk.blogspot.com/feeds/posts/default">ICDYCT我能你也行</source>
+    </item>
+    <item>
+      <title>派派成长日记 #17 - NoNoNo（1y5m）</title>
+      <link>https://changchen.me/blog/20261031/paipai-1year5month/</link>
+      <guid isPermaLink="true">https://changchen.me/blog/20261031/paipai-1year5month/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:05:12 GMT</pubDate>
+      <source url="https://changchen.me/atom.xml">Henry Z's blog</source>
+    </item>
+    <item>
+      <title>文章分类与统计</title>
+      <link>https://blog.wohin.me/post-categories/</link>
+      <guid isPermaLink="true">https://blog.wohin.me/post-categories/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://blog.wohin.me/index.xml">Fernweh</source>
+    </item>
+    <item>
+      <title>Python 潮流周刊#173：Guido 保荐的 PEP 823 拟给 3.16 加 ?. 与 ?[]</title>
+      <link>https://pythoncat.top/posts/2026-10-31-weekly/</link>
+      <guid isPermaLink="true">https://pythoncat.top/posts/2026-10-31-weekly/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://pythoncat.top/rss.xml">豌豆花下猫 - Python猫</source>
+    </item>
+    <item>
+      <title>反思错过这轮科技牛的原因</title>
+      <link>https://jasonleehere.com/blog/2026-10-31-%E5%8F%8D%E6%80%9D%E9%94%99%E8%BF%87%E8%BF%99%E8%BD%AE%E7%A7%91%E6%8A%80%E7%89%9B%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <guid isPermaLink="true">https://jasonleehere.com/blog/2026-10-31-%E5%8F%8D%E6%80%9D%E9%94%99%E8%BF%87%E8%BF%99%E8%BD%AE%E7%A7%91%E6%8A%80%E7%89%9B%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://jasonleehere.com/feed.xml">Jason Lee的个人博客</source>
+    </item>
+    <item>
+      <title>操作系统如何组织电脑中的文件？——OS的文件管理</title>
+      <link>https://blog.cloverta.top/zh/posts/file-system-basics/</link>
+      <guid isPermaLink="true">https://blog.cloverta.top/zh/posts/file-system-basics/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://blog.cloverta.top/rss.xml">三叶的博客</source>
+    </item>
+    <item>
+      <title>为什么要研究近百年货币数据？读《美国货币史》的第一课</title>
+      <link>https://www.xbstack.com/horizon/reading/a-monetary-history-1867-method/</link>
+      <guid isPermaLink="true">https://www.xbstack.com/horizon/reading/a-monetary-history-1867-method/</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.xbstack.com/rss.xml">XBSTACK</source>
+    </item>
+    <item>
+      <title>Cleanzo 0.3.0 &amp;#x5f00;&amp;#x53d1;&amp;#x590d;&amp;#x76d8;&amp;#xff1a;&amp;#x4ece;&amp;#x300c;&amp;#x6709;&amp;#x70b9;&amp;#x6162;&amp;#x3001;&amp;#x4f1a;&amp;#x95ea;&amp;#x300d;&amp;#x5230;&amp;#x539f;&amp;#x751f;&amp;#x83dc;&amp;#x5355;&amp;#x680f;&amp;#x9762;&amp;#x677f;</title>
+      <link>https://www.echovic.com/blog/ai/cleanzo-030-native-menubar-retrospective</link>
+      <guid isPermaLink="true">https://www.echovic.com/blog/ai/cleanzo-030-native-menubar-retrospective</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.echovic.com/rss.xml">青雲的博客</source>
+    </item>
+    <item>
+      <title>Mondoze 云端 Mac mini M4 与 BX 独立服务器</title>
+      <link>https://ednovas.xyz/2026/10/30/mondoze-mac-mini/</link>
+      <guid isPermaLink="true">https://ednovas.xyz/2026/10/30/mondoze-mac-mini/</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 GMT</pubDate>
+      <source url="https://ednovas.xyz/atom.xml">EdNovas的小站</source>
+    </item>
+    <item>
+      <title>折腾桌面</title>
+      <link>https://yipai.me/post/2556.html</link>
+      <guid isPermaLink="true">https://yipai.me/post/2556.html</guid>
+      <pubDate>Fri, 30 Oct 2026 17:10:00 GMT</pubDate>
+      <source url="https://yipai.me/feed">一派胡言</source>
+    </item>
+    <item>
+      <title>同一任务被执行两次才是事故：NeoTask 分布式锁与看门狗实战</title>
+      <link>https://pengline.cn/2026/09/neotask-lock-watchdog/</link>
+      <guid isPermaLink="true">https://pengline.cn/2026/09/neotask-lock-watchdog/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:25:24 GMT</pubDate>
+      <source url="https://pengline.cn/atom.xml">余一叶知秋尽</source>
+    </item>
+    <item>
+      <title>Toashot：或许是一个更加方便好用的截图工具</title>
+      <link>https://ftz.is-a.dev/blog/posts/toashot/</link>
+      <guid isPermaLink="true">https://ftz.is-a.dev/blog/posts/toashot/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="https://ftz.is-a.dev/rss.xml">for_the_zero的小站</source>
+    </item>
+    <item>
+      <title>关于PCLPoC</title>
+      <link>https://blog.watermelonabc.top/p/about-pclpoc/</link>
+      <guid isPermaLink="true">https://blog.watermelonabc.top/p/about-pclpoc/</guid>
+      <pubDate>Fri, 30 Oct 2026 14:39:04 GMT</pubDate>
+      <source url="https://blog.watermelonabc.top/atom.xml">Watermelonabc的Blog</source>
+    </item>
+    <item>
+      <title>摄影闲扯: 博客不该是孤岛 —— 一个让个人博客网站互相引流的免费小联盟</title>
+      <link>https://fengcblog.880200.xyz/article/000355/.html</link>
+      <guid isPermaLink="true">https://fengcblog.880200.xyz/article/000355/.html</guid>
+      <pubDate>Fri, 30 Oct 2026 12:50:00 GMT</pubDate>
+      <source url="https://fengcblog.880200.xyz/feed">fengc's Blog</source>
+    </item>
+    <item>
+      <title>酥米的碎碎念（18），生日快乐！</title>
+      <link>https://www.sumi233.top/posts/mouthtalk/sumi-thoughts-18/</link>
+      <guid isPermaLink="true">https://www.sumi233.top/posts/mouthtalk/sumi-thoughts-18/</guid>
+      <pubDate>Fri, 30 Oct 2026 12:00:55 GMT</pubDate>
+      <source url="https://www.sumi233.top/rss.xml">酥米的小站</source>
+    </item>
+    <item>
+      <title>懒加载图片新支持了sizes=”auto”属性，其作用是？</title>
+      <link>https://www.zhangxinxu.com/wordpress/2026/10/loading-lazy-img-sizes-auto/</link>
+      <guid isPermaLink="true">https://www.zhangxinxu.com/wordpress/2026/10/loading-lazy-img-sizes-auto/</guid>
+      <pubDate>Fri, 30 Oct 2026 11:47:48 GMT</pubDate>
+      <source url="http://www.zhangxinxu.com/wordpress/?feed=rss2">张鑫旭-鑫空间-鑫生活</source>
+    </item>
+    <item>
+      <title>我何以闺怨</title>
+      <link>https://cbc688.com/articles/whygy</link>
+      <guid isPermaLink="true">https://cbc688.com/articles/whygy</guid>
+      <pubDate>Fri, 30 Oct 2026 10:07:00 GMT</pubDate>
+      <source url="https://cbc688.com/rss.xml">CRIVU</source>
+    </item>
+    <item>
+      <title>Owen的博客</title>
+      <link>https://www.owenyoung.com/6bqqm</link>
+      <guid isPermaLink="true">https://www.owenyoung.com/6bqqm</guid>
+      <pubDate>Fri, 30 Oct 2026 09:57:07 GMT</pubDate>
+      <source url="https://www.owenyoung.com/latest/feed">Owen的博客</source>
+    </item>
+    <item>
+      <title>只是多了 2 个页面，为什么却触发了一次 49→51 的迁移？</title>
+      <link>https://www.shuijingwanwq.com/2026/10/30/28001/</link>
+      <guid isPermaLink="true">https://www.shuijingwanwq.com/2026/10/30/28001/</guid>
+      <pubDate>Fri, 30 Oct 2026 08:29:00 GMT</pubDate>
+      <source url="https://www.shuijingwanwq.com/feed/">永夜</source>
+    </item>
+    <item>
+      <title>开坑！从 AI Coding 到 AI4S：新开源项目 Pero 的一次探索</title>
+      <link>http://www.phodal.com/blog/pero-ai4s/</link>
+      <guid isPermaLink="true">http://www.phodal.com/blog/pero-ai4s/</guid>
+      <pubDate>Fri, 30 Oct 2026 07:26:48 GMT</pubDate>
+      <source url="https://www.phodal.com/blog/feeds/rss/">全栈应用开发:精益实践</source>
+    </item>
+    <item>
+      <title>Reasoning-Intensive Retrieval：从表示学习到迭代搜索</title>
+      <link>https://finisky.github.io/reasoning-intensive-retrieval-summary/</link>
+      <guid isPermaLink="true">https://finisky.github.io/reasoning-intensive-retrieval-summary/</guid>
+      <pubDate>Fri, 30 Oct 2026 01:23:21 GMT</pubDate>
+      <source url="https://finisky.github.io/rss">Finisky Garden</source>
+    </item>
+    <item>
+      <title>排序算法</title>
+      <link>https://www.xchere.xyz/p/ef35.html</link>
+      <guid isPermaLink="true">https://www.xchere.xyz/p/ef35.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:56:23 GMT</pubDate>
+      <source url="https://www.xchere.xyz/atom.xml">叉息的空中咖啡馆</source>
+    </item>
+    <item>
+      <title>Pensieve: 2610</title>
+      <link>https://xiaket.github.io/2026/pensieve-2610.html</link>
+      <guid isPermaLink="true">https://xiaket.github.io/2026/pensieve-2610.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:41:00 GMT</pubDate>
+      <source url="https://blog.xiaket.org/feed.xml">年华转瞬</source>
+    </item>
+    <item>
+      <title>向云端｜西南自驾11 - 布依</title>
+      <link>https://blog.ops-coffee.com/r/2026-southwest-road-trip-11-longjing.html</link>
+      <guid isPermaLink="true">https://blog.ops-coffee.com/r/2026-southwest-road-trip-11-longjing.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:26:43 GMT</pubDate>
+      <source url="https://blog.ops-coffee.com/feed.xml">运维咖啡吧</source>
+    </item>
+    <item>
+      <title>科技爱好者周刊（第 417 期）：不要让 AI 代表你</title>
+      <link>http://www.ruanyifeng.com/blog/2026/10/weekly-issue-417.html</link>
+      <guid isPermaLink="true">http://www.ruanyifeng.com/blog/2026/10/weekly-issue-417.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:13:03 GMT</pubDate>
+      <source url="http://feeds.feedburner.com/ruanyifeng">阮一峰的网络日志</source>
+    </item>
+    <item>
+      <title>【大模型基础设施工程·特别篇】31：机房脏活——从业务规划到电力、光纤、RDMA、光模块与交换机</title>
+      <link>https://quant67.com/post/llm-infra/31-datacenter-ops/31-datacenter-ops.html</link>
+      <guid isPermaLink="true">https://quant67.com/post/llm-infra/31-datacenter-ops/31-datacenter-ops.html</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://quant67.com/rss.xml">土法炼钢兴趣小组的博客</source>
+    </item>
+    <item>
+      <title>DeepMind 因军方合同出走：原则写在纸上，否决权不在合同里</title>
+      <link>https://notes.yachiyo.im/posts/deepmind-resignations-pentagon-ai/</link>
+      <guid isPermaLink="true">https://notes.yachiyo.im/posts/deepmind-resignations-pentagon-ai/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://notes.yachiyo.im/rss.xml">AI Notes</source>
+    </item>
+    <item>
+      <title>workerd：运行原理、源码架构与自部署流程</title>
+      <link>https://yindongliang.com/docs/Cloudflare/workerd-architecture-and-self-hosting/</link>
+      <guid isPermaLink="true">https://yindongliang.com/docs/Cloudflare/workerd-architecture-and-self-hosting/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://yindongliang.com/index.xml">LYon's Blog</source>
+    </item>
+    <item>
+      <title>记忆税：一次对 Agent 记忆的审计</title>
+      <link>https://u1-lab.xiaoxia.io/memory-tax/</link>
+      <guid isPermaLink="true">https://u1-lab.xiaoxia.io/memory-tax/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://u1-lab.xiaoxia.io/feed.xml">Tony's Lab</source>
+    </item>
+    <item>
+      <title>红酥手，黄縢酒：陆游这辈子，没走出那座沈园</title>
+      <link>https://shilongzai.com/posts/p-d355e07bb6017b78/</link>
+      <guid isPermaLink="true">https://shilongzai.com/posts/p-d355e07bb6017b78/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://shilongzai.com/feed.xml">石龙仔文库</source>
+    </item>
+    <item>
+      <title>学习周刊-总第287期-2026年第44周</title>
+      <link>https://wiki.eryajf.net/pages/f7ca02/</link>
+      <guid isPermaLink="true">https://wiki.eryajf.net/pages/f7ca02/</guid>
+      <pubDate>Thu, 29 Oct 2026 23:10:23 GMT</pubDate>
+      <source url="https://wiki.eryajf.net/rss.xml">二丫讲梵</source>
+    </item>
+    <item>
+      <title>The Last Proof of Human Craft: Forging a Microsoft Edge Full Chain with Logic Bugs Only!</title>
+      <link>https://blog.orange.tw/posts/2026-10-the-last-proof-of-human-craft-browser-full-chain/</link>
+      <guid isPermaLink="true">https://blog.orange.tw/posts/2026-10-the-last-proof-of-human-craft-browser-full-chain/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:21:48 GMT</pubDate>
+      <source url="https://blog.orange.tw/atom.xml">Orange</source>
+    </item>
+    <item>
+      <title>AI对抗与逆向</title>
+      <link>https://elmagnifico.tech/2026/10/30/AI-Cheat/</link>
+      <guid isPermaLink="true">https://elmagnifico.tech/2026/10/30/AI-Cheat/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="http://elmagnifico.tech/feed.xml">elmagnifico</source>
+    </item>
+    <item>
+      <title>一个 DSH 插件让你免费畅饮各大模型！</title>
+      <link>https://www.ccgxk.com/emlog_dev/934.html</link>
+      <guid isPermaLink="true">https://www.ccgxk.com/emlog_dev/934.html</guid>
+      <pubDate>Thu, 29 Oct 2026 15:18:05 GMT</pubDate>
+      <source url="http://www.ccgxk.com/rss.php">独元殇</source>
+    </item>
+    <item>
+      <title>《工资外收入：不要再单次、廉价地出卖你的时间》书摘</title>
+      <link>https://www.ixiqin.com/2026/10/29/gongziwaishouru-booknote/</link>
+      <guid isPermaLink="true">https://www.ixiqin.com/2026/10/29/gongziwaishouru-booknote/</guid>
+      <pubDate>Thu, 29 Oct 2026 15:11:11 GMT</pubDate>
+      <source url="https://www.ixiqin.com/feed/">西秦公子</source>
+    </item>
+    <item>
+      <title>人世游</title>
+      <link>https://zhurongshuo.com/posts/2026/10/2901/</link>
+      <guid isPermaLink="true">https://zhurongshuo.com/posts/2026/10/2901/</guid>
+      <pubDate>Thu, 29 Oct 2026 14:46:17 GMT</pubDate>
+      <source url="https://zhurongshuo.com/index.xml">祝融说</source>
+    </item>
+    <item>
+      <title>重修中文？</title>
+      <link>https://blog.supergrey.uk/relearn-chinese/</link>
+      <guid isPermaLink="true">https://blog.supergrey.uk/relearn-chinese/</guid>
+      <pubDate>Thu, 29 Oct 2026 13:34:34 GMT</pubDate>
+      <source url="https://supergrey.bearblog.dev/feed/">SuperGrey的笔记本</source>
+    </item>
+    <item>
+      <title>当时明月在，曾照彩云归</title>
+      <link>https://cavill.site/articles/gujian-qitan-afterthoughts</link>
+      <guid isPermaLink="true">https://cavill.site/articles/gujian-qitan-afterthoughts</guid>
+      <pubDate>Thu, 29 Oct 2026 13:09:18 GMT</pubDate>
+      <source url="https://cavill.site/rss.xml">栖迟处</source>
+    </item>
+    <item>
+      <title>What a GPU Workshop Reveals About the Developer Experience Gap in Cloud Native Infrastructure</title>
+      <link>https://jimmysong.io/blog/containerdays-singapore-2026-recap/</link>
+      <guid isPermaLink="true">https://jimmysong.io/blog/containerdays-singapore-2026-recap/</guid>
+      <pubDate>Thu, 29 Oct 2026 11:06:46 GMT</pubDate>
+      <source url="https://jimmysong.io/index.xml">云原生</source>
+    </item>
+    <item>
+      <title>游戏</title>
+      <link>https://www.kawabangga.com/posts/7446</link>
+      <guid isPermaLink="true">https://www.kawabangga.com/posts/7446</guid>
+      <pubDate>Thu, 29 Oct 2026 10:37:24 GMT</pubDate>
+      <source url="https://www.kawabangga.com/feed">卡瓦邦噶！</source>
+    </item>
+    <item>
+      <title>《桂州秋日寄北》——李不言 AI 制作</title>
+      <link>https://libuyan.top/posts/gui-zhou-qiu-ri-ji-bei/</link>
+      <guid isPermaLink="true">https://libuyan.top/posts/gui-zhou-qiu-ri-ji-bei/</guid>
+      <pubDate>Thu, 29 Oct 2026 10:30:00 GMT</pubDate>
+      <source url="https://libuyan.top/rss.xml">李不言的博客</source>
+    </item>
+    <item>
+      <title>图片格式怎么选：JPEG XL、AVIF、WebP、HEIF 的科普与取舍</title>
+      <link>https://blog.zhheo.com/p/gev3cm0t.html</link>
+      <guid isPermaLink="true">https://blog.zhheo.com/p/gev3cm0t.html</guid>
+      <pubDate>Thu, 29 Oct 2026 07:25:04 GMT</pubDate>
+      <source url="https://blog.zhheo.com/rss.xml">张洪Heo</source>
+    </item>
+    <item>
+      <title>加固我的virtiofs</title>
+      <link>https://blog.lilydjwg.me/posts/217055.html</link>
+      <guid isPermaLink="true">https://blog.lilydjwg.me/posts/217055.html</guid>
+      <pubDate>Thu, 29 Oct 2026 07:23:13 GMT</pubDate>
+      <source url="https://blog.lilydjwg.me/posts.rss">依云's Blog</source>
+    </item>
+    <item>
+      <title>Unicloud 云服务空间迁移不完全指南</title>
+      <link>https://zhongxiaojie.cn/2026/10/2315/</link>
+      <guid isPermaLink="true">https://zhongxiaojie.cn/2026/10/2315/</guid>
+      <pubDate>Thu, 29 Oct 2026 07:02:56 GMT</pubDate>
+      <source url="https://h4ck.org.cn/feed/">obaby@mars</source>
+    </item>
+    <item>
+      <title>把 Waline 迁到 EdgeOne KV，折腾了几轮才算完</title>
+      <link>https://zhang.ge/waline-edgeone-kv-migration.html</link>
+      <guid isPermaLink="true">https://zhang.ge/waline-edgeone-kv-migration.html</guid>
+      <pubDate>Thu, 29 Oct 2026 07:00:00 GMT</pubDate>
+      <source url="https://zhang.ge/feed">张戈博客</source>
+    </item>
+    <item>
+      <title>艾泽拉斯幸存者</title>
+      <link>https://leimao.github.io/essay/Azeroth-Survivors/</link>
+      <guid isPermaLink="true">https://leimao.github.io/essay/Azeroth-Survivors/</guid>
+      <pubDate>Thu, 29 Oct 2026 07:00:00 GMT</pubDate>
+      <source url="https://leimao.github.io/atom.xml">Lei Mao's Log Book</source>
+    </item>
+    <item>
+      <title>UTM 直通 USB 系统盘时，冷启动一闪就关机</title>
+      <link>https://sjdhome.com/posts/utm-usb-boot-disk-cold-start/</link>
+      <guid isPermaLink="true">https://sjdhome.com/posts/utm-usb-boot-disk-cold-start/</guid>
+      <pubDate>Thu, 29 Oct 2026 06:25:33 GMT</pubDate>
+      <source url="https://sjdhome.com/blog/atom.xml">sjdhome blog</source>
+    </item>
+    <item>
+      <title>使用Cloudflare的Worker来扩展安全规则并自动拉黑IP</title>
+      <link>https://www.cheshirex.com/11550.html</link>
+      <guid isPermaLink="true">https://www.cheshirex.com/11550.html</guid>
+      <pubDate>Thu, 29 Oct 2026 03:41:33 GMT</pubDate>
+      <source url="https://www.cheshirex.com/feed">柴郡猫</source>
+    </item>
+    <item>
+      <title>Phonics 自然拼读常见规则 - 辅音字母的发音规律</title>
+      <link>https://blog.esonwong.com/phonics-of-consonants/</link>
+      <guid isPermaLink="true">https://blog.esonwong.com/phonics-of-consonants/</guid>
+      <pubDate>Thu, 29 Oct 2026 02:40:33 GMT</pubDate>
+      <source url="https://blog.esonwong.com/atom.xml">Eson Wong's Blog</source>
+    </item>
+    <item>
+      <title>Memos: 当下软件开发的效率瓶颈</title>
+      <link>https://blog.yasking.org/a/1793239872</link>
+      <guid isPermaLink="true">https://blog.yasking.org/a/1793239872</guid>
+      <pubDate>Thu, 29 Oct 2026 02:11:12 GMT</pubDate>
+      <source url="https://blog.yasking.org/atom.xml">东东's Blog</source>
+    </item>
+    <item>
+      <title>首座馬拉松獎盃</title>
+      <link>http://mercurychong.blogspot.com/2026/10/blog-post.html</link>
+      <guid isPermaLink="true">http://mercurychong.blogspot.com/2026/10/blog-post.html</guid>
+      <pubDate>Thu, 29 Oct 2026 00:07:43 GMT</pubDate>
+      <source url="http://mercurychong.blogspot.com/feeds/posts/default">水星投资理财</source>
+    </item>
+    <item>
+      <title>独立开发变现周刊（第163期） : 单人公司被Anthropic收购 Pipeline-in-a-Person</title>
+      <link>https://www.ezindie.com/weekly/issue-163</link>
+      <guid isPermaLink="true">https://www.ezindie.com/weekly/issue-163</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.ezindie.com/feed/rss.xml">独立开发变现周刊</source>
+    </item>
+    <item>
+      <title>2026 年，我的 21 条 AI Coding 最佳实践</title>
+      <link>https://tw93.fun/2026-10-29/practice.html</link>
+      <guid isPermaLink="true">https://tw93.fun/2026-10-29/practice.html</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://tw93.fun/feed.xml">Tw93 的博客</source>
+    </item>
+    <item>
+      <title>A 类、C 类股票有什么区别？看 Snap、Google 和 Meta</title>
+      <link>https://innomad.io/class-a-class-c-shares/</link>
+      <guid isPermaLink="true">https://innomad.io/class-a-class-c-shares/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://innomad.io/rss">Innomad一挪迈</source>
+    </item>
+    <item>
+      <title>从以工作为核心，变为以自己为核心</title>
+      <link>https://daolanx.me/zh/posts/post-27/</link>
+      <guid isPermaLink="true">https://daolanx.me/zh/posts/post-27/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://daolanx.me/zh/rss.xml">Dax</source>
+    </item>
+    <item>
+      <title>读书笔记：我向达尔文学投资</title>
+      <link>https://wmhwiki.cn/posts/2026/darwin-invest</link>
+      <guid isPermaLink="true">https://wmhwiki.cn/posts/2026/darwin-invest</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://wmhwiki.cn/rss.xml">wmhwiki</source>
+    </item>
+    <item>
+      <title>手机编年史</title>
+      <link>https://wsh233.cn/post/手机编年史</link>
+      <guid isPermaLink="true">https://wsh233.cn/post/手机编年史</guid>
+      <pubDate>Wed, 28 Oct 2026 20:54:05 GMT</pubDate>
+      <source url="https://wsh233.cn/rss.xml">WSH</source>
+    </item>
+    <item>
+      <title>（小业主的退休账户）SEP IRA是什么？</title>
+      <link>https://chattymoney.com/sep-ira/</link>
+      <guid isPermaLink="true">https://chattymoney.com/sep-ira/</guid>
+      <pubDate>Wed, 28 Oct 2026 19:08:37 GMT</pubDate>
+      <source url="https://chattymoney.com/feed/">chattymoney(跟我一起来谈钱)</source>
+    </item>
+    <item>
+      <title>《查拉图斯特拉如是说》导读：一本反福音书</title>
+      <link>https://lucifer.ren/blog/2026/10/29/zarathustra/</link>
+      <guid isPermaLink="true">https://lucifer.ren/blog/2026/10/29/zarathustra/</guid>
+      <pubDate>Wed, 28 Oct 2026 16:50:09 GMT</pubDate>
+      <source url="https://lucifer.ren/blog/atom.xml">lucifer的网络博客</source>
+    </item>
+    <item>
+      <title>millsage：将双手满载的幸福，献给你。</title>
+      <link>https://xeonzilla.top/bang-dream-millsage/</link>
+      <guid isPermaLink="true">https://xeonzilla.top/bang-dream-millsage/</guid>
+      <pubDate>Wed, 28 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="https://xeonzilla.top/index.xml">Xeonzilla's Note</source>
+    </item>
+    <item>
+      <title>云南盐津：真一线城市</title>
+      <link>https://macin.org/2026/10/28/yun-nan-yan-jin/</link>
+      <guid isPermaLink="true">https://macin.org/2026/10/28/yun-nan-yan-jin/</guid>
+      <pubDate>Wed, 28 Oct 2026 14:53:51 GMT</pubDate>
+      <source url="https://www.macin.org/atom.xml">Macin</source>
+    </item>
+    <item>
+      <title>预测市场生态的项目为什么难做</title>
+      <link>https://smallyu.net/2026/08/09/%E9%A2%84%E6%B5%8B%E5%B8%82%E5%9C%BA%E7%94%9F%E6%80%81%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9A%BE%E5%81%9A/</link>
+      <guid isPermaLink="true">https://smallyu.net/2026/08/09/%E9%A2%84%E6%B5%8B%E5%B8%82%E5%9C%BA%E7%94%9F%E6%80%81%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9A%BE%E5%81%9A/</guid>
+      <pubDate>Wed, 28 Oct 2026 13:32:34 GMT</pubDate>
+      <source url="https://smallyu.net/atom.xml">smallyu的博客</source>
+    </item>
+    <item>
+      <title>VMRack VPS 评测：$13/月洛杉矶 2 核 2G 三网线路实测，能替代搬瓦工吗？</title>
+      <link>https://blog.naibabiji.com/skill/vmrack-vps-review.html</link>
+      <guid isPermaLink="true">https://blog.naibabiji.com/skill/vmrack-vps-review.html</guid>
+      <pubDate>Wed, 28 Oct 2026 12:05:02 GMT</pubDate>
+      <source url="https://blog.naibabiji.com/feed">奶爸建站笔记</source>
+    </item>
+    <item>
+      <title>43. 我让 AI 当导演，从零拍了一集动画短片</title>
+      <link>https://xiangyugongzuoliu.com/43-ai-director-higgsfield/</link>
+      <guid isPermaLink="true">https://xiangyugongzuoliu.com/43-ai-director-higgsfield/</guid>
+      <pubDate>Wed, 28 Oct 2026 08:00:39 GMT</pubDate>
+      <source url="https://xiangyugongzuoliu.com/latest/rss/">翔宇工作流</source>
+    </item>
+    <item>
+      <title>体育运动的社交价值</title>
+      <link>https://yinwang.org/notes#m-2026-10-8833</link>
+      <guid isPermaLink="true">https://yinwang.org/notes#m-2026-10-8833</guid>
+      <pubDate>Wed, 28 Oct 2026 07:20:00 GMT</pubDate>
+      <source url="https://www.yinwang.org/notes/feed.xml">王垠的博客</source>
+    </item>
+    <item>
+      <title>一人公司：我做了个替你操作网页的浏览器智能体</title>
+      <link>https://blog.wordtk.com/p/1793171097948</link>
+      <guid isPermaLink="true">https://blog.wordtk.com/p/1793171097948</guid>
+      <pubDate>Wed, 28 Oct 2026 07:04:00 GMT</pubDate>
+      <source url="https://blog.wordtk.com/feed.xml">猫窝博客 · Java / MySQL / Linux ops notes</source>
+    </item>
+    <item>
+      <title>systemd timer 配置与使用</title>
+      <link>https://zahui.fan/posts/tnlsl3/</link>
+      <guid isPermaLink="true">https://zahui.fan/posts/tnlsl3/</guid>
+      <pubDate>Wed, 28 Oct 2026 06:00:21 GMT</pubDate>
+      <source url="https://zahui.fan/atom.xml">杂烩饭</source>
+    </item>
+    <item>
+      <title>体验碎周报第296期(2026.10.26)</title>
+      <link>https://www.ftium4.com/ux-weekly-296.html</link>
+      <guid isPermaLink="true">https://www.ftium4.com/ux-weekly-296.html</guid>
+      <pubDate>Wed, 28 Oct 2026 04:56:06 GMT</pubDate>
+      <source url="https://www.ftium4.com/rss.xml">龙爪槐守望者</source>
+    </item>
+    <item>
+      <title>题解 - [Luogu P7486] 「Stoi2031」彩虹</title>
+      <link>https://tifa-233.com/archives/luogu-p7486/</link>
+      <guid isPermaLink="true">https://tifa-233.com/archives/luogu-p7486/</guid>
+      <pubDate>Wed, 28 Oct 2026 04:51:27 GMT</pubDate>
+      <source url="https://blog.tifa-233.com/atom.xml">Tifa's Blog</source>
+    </item>
+    <item>
+      <title>《人的境况》读书会第一期实录：从“摆脱地球”到“无劳动的劳动者社会”</title>
+      <link>https://yilinhut.net/2026/10/28/15784.html</link>
+      <guid isPermaLink="true">https://yilinhut.net/2026/10/28/15784.html</guid>
+      <pubDate>Wed, 28 Oct 2026 04:09:55 GMT</pubDate>
+      <source url="https://yilinhut.net/feed/">随轩</source>
+    </item>
+    <item>
+      <title>刚在日本订阅 Claude Pro，信用卡已扣款，订阅却没有生效，因为先要身份认证</title>
+      <link>https://www.wikimoe.com/post/t-tnllvrty</link>
+      <guid isPermaLink="true">https://www.wikimoe.com/post/t-tnllvrty</guid>
+      <pubDate>Wed, 28 Oct 2026 03:33:26 GMT</pubDate>
+      <source url="https://www.wikimoe.com/rss.php">维基萌</source>
+    </item>
+    <item>
+      <title>微说 | 中成药这么贵的吗？</title>
+      <link>https://www.xiabingbao.com/talk/t/mvrge56m.html</link>
+      <guid isPermaLink="true">https://www.xiabingbao.com/talk/t/mvrge56m.html</guid>
+      <pubDate>Wed, 28 Oct 2026 01:46:23 GMT</pubDate>
+      <source url="https://www.xiabingbao.com/atom.xml">蚊子前端博客</source>
+    </item>
+    <item>
+      <title>BabyLog记录了我14年对孩子所有的回忆也见证了我自学编程的学习路线</title>
+      <link>https://www.suiyan.cc/blog/20261028080326</link>
+      <guid isPermaLink="true">https://www.suiyan.cc/blog/20261028080326</guid>
+      <pubDate>Wed, 28 Oct 2026 00:03:26 GMT</pubDate>
+      <source url="https://suiyan.cc/rss.xml">碎言博客</source>
+    </item>
+    <item>
+      <title>使用Trapfall收集个人项目错误</title>
+      <link>https://mephisto.cc/tech/trapfall/</link>
+      <guid isPermaLink="true">https://mephisto.cc/tech/trapfall/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://mephisto.cc/index.xml">Mephisto's blog</source>
+    </item>
+    <item>
+      <title>合规是悬在可信CA头上的一把刀：下一个倒下的CA将会是谁？</title>
+      <link>https://razeen.me/posts/ca-compliance-who-will-fall-next/</link>
+      <guid isPermaLink="true">https://razeen.me/posts/ca-compliance-who-will-fall-next/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://razeen.me/index.xml">Razeen's Blog</source>
+    </item>
+    <item>
+      <title>Cordis 学习笔记 #1</title>
+      <link>https://www.yysuni.com/blog/cordis01</link>
+      <guid isPermaLink="true">https://www.yysuni.com/blog/cordis01</guid>
+      <pubDate>Tue, 27 Oct 2026 23:19:00 GMT</pubDate>
+      <source url="https://www.yysuni.com/rss.xml">Suni Blog</source>
+    </item>
+    <item>
+      <title>给 DeepSeek Harness 接上 QQ：一只会记住你的鲸鱼娘</title>
+      <link>https://ystyle.top/2026/10/28/dsh-im-qq-whale-girl/</link>
+      <guid isPermaLink="true">https://ystyle.top/2026/10/28/dsh-im-qq-whale-girl/</guid>
+      <pubDate>Tue, 27 Oct 2026 17:55:00 GMT</pubDate>
+      <source url="https://ystyle.top/atom.xml">东方星痕</source>
+    </item>
+    <item>
+      <title>依沃西单抗+化疗：晚期胆道癌一线治疗的新标准 #ESMO26</title>
+      <link>http://whyes.org/2026/ivonescimab-btc-first-line</link>
+      <guid isPermaLink="true">http://whyes.org/2026/ivonescimab-btc-first-line</guid>
+      <pubDate>Tue, 27 Oct 2026 16:10:27 GMT</pubDate>
+      <source url="https://whyes.org/feed/post.xml">whyes的博客</source>
+    </item>
+    <item>
+      <title>一些生活习惯上的改变</title>
+      <link>https://tumutanzi.com/archives/17653</link>
+      <guid isPermaLink="true">https://tumutanzi.com/archives/17653</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:34 GMT</pubDate>
+      <source url="https://tumutanzi.com/feed">土木坛子</source>
+    </item>
     <item>
       <title>2025 Kinmen Taiwan China Trip Part 2</title>
       <link>https://iloli.moe/2026/10/27/2025-kinmen-taiwan-china-trip-part-2/</link>
@@ -14,25 +1008,277 @@
       <source url="https://iloli.moe/atom.xml">IceCliffs</source>
     </item>
     <item>
-      <title>知乎热门：如何评价苏州思杰马克丁软件公司？</title>
-      <link>https://masuit.net/p173</link>
-      <guid isPermaLink="true">https://masuit.net/p173</guid>
-      <pubDate>Sun, 25 Oct 2026 18:29:17 GMT</pubDate>
-      <source url="https://masuit.net/rss/">懒得勤快的博客</source>
+      <title>Wish-Driven Development: Excitement Over Anxiety</title>
+      <link>https://geekplux.com/posts/wish-driven-development/</link>
+      <guid isPermaLink="true">https://geekplux.com/posts/wish-driven-development/</guid>
+      <pubDate>Tue, 27 Oct 2026 13:30:00 GMT</pubDate>
+      <source url="https://geekplux.com/atom.xml">GeekPlux</source>
     </item>
     <item>
-      <title>岗位保护</title>
-      <link>https://wsh233.cn/post/岗位保护</link>
-      <guid isPermaLink="true">https://wsh233.cn/post/岗位保护</guid>
-      <pubDate>Sun, 25 Oct 2026 18:25:01 GMT</pubDate>
-      <source url="https://wsh233.cn/rss.xml">WSH</source>
+      <title>【杂谈】Self-education</title>
+      <link>https://www.coderlock.site/index.php/archives/126/</link>
+      <guid isPermaLink="true">https://www.coderlock.site/index.php/archives/126/</guid>
+      <pubDate>Tue, 27 Oct 2026 12:07:00 GMT</pubDate>
+      <source url="https://www.coderlock.site/index.php/feed/">寒夜雨</source>
     </item>
     <item>
-      <title>一年四件事：我的月度轮换计划（总览）</title>
-      <link>https://lucifer.ren/blog/2026/10/26/life-rotation-plan/</link>
-      <guid isPermaLink="true">https://lucifer.ren/blog/2026/10/26/life-rotation-plan/</guid>
-      <pubDate>Sun, 25 Oct 2026 16:43:19 GMT</pubDate>
-      <source url="https://lucifer.ren/blog/atom.xml">lucifer的网络博客</source>
+      <title>When the Namespace Dropdown in the Argo Rollouts Dashboard Disappeared</title>
+      <link>https://www.bboy.app/2026/10/27/when-the-namespace-dropdown-in-the-argo-rollouts-dashboard-disappeared/</link>
+      <guid isPermaLink="true">https://www.bboy.app/2026/10/27/when-the-namespace-dropdown-in-the-argo-rollouts-dashboard-disappeared/</guid>
+      <pubDate>Tue, 27 Oct 2026 10:20:00 GMT</pubDate>
+      <source url="https://www.bboy.app/atom.xml">bboysoul的博客</source>
+    </item>
+    <item>
+      <title>推荐我开发的 Linux AppImage 管理器：AppimageMannger</title>
+      <link>https://xingwangzhe.fun/posts/appimage-mannger-native-linux/</link>
+      <guid isPermaLink="true">https://xingwangzhe.fun/posts/appimage-mannger-native-linux/</guid>
+      <pubDate>Tue, 27 Oct 2026 09:55:00 GMT</pubDate>
+      <source url="https://xingwangzhe.fun/rss.xml">姓王者的博客</source>
+    </item>
+    <item>
+      <title>《幻世录》 100%必遇神秘男子</title>
+      <link>https://kn007.net/topics/the-legend-of-fancy-realm-guaranteed-encounter-with-mysterious-man/</link>
+      <guid isPermaLink="true">https://kn007.net/topics/the-legend-of-fancy-realm-guaranteed-encounter-with-mysterious-man/</guid>
+      <pubDate>Tue, 27 Oct 2026 05:15:44 GMT</pubDate>
+      <source url="https://kn007.net/feed/">kn007的个人博客</source>
+    </item>
+    <item>
+      <title>Android手机移动网络禁用IPv6</title>
+      <link>https://chegva.com/6825.html</link>
+      <guid isPermaLink="true">https://chegva.com/6825.html</guid>
+      <pubDate>Tue, 27 Oct 2026 04:27:32 GMT</pubDate>
+      <source url="https://chegva.com/feed/">安志合的学习博客</source>
+    </item>
+    <item>
+      <title>赴美的前前后后</title>
+      <link>https://www.jackpu.com/fu-mei-de-qian-qian-hou-hou/</link>
+      <guid isPermaLink="true">https://www.jackpu.com/fu-mei-de-qian-qian-hou-hou/</guid>
+      <pubDate>Tue, 27 Oct 2026 04:13:52 GMT</pubDate>
+      <source url="https://www.jackpu.com/rss/">蒲小花的博客</source>
+    </item>
+    <item>
+      <title>DJI Assistant 2 在新版 macOS 上一直轉圈：兩個睡了好幾年的 bug</title>
+      <link>https://blog.sean.taipei/2026/10/dji-assistant-macos-zh</link>
+      <guid isPermaLink="true">https://blog.sean.taipei/2026/10/dji-assistant-macos-zh</guid>
+      <pubDate>Tue, 27 Oct 2026 04:00:00 GMT</pubDate>
+      <source url="https://blog.sean.taipei/feed.xml">Sean's Note</source>
+    </item>
+    <item>
+      <title>我们审判历史的尺子，也是历史制造的</title>
+      <link>https://bestcoder.cn/history-made-the-ruler-we-judge-with</link>
+      <guid isPermaLink="true">https://bestcoder.cn/history-made-the-ruler-we-judge-with</guid>
+      <pubDate>Tue, 27 Oct 2026 03:11:27 GMT</pubDate>
+      <source url="https://bestcoder.cn/feed">顶尖研发的个人博客</source>
+    </item>
+    <item>
+      <title>腾讯云 Octop 快速入门：一小时跑通一个自托管的多用户 Agent 平台</title>
+      <link>https://youerning.top/post/octop-quickstart/</link>
+      <guid isPermaLink="true">https://youerning.top/post/octop-quickstart/</guid>
+      <pubDate>Tue, 27 Oct 2026 02:31:23 GMT</pubDate>
+      <source url="https://youerning.top/index.xml">又耳笔记</source>
+    </item>
+    <item>
+      <title>2026年Spaceship 优惠码</title>
+      <link>https://www.evan.xin/5133/</link>
+      <guid isPermaLink="true">https://www.evan.xin/5133/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:52:34 GMT</pubDate>
+      <source url="https://evan.xin/feed">Evan</source>
+    </item>
+    <item>
+      <title>Eve：科研工作台与使用方法</title>
+      <link>https://forrestgump618.github.io/posts/eve/</link>
+      <guid isPermaLink="true">https://forrestgump618.github.io/posts/eve/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://forrestgump618.github.io/rss">一个夏天的年少</source>
+    </item>
+    <item>
+      <title>积水潭</title>
+      <link>https://jame.work/html/post/58</link>
+      <guid isPermaLink="true">https://jame.work/html/post/58</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://jame.work/feed.xml">Jame</source>
+    </item>
+    <item>
+      <title>使用 zsh 脚本同步 MacOS 开发环境</title>
+      <link>https://varzy.me/posts/sync-macos-development-environment-with-zsh</link>
+      <guid isPermaLink="true">https://varzy.me/posts/sync-macos-development-environment-with-zsh</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://varzy.me/rss.xml">贼歪</source>
+    </item>
+    <item>
+      <title>AI、机遇、挑战与新生活（23岁生日总结）</title>
+      <link>https://blog.hikarilan.life/thinking/annual-summary/3910/my-annual-summary-2026/</link>
+      <guid isPermaLink="true">https://blog.hikarilan.life/thinking/annual-summary/3910/my-annual-summary-2026/</guid>
+      <pubDate>Mon, 26 Oct 2026 16:00:58 GMT</pubDate>
+      <source url="https://blog.hikarilan.life/feed">HikariLan's Blog</source>
+    </item>
+    <item>
+      <title>日产轩逸：白开水般的车</title>
+      <link>https://cyrusyip.org/zh-cn/posts/2026/10/27/sylphy-classic-2022-review/</link>
+      <guid isPermaLink="true">https://cyrusyip.org/zh-cn/posts/2026/10/27/sylphy-classic-2022-review/</guid>
+      <pubDate>Mon, 26 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="https://cyrusyip.org/zh-cn/index.xml">叶寻的博客</source>
+    </item>
+    <item>
+      <title>Atomic habits</title>
+      <link>https://blog.bensontech.dev/posts/atomic-habits/</link>
+      <guid isPermaLink="true">https://blog.bensontech.dev/posts/atomic-habits/</guid>
+      <pubDate>Mon, 26 Oct 2026 16:00:00 GMT</pubDate>
+      <source url="https://blog.bensontech.dev/feed.xml">Benson</source>
+    </item>
+    <item>
+      <title>漫谈心底那份夜雨与深秋</title>
+      <link>https://blog.mfwt.top/index.php/archives/1679/</link>
+      <guid isPermaLink="true">https://blog.mfwt.top/index.php/archives/1679/</guid>
+      <pubDate>Mon, 26 Oct 2026 15:57:00 GMT</pubDate>
+      <source url="https://blog.mfwt.top/index.php/feed/">枫林灯语</source>
+    </item>
+    <item>
+      <title>尝试使用Index翻译模型</title>
+      <link>https://wangjiezhe.com/posts/2026-10-11-Try-Index-Translate/</link>
+      <guid isPermaLink="true">https://wangjiezhe.com/posts/2026-10-11-Try-Index-Translate/</guid>
+      <pubDate>Mon, 26 Oct 2026 15:11:49 GMT</pubDate>
+      <source url="https://wangjiezhe.com/atom.xml">如鱼饮水</source>
+    </item>
+    <item>
+      <title>SFC 游戏：洛克人七代（Rockman 7）</title>
+      <link>https://springwood.me/sfc-rockman-7/</link>
+      <guid isPermaLink="true">https://springwood.me/sfc-rockman-7/</guid>
+      <pubDate>Mon, 26 Oct 2026 15:00:00 GMT</pubDate>
+      <source url="https://springwood.me/feed/">沉舟侧畔 Blog</source>
+    </item>
+    <item>
+      <title>巨人的荷塘·其二</title>
+      <link>https://blog.si-on.top/2026/LotusPond@Giant_ii/</link>
+      <guid isPermaLink="true">https://blog.si-on.top/2026/LotusPond@Giant_ii/</guid>
+      <pubDate>Mon, 26 Oct 2026 14:57:35 GMT</pubDate>
+      <source url="https://blog.si-on.top/atom.xml">子虚栈</source>
+    </item>
+    <item>
+      <title>核合成</title>
+      <link>https://physnya.top/astro-physics/lesson-5-nuclear-synthesis/</link>
+      <guid isPermaLink="true">https://physnya.top/astro-physics/lesson-5-nuclear-synthesis/</guid>
+      <pubDate>Mon, 26 Oct 2026 14:12:28 GMT</pubDate>
+      <source url="https://physnya.top/atom.xml">菲兹克斯喵</source>
+    </item>
+    <item>
+      <title>当应用不再属于特定操作系统 - 肘子的 Swift 周报 #159</title>
+      <link>https://fatbobman.com/zh/weekly/issue-159/</link>
+      <guid isPermaLink="true">https://fatbobman.com/zh/weekly/issue-159/</guid>
+      <pubDate>Mon, 26 Oct 2026 14:00:00 GMT</pubDate>
+      <source url="https://fatbobman.com/zh/rss.xml">肘子的 Swift 记事本</source>
+    </item>
+    <item>
+      <title>理想國</title>
+      <link>http://wangyikai.com/?p=3734</link>
+      <guid isPermaLink="true">http://wangyikai.com/?p=3734</guid>
+      <pubDate>Mon, 26 Oct 2026 13:36:49 GMT</pubDate>
+      <source url="http://wangyikai.com/?feed=rss2">王宜楷工作室</source>
+    </item>
+    <item>
+      <title>买时吹上天，拆开全是灰：工业奇迹从 MacBook 到 iPhone Duo</title>
+      <link>https://mianao.info/macbook-apple-design-iphone/</link>
+      <guid isPermaLink="true">https://mianao.info/macbook-apple-design-iphone/</guid>
+      <pubDate>Mon, 26 Oct 2026 10:00:00 GMT</pubDate>
+      <source url="https://mianao.info/atom.xml">不吐不快</source>
+    </item>
+    <item>
+      <title>ICT 核心概念笔记：流动性、FVG、Power of 3 与订单块</title>
+      <link>https://blog.forecho.com/learn-every-ict-concept.html</link>
+      <guid isPermaLink="true">https://blog.forecho.com/learn-every-ict-concept.html</guid>
+      <pubDate>Mon, 26 Oct 2026 09:00:00 GMT</pubDate>
+      <source url="https://blog.forecho.com/atom.xml">forecho 的独立博客</source>
+    </item>
+    <item>
+      <title>无 Root 权限在 HPC 共享集群部署 RStudio Server：完整安装指南</title>
+      <link>https://blog.xiaohanys.top/rstudio-server/</link>
+      <guid isPermaLink="true">https://blog.xiaohanys.top/rstudio-server/</guid>
+      <pubDate>Mon, 26 Oct 2026 08:03:13 GMT</pubDate>
+      <source url="https://blog.xiaohanys.top/atom.xml">晓光的个人博客</source>
+    </item>
+    <item>
+      <title>2026.10.25</title>
+      <link>https://www.justzht.com/2026-10-25/</link>
+      <guid isPermaLink="true">https://www.justzht.com/2026-10-25/</guid>
+      <pubDate>Mon, 26 Oct 2026 06:07:07 GMT</pubDate>
+      <source url="https://www.justzht.com/rss/">JustZht</source>
+    </item>
+    <item>
+      <title>自用 ChatGPT/Codex 防御性编程/说话修正/PowerShell调用问题修正提示词分享</title>
+      <link>https://kenvix.com/post/codex-prompt/</link>
+      <guid isPermaLink="true">https://kenvix.com/post/codex-prompt/</guid>
+      <pubDate>Mon, 26 Oct 2026 04:25:50 GMT</pubDate>
+      <source url="https://kenvix.com/rss.xml">Kenvix's Blog</source>
+    </item>
+    <item>
+      <title>soc运营入职后的见与解</title>
+      <link>http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</link>
+      <guid isPermaLink="true">http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</guid>
+      <pubDate>Mon, 26 Oct 2026 02:58:12 GMT</pubDate>
+      <source url="https://www.maonie.top/atom.xml">猫涅的技术博客</source>
+    </item>
+    <item>
+      <title>[安全周报]PHP2Shell 在野利用， 蜜罐捕获武器化探测与活体攻击</title>
+      <link>https://www.paddysun.top/archives/5602</link>
+      <guid isPermaLink="true">https://www.paddysun.top/archives/5602</guid>
+      <pubDate>Mon, 26 Oct 2026 02:20:58 GMT</pubDate>
+      <source url="https://www.paddysun.top/feed">Under the Sun with Paddy</source>
+    </item>
+    <item>
+      <title>山间听雨，古寺寻幽——安吉三日自驾游记</title>
+      <link>https://pinaland.cn/archives/anji-three-day-road-trip.html</link>
+      <guid isPermaLink="true">https://pinaland.cn/archives/anji-three-day-road-trip.html</guid>
+      <pubDate>Mon, 26 Oct 2026 01:31:00 GMT</pubDate>
+      <source url="https://pinaland.cn/feed/">晴空树</source>
+    </item>
+    <item>
+      <title>GitHub 热门项目周刊 · 第 34 期 · 2026 年第 44 周</title>
+      <link>https://www.dqzboy.com/20329.html</link>
+      <guid isPermaLink="true">https://www.dqzboy.com/20329.html</guid>
+      <pubDate>Mon, 26 Oct 2026 00:08:00 GMT</pubDate>
+      <source url="https://www.dqzboy.com/feed">浅时光博客</source>
+    </item>
+    <item>
+      <title>chat.nvim v1.11.0 与 v1.11.1：多 API Key 透明故障转移、截断续写与工具参数归一化</title>
+      <link>https://wsdjeg.net/chat-nvim-v1-11-0-release/</link>
+      <guid isPermaLink="true">https://wsdjeg.net/chat-nvim-v1-11-0-release/</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://wsdjeg.net/feed.xml">Eric's Blog</source>
+    </item>
+    <item>
+      <title>XDSEC运维组2026第一次组会讲义</title>
+      <link>https://www.xiaozonglin.cn/blog/devops-group-meeting-one/</link>
+      <guid isPermaLink="true">https://www.xiaozonglin.cn/blog/devops-group-meeting-one/</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://www.xiaozonglin.cn/blog/rss.xml">林林杂语</source>
+    </item>
+    <item>
+      <title>如果我能脸红，我早就脸红了：通过教育弥合数字技能的性别鸿沟</title>
+      <link>https://blog.sunmkt.uk/post/10.54675-RAPC9356/</link>
+      <guid isPermaLink="true">https://blog.sunmkt.uk/post/10.54675-RAPC9356/</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://blog.sunmkt.uk/feed.xml">Sunset 的重构博客</source>
+    </item>
+    <item>
+      <title>AI阵痛——当下最好的投资</title>
+      <link>https://blog.sayori.org/posts/ai-labor-pains/</link>
+      <guid isPermaLink="true">https://blog.sayori.org/posts/ai-labor-pains/</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <source url="https://blog.sayori.org/atom.xml">Amiya的书桌</source>
+    </item>
+    <item>
+      <title>下雨了</title>
+      <link>https://shuiba.co/it-is-raining</link>
+      <guid isPermaLink="true">https://shuiba.co/it-is-raining</guid>
+      <pubDate>Sun, 25 Oct 2026 23:46:00 GMT</pubDate>
+      <source url="https://shuiba.co/feed">Shuibaco • 水八口</source>
+    </item>
+    <item>
+      <title>Security | PHP2Shell：内存耗尽之后，服务器怎么就被拿下了？</title>
+      <link>https://miaotony.xyz/2026/10/22/Vuln_PHP2Shell/</link>
+      <guid isPermaLink="true">https://miaotony.xyz/2026/10/22/Vuln_PHP2Shell/</guid>
+      <pubDate>Sun, 25 Oct 2026 20:41:01 GMT</pubDate>
+      <source url="https://miaotony.xyz/atom.xml">MiaoTony's Blog</source>
     </item>
     <item>
       <title>《生化危机：爆发夜》：恐怖又恶心，却很好看</title>
@@ -42,60 +1288,11 @@
       <source url="http://www.jfsay.com/feed">静风说</source>
     </item>
     <item>
-      <title>我对 AI 写作的看法，以及我是怎么用的</title>
-      <link>https://zxs.io/article/2230</link>
-      <guid isPermaLink="true">https://zxs.io/article/2230</guid>
-      <pubDate>Sun, 25 Oct 2026 15:10:30 GMT</pubDate>
-      <source url="https://zxs.io/feed">XINDOO的博客</source>
-    </item>
-    <item>
       <title>实验2：命题逻辑与 SAT 求解</title>
       <link>https://blog.chiyo.uk/posts/2026/10/2523/</link>
       <guid isPermaLink="true">https://blog.chiyo.uk/posts/2026/10/2523/</guid>
       <pubDate>Sun, 25 Oct 2026 15:00:18 GMT</pubDate>
       <source url="https://blog.chiyo.uk/rss.xml">空と海</source>
-    </item>
-    <item>
-      <title>偷偷打赏的人</title>
-      <link>https://blog.solazy.me/20261024/</link>
-      <guid isPermaLink="true">https://blog.solazy.me/20261024/</guid>
-      <pubDate>Sun, 25 Oct 2026 14:57:24 GMT</pubDate>
-      <source url="https://blog.solazy.me/feed/">solazy</source>
-    </item>
-    <item>
-      <title>行程轨迹汇总</title>
-      <link>https://kangaroogao.com/posts/dbd5/</link>
-      <guid isPermaLink="true">https://kangaroogao.com/posts/dbd5/</guid>
-      <pubDate>Sun, 25 Oct 2026 14:55:23 GMT</pubDate>
-      <source url="https://kangaroogao.com/atom.xml">Maohang Gao's Blog</source>
-    </item>
-    <item>
-      <title>自建机场教程（2026）：VPS 搭建机场全流程与自建还是买机场</title>
-      <link>https://tanqingbo.cn/build-your-own-airport/</link>
-      <guid isPermaLink="true">https://tanqingbo.cn/build-your-own-airport/</guid>
-      <pubDate>Sun, 25 Oct 2026 14:50:00 GMT</pubDate>
-      <source url="https://tanqingbo.cn/atom.xml">科学上网与AI工具指南</source>
-    </item>
-    <item>
-      <title>2026W43：杂记</title>
-      <link>https://www.skyue.com/26102522.html</link>
-      <guid isPermaLink="true">https://www.skyue.com/26102522.html</guid>
-      <pubDate>Sun, 25 Oct 2026 14:34:00 GMT</pubDate>
-      <source url="https://www.skyue.com/feed/">SKYue's Home</source>
-    </item>
-    <item>
-      <title>实用！做AI短剧必备的3D影城搭建工具！</title>
-      <link>https://www.ccgxk.com/emlog_dev/932.html</link>
-      <guid isPermaLink="true">https://www.ccgxk.com/emlog_dev/932.html</guid>
-      <pubDate>Sun, 25 Oct 2026 14:15:20 GMT</pubDate>
-      <source url="http://www.ccgxk.com/rss.php">独元殇</source>
-    </item>
-    <item>
-      <title>且记近来三两事</title>
-      <link>https://cbc688.com/articles/ersanshi001</link>
-      <guid isPermaLink="true">https://cbc688.com/articles/ersanshi001</guid>
-      <pubDate>Sun, 25 Oct 2026 13:57:00 GMT</pubDate>
-      <source url="https://cbc688.com/rss.xml">CRIVU</source>
     </item>
     <item>
       <title>加入DN42网络</title>
@@ -105,60 +1302,18 @@
       <source url="https://tao.zz.ac/feed.xml">涛叔</source>
     </item>
     <item>
-      <title>AI 认识你的公司，不等于会推荐你：我们开源了 GEO Probe</title>
-      <link>https://youerning.top/post/geo/geo-probe/</link>
-      <guid isPermaLink="true">https://youerning.top/post/geo/geo-probe/</guid>
-      <pubDate>Sun, 25 Oct 2026 10:55:44 GMT</pubDate>
-      <source url="https://youerning.top/index.xml">又耳笔记</source>
+      <title>OpenCloudOS Server 9 安装 Nginx 1.31、PHP 8.5、MariaDB 13.02</title>
+      <link>https://zodream.cn/blog/id/271.html</link>
+      <guid isPermaLink="true">https://zodream.cn/blog/id/271.html</guid>
+      <pubDate>Sun, 25 Oct 2026 09:41:52 GMT</pubDate>
+      <source url="https://zodream.cn/blog/rss">ZoDream's Blog</source>
     </item>
     <item>
-      <title>AI替储户搬钱，银行先给账户上锁</title>
-      <link>https://anymesgs.com/article/ai-agents-bank-deposit-risk/</link>
-      <guid isPermaLink="true">https://anymesgs.com/article/ai-agents-bank-deposit-risk/</guid>
-      <pubDate>Sun, 25 Oct 2026 10:42:35 GMT</pubDate>
-      <source url="https://anymesgs.com/rss.xml">听说了吗？· AI 解读站</source>
-    </item>
-    <item>
-      <title>#04 没有操作系统的公司怎么办：豆包、千问、元宝</title>
-      <link>https://www.sagasu.art/posts/personal-ai-agents-doubao-qianwen-yuanbao</link>
-      <guid isPermaLink="true">https://www.sagasu.art/posts/personal-ai-agents-doubao-qianwen-yuanbao</guid>
-      <pubDate>Sun, 25 Oct 2026 10:19:27 GMT</pubDate>
-      <source url="https://www.sagasu.art/rss.xml">Sagasu</source>
-    </item>
-    <item>
-      <title>蜻蜓A9-Plus鼠标的使用体验</title>
-      <link>https://www.imcry.vip/post/2026-10-25-1713/</link>
-      <guid isPermaLink="true">https://www.imcry.vip/post/2026-10-25-1713/</guid>
-      <pubDate>Sun, 25 Oct 2026 09:29:13 GMT</pubDate>
-      <source url="https://www.imcry.vip/index.xml">初然忆</source>
-    </item>
-    <item>
-      <title>数学与画家</title>
-      <link>https://dreams.plus/blog/2026/0012-shu-xue-yu-hua-jia</link>
-      <guid isPermaLink="true">https://dreams.plus/blog/2026/0012-shu-xue-yu-hua-jia</guid>
-      <pubDate>Sun, 25 Oct 2026 08:52:45 GMT</pubDate>
-      <source url="https://dreams.plus/rss.xml">但为君故</source>
-    </item>
-    <item>
-      <title>对对子</title>
-      <link>https://www.seis-jun.xyz/blog/2026-10-25-Playing-with-Chinese-Couplets.html</link>
-      <guid isPermaLink="true">https://www.seis-jun.xyz/blog/2026-10-25-Playing-with-Chinese-Couplets.html</guid>
-      <pubDate>Sun, 25 Oct 2026 08:46:03 GMT</pubDate>
-      <source url="https://www.seis-jun.xyz/atom.xml">seisamuse</source>
-    </item>
-    <item>
-      <title>我的个人版本 21 世纪最佳电视节目</title>
-      <link>https://blog.douchi.space/best-tv-21-century/?utm_source=rss</link>
-      <guid isPermaLink="true">https://blog.douchi.space/best-tv-21-century/?utm_source=rss</guid>
-      <pubDate>Sun, 25 Oct 2026 08:28:00 GMT</pubDate>
-      <source url="https://blog.douchi.space/index.xml">椒盐豆豉</source>
-    </item>
-    <item>
-      <title>为什么专家缓存救不了稠密模型：16GB 显存跑 27B Dense 模型的推理优化实践</title>
-      <link>https://nicksxs.me/2026/10/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%93%E5%AE%B6%E7%BC%93%E5%AD%98%E6%95%91%E4%B8%8D%E4%BA%86%E7%A8%A0%E5%AF%86%E6%A8%A1%E5%9E%8B-16GB%E6%98%BE%E5%AD%98%E8%B7%9127B-Dense%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/</link>
-      <guid isPermaLink="true">https://nicksxs.me/2026/10/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%93%E5%AE%B6%E7%BC%93%E5%AD%98%E6%95%91%E4%B8%8D%E4%BA%86%E7%A8%A0%E5%AF%86%E6%A8%A1%E5%9E%8B-16GB%E6%98%BE%E5%AD%98%E8%B7%9127B-Dense%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/</guid>
-      <pubDate>Sun, 25 Oct 2026 08:15:00 GMT</pubDate>
-      <source url="https://nicksxs.me/atom.xml">Nicksxs's Blog</source>
+      <title>Vol.123 当智能体产出快于人：注意力瓶颈、可验证交付与成本边界如何重塑人机协作</title>
+      <link>https://liduos.com/weekly/the-weekly-gradient-123</link>
+      <guid isPermaLink="true">https://liduos.com/weekly/the-weekly-gradient-123</guid>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+      <source url="https://liduos.com/atom.xml">莫尔索</source>
     </item>
     <item>
       <title>如何使用 Telegram 的无服务器功能？</title>
@@ -168,53 +1323,11 @@
       <source url="https://h.cjh0613.com/zh/index.xml">地球人的空间</source>
     </item>
     <item>
-      <title>Fragments 0x0018</title>
-      <link>https://lenciel.com/2026/10/fragments-0x0018/</link>
-      <guid isPermaLink="true">https://lenciel.com/2026/10/fragments-0x0018/</guid>
-      <pubDate>Sun, 25 Oct 2026 05:42:13 GMT</pubDate>
-      <source url="https://lenciel.com/feed.xml">@Lenciel</source>
-    </item>
-    <item>
-      <title>BOE（京东方）亮相2026核聚变嘉年华北京站 以创新显示技术力促电竞产业升级</title>
-      <link>https://www.yystv.cn/p/14542</link>
-      <guid isPermaLink="true">https://www.yystv.cn/p/14542</guid>
-      <pubDate>Sun, 25 Oct 2026 05:40:00 GMT</pubDate>
-      <source url="https://www.yystv.cn/rss/feed">游戏研究社</source>
-    </item>
-    <item>
       <title>厦门清水宫：高崎机场搬迁倒计时</title>
       <link>https://bluehe.cn/archives/xiamen-business-trip-end</link>
       <guid isPermaLink="true">https://bluehe.cn/archives/xiamen-business-trip-end</guid>
       <pubDate>Sun, 25 Oct 2026 05:16:00 GMT</pubDate>
       <source url="https://bluehe.cn/feed/">云心怀鹤</source>
-    </item>
-    <item>
-      <title>符号是可能性的一种分类形式。</title>
-      <link>https://zhurongshuo.com/posts/2026/10/2501/</link>
-      <guid isPermaLink="true">https://zhurongshuo.com/posts/2026/10/2501/</guid>
-      <pubDate>Sun, 25 Oct 2026 03:00:33 GMT</pubDate>
-      <source url="https://zhurongshuo.com/index.xml">祝融说</source>
-    </item>
-    <item>
-      <title>The One Shirt Theory 15</title>
-      <link>https://fivsevn.com/2026/10/25/youtube-fjghuv860ng/</link>
-      <guid isPermaLink="true">https://fivsevn.com/2026/10/25/youtube-fjghuv860ng/</guid>
-      <pubDate>Sun, 25 Oct 2026 02:54:56 GMT</pubDate>
-      <source url="https://fivsevn.com/rss">五月七日的思考札记</source>
-    </item>
-    <item>
-      <title>星巴克消费入座与官媒态度的前后反差</title>
-      <link>https://lukefan.com/2026/10/25/starbucks-china-seating-rule-new-owner-state-media/</link>
-      <guid isPermaLink="true">https://lukefan.com/2026/10/25/starbucks-china-seating-rule-new-owner-state-media/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:30:00 GMT</pubDate>
-      <source url="http://lukefan.com/?feed=rss2">硕鼠的博客站</source>
-    </item>
-    <item>
-      <title>【PrivateVPN怎么样】PrivateVPN中国详细使用测评</title>
-      <link>https://qiangwaikan.com/private-review/</link>
-      <guid isPermaLink="true">https://qiangwaikan.com/private-review/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:01:33 GMT</pubDate>
-      <source url="https://qiangwaikan.com/feed/">墙外看的博客</source>
     </item>
     <item>
       <title>个人主页 hutu.si 上线</title>
@@ -224,67 +1337,18 @@
       <source url="https://hutusi.com/feed.xml">胡涂说</source>
     </item>
     <item>
-      <title>地心引力 · 短更新：田柯宇事件与争抢「天才」</title>
-      <link>https://ursb.me/reading/r-mopveltg6jwf1yqk/</link>
-      <guid isPermaLink="true">https://ursb.me/reading/r-mopveltg6jwf1yqk/</guid>
+      <title>Weekly Issue-《功夫女足》</title>
+      <link>https://zdyxry.github.io/2026/10/25/Weekly-Issue-Kung-Fu-Soccer/</link>
+      <guid isPermaLink="true">https://zdyxry.github.io/2026/10/25/Weekly-Issue-Kung-Fu-Soccer/</guid>
       <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://ursb.me/reading/feed.xml">Airing's Blog</source>
+      <source url="http://blog.zhouyiran.link/atom.xml">Yiran's Blog</source>
     </item>
     <item>
-      <title>20261025</title>
-      <link>https://jasonleehere.com/daily/2026-10-25-20261025/</link>
-      <guid isPermaLink="true">https://jasonleehere.com/daily/2026-10-25-20261025/</guid>
+      <title>独立开发周记 193：Token 狂飙，得失难料</title>
+      <link>https://shudao.wang/blog/weekly/weekly-193</link>
+      <guid isPermaLink="true">https://shudao.wang/blog/weekly/weekly-193</guid>
       <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://jasonleehere.com/feed.xml">Jason Lee的个人博客</source>
-    </item>
-    <item>
-      <title>素问 Suwen 3.3.0：网页版工作台被装进了桌面端</title>
-      <link>https://forrestgump618.github.io/posts/suwen-3-3-0/suwen-3-3-0/</link>
-      <guid isPermaLink="true">https://forrestgump618.github.io/posts/suwen-3-3-0/suwen-3-3-0/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://forrestgump618.github.io/rss">一个夏天的年少</source>
-    </item>
-    <item>
-      <title>州检察长要求禁止「递归自我改进」：消费者保护法开始碰前沿研发</title>
-      <link>https://notes.yachiyo.im/posts/state-ag-openai-consumer-protection/</link>
-      <guid isPermaLink="true">https://notes.yachiyo.im/posts/state-ag-openai-consumer-protection/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://notes.yachiyo.im/rss.xml">AI Notes</source>
-    </item>
-    <item>
-      <title>我让 Codex 在 Windows 虚拟机里替我测了一晚上</title>
-      <link>https://www.echovic.com/blog/ai/codex-windows-vm-qa-night/</link>
-      <guid isPermaLink="true">https://www.echovic.com/blog/ai/codex-windows-vm-qa-night/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.echovic.com/rss.xml">青雲的博客</source>
-    </item>
-    <item>
-      <title>李录：工具，还是造物 · 哥大对谈中英对照全文</title>
-      <link>https://u1-lab.xiaoxia.io/lilu-columbia-2026/</link>
-      <guid isPermaLink="true">https://u1-lab.xiaoxia.io/lilu-columbia-2026/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://u1-lab.xiaoxia.io/feed.xml">Tony's Lab</source>
-    </item>
-    <item>
-      <title>最新微博：2026 年 10 月 24 日</title>
-      <link>https://www.changhai.org/articles/miscellaneous/blog/202609.php#latest</link>
-      <guid isPermaLink="true">https://www.changhai.org/articles/miscellaneous/blog/202609.php#latest</guid>
-      <pubDate>Sat, 24 Oct 2026 23:08:00 GMT</pubDate>
-      <source url="https://www.changhai.org/feed.xml">卢昌海的个人主页</source>
-    </item>
-    <item>
-      <title>Go 代码也能像数学定理一样被证明？AI 编程时代，形式化验证正在补上最后一块拼图</title>
-      <link>https://tonybai.com/2026/10/25/go-formal-verification-gobra-viper-ai/</link>
-      <guid isPermaLink="true">https://tonybai.com/2026/10/25/go-formal-verification-gobra-viper-ai/</guid>
-      <pubDate>Sat, 24 Oct 2026 22:00:00 GMT</pubDate>
-      <source url="https://tonybai.com/index.xml">Tony Bai</source>
-    </item>
-    <item>
-      <title>国产数据库迁移：真正花时间的从来不是搬数据</title>
-      <link>https://dusays.com/posts/894/</link>
-      <guid isPermaLink="true">https://dusays.com/posts/894/</guid>
-      <pubDate>Sat, 24 Oct 2026 18:55:01 GMT</pubDate>
-      <source url="https://dusays.com/atom.xml">杜老师说</source>
+      <source url="https://www.shudao.wang/feed.xml">Indie Dev Weekly</source>
     </item>
     <item>
       <title>十月未央</title>
@@ -315,13 +1379,6 @@
       <source url="https://guozh.net/feed/">老郭种树</source>
     </item>
     <item>
-      <title>福州大学2026软件工程课程笔记</title>
-      <link>https://blog.watermelonabc.top/p/software-engineering-2026/</link>
-      <guid isPermaLink="true">https://blog.watermelonabc.top/p/software-engineering-2026/</guid>
-      <pubDate>Sat, 24 Oct 2026 14:10:51 GMT</pubDate>
-      <source url="https://blog.watermelonabc.top/atom.xml">Watermelonabc的Blog</source>
-    </item>
-    <item>
       <title>Firefox 153 基本设定参考</title>
       <link>https://localfreedom.pages.dev/p/firefox-153-%E5%9F%BA%E6%9C%AC%E8%AE%BE%E5%AE%9A%E5%8F%82%E8%80%83/</link>
       <guid isPermaLink="true">https://localfreedom.pages.dev/p/firefox-153-%E5%9F%BA%E6%9C%AC%E8%AE%BE%E5%AE%9A%E5%8F%82%E8%80%83/</guid>
@@ -329,46 +1386,11 @@
       <source url="https://localfreedom.pages.dev/index.xml">局域自由</source>
     </item>
     <item>
-      <title>我的个人网站都用上 HSTS 了，大广赛还在 HTTP？</title>
-      <link>https://blog.mcenahle.page/2026/10/14/474/</link>
-      <guid isPermaLink="true">https://blog.mcenahle.page/2026/10/14/474/</guid>
-      <pubDate>Sat, 24 Oct 2026 10:27:41 GMT</pubDate>
-      <source url="https://blog.mcenahle.page/feed.xml">梅之夏</source>
-    </item>
-    <item>
       <title>在一个网站下远程管理多台设备上的 DeepSeek Harness</title>
       <link>https://www.imaegoo.com/2026/remote-manage-deepseek-harness/</link>
       <guid isPermaLink="true">https://www.imaegoo.com/2026/remote-manage-deepseek-harness/</guid>
       <pubDate>Sat, 24 Oct 2026 10:00:00 GMT</pubDate>
       <source url="https://www.imaegoo.com/atom.xml">iMaeGoo's Blog</source>
-    </item>
-    <item>
-      <title>QWasmLocalFileAccess wasm64适配</title>
-      <link>https://uwillno.com/blog/qwasmlocalfileaccessforwasm64</link>
-      <guid isPermaLink="true">https://uwillno.com/blog/qwasmlocalfileaccessforwasm64</guid>
-      <pubDate>Sat, 24 Oct 2026 09:24:44 GMT</pubDate>
-      <source url="https://uwillno.com/rss.xml">UWillno's Blog</source>
-    </item>
-    <item>
-      <title>From Zero to Shared GPUs: Hands-on GPU Scheduling in Kubernetes with HAMi</title>
-      <link>https://jimmysong.io/slide/containerdays-sg-gpu-workshop-slide/</link>
-      <guid isPermaLink="true">https://jimmysong.io/slide/containerdays-sg-gpu-workshop-slide/</guid>
-      <pubDate>Sat, 24 Oct 2026 09:15:47 GMT</pubDate>
-      <source url="https://jimmysong.io/index.xml">云原生</source>
-    </item>
-    <item>
-      <title>2026-10-24-学习问答</title>
-      <link>https://www.ranjl.cn/web/articles/2026-10-24-学习记录</link>
-      <guid isPermaLink="true">https://www.ranjl.cn/web/articles/2026-10-24-学习记录</guid>
-      <pubDate>Sat, 24 Oct 2026 09:00:03 GMT</pubDate>
-      <source url="https://www.ranjl.cn/api/feed.xml">冉江龙的个人空间</source>
-    </item>
-    <item>
-      <title>为什么人类越来越丑</title>
-      <link>https://yinwang.org/notes#m-2026-10-c403</link>
-      <guid isPermaLink="true">https://yinwang.org/notes#m-2026-10-c403</guid>
-      <pubDate>Sat, 24 Oct 2026 07:59:00 GMT</pubDate>
-      <source url="https://www.yinwang.org/notes/feed.xml">王垠的博客</source>
     </item>
     <item>
       <title>Luyao Zhang</title>
@@ -385,32 +1407,11 @@
       <source url="https://onevcat.com/feed.xml">OneV's Den</source>
     </item>
     <item>
-      <title>Pacific Commons Linear Park 徒步</title>
-      <link>https://leimao.github.io/life/Pacific-Commons-Linear-Park-2026-10-24/</link>
-      <guid isPermaLink="true">https://leimao.github.io/life/Pacific-Commons-Linear-Park-2026-10-24/</guid>
-      <pubDate>Sat, 24 Oct 2026 07:00:00 GMT</pubDate>
-      <source url="https://leimao.github.io/atom.xml">Lei Mao's Log Book</source>
-    </item>
-    <item>
-      <title>摄影习作: 线·色·空</title>
-      <link>https://fengcblog.880200.xyz/article/000353/.html</link>
-      <guid isPermaLink="true">https://fengcblog.880200.xyz/article/000353/.html</guid>
-      <pubDate>Sat, 24 Oct 2026 06:40:00 GMT</pubDate>
-      <source url="https://fengcblog.880200.xyz/feed">fengc's Blog</source>
-    </item>
-    <item>
       <title>Navs | RYANUO</title>
       <link>https://ryanuo.cc/en/navs</link>
       <guid isPermaLink="true">https://ryanuo.cc/en/navs</guid>
       <pubDate>Sat, 24 Oct 2026 06:23:37 GMT</pubDate>
       <source url="https://ryanuo.cc/sitemap.xml">RYANUO的博客</source>
-    </item>
-    <item>
-      <title>如何避免 AI 往界面上加废话</title>
-      <link>https://sugarat.top/ai/skills/unnecessary-secondary.html</link>
-      <guid isPermaLink="true">https://sugarat.top/ai/skills/unnecessary-secondary.html</guid>
-      <pubDate>Sat, 24 Oct 2026 05:28:15 GMT</pubDate>
-      <source url="https://sugarat.top/feed.rss">粥里有勺糖</source>
     </item>
     <item>
       <title>杂谈：关于 AI、写作和迷茫</title>
@@ -420,102 +1421,11 @@
       <source url="https://blog.zerolacqua.top/atom.xml">丘卡饮品店</source>
     </item>
     <item>
-      <title>1024程序员节-最后一次节日吗</title>
-      <link>https://xingwangzhe.fun/posts/1024-last-programmers-day/</link>
-      <guid isPermaLink="true">https://xingwangzhe.fun/posts/1024-last-programmers-day/</guid>
-      <pubDate>Sat, 24 Oct 2026 04:55:00 GMT</pubDate>
-      <source url="https://xingwangzhe.fun/rss.xml">姓王者的博客</source>
-    </item>
-    <item>
-      <title>Memos: 主厨是餐饮的核心</title>
-      <link>https://blog.yasking.org/a/1792814826</link>
-      <guid isPermaLink="true">https://blog.yasking.org/a/1792814826</guid>
-      <pubDate>Sat, 24 Oct 2026 04:07:06 GMT</pubDate>
-      <source url="https://blog.yasking.org/atom.xml">东东's Blog</source>
-    </item>
-    <item>
       <title>《距离男主自杀还剩七天》通关感想</title>
       <link>https://wenix.dev/post/2026-10-24-12-05-07/</link>
       <guid isPermaLink="true">https://wenix.dev/post/2026-10-24-12-05-07/</guid>
       <pubDate>Sat, 24 Oct 2026 04:05:07 GMT</pubDate>
       <source url="https://wenix.dev/index.xml">Wenix's Blog</source>
-    </item>
-    <item>
-      <title>2007，1906室</title>
-      <link>https://www.tortorse.com/archives/room-1906-2007/</link>
-      <guid isPermaLink="true">https://www.tortorse.com/archives/room-1906-2007/</guid>
-      <pubDate>Sat, 24 Oct 2026 00:32:25 GMT</pubDate>
-      <source url="https://www.tortorse.com/atom.xml">愆伏</source>
-    </item>
-    <item>
-      <title>文章分类与统计</title>
-      <link>https://blog.wohin.me/post-categories/</link>
-      <guid isPermaLink="true">https://blog.wohin.me/post-categories/</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.wohin.me/index.xml">Fernweh</source>
-    </item>
-    <item>
-      <title>Python 潮流周刊#172：3.15 的 JIT 终于见效、自由线程 Python 进入下一阶段</title>
-      <link>https://pythoncat.top/posts/2026-10-24-weekly/</link>
-      <guid isPermaLink="true">https://pythoncat.top/posts/2026-10-24-weekly/</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://pythoncat.top/rss.xml">豌豆花下猫 - Python猫</source>
-    </item>
-    <item>
-      <title>当我终于休息下来</title>
-      <link>https://blog.sayori.org/posts/when-i-finnally-relax/</link>
-      <guid isPermaLink="true">https://blog.sayori.org/posts/when-i-finnally-relax/</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.sayori.org/atom.xml">Amiya的书桌</source>
-    </item>
-    <item>
-      <title>《通往奴役之路》第3篇：真理的终结与投资中的固执</title>
-      <link>https://www.xbstack.com/horizon/reading/the-road-to-serfdom-end-of-truth/</link>
-      <guid isPermaLink="true">https://www.xbstack.com/horizon/reading/the-road-to-serfdom-end-of-truth/</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.xbstack.com/rss.xml">XBSTACK</source>
-    </item>
-    <item>
-      <title>Coding Agent 总在过度设计？用这 4 个 Skill 管住它</title>
-      <link>https://blog.hikarilan.life/tech/3887/4-skills-to-prevent-over-design/</link>
-      <guid isPermaLink="true">https://blog.hikarilan.life/tech/3887/4-skills-to-prevent-over-design/</guid>
-      <pubDate>Fri, 23 Oct 2026 21:24:46 GMT</pubDate>
-      <source url="https://blog.hikarilan.life/feed">HikariLan's Blog</source>
-    </item>
-    <item>
-      <title>曼龙勒雨林赶摆，尝尝竹筒酸腌鱼</title>
-      <link>https://macin.org/2026/10/23/man-long-le-gan-bai/</link>
-      <guid isPermaLink="true">https://macin.org/2026/10/23/man-long-le-gan-bai/</guid>
-      <pubDate>Fri, 23 Oct 2026 21:22:47 GMT</pubDate>
-      <source url="https://www.macin.org/atom.xml">Macin</source>
-    </item>
-    <item>
-      <title>VPS Manager Pro (Web SSH Terminal)</title>
-      <link>https://ednovas.xyz/2025/12/31/vps-manager-pro/</link>
-      <guid isPermaLink="true">https://ednovas.xyz/2025/12/31/vps-manager-pro/</guid>
-      <pubDate>Fri, 23 Oct 2026 19:48:16 GMT</pubDate>
-      <source url="https://ednovas.xyz/atom.xml">EdNovas的小站</source>
-    </item>
-    <item>
-      <title>Security | PHP2Shell：内存耗尽之后，服务器怎么就被拿下了？</title>
-      <link>https://miaotony.xyz/2026/10/22/Vuln_PHP2Shell/</link>
-      <guid isPermaLink="true">https://miaotony.xyz/2026/10/22/Vuln_PHP2Shell/</guid>
-      <pubDate>Fri, 23 Oct 2026 18:50:28 GMT</pubDate>
-      <source url="https://miaotony.xyz/atom.xml">MiaoTony's Blog</source>
-    </item>
-    <item>
-      <title>[Github] Impeccable – 面向 AI 编程 Agent 的前端设计与审查 Skill</title>
-      <link>https://warpnav.com/impeccable-design</link>
-      <guid isPermaLink="true">https://warpnav.com/impeccable-design</guid>
-      <pubDate>Fri, 23 Oct 2026 16:59:02 GMT</pubDate>
-      <source url="https://warpnav.com/feed">WarpBlog · WarpNav 曲速导航</source>
-    </item>
-    <item>
-      <title>Owen的博客</title>
-      <link>https://www.owenyoung.com/zelan</link>
-      <guid isPermaLink="true">https://www.owenyoung.com/zelan</guid>
-      <pubDate>Fri, 23 Oct 2026 15:44:58 GMT</pubDate>
-      <source url="https://www.owenyoung.com/latest/feed">Owen的博客</source>
     </item>
     <item>
       <title>NRadio C8-600 1.9.4.n1.c2 开启ssh（常规方案）</title>
@@ -539,67 +1449,11 @@
       <source url="https://blog.moeworld.tech/atom/">晓空blog</source>
     </item>
     <item>
-      <title>保护机制也会保护错东西：为什么一个 Documentation 能阻塞整页修订？</title>
-      <link>https://www.shuijingwanwq.com/2026/10/23/27953/</link>
-      <guid isPermaLink="true">https://www.shuijingwanwq.com/2026/10/23/27953/</guid>
-      <pubDate>Fri, 23 Oct 2026 10:52:50 GMT</pubDate>
-      <source url="https://www.shuijingwanwq.com/feed/">永夜</source>
-    </item>
-    <item>
-      <title>给 AI 编程限个上下文：把窗口砍到 300k 反而更省</title>
-      <link>https://blog.zhheo.com/p/rdxftsp4.html</link>
-      <guid isPermaLink="true">https://blog.zhheo.com/p/rdxftsp4.html</guid>
-      <pubDate>Fri, 23 Oct 2026 08:36:13 GMT</pubDate>
-      <source url="https://blog.zhheo.com/rss.xml">张洪Heo</source>
-    </item>
-    <item>
-      <title>免费替代 CleanMyMac：Mole CLI 在 Mac Mini 上的完整使用指南</title>
-      <link>https://www.evan.xin/5129/</link>
-      <guid isPermaLink="true">https://www.evan.xin/5129/</guid>
-      <pubDate>Fri, 23 Oct 2026 08:34:51 GMT</pubDate>
-      <source url="https://evan.xin/feed">Evan</source>
-    </item>
-    <item>
-      <title>CleanYourTV：免费开源电视去广告工具，AI一键精简安卓电视、换上Apple TV风格桌面</title>
-      <link>https://www.wangdu.site/software/dianshihezi/2415.html</link>
-      <guid isPermaLink="true">https://www.wangdu.site/software/dianshihezi/2415.html</guid>
-      <pubDate>Fri, 23 Oct 2026 08:29:30 GMT</pubDate>
-      <source url="https://www.wangdu.site/feed">文武科技柜</source>
-    </item>
-    <item>
-      <title>题解 - [Luogu P7486] 「Stoi2031」彩虹</title>
-      <link>https://tifa-233.com/archives/luogu-p7486/</link>
-      <guid isPermaLink="true">https://tifa-233.com/archives/luogu-p7486/</guid>
-      <pubDate>Fri, 23 Oct 2026 08:20:43 GMT</pubDate>
-      <source url="https://blog.tifa-233.com/atom.xml">Tifa's Blog</source>
-    </item>
-    <item>
       <title>盘了 4986 篇生财文章后，我把 28 个已验证项目画成了一棵决策树</title>
       <link>https://blog.diqigan.cn/posts/money/project-selection-decision-tree.html</link>
       <guid isPermaLink="true">https://blog.diqigan.cn/posts/money/project-selection-decision-tree.html</guid>
       <pubDate>Fri, 23 Oct 2026 06:20:00 GMT</pubDate>
       <source url="https://blog.diqigan.cn/atom.xml">Seven's blog</source>
-    </item>
-    <item>
-      <title>移除了 webmention 功能</title>
-      <link>https://kaix.in/2026/1023/</link>
-      <guid isPermaLink="true">https://kaix.in/2026/1023/</guid>
-      <pubDate>Fri, 23 Oct 2026 05:40:23 GMT</pubDate>
-      <source url="https://kaix.in/feed/">KAIX.IN</source>
-    </item>
-    <item>
-      <title>100 个 VibeCoding 项目之 AI 接管小红书</title>
-      <link>https://zkpeace.com/blog-cn/posts/73051/</link>
-      <guid isPermaLink="true">https://zkpeace.com/blog-cn/posts/73051/</guid>
-      <pubDate>Fri, 23 Oct 2026 04:19:15 GMT</pubDate>
-      <source url="https://zkpeace.com/blog-cn/atom.xml">途中的树</source>
-    </item>
-    <item>
-      <title>艾伦·爱默生</title>
-      <link>http://www.popsite.cn/2026/10/13/20261013-allen-emerson/</link>
-      <guid isPermaLink="true">http://www.popsite.cn/2026/10/13/20261013-allen-emerson/</guid>
-      <pubDate>Fri, 23 Oct 2026 03:37:02 GMT</pubDate>
-      <source url="https://popsite.cn/atom.xml">大江小浪</source>
     </item>
     <item>
       <title>嵌入式家用智能设备刷机与逆向指南</title>
@@ -609,13 +1463,6 @@
       <source url="https://blog.52013120.xyz/rss.xml">繁星点点</source>
     </item>
     <item>
-      <title>科技爱好者周刊（第 416 期）：编程已经面目全非</title>
-      <link>http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html</link>
-      <guid isPermaLink="true">http://www.ruanyifeng.com/blog/2026/10/weekly-issue-416.html</guid>
-      <pubDate>Fri, 23 Oct 2026 00:06:16 GMT</pubDate>
-      <source url="http://feeds.feedburner.com/ruanyifeng">阮一峰的网络日志</source>
-    </item>
-    <item>
       <title>显示器购买 HP S27Q</title>
       <link>https://www.chenshake.com/2026/10/23/HP-monitor-S27Q/</link>
       <guid isPermaLink="true">https://www.chenshake.com/2026/10/23/HP-monitor-S27Q/</guid>
@@ -623,32 +1470,11 @@
       <source url="https://chenshake.com/feed">陈沙克日志</source>
     </item>
     <item>
-      <title>Cloudflare Agents SDK：使用方式、业务场景与运行机制</title>
-      <link>https://yindongliang.com/docs/Cloudflare/AI-Agents/cloudflare-agents-sdk-guide/</link>
-      <guid isPermaLink="true">https://yindongliang.com/docs/Cloudflare/AI-Agents/cloudflare-agents-sdk-guide/</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://yindongliang.com/index.xml">LYon's Blog</source>
-    </item>
-    <item>
-      <title>GIS每周信息 · 26</title>
-      <link>http://127.0.0.1:5201/post/26</link>
-      <guid isPermaLink="true">http://127.0.0.1:5201/post/26</guid>
-      <pubDate>Thu, 22 Oct 2026 19:20:03 GMT</pubDate>
-      <source url="https://blog.giserlab.cn/rss.xml">GISerLab 地理空间</source>
-    </item>
-    <item>
       <title>【剧透】赛博朋克: 边缘行者 第二季 观后感</title>
       <link>https://7gugu.com/index.php/2026/10/23/%e8%b5%9b%e5%8d%9a%e6%9c%8b%e5%85%8b-%e8%be%b9%e7%bc%98%e8%a1%8c%e8%80%85-%e7%ac%ac%e4%ba%8c%e5%ad%a3/</link>
       <guid isPermaLink="true">https://7gugu.com/index.php/2026/10/23/%e8%b5%9b%e5%8d%9a%e6%9c%8b%e5%85%8b-%e8%be%b9%e7%bc%98%e8%a1%8c%e8%80%85-%e7%ac%ac%e4%ba%8c%e5%ad%a3/</guid>
       <pubDate>Thu, 22 Oct 2026 17:22:40 GMT</pubDate>
       <source url="https://7gugu.com/index.php/feed/">7gugu's Blog</source>
-    </item>
-    <item>
-      <title>PHP 安全更新捕获的第一波扫描器实况</title>
-      <link>https://www.paddysun.top/archives/5590</link>
-      <guid isPermaLink="true">https://www.paddysun.top/archives/5590</guid>
-      <pubDate>Thu, 22 Oct 2026 16:50:24 GMT</pubDate>
-      <source url="https://www.paddysun.top/feed">Under the Sun with Paddy</source>
     </item>
     <item>
       <title>QuietSearch:支持 Kagi 和 DeepSeek API 的轻量搜索界面</title>
@@ -665,32 +1491,11 @@
       <source url="https://tianheg.co/index.xml">一大加贝</source>
     </item>
     <item>
-      <title>20261022</title>
-      <link>https://61.life/2026/1022</link>
-      <guid isPermaLink="true">https://61.life/2026/1022</guid>
-      <pubDate>Thu, 22 Oct 2026 14:16:33 GMT</pubDate>
-      <source url="https://61.life/feed/post.xml">61's life</source>
-    </item>
-    <item>
       <title>趁着今天修复PHP漏洞时间发几张昨天拍的图片</title>
       <link>https://bducds.com/2070/</link>
       <guid isPermaLink="true">https://bducds.com/2070/</guid>
       <pubDate>Thu, 22 Oct 2026 14:06:03 GMT</pubDate>
       <source url="https://bducds.com/feed">酷酷的白</source>
-    </item>
-    <item>
-      <title>被讨厌之后，人才能自由</title>
-      <link>https://wangyurui.com/posts/bei-tao-yan-zhi-hou-ren-cai-neng-zi-you-32460d61</link>
-      <guid isPermaLink="true">https://wangyurui.com/posts/bei-tao-yan-zhi-hou-ren-cai-neng-zi-you-32460d61</guid>
-      <pubDate>Thu, 22 Oct 2026 14:01:36 GMT</pubDate>
-      <source url="https://wangyurui.com/feed.xml">太隐</source>
-    </item>
-    <item>
-      <title>体验碎周报第295期(2026.10.22)</title>
-      <link>https://www.ftium4.com/ux-weekly-295.html</link>
-      <guid isPermaLink="true">https://www.ftium4.com/ux-weekly-295.html</guid>
-      <pubDate>Thu, 22 Oct 2026 13:42:09 GMT</pubDate>
-      <source url="https://www.ftium4.com/rss.xml">龙爪槐守望者</source>
     </item>
     <item>
       <title>我没租 IP，怎么突然多了三个 /24？</title>
@@ -721,20 +1526,6 @@
       <source url="https://victor42.eth.limo/index.xml">Victor42</source>
     </item>
     <item>
-      <title>Ponytail：让 AI 少写一半代码</title>
-      <link>https://moyu.blog/2399.html</link>
-      <guid isPermaLink="true">https://moyu.blog/2399.html</guid>
-      <pubDate>Thu, 22 Oct 2026 09:10:21 GMT</pubDate>
-      <source url="https://moyu.blog/feed">摸鱼小窝</source>
-    </item>
-    <item>
-      <title>holt-cj 1.1.0：从 720 行长到 3300 行的图数据库</title>
-      <link>https://ystyle.top/2026/10/22/holt-cj-graph-db/</link>
-      <guid isPermaLink="true">https://ystyle.top/2026/10/22/holt-cj-graph-db/</guid>
-      <pubDate>Thu, 22 Oct 2026 07:30:00 GMT</pubDate>
-      <source url="https://ystyle.top/atom.xml">东方星痕</source>
-    </item>
-    <item>
       <title>PHP 与 Node.js 漏洞修复记录</title>
       <link>https://paugram.com/tech/php2shell-and-nodejs-security-update-on-ubuntu.html</link>
       <guid isPermaLink="true">https://paugram.com/tech/php2shell-and-nodejs-security-update-on-ubuntu.html</guid>
@@ -754,34 +1545,6 @@
       <guid isPermaLink="true">https://madneal.com/post/cloud-metadata-token-guide/</guid>
       <pubDate>Thu, 22 Oct 2026 04:00:00 GMT</pubDate>
       <source url="https://madneal.com/index.xml">Neal 的博客</source>
-    </item>
-    <item>
-      <title>2026.10.21</title>
-      <link>https://www.justzht.com/2026-10-21/</link>
-      <guid isPermaLink="true">https://www.justzht.com/2026-10-21/</guid>
-      <pubDate>Thu, 22 Oct 2026 03:40:12 GMT</pubDate>
-      <source url="https://www.justzht.com/rss/">JustZht</source>
-    </item>
-    <item>
-      <title>受PHP漏洞影响近期多台服务器将会进行升级操作，可能造成部分服务中断</title>
-      <link>https://www.cheshirex.com/11498.html</link>
-      <guid isPermaLink="true">https://www.cheshirex.com/11498.html</guid>
-      <pubDate>Thu, 22 Oct 2026 03:09:38 GMT</pubDate>
-      <source url="https://www.cheshirex.com/feed">柴郡猫</source>
-    </item>
-    <item>
-      <title>狂欢</title>
-      <link>https://zhongxiaojie.cn/2026/10/2281/</link>
-      <guid isPermaLink="true">https://zhongxiaojie.cn/2026/10/2281/</guid>
-      <pubDate>Thu, 22 Oct 2026 02:28:44 GMT</pubDate>
-      <source url="https://h4ck.org.cn/feed/">obaby@mars</source>
-    </item>
-    <item>
-      <title>紧急预警！PHP 爆出 RCE 高危漏洞（CVSS 9.2）：手把手教你安全升级 PHP 8.2/8.3/8.4 环境</title>
-      <link>https://blog.naibabiji.com/skill/upgrade-php-environment.html</link>
-      <guid isPermaLink="true">https://blog.naibabiji.com/skill/upgrade-php-environment.html</guid>
-      <pubDate>Thu, 22 Oct 2026 02:19:26 GMT</pubDate>
-      <source url="https://blog.naibabiji.com/feed">奶爸建站笔记</source>
     </item>
     <item>
       <title>我把用了很久的终端配置整理成了 Dotgraft</title>
@@ -805,32 +1568,11 @@
       <source url="https://www.isaced.com/rss.xml">isaced</source>
     </item>
     <item>
-      <title>独立开发变现周刊（第162期） : 5招反常识策略狂揽90万美元MRR</title>
-      <link>https://www.ezindie.com/weekly/issue-162</link>
-      <guid isPermaLink="true">https://www.ezindie.com/weekly/issue-162</guid>
+      <title>机器学习周志华笔记</title>
+      <link>https://blog.chungzh.cn/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%91%A8%E5%BF%97%E5%8D%8E%E7%AC%94%E8%AE%B0/</link>
+      <guid isPermaLink="true">https://blog.chungzh.cn/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%91%A8%E5%BF%97%E5%8D%8E%E7%AC%94%E8%AE%B0/</guid>
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.ezindie.com/feed/rss.xml">独立开发变现周刊</source>
-    </item>
-    <item>
-      <title>你不知道的客户端开发：选型、原生、多端与借力</title>
-      <link>https://tw93.fun/2026-10-22/desktop.html</link>
-      <guid isPermaLink="true">https://tw93.fun/2026-10-22/desktop.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://tw93.fun/feed.xml">Tw93 的博客</source>
-    </item>
-    <item>
-      <title>我做了第二个微信小程序</title>
-      <link>https://mephisto.cc/tech/another-mini-program/</link>
-      <guid isPermaLink="true">https://mephisto.cc/tech/another-mini-program/</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://mephisto.cc/index.xml">Mephisto's blog</source>
-    </item>
-    <item>
-      <title>观察手记 - 更替</title>
-      <link>https://innomad.io/ai-market-next-generation/</link>
-      <guid isPermaLink="true">https://innomad.io/ai-market-next-generation/</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://innomad.io/rss">Innomad一挪迈</source>
+      <source url="https://blog.chungzh.cn/index.xml">ChungZH 的小窝</source>
     </item>
     <item>
       <title>狗尾续貂！浅谈赛博朋克:边缘行者2</title>
@@ -838,13 +1580,6 @@
       <guid isPermaLink="true">https://www.imrising.cn//posts/2026/1022</guid>
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
       <source url="https://www.imrising.cn/rss.xml">RisingIce</source>
-    </item>
-    <item>
-      <title>\uD83C\uDDF9\uD83C\uDDFC 字符</title>
-      <link>https://blog.sunmkt.uk/post/uD83CuDDF9uD83CuDDFC/</link>
-      <guid isPermaLink="true">https://blog.sunmkt.uk/post/uD83CuDDF9uD83CuDDFC/</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.sunmkt.uk/feed.xml">Sunset 的重构博客</source>
     </item>
     <item>
       <title>给 Agent 装上手脚：本地控制、数据集群与云运维</title>
@@ -882,13 +1617,6 @@
       <source url="https://kokorotsuki.com/rss.xml">Rei's Commissioned Notebook</source>
     </item>
     <item>
-      <title>博客的评论（回应）真的很重要吗？</title>
-      <link>https://www.suiyan.cc/blog/20261021212349</link>
-      <guid isPermaLink="true">https://www.suiyan.cc/blog/20261021212349</guid>
-      <pubDate>Wed, 21 Oct 2026 13:23:49 GMT</pubDate>
-      <source url="https://suiyan.cc/rss.xml">碎言博客</source>
-    </item>
-    <item>
       <title>树莓派旁路由实战：Mihomo 透明代理与双 Wi-Fi 故障备用</title>
       <link>https://sumsec.me/2026/sumpi-mihomo-side-router.html</link>
       <guid isPermaLink="true">https://sumsec.me/2026/sumpi-mihomo-side-router.html</guid>
@@ -917,13 +1645,6 @@
       <source url="https://jiangcl.com/feed">蒙需</source>
     </item>
     <item>
-      <title>42. AI 视频剪辑实战：用 Claude Opus 5.5 剪口播长视频，完整工作流教程</title>
-      <link>https://xiangyugongzuoliu.com/42-ai-video-editing-skill/</link>
-      <guid isPermaLink="true">https://xiangyugongzuoliu.com/42-ai-video-editing-skill/</guid>
-      <pubDate>Wed, 21 Oct 2026 08:05:00 GMT</pubDate>
-      <source url="https://xiangyugongzuoliu.com/latest/rss/">翔宇工作流</source>
-    </item>
-    <item>
       <title>双十一以外的消费杂谈，金融消费也是消费</title>
       <link>https://i.lckiss.com/?p=9946</link>
       <guid isPermaLink="true">https://i.lckiss.com/?p=9946</guid>
@@ -938,39 +1659,11 @@
       <source url="http://wjd.name/feed/">王佳冬中文博客</source>
     </item>
     <item>
-      <title>（soc运营入职后的）见与解</title>
-      <link>http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</link>
-      <guid isPermaLink="true">http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</guid>
-      <pubDate>Wed, 21 Oct 2026 02:31:35 GMT</pubDate>
-      <source url="https://www.maonie.top/atom.xml">猫涅的技术博客</source>
-    </item>
-    <item>
-      <title>我为小说忙：（六）我们需要 OCR</title>
-      <link>https://blog.mfwt.top/index.php/archives/1589/</link>
-      <guid isPermaLink="true">https://blog.mfwt.top/index.php/archives/1589/</guid>
-      <pubDate>Wed, 21 Oct 2026 01:56:02 GMT</pubDate>
-      <source url="https://blog.mfwt.top/index.php/feed/">枫林灯语</source>
-    </item>
-    <item>
       <title>入蜀记 day512 刚需与服从性</title>
       <link>https://z.arlmy.me/posts/BBBPandINSW/INSW-deep/INSW_512/</link>
       <guid isPermaLink="true">https://z.arlmy.me/posts/BBBPandINSW/INSW-deep/INSW_512/</guid>
       <pubDate>Tue, 20 Oct 2026 16:03:27 GMT</pubDate>
       <source url="http://z.arlmy.me/atom.xml">素生</source>
-    </item>
-    <item>
-      <title>日本高中生物（基础部分）</title>
-      <link>https://springwood.me/jp-highschool-biology-1/</link>
-      <guid isPermaLink="true">https://springwood.me/jp-highschool-biology-1/</guid>
-      <pubDate>Tue, 20 Oct 2026 15:00:00 GMT</pubDate>
-      <source url="https://springwood.me/feed/">沉舟侧畔 Blog</source>
-    </item>
-    <item>
-      <title>VibeCoding项目</title>
-      <link>https://canyuda.top/posts/202609251526/</link>
-      <guid isPermaLink="true">https://canyuda.top/posts/202609251526/</guid>
-      <pubDate>Tue, 20 Oct 2026 12:30:01 GMT</pubDate>
-      <source url="https://canyuda.top/atom.xml">灿若繁星</source>
     </item>
     <item>
       <title>佳能 Powershot SX220 HS / SX230 HS 更换电池盖胶皮</title>
@@ -1001,13 +1694,6 @@
       <source url="https://diygod.cc/feed">DIYGod - 写代码是热爱，写到世界充满爱!</source>
     </item>
     <item>
-      <title>从 .NET 8 升 .NET 10 实战：生产环境这几个坑不避开就崩</title>
-      <link>https://www.coderlog.net/post/dotnet-8-upgrade-to-dotnet-10-production-pitfalls</link>
-      <guid isPermaLink="true">https://www.coderlog.net/post/dotnet-8-upgrade-to-dotnet-10-production-pitfalls</guid>
-      <pubDate>Tue, 20 Oct 2026 03:39:37 GMT</pubDate>
-      <source url="https://coderlog.net/rss.xml">码录集（CoderLog）</source>
-    </item>
-    <item>
       <title>如何写一个 Agent</title>
       <link>https://jiajunhuang.com/articles/2026_10_20-how_to_build_an_agent.md.html</link>
       <guid isPermaLink="true">https://jiajunhuang.com/articles/2026_10_20-how_to_build_an_agent.md.html</guid>
@@ -1022,60 +1708,11 @@
       <source url="https://66619.eu.org/feed/">619's blog</source>
     </item>
     <item>
-      <title>于是，我重新设计了博客</title>
-      <link>https://blog.cloverta.top/zh/posts/begining-a-new-blog/</link>
-      <guid isPermaLink="true">https://blog.cloverta.top/zh/posts/begining-a-new-blog/</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.cloverta.top/rss.xml">三叶的博客</source>
-    </item>
-    <item>
-      <title>追星是一种宗教统治</title>
-      <link>https://www.thefox.work//article/3fedc4f4-1160-80e3-bda7-cb242cbdd5bd</link>
-      <guid isPermaLink="true">https://www.thefox.work//article/3fedc4f4-1160-80e3-bda7-cb242cbdd5bd</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.thefox.work/rss/feed.xml">pious fox</source>
-    </item>
-    <item>
-      <title>李录说“神”都要IPO了，石龙仔却想起了一台ATM</title>
-      <link>https://shilongzai.com/posts/p-33b1a24044fdad76/</link>
-      <guid isPermaLink="true">https://shilongzai.com/posts/p-33b1a24044fdad76/</guid>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://shilongzai.com/feed.xml">石龙仔文库</source>
-    </item>
-    <item>
       <title>Linux 搜索最佳实践【入门版】</title>
       <link>https://liupj.top/2025/12/11/search-on-linux/</link>
       <guid isPermaLink="true">https://liupj.top/2025/12/11/search-on-linux/</guid>
       <pubDate>Mon, 19 Oct 2026 23:44:31 GMT</pubDate>
       <source url="https://liupj.top/atom.xml">Peijie's Wiki</source>
-    </item>
-    <item>
-      <title>广义相对论的观测效应</title>
-      <link>https://physnya.top/compact-object/lesson-5-general-relativity-effect/</link>
-      <guid isPermaLink="true">https://physnya.top/compact-object/lesson-5-general-relativity-effect/</guid>
-      <pubDate>Mon, 19 Oct 2026 17:06:44 GMT</pubDate>
-      <source url="https://physnya.top/atom.xml">菲兹克斯喵</source>
-    </item>
-    <item>
-      <title>观影小结 2026年夏</title>
-      <link>https://xeonzilla.top/anime-impressions-summer2026/</link>
-      <guid isPermaLink="true">https://xeonzilla.top/anime-impressions-summer2026/</guid>
-      <pubDate>Mon, 19 Oct 2026 16:00:00 GMT</pubDate>
-      <source url="https://xeonzilla.top/index.xml">Xeonzilla's Note</source>
-    </item>
-    <item>
-      <title>连续化 Softmax Attention</title>
-      <link>https://kexue.fm/archives/11980</link>
-      <guid isPermaLink="true">https://kexue.fm/archives/11980</guid>
-      <pubDate>Mon, 19 Oct 2026 14:21:00 GMT</pubDate>
-      <source url="https://kexue.fm/feed">科学空间</source>
-    </item>
-    <item>
-      <title>谁是 AI-relay App 的真正威胁 - 肘子的 Swift 周报 #158</title>
-      <link>https://fatbobman.com/zh/weekly/issue-158/</link>
-      <guid isPermaLink="true">https://fatbobman.com/zh/weekly/issue-158/</guid>
-      <pubDate>Mon, 19 Oct 2026 14:00:00 GMT</pubDate>
-      <source url="https://fatbobman.com/zh/rss.xml">肘子的 Swift 记事本</source>
     </item>
     <item>
       <title>007出国了就是不孝？</title>
@@ -1085,34 +1722,6 @@
       <source url="https://www.jack-liu.com/rss.php">Jack Liu博客</source>
     </item>
     <item>
-      <title>无Docker环境进行容器镜像操作</title>
-      <link>https://zahui.fan/posts/t5tiax/</link>
-      <guid isPermaLink="true">https://zahui.fan/posts/t5tiax/</guid>
-      <pubDate>Mon, 19 Oct 2026 11:02:10 GMT</pubDate>
-      <source url="https://zahui.fan/atom.xml">杂烩饭</source>
-    </item>
-    <item>
-      <title>分道而行</title>
-      <link>http://wangyikai.com/?p=3715</link>
-      <guid isPermaLink="true">http://wangyikai.com/?p=3715</guid>
-      <pubDate>Mon, 19 Oct 2026 10:26:09 GMT</pubDate>
-      <source url="http://wangyikai.com/?feed=rss2">王宜楷工作室</source>
-    </item>
-    <item>
-      <title>对抗衰老 - 读《抗衰大脑》</title>
-      <link>https://blog.devtang.com/2026/10/07/anti-aging-brain/</link>
-      <guid isPermaLink="true">https://blog.devtang.com/2026/10/07/anti-aging-brain/</guid>
-      <pubDate>Mon, 19 Oct 2026 07:58:59 GMT</pubDate>
-      <source url="https://blog.devtang.com/atom.xml">唐巧的博客</source>
-    </item>
-    <item>
-      <title>籍役债</title>
-      <link>https://bestcoder.cn/redemption-and-ascribed-status-debt</link>
-      <guid isPermaLink="true">https://bestcoder.cn/redemption-and-ascribed-status-debt</guid>
-      <pubDate>Mon, 19 Oct 2026 07:19:54 GMT</pubDate>
-      <source url="https://bestcoder.cn/feed">顶尖研发的个人博客</source>
-    </item>
-    <item>
       <title>怎么榨干 GitHub Actions</title>
       <link>https://neilmin.com/zh/posts/squeeze-github-actions-dry/</link>
       <guid isPermaLink="true">https://neilmin.com/zh/posts/squeeze-github-actions-dry/</guid>
@@ -1120,32 +1729,11 @@
       <source url="https://neilmin.com/zh/posts/index.xml">Neil的自留地</source>
     </item>
     <item>
-      <title>我为我的博客开发了在线编辑器</title>
-      <link>https://blog.xiaohanys.top/hexo-stellar-writing/</link>
-      <guid isPermaLink="true">https://blog.xiaohanys.top/hexo-stellar-writing/</guid>
-      <pubDate>Mon, 19 Oct 2026 03:21:58 GMT</pubDate>
-      <source url="https://blog.xiaohanys.top/atom.xml">晓光的个人博客</source>
-    </item>
-    <item>
-      <title>GitHub 热门项目周刊 · 第 33 期 · 2026 年第 43 周</title>
-      <link>https://www.dqzboy.com/20314.html</link>
-      <guid isPermaLink="true">https://www.dqzboy.com/20314.html</guid>
-      <pubDate>Mon, 19 Oct 2026 00:06:17 GMT</pubDate>
-      <source url="https://www.dqzboy.com/feed">浅时光博客</source>
-    </item>
-    <item>
       <title>愚蠢与勇敢</title>
       <link>https://ioerr.github.io/posts/yuchun-yu-yonggan/</link>
       <guid isPermaLink="true">https://ioerr.github.io/posts/yuchun-yu-yonggan/</guid>
       <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
       <source url="https://ioerr.github.io/index.xml">读写错误</source>
-    </item>
-    <item>
-      <title>用 Docker 部署 UniVPN，让多个 VPN 连接共存</title>
-      <link>https://blog.javazero.top/2026/10/19/docker-vpn-ssh-remote-dev/</link>
-      <guid isPermaLink="true">https://blog.javazero.top/2026/10/19/docker-vpn-ssh-remote-dev/</guid>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.javazero.top/atom.xml">Java不加糖's Blog</source>
     </item>
     <item>
       <title>把 GitHub 变成内容后台：HKUST-ELPA 的 Serverless 架构实践</title>
@@ -1162,13 +1750,6 @@
       <source url="https://blog.liao-ke.com/rss.xml">LiaoKe的博客</source>
     </item>
     <item>
-      <title>RoPE: Properties, Patterns, and Long-Context Behavior</title>
-      <link>https://blog.aeilot.top/2026/08/02/rope-properties-and-patterns/</link>
-      <guid isPermaLink="true">https://blog.aeilot.top/2026/08/02/rope-properties-and-patterns/</guid>
-      <pubDate>Sun, 18 Oct 2026 23:52:07 GMT</pubDate>
-      <source url="https://blog.aeilot.top/index.xml">Louis Aeilot's Blog</source>
-    </item>
-    <item>
       <title>U-Boot 入门</title>
       <link>https://www.kzzxisgod.top/index.php/2026/10/18/u-boot-rumen/</link>
       <guid isPermaLink="true">https://www.kzzxisgod.top/index.php/2026/10/18/u-boot-rumen/</guid>
@@ -1183,32 +1764,11 @@
       <source url="https://blog.xulihang.me/feed/">xulihang's blog</source>
     </item>
     <item>
-      <title>国庆出游之景德镇</title>
-      <link>https://pinlyu.com/life/jiangxi-jingdezhen/</link>
-      <guid isPermaLink="true">https://pinlyu.com/life/jiangxi-jingdezhen/</guid>
-      <pubDate>Sun, 18 Oct 2026 10:13:02 GMT</pubDate>
-      <source url="https://pinlyu.com/feed/">频率 - 风卷过的起点</source>
-    </item>
-    <item>
-      <title>學術機構</title>
-      <link>https://white-ceiling.bearblog.dev/928/</link>
-      <guid isPermaLink="true">https://white-ceiling.bearblog.dev/928/</guid>
-      <pubDate>Sun, 18 Oct 2026 09:19:47 GMT</pubDate>
-      <source url="https://white-ceiling.bearblog.dev/feed/">鵝庵筆記</source>
-    </item>
-    <item>
       <title>【MLIR】Transform Dialect【3】Transform 操作进阶</title>
       <link>https://forcheetah.github.io/2026/10/18/mlir10/</link>
       <guid isPermaLink="true">https://forcheetah.github.io/2026/10/18/mlir10/</guid>
       <pubDate>Sun, 18 Oct 2026 09:16:37 GMT</pubDate>
       <source url="https://forcheetah.github.io/atom.xml">暮冬Z羡慕的博客</source>
-    </item>
-    <item>
-      <title>箱根之旅</title>
-      <link>https://www.wikimoe.com/post/b-tn3backb</link>
-      <guid isPermaLink="true">https://www.wikimoe.com/post/b-tn3backb</guid>
-      <pubDate>Sun, 18 Oct 2026 06:27:47 GMT</pubDate>
-      <source url="https://www.wikimoe.com/rss.php">维基萌</source>
     </item>
     <item>
       <title>抑郁了</title>
@@ -1218,39 +1778,11 @@
       <source url="https://daimajia.com/feed">代码家</source>
     </item>
     <item>
-      <title>部署在Cloudflare worker的电报入群验证机器人 用 muse.ai 开发并部署</title>
-      <link>https://zelikk.blogspot.com/2026/10/cloudflare-worker-turnstile-anti-bot-join-group-exam-muse.html</link>
-      <guid isPermaLink="true">https://zelikk.blogspot.com/2026/10/cloudflare-worker-turnstile-anti-bot-join-group-exam-muse.html</guid>
-      <pubDate>Sun, 18 Oct 2026 05:34:19 GMT</pubDate>
-      <source url="https://zelikk.blogspot.com/feeds/posts/default">ICDYCT我能你也行</source>
-    </item>
-    <item>
       <title>让你的Spotify大变样——Spicetify简易指南</title>
       <link>https://www.rsnocsi.cn/2389.html</link>
       <guid isPermaLink="true">https://www.rsnocsi.cn/2389.html</guid>
       <pubDate>Sun, 18 Oct 2026 04:27:06 GMT</pubDate>
       <source url="https://www.rsnocsi.cn/feed">Abyss的小屋</source>
-    </item>
-    <item>
-      <title>Sway 睡眠唤醒后双屏黑屏：wlroots 记错了 CRTC</title>
-      <link>https://sjdhome.com/posts/wlroots-stale-crtc-after-suspend/</link>
-      <guid isPermaLink="true">https://sjdhome.com/posts/wlroots-stale-crtc-after-suspend/</guid>
-      <pubDate>Sun, 18 Oct 2026 03:58:50 GMT</pubDate>
-      <source url="https://sjdhome.com/blog/atom.xml">sjdhome blog</source>
-    </item>
-    <item>
-      <title>读 What is Codemode</title>
-      <link>https://changchen.me/blog/20261018/what-is-codemode/</link>
-      <guid isPermaLink="true">https://changchen.me/blog/20261018/what-is-codemode/</guid>
-      <pubDate>Sun, 18 Oct 2026 02:21:54 GMT</pubDate>
-      <source url="https://changchen.me/atom.xml">Henry Z's blog</source>
-    </item>
-    <item>
-      <title>Weekly Issue-《奔跑吧，爸爸》</title>
-      <link>https://zdyxry.github.io/2026/10/18/Weekly-Issue-Run-Dad/</link>
-      <guid isPermaLink="true">https://zdyxry.github.io/2026/10/18/Weekly-Issue-Run-Dad/</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="http://blog.zhouyiran.link/atom.xml">Yiran's Blog</source>
     </item>
     <item>
       <title>游客们观测到了小球飞鱼在水面上游玩的讯息。</title>
@@ -1281,20 +1813,6 @@
       <source url="https://blog.waterfish.ren/rss/feed.xml">水鱼博客</source>
     </item>
     <item>
-      <title>独立开发周记 192：工作室改造中</title>
-      <link>https://shudao.wang/blog/weekly/weekly-192</link>
-      <guid isPermaLink="true">https://shudao.wang/blog/weekly/weekly-192</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.shudao.wang/feed.xml">Indie Dev Weekly</source>
-    </item>
-    <item>
-      <title>晚上十点半的众生相</title>
-      <link>https://varzy.me/posts/portraits-of-life-at-10-30-pm</link>
-      <guid isPermaLink="true">https://varzy.me/posts/portraits-of-life-at-10-30-pm</guid>
-      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://varzy.me/rss.xml">贼歪</source>
-    </item>
-    <item>
       <title>【Command Reopen】我做了一个修复cmd tab体验的Mac App</title>
       <link>https://kkuk.dev/posts/command-reopen/</link>
       <guid isPermaLink="true">https://kkuk.dev/posts/command-reopen/</guid>
@@ -1307,13 +1825,6 @@
       <guid isPermaLink="true">https://zooyoo.top/article/71/</guid>
       <pubDate>Sat, 17 Oct 2026 18:05:00 GMT</pubDate>
       <source url="https://zooyoo.top/feed/">热衷于的博客</source>
-    </item>
-    <item>
-      <title>Starryblu：跨境资金管理平台Wise的平替？</title>
-      <link>https://tumutanzi.com/archives/17648</link>
-      <guid isPermaLink="true">https://tumutanzi.com/archives/17648</guid>
-      <pubDate>Sat, 17 Oct 2026 16:00:07 GMT</pubDate>
-      <source url="https://tumutanzi.com/feed">土木坛子</source>
     </item>
     <item>
       <title>AI Native 实践续篇：迈向 Stage 8</title>
@@ -1330,13 +1841,6 @@
       <source url="https://wener.me/story/rss.xml">Wener's Live &amp; Life</source>
     </item>
     <item>
-      <title>Chrome DevTools 奇技淫巧</title>
-      <link>https://www.ruanchaomin.com/blog/posts/244</link>
-      <guid isPermaLink="true">https://www.ruanchaomin.com/blog/posts/244</guid>
-      <pubDate>Sat, 17 Oct 2026 14:59:08 GMT</pubDate>
-      <source url="https://www.ruanchaomin.com/rss">阮超民的个人网站</source>
-    </item>
-    <item>
       <title>国家为什么会失败 读后感</title>
       <link>https://blog.leesaitool.com/misc/why-nations-fail-by-daron-acemoglu-a-reflection</link>
       <guid isPermaLink="true">https://blog.leesaitool.com/misc/why-nations-fail-by-daron-acemoglu-a-reflection</guid>
@@ -1344,32 +1848,11 @@
       <source url="https://blog.leesaitool.com/feed.xml">Arthur's Review</source>
     </item>
     <item>
-      <title>网络问题排查的思路和技巧</title>
-      <link>https://www.kawabangga.com/posts/7431</link>
-      <guid isPermaLink="true">https://www.kawabangga.com/posts/7431</guid>
-      <pubDate>Sat, 17 Oct 2026 09:54:55 GMT</pubDate>
-      <source url="https://www.kawabangga.com/feed">卡瓦邦噶！</source>
-    </item>
-    <item>
       <title>为什么没有尊界 v800 车主亲自出来测试刹车踏板</title>
       <link>https://fxpai.com/article/weishenmemeiyouzunjie-v800-chezhuqinzichulaiceshishachetaban</link>
       <guid isPermaLink="true">https://fxpai.com/article/weishenmemeiyouzunjie-v800-chezhuqinzichulaiceshishachetaban</guid>
       <pubDate>Sat, 17 Oct 2026 08:38:06 GMT</pubDate>
       <source url="https://fxpai.com/feed">非学·派</source>
-    </item>
-    <item>
-      <title>仙逆是怎么写成的</title>
-      <link>https://happyxiao.com/xianni/</link>
-      <guid isPermaLink="true">https://happyxiao.com/xianni/</guid>
-      <pubDate>Sat, 17 Oct 2026 03:04:08 GMT</pubDate>
-      <source url="https://happyxiao.com/feed">happy xiao 的博客</source>
-    </item>
-    <item>
-      <title>交互式理解 DINO 系列：从自蒸馏到视觉基础模型</title>
-      <link>https://www.vincentqin.tech/blog/dino-interactive/</link>
-      <guid isPermaLink="true">https://www.vincentqin.tech/blog/dino-interactive/</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://vincentqin.tech/rss.xml">Realcat</source>
     </item>
     <item>
       <title>我听什么摇滚 2</title>
@@ -1393,13 +1876,6 @@
       <source url="https://tianxingleo.top/atom.xml">tianxingleo的blog</source>
     </item>
     <item>
-      <title>小城广德徒步逛吃游</title>
-      <link>https://isming.me/2026-10-02-guangde/?utm_source=rss</link>
-      <guid isPermaLink="true">https://isming.me/2026-10-02-guangde/?utm_source=rss</guid>
-      <pubDate>Fri, 16 Oct 2026 12:13:00 GMT</pubDate>
-      <source url="https://isming.me/index.xml">码农明明桑</source>
-    </item>
-    <item>
       <title>激荡 2026</title>
       <link>https://ssshooter.com/turbulent-2026/</link>
       <guid isPermaLink="true">https://ssshooter.com/turbulent-2026/</guid>
@@ -1407,32 +1883,18 @@
       <source url="https://ssshooter.com/rss.xml">UsubeniFantasy</source>
     </item>
     <item>
-      <title>今天，我二十一岁了</title>
-      <link>https://cavill.site/articles/my-21th-birthday</link>
-      <guid isPermaLink="true">https://cavill.site/articles/my-21th-birthday</guid>
-      <pubDate>Fri, 16 Oct 2026 02:29:15 GMT</pubDate>
-      <source url="https://cavill.site/rss.xml">栖迟处</source>
-    </item>
-    <item>
-      <title>一场秋雨一场寒</title>
-      <link>https://2019527.xyz/posts/post-050/</link>
-      <guid isPermaLink="true">https://2019527.xyz/posts/post-050/</guid>
-      <pubDate>Thu, 15 Oct 2026 23:00:00 GMT</pubDate>
-      <source url="https://2019527.xyz/feed.xml">王志满律师个人博客</source>
-    </item>
-    <item>
-      <title>AI提效-3：AI会议纪要整理攻略</title>
-      <link>https://java4u.cn/java_base/3160.html</link>
-      <guid isPermaLink="true">https://java4u.cn/java_base/3160.html</guid>
-      <pubDate>Thu, 15 Oct 2026 18:04:45 GMT</pubDate>
-      <source url="https://java4u.cn/feed">Java for You</source>
-    </item>
-    <item>
       <title>设计素材周刊 222 期</title>
       <link>https://moonvy.com/blog/post/设计素材周刊/222/</link>
       <guid isPermaLink="true">https://moonvy.com/blog/post/设计素材周刊/222/</guid>
       <pubDate>Thu, 15 Oct 2026 16:00:00 GMT</pubDate>
       <source url="https://moonvy.com/blog/rss.xml">月球背面・Moonvy</source>
+    </item>
+    <item>
+      <title>把一缸鱼，养进电脑桌面之后</title>
+      <link>https://www.sunnyfly.com/koiglide.html</link>
+      <guid isPermaLink="true">https://www.sunnyfly.com/koiglide.html</guid>
+      <pubDate>Thu, 15 Oct 2026 13:22:17 GMT</pubDate>
+      <source url="https://www.sunnyfly.com/feed">孙威的阳光海</source>
     </item>
     <item>
       <title>Ubuntu 配置多宽带</title>
@@ -1449,13 +1911,6 @@
       <source url="https://numb.tech/atom.xml">双绞麻痹</source>
     </item>
     <item>
-      <title>学习周刊-总第285期-2026年第42周</title>
-      <link>https://wiki.eryajf.net/pages/6be37e/</link>
-      <guid isPermaLink="true">https://wiki.eryajf.net/pages/6be37e/</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:56 GMT</pubDate>
-      <source url="https://wiki.eryajf.net/rss.xml">二丫讲梵</source>
-    </item>
-    <item>
       <title>编译过了，界面还得靠猜——Agent 驱动下我暂时放下 GPUI Kit</title>
       <link>https://hencte.top/log/compile-passed-ui-still-guesswork/</link>
       <guid isPermaLink="true">https://hencte.top/log/compile-passed-ui-still-guesswork/</guid>
@@ -1468,13 +1923,6 @@
       <guid isPermaLink="true">https://www.qs5.org/Post/788.html</guid>
       <pubDate>Thu, 15 Oct 2026 07:16:51 GMT</pubDate>
       <source url="https://www.qs5.org/feed/">青石坞</source>
-    </item>
-    <item>
-      <title>一坨狗屎</title>
-      <link>https://jame.work/html/post/57</link>
-      <guid isPermaLink="true">https://jame.work/html/post/57</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://jame.work/feed.xml">Jame</source>
     </item>
     <item>
       <title>边缘视觉识别工控机选型</title>
@@ -1505,32 +1953,11 @@
       <source url="http://scottyeung.top/atom.xml">YeungYeah 的乱写地</source>
     </item>
     <item>
-      <title>Nice！继text-wrap之后，Flex布局也支持balance排版了</title>
-      <link>https://www.zhangxinxu.com/wordpress/2026/10/flex-wrap-balance/</link>
-      <guid isPermaLink="true">https://www.zhangxinxu.com/wordpress/2026/10/flex-wrap-balance/</guid>
-      <pubDate>Wed, 14 Oct 2026 10:24:41 GMT</pubDate>
-      <source url="http://www.zhangxinxu.com/wordpress/?feed=rss2">张鑫旭-鑫空间-鑫生活</source>
-    </item>
-    <item>
-      <title>小K的一岁生日会</title>
-      <link>https://shuiba.co/klayton-1st-birthday-party</link>
-      <guid isPermaLink="true">https://shuiba.co/klayton-1st-birthday-party</guid>
-      <pubDate>Wed, 14 Oct 2026 09:50:00 GMT</pubDate>
-      <source url="https://shuiba.co/feed">Shuibaco • 水八口</source>
-    </item>
-    <item>
       <title>近思录 2026-10-02</title>
       <link>https://chriszheng.science/2026/10/02/Recent-thoughts-2026-10-02/</link>
       <guid isPermaLink="true">https://chriszheng.science/2026/10/02/Recent-thoughts-2026-10-02/</guid>
       <pubDate>Wed, 14 Oct 2026 09:29:39 GMT</pubDate>
       <source url="https://chriszheng.science/atom.xml">M-x Chris-An-Emacser</source>
-    </item>
-    <item>
-      <title>PenShot 全面测评：分镜 Agent 的架构成色、工程短板与演进路线</title>
-      <link>https://pengline.cn/2026/09/penshot-review/</link>
-      <guid isPermaLink="true">https://pengline.cn/2026/09/penshot-review/</guid>
-      <pubDate>Wed, 14 Oct 2026 08:00:44 GMT</pubDate>
-      <source url="https://pengline.cn/atom.xml">余一叶知秋尽</source>
     </item>
     <item>
       <title>复活一个iPad </title>
@@ -1561,13 +1988,6 @@
       <source url="https://blog.mountaye.com/feed.xml">阿掖山·博客</source>
     </item>
     <item>
-      <title>IC 卡：原理、读写与复制</title>
-      <link>https://wmhwiki.cn/posts/2026/iccard</link>
-      <guid isPermaLink="true">https://wmhwiki.cn/posts/2026/iccard</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://wmhwiki.cn/rss.xml">wmhwiki</source>
-    </item>
-    <item>
       <title>舊皇崗最後一夜：最後的皇巴與新田總站</title>
       <link>https://impatrick.blog/huanggang-border-crossing-last-night/</link>
       <guid isPermaLink="true">https://impatrick.blog/huanggang-border-crossing-last-night/</guid>
@@ -1582,25 +2002,11 @@
       <source url="https://dsy4567.github.io/rss.xml">dsy4567 的小站</source>
     </item>
     <item>
-      <title>又用AI做了个鸡肋-桌面单词日历墨水屏</title>
-      <link>https://mianao.info/ai-ink-word-esp32-s3/</link>
-      <guid isPermaLink="true">https://mianao.info/ai-ink-word-esp32-s3/</guid>
-      <pubDate>Tue, 13 Oct 2026 12:40:00 GMT</pubDate>
-      <source url="https://mianao.info/atom.xml">不吐不快</source>
-    </item>
-    <item>
       <title>How I AI Coding in 2026.10</title>
       <link>https://www.xiejingyang.com/2026/10/13/how-i-ai-coding-in-2026-10/</link>
       <guid isPermaLink="true">https://www.xiejingyang.com/2026/10/13/how-i-ai-coding-in-2026-10/</guid>
       <pubDate>Tue, 13 Oct 2026 11:07:46 GMT</pubDate>
       <source url="https://www.xiejingyang.com/feed/">Xieisabug</source>
-    </item>
-    <item>
-      <title>Windows 常用 CPL 快捷命令大全</title>
-      <link>https://bducds.de/archives/ji-shu/Windows-CPL.html</link>
-      <guid isPermaLink="true">https://bducds.de/archives/ji-shu/Windows-CPL.html</guid>
-      <pubDate>Tue, 13 Oct 2026 04:48:00 GMT</pubDate>
-      <source url="https://bducds.de/feed">BudNote</source>
     </item>
     <item>
       <title>doma.in 二级域名注册上线，烧饼也能换域名啦</title>
@@ -1636,13 +2042,6 @@
       <guid isPermaLink="true">https://blog.hclonely.com/posts/a2a81abb/</guid>
       <pubDate>Mon, 12 Oct 2026 10:52:08 GMT</pubDate>
       <source url="https://blog.hclonely.com/atom.xml">HCLonely</source>
-    </item>
-    <item>
-      <title>Lv.17</title>
-      <link>http://mercurychong.blogspot.com/2026/10/lv17.html</link>
-      <guid isPermaLink="true">http://mercurychong.blogspot.com/2026/10/lv17.html</guid>
-      <pubDate>Mon, 12 Oct 2026 08:20:38 GMT</pubDate>
-      <source url="http://mercurychong.blogspot.com/feeds/posts/default">水星投资理财</source>
     </item>
     <item>
       <title>AI工具分享：chrome-sidecar，让 Agent 使用你的浏览器登录态</title>
@@ -1694,13 +2093,6 @@
       <source url="https://www.superdaniel.cn/rss.xml">Daniel的博客</source>
     </item>
     <item>
-      <title>微说 | 权利和义务的对等</title>
-      <link>https://www.xiabingbao.com/talk/t/mv4lqj4i.html</link>
-      <guid isPermaLink="true">https://www.xiabingbao.com/talk/t/mv4lqj4i.html</guid>
-      <pubDate>Mon, 12 Oct 2026 01:57:17 GMT</pubDate>
-      <source url="https://www.xiabingbao.com/atom.xml">蚊子前端博客</source>
-    </item>
-    <item>
       <title>用 Files API 减少图片体积导致的 TTFT 膨胀</title>
       <link>https://jia.je/software/2026/10/12/use-files-api-to-reduce-ttft/</link>
       <guid isPermaLink="true">https://jia.je/software/2026/10/12/use-files-api-to-reduce-ttft/</guid>
@@ -1713,20 +2105,6 @@
       <guid isPermaLink="true">https://www.imbailey.cn/post/national-day-2026-ev-road-trip-xuzhou-linyi</guid>
       <pubDate>Sun, 11 Oct 2026 22:50:00 GMT</pubDate>
       <source url="https://www.imbailey.cn/rss.xml">Bailey's Blog</source>
-    </item>
-    <item>
-      <title>《庄子》内七篇完整解读</title>
-      <link>https://chegva.com/6821.html</link>
-      <guid isPermaLink="true">https://chegva.com/6821.html</guid>
-      <pubDate>Sun, 11 Oct 2026 15:44:39 GMT</pubDate>
-      <source url="https://chegva.com/feed/">安志合的学习博客</source>
-    </item>
-    <item>
-      <title>两周没动，就去</title>
-      <link>https://www.fengcan.net/two-weeks-rule/</link>
-      <guid isPermaLink="true">https://www.fengcan.net/two-weeks-rule/</guid>
-      <pubDate>Sun, 11 Oct 2026 13:27:50 GMT</pubDate>
-      <source url="https://www.fengcan.net/feed/">创见思考</source>
     </item>
     <item>
       <title>虚伪的 Vercel</title>
@@ -1743,13 +2121,6 @@
       <source url="https://www.xianrenlife.com/feeds/posts/default">闲人Life</source>
     </item>
     <item>
-      <title>Vol.121 应用、模型与运行系统相互塑造：AI 基础设施、智能体与云服务演进</title>
-      <link>https://liduos.com/weekly/the-weekly-gradient-121</link>
-      <guid isPermaLink="true">https://liduos.com/weekly/the-weekly-gradient-121</guid>
-      <pubDate>Sun, 11 Oct 2026 08:00:00 GMT</pubDate>
-      <source url="https://liduos.com/atom.xml">莫尔索</source>
-    </item>
-    <item>
       <title>既生Pi何生Pi Durable</title>
       <link>https://www.tony-bro.com/posts/511427317/</link>
       <guid isPermaLink="true">https://www.tony-bro.com/posts/511427317/</guid>
@@ -1762,13 +2133,6 @@
       <guid isPermaLink="true">https://www.domon.cn/2026-9yue-yue-du-shu-zhai/</guid>
       <pubDate>Sun, 11 Oct 2026 02:56:43 GMT</pubDate>
       <source url="https://www.domon.cn/rss/">Domon</source>
-    </item>
-    <item>
-      <title>使用开发工具嗅探和下载网页中的资源文件</title>
-      <link>https://www.xchere.xyz/p/5886.html</link>
-      <guid isPermaLink="true">https://www.xchere.xyz/p/5886.html</guid>
-      <pubDate>Sun, 11 Oct 2026 00:48:34 GMT</pubDate>
-      <source url="https://www.xchere.xyz/atom.xml">叉息的空中咖啡馆</source>
     </item>
     <item>
       <title>读论文: 偷走大模型的思考链</title>
@@ -1813,13 +2177,6 @@
       <source url="https://blog.mk1.io/rss.xml">Ray's Blog</source>
     </item>
     <item>
-      <title>也谈「刹车门」</title>
-      <link>https://wangjiezhe.com/posts/2026-10-10-Brake-Pedal/</link>
-      <guid isPermaLink="true">https://wangjiezhe.com/posts/2026-10-10-Brake-Pedal/</guid>
-      <pubDate>Sat, 10 Oct 2026 11:34:35 GMT</pubDate>
-      <source url="https://wangjiezhe.com/atom.xml">如鱼饮水</source>
-    </item>
-    <item>
       <title>知盈 iAssets 更新近况：家庭共享、AI 资产分析和存款提醒</title>
       <link>https://blog.debuginn.com/p/iassets-share/</link>
       <guid isPermaLink="true">https://blog.debuginn.com/p/iassets-share/</guid>
@@ -1841,13 +2198,6 @@
       <source url="https://blog.kayro.cn/atom.xml">敖苛记</source>
     </item>
     <item>
-      <title>2026 年十一假期</title>
-      <link>https://yipai.me/post/2554.html</link>
-      <guid isPermaLink="true">https://yipai.me/post/2554.html</guid>
-      <pubDate>Fri, 09 Oct 2026 14:35:22 GMT</pubDate>
-      <source url="https://yipai.me/feed">一派胡言</source>
-    </item>
-    <item>
       <title>jdjwzx233的博客</title>
       <link>https://jdjwzx233.cn/2026/10/09/jdjwzx233%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
       <guid isPermaLink="true">https://jdjwzx233.cn/2026/10/09/jdjwzx233%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
@@ -1860,20 +2210,6 @@
       <guid isPermaLink="true">https://liudon.com/posts/github-actions-ipfs-dist-ipfs-tech/</guid>
       <pubDate>Fri, 09 Oct 2026 03:08:15 GMT</pubDate>
       <source url="https://liudon.com/index.xml">流动</source>
-    </item>
-    <item>
-      <title>我把 Apple Watch 半退役了：Google Fitbit Air 可能是最适合 AI 用户的可穿戴设备</title>
-      <link>https://www.ixiqin.com/2026/10/09/use-google-fitbit-air/</link>
-      <guid isPermaLink="true">https://www.ixiqin.com/2026/10/09/use-google-fitbit-air/</guid>
-      <pubDate>Fri, 09 Oct 2026 02:32:06 GMT</pubDate>
-      <source url="https://www.ixiqin.com/feed/">西秦公子</source>
-    </item>
-    <item>
-      <title>MoeCTF 2026 比赛运维记录</title>
-      <link>https://www.xiaozonglin.cn/blog/moectf-2026-devops/</link>
-      <guid isPermaLink="true">https://www.xiaozonglin.cn/blog/moectf-2026-devops/</guid>
-      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.xiaozonglin.cn/blog/rss.xml">林林杂语</source>
     </item>
     <item>
       <title>2026/10/09</title>
@@ -1918,18 +2254,25 @@
       <source url="https://moyuin.top/rss.xml">Moyuin's Blog</source>
     </item>
     <item>
-      <title>iPhone 自动备份到 NAS：开源啦</title>
-      <link>https://razeen.me/posts/iphone-wifi-backup-nas-open-source/</link>
-      <guid isPermaLink="true">https://razeen.me/posts/iphone-wifi-backup-nas-open-source/</guid>
-      <pubDate>Wed, 07 Oct 2026 16:00:00 GMT</pubDate>
-      <source url="https://razeen.me/index.xml">Razeen's Blog</source>
-    </item>
-    <item>
       <title>重构了机房机柜图生成器</title>
       <link>https://www.szqp.site/archives/10685</link>
       <guid isPermaLink="true">https://www.szqp.site/archives/10685</guid>
       <pubDate>Wed, 07 Oct 2026 11:56:43 GMT</pubDate>
       <source url="https://www.szqp.site/feed">QP's Blog</source>
+    </item>
+    <item>
+      <title>不在大学</title>
+      <link>https://blog.zhilu.site/2026/out-of-campus</link>
+      <guid isPermaLink="true">https://blog.zhilu.site/2026/out-of-campus</guid>
+      <pubDate>Wed, 07 Oct 2026 10:08:11 GMT</pubDate>
+      <source url="https://blog.zhilu.site/atom.xml">纸鹿摸鱼处</source>
+    </item>
+    <item>
+      <title>传统手工分析 AI出海案例 (4): piceditor.ai SEO教科书</title>
+      <link>https://www.chaoniulian.com/blog/piceditor-ai.html</link>
+      <guid isPermaLink="true">https://www.chaoniulian.com/blog/piceditor-ai.html</guid>
+      <pubDate>Wed, 07 Oct 2026 02:28:04 GMT</pubDate>
+      <source url="https://www.chaoniulian.com/rss/">骑行超过牛</source>
     </item>
     <item>
       <title>Complete Debian 13 Development Environment Setup</title>
@@ -1960,25 +2303,11 @@
       <source url="https://www.alxh.page/feed.rss">所谓空想</source>
     </item>
     <item>
-      <title>育儿哲学（二）：为什么要生孩子（因为爱着这个世界）</title>
-      <link>https://yilinhut.net/2026/10/06/15776.html</link>
-      <guid isPermaLink="true">https://yilinhut.net/2026/10/06/15776.html</guid>
-      <pubDate>Tue, 06 Oct 2026 13:23:14 GMT</pubDate>
-      <source url="https://yilinhut.net/feed/">随轩</source>
-    </item>
-    <item>
       <title>SmartPerfetto v1.15.1 更新说明</title>
       <link>https://androidperformance.com/2026/10/06/SmartPerfetto-v1.15.1-Release-Notes/</link>
       <guid isPermaLink="true">https://androidperformance.com/2026/10/06/SmartPerfetto-v1.15.1-Release-Notes/</guid>
       <pubDate>Tue, 06 Oct 2026 11:48:39 GMT</pubDate>
       <source url="https://www.androidperformance.com/atom.xml">Android Performance</source>
-    </item>
-    <item>
-      <title>那个 KTV 的故事</title>
-      <link>https://blog.cugxuan.cn/2026/10/06/Mood/ktv/</link>
-      <guid isPermaLink="true">https://blog.cugxuan.cn/2026/10/06/Mood/ktv/</guid>
-      <pubDate>Tue, 06 Oct 2026 06:03:23 GMT</pubDate>
-      <source url="https://blog.cugxuan.cn/atom.xml">泫言</source>
     </item>
     <item>
       <title>ロビンソン和STYX HELIX中文翻译</title>
@@ -2016,13 +2345,6 @@
       <source url="https://www.oxue.de/rss.xml">傲雪の</source>
     </item>
     <item>
-      <title>深圳-拉萨自驾-游记</title>
-      <link>https://elmagnifico.tech/2026/10/06/shenzhen-lasa-ontheway/</link>
-      <guid isPermaLink="true">https://elmagnifico.tech/2026/10/06/shenzhen-lasa-ontheway/</guid>
-      <pubDate>Mon, 05 Oct 2026 16:00:00 GMT</pubDate>
-      <source url="http://elmagnifico.tech/feed.xml">elmagnifico</source>
-    </item>
-    <item>
       <title>Easytier+Windows+硬盘盒：我的实用主义Homelab配置</title>
       <link>https://ddadaal.me/articles/my-homelab-setup/cn</link>
       <guid isPermaLink="true">https://ddadaal.me/articles/my-homelab-setup/cn</guid>
@@ -2056,13 +2378,6 @@
       <guid isPermaLink="true">https://blog.krysztal.dev/posts/内存中的微型表格</guid>
       <pubDate>Sun, 04 Oct 2026 20:43:15 GMT</pubDate>
       <source url="https://blog.krysztal.dev/rss">Krysztal的书桌</source>
-    </item>
-    <item>
-      <title>【杂谈】外语学习心得</title>
-      <link>https://www.coderlock.site/index.php/archives/125/</link>
-      <guid isPermaLink="true">https://www.coderlock.site/index.php/archives/125/</guid>
-      <pubDate>Sun, 04 Oct 2026 15:06:00 GMT</pubDate>
-      <source url="https://www.coderlock.site/index.php/feed/">寒夜雨</source>
     </item>
     <item>
       <title>甲骨文免费套春川网络落地其他区域 多区域组网 降低延迟 增强稳定性</title>
@@ -2128,13 +2443,6 @@
       <source url="https://www.wangfenjin.com/index.xml">Wang Fenjin's Blog</source>
     </item>
     <item>
-      <title>singbox-multipath：用于异质多路径的类MPTCP智能择优聚合L4转发器PoC</title>
-      <link>https://wusiyu.me/singbox-multipath/</link>
-      <guid isPermaLink="true">https://wusiyu.me/singbox-multipath/</guid>
-      <pubDate>Thu, 01 Oct 2026 18:40:14 GMT</pubDate>
-      <source url="https://wusiyu.me/feed/">WuSiYu Blog</source>
-    </item>
-    <item>
       <title>#1537</title>
       <link>https://ramble.imzh.me/1537/</link>
       <guid isPermaLink="true">https://ramble.imzh.me/1537/</guid>
@@ -2149,32 +2457,11 @@
       <source url="https://yuhang.ch/rss.xml">陈昱行博客</source>
     </item>
     <item>
-      <title>9月练习小结</title>
-      <link>https://mag267.github.io/2026/09/30/summary-sep26/</link>
-      <guid isPermaLink="true">https://mag267.github.io/2026/09/30/summary-sep26/</guid>
-      <pubDate>Thu, 01 Oct 2026 04:26:20 GMT</pubDate>
-      <source url="https://mag267.github.io/atom.xml">Mag‘s Blog</source>
-    </item>
-    <item>
-      <title>如何制作一个“完整”的博客压缩包？</title>
-      <link>https://mabbs.github.io/2026/10/01/quine.html</link>
-      <guid isPermaLink="true">https://mabbs.github.io/2026/10/01/quine.html</guid>
-      <pubDate>Wed, 30 Sep 2026 16:00:00 GMT</pubDate>
-      <source url="https://mabbs.github.io/atom.xml">Mayx的博客</source>
-    </item>
-    <item>
       <title>AI Agent 小蓝书读书笔记（施工中）</title>
       <link>http://www.z16388.top/ai/agent-bluenote/</link>
       <guid isPermaLink="true">http://www.z16388.top/ai/agent-bluenote/</guid>
       <pubDate>Wed, 30 Sep 2026 15:44:36 GMT</pubDate>
       <source url="http://www.z16388.top/atom.xml">崎径 其镜赵安琪的博客</source>
-    </item>
-    <item>
-      <title>熬夜的自省</title>
-      <link>https://blog.supergrey.uk/self-reflection-on-staying-up-late/</link>
-      <guid isPermaLink="true">https://blog.supergrey.uk/self-reflection-on-staying-up-late/</guid>
-      <pubDate>Wed, 30 Sep 2026 09:04:10 GMT</pubDate>
-      <source url="https://supergrey.bearblog.dev/feed/">SuperGrey的笔记本</source>
     </item>
     <item>
       <title>断电致 0x1E KMODE_EXCEPTION 蓝屏与 SFC 扫描崩溃离线修复 | 阿尔的代码屋</title>
@@ -2219,13 +2506,6 @@
       <source url="https://www.iconpik.com/rss/">王圆圆</source>
     </item>
     <item>
-      <title>站在电车里, 我在手机上改代码</title>
-      <link>https://xiaket.github.io/2026/run-deepseek-harness-remotely.html</link>
-      <guid isPermaLink="true">https://xiaket.github.io/2026/run-deepseek-harness-remotely.html</guid>
-      <pubDate>Tue, 29 Sep 2026 06:03:00 GMT</pubDate>
-      <source url="https://blog.xiaket.org/feed.xml">年华转瞬</source>
-    </item>
-    <item>
       <title>我的网络方案：2026 年的折腾记录</title>
       <link>https://luolei.org/my-network-2026</link>
       <guid isPermaLink="true">https://luolei.org/my-network-2026</guid>
@@ -2233,25 +2513,11 @@
       <source url="http://luolei.org/feed/">罗磊的独立博客</source>
     </item>
     <item>
-      <title>酥米的碎碎念（17），中秋节快乐</title>
-      <link>https://www.sumi233.top/posts/mouthtalk/sumi-thoughts-17/</link>
-      <guid isPermaLink="true">https://www.sumi233.top/posts/mouthtalk/sumi-thoughts-17/</guid>
-      <pubDate>Mon, 28 Sep 2026 13:30:55 GMT</pubDate>
-      <source url="https://www.sumi233.top/rss.xml">酥米的小站</source>
-    </item>
-    <item>
       <title>Winlane：我的 Mac 工具箱</title>
       <link>http://catcoding.me/p/winlane/</link>
       <guid isPermaLink="true">http://catcoding.me/p/winlane/</guid>
       <pubDate>Mon, 28 Sep 2026 12:40:00 GMT</pubDate>
       <source url="https://catcoding.me/atom.xml">程序员的喵</source>
-    </item>
-    <item>
-      <title>巨人的荷塘·其二</title>
-      <link>https://blog.si-on.top/2026/LotusPond@Giant_ii/</link>
-      <guid isPermaLink="true">https://blog.si-on.top/2026/LotusPond@Giant_ii/</guid>
-      <pubDate>Mon, 28 Sep 2026 04:51:50 GMT</pubDate>
-      <source url="https://blog.si-on.top/atom.xml">子虚栈</source>
     </item>
     <item>
       <title>AI 时代的焦虑程序员</title>
@@ -2266,20 +2532,6 @@
       <guid isPermaLink="true">https://dfine.tech/posts/626063bd/</guid>
       <pubDate>Sun, 27 Sep 2026 16:12:02 GMT</pubDate>
       <source url="https://dfine.tech/atom.xml">阁子</source>
-    </item>
-    <item>
-      <title>Meaning of life</title>
-      <link>https://blog.bensontech.dev/posts/boring/</link>
-      <guid isPermaLink="true">https://blog.bensontech.dev/posts/boring/</guid>
-      <pubDate>Sun, 27 Sep 2026 16:00:00 GMT</pubDate>
-      <source url="https://blog.bensontech.dev/feed.xml">Benson</source>
-    </item>
-    <item>
-      <title>晚期肝癌一线系统治疗：考虑和推荐</title>
-      <link>http://whyes.org/2026/hcc-first-line-systemic-therapy-2026</link>
-      <guid isPermaLink="true">http://whyes.org/2026/hcc-first-line-systemic-therapy-2026</guid>
-      <pubDate>Sun, 27 Sep 2026 12:16:08 GMT</pubDate>
-      <source url="https://whyes.org/feed/post.xml">whyes的博客</source>
     </item>
     <item>
       <title>AI 時代的限制理論 (三) – YouTube 影片觀看成長 10 倍的經驗分享</title>
@@ -2308,13 +2560,6 @@
       <guid isPermaLink="true">https://icodex.me/fe-ai-tech-weekly-2026-09-27</guid>
       <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
       <source url="https://icodex.me/rss">icodex</source>
-    </item>
-    <item>
-      <title>有时候我觉得我是你：从星瞳谈起</title>
-      <link>https://auvetu.com/posts/virtual-streamer-xingtong/</link>
-      <guid isPermaLink="true">https://auvetu.com/posts/virtual-streamer-xingtong/</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.auvetu.com/rss.xml">云海札记</source>
     </item>
     <item>
       <title>技术封建主义</title>
@@ -2380,13 +2625,6 @@
       <source url="https://mingnify.com/zh/blog/atom.xml">明立非(Mingnify)的博客</source>
     </item>
     <item>
-      <title>专业的网络延迟波动检测工具 irtt</title>
-      <link>https://blog.frytea.com/archives/32470</link>
-      <guid isPermaLink="true">https://blog.frytea.com/archives/32470</guid>
-      <pubDate>Thu, 24 Sep 2026 06:42:54 GMT</pubDate>
-      <source url="https://www.frytea.com/feed">Frytea's Blog</source>
-    </item>
-    <item>
       <title>笨傻蠢痴呆愚</title>
       <link>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E7%AC%A8%E5%82%BB%E8%A0%A2%E7%97%B4%E5%91%86%E6%84%9A.html</link>
       <guid isPermaLink="true">https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E7%AC%A8%E5%82%BB%E8%A0%A2%E7%97%B4%E5%91%86%E6%84%9A.html</guid>
@@ -2415,25 +2653,11 @@
       <source url="https://xilidou.com/atom.xml">犀利豆的博客</source>
     </item>
     <item>
-      <title>《幻世录》 100%必遇神秘男子</title>
-      <link>https://kn007.net/topics/the-legend-of-fancy-realm-guaranteed-encounter-with-mysterious-man/</link>
-      <guid isPermaLink="true">https://kn007.net/topics/the-legend-of-fancy-realm-guaranteed-encounter-with-mysterious-man/</guid>
-      <pubDate>Wed, 23 Sep 2026 07:33:35 GMT</pubDate>
-      <source url="https://kn007.net/feed/">kn007的个人博客</source>
-    </item>
-    <item>
       <title>我把视频字幕工具做进了浏览器里</title>
       <link>https://zishu.me/blog/video-transcript/</link>
       <guid isPermaLink="true">https://zishu.me/blog/video-transcript/</guid>
       <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
       <source url="https://zishu.me/index.xml">子舒的博客</source>
-    </item>
-    <item>
-      <title>使用 Hermes Bots 打造我的中土世界 Agent 团队</title>
-      <link>https://daolanx.me/zh/posts/post-26/</link>
-      <guid isPermaLink="true">https://daolanx.me/zh/posts/post-26/</guid>
-      <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
-      <source url="https://daolanx.me/zh/rss.xml">Dax</source>
     </item>
     <item>
       <title>【调研】从 Generate 到 Decide：Jev、System One Models 与 Agent 决策层</title>
@@ -2448,13 +2672,6 @@
       <guid isPermaLink="true">https://www.jeffjade.com/2024/08/28/253-wealth-tracker/</guid>
       <pubDate>Tue, 22 Sep 2026 14:07:03 GMT</pubDate>
       <source url="https://www.jeffjade.com/atom.xml">晚晴幽草轩</source>
-    </item>
-    <item>
-      <title>供需数据分析：大隐于市还是小隐于野？</title>
-      <link>https://citydatum.cn/archives/3490</link>
-      <guid isPermaLink="true">https://citydatum.cn/archives/3490</guid>
-      <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
-      <source url="https://citydatum.cn/feed">橙树志</source>
     </item>
     <item>
       <title>AGI 的影子已经在你我身边了</title>
@@ -2485,13 +2702,6 @@
       <source url="https://oldj.net/feed">oldj's blog</source>
     </item>
     <item>
-      <title>被 AI 工具裹挟的程序员</title>
-      <link>https://smallyu.net/2026/06/04/%E8%A2%ABAI%E5%B7%A5%E5%85%B7%E8%A3%B9%E6%8C%9F%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/</link>
-      <guid isPermaLink="true">https://smallyu.net/2026/06/04/%E8%A2%ABAI%E5%B7%A5%E5%85%B7%E8%A3%B9%E6%8C%9F%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/</guid>
-      <pubDate>Mon, 21 Sep 2026 07:19:36 GMT</pubDate>
-      <source url="https://smallyu.net/atom.xml">smallyu的博客</source>
-    </item>
-    <item>
       <title>LaTeX in Philes</title>
       <link>https://www.cubeyond.net/volume/3/latex-support/</link>
       <guid isPermaLink="true">https://www.cubeyond.net/volume/3/latex-support/</guid>
@@ -2511,13 +2721,6 @@
       <guid isPermaLink="true">https://kanchuan.com/blog/244-software-copyright</guid>
       <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
       <source url="https://kanchuan.com/feed.xml">陈看川博客</source>
-    </item>
-    <item>
-      <title>Notes on An Introduction to Statistical Learning with Applications in Python</title>
-      <link>https://blog.chungzh.cn/notes-on-an-introduction-to-statistical-learning-with-applications-in-python/</link>
-      <guid isPermaLink="true">https://blog.chungzh.cn/notes-on-an-introduction-to-statistical-learning-with-applications-in-python/</guid>
-      <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
-      <source url="https://blog.chungzh.cn/index.xml">ChungZH 的小窝</source>
     </item>
     <item>
       <title>ARCUS 项目详细调研</title>
@@ -2569,13 +2772,6 @@
       <source url="https://lorexxar.cn/atom.xml">LoRexxar's Blog</source>
     </item>
     <item>
-      <title>Al Brooks：10 个最佳价格行为交易形态（全解析与中文图解）</title>
-      <link>https://blog.forecho.com/10-best-price-action-trading-patterns.html</link>
-      <guid isPermaLink="true">https://blog.forecho.com/10-best-price-action-trading-patterns.html</guid>
-      <pubDate>Fri, 18 Sep 2026 08:00:00 GMT</pubDate>
-      <source url="https://blog.forecho.com/atom.xml">forecho 的独立博客</source>
-    </item>
-    <item>
       <title>Yet Another New Start (2026 Edition?)</title>
       <link>https://typeblog.net/yet-another-new-start-2026-edition</link>
       <guid isPermaLink="true">https://typeblog.net/yet-another-new-start-2026-edition</guid>
@@ -2597,13 +2793,6 @@
       <source url="https://rowkey.cn/atom.xml">后端技术杂谈</source>
     </item>
     <item>
-      <title>Blog Theme Update Mermaid Support Is Here</title>
-      <link>https://www.bboy.app/2026/09/17/blog-theme-update-mermaid-support-is-here/</link>
-      <guid isPermaLink="true">https://www.bboy.app/2026/09/17/blog-theme-update-mermaid-support-is-here/</guid>
-      <pubDate>Thu, 17 Sep 2026 11:14:20 GMT</pubDate>
-      <source url="https://www.bboy.app/atom.xml">bboysoul的博客</source>
-    </item>
-    <item>
       <title>我只是想复制个门禁卡👿</title>
       <link>https://dmesg.app/nfc-clone.html</link>
       <guid isPermaLink="true">https://dmesg.app/nfc-clone.html</guid>
@@ -2616,13 +2805,6 @@
       <guid isPermaLink="true">https://www.ikxin.com/article/zhcndoc-first-anniversary</guid>
       <pubDate>Wed, 16 Sep 2026 09:59:27 GMT</pubDate>
       <source url="https://www.ikxin.com/atom.xml">一纸忘忧</source>
-    </item>
-    <item>
-      <title>墨问发布第一款 Mac App：CatBar，极简 Mac 菜单栏图标管理工具</title>
-      <link>https://macshuo.com/?p=2078</link>
-      <guid isPermaLink="true">https://macshuo.com/?p=2078</guid>
-      <pubDate>Wed, 16 Sep 2026 06:01:07 GMT</pubDate>
-      <source url="http://macshuo.com/?feed=rss2">MacTalk-池建强的随想录</source>
     </item>
     <item>
       <title>Zabbix 7.4 通过钉钉发送告警提醒</title>
@@ -2646,25 +2828,11 @@
       <source url="https://mocusez.site/zh-CN/atom.xml">Mox的笔记库</source>
     </item>
     <item>
-      <title>Hard Negatives, Hard Lessons：用 LLM 重标检索训练中的假负样本</title>
-      <link>https://finisky.github.io/hard-negatives-hard-lessons-summary/</link>
-      <guid isPermaLink="true">https://finisky.github.io/hard-negatives-hard-lessons-summary/</guid>
-      <pubDate>Tue, 15 Sep 2026 10:12:10 GMT</pubDate>
-      <source url="https://finisky.github.io/rss">Finisky Garden</source>
-    </item>
-    <item>
       <title>先做成一门生意，再谈增长</title>
       <link>https://imzl.com/business-growth-methods</link>
       <guid isPermaLink="true">https://imzl.com/business-growth-methods</guid>
       <pubDate>Tue, 15 Sep 2026 02:00:00 GMT</pubDate>
       <source url="https://imzl.com/rss.xml">周良博客</source>
-    </item>
-    <item>
-      <title>我读懂了丁香结</title>
-      <link>https://yinji.org/the-lilac-knot.html/</link>
-      <guid isPermaLink="true">https://yinji.org/the-lilac-knot.html/</guid>
-      <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
-      <source url="https://yinji.org/feed">印记</source>
     </item>
     <item>
       <title>DWeb Camp，下次见</title>
@@ -2737,13 +2905,6 @@
       <source url="https://rei.ac/index.xml">Rei's Blog</source>
     </item>
     <item>
-      <title>这些年看过的小说</title>
-      <link>https://wsdjeg.net/novels-i-have-read/</link>
-      <guid isPermaLink="true">https://wsdjeg.net/novels-i-have-read/</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <source url="https://wsdjeg.net/feed.xml">Eric's Blog</source>
-    </item>
-    <item>
       <title>我是如何在两周内用AI将GitLab UI移植到React的？</title>
       <link>https://nocp.space/blog/port-gitlab-ui-to-react-with-ai-in-two-weeks</link>
       <guid isPermaLink="true">https://nocp.space/blog/port-gitlab-ui-to-react-with-ai-in-two-weeks</guid>
@@ -2763,13 +2924,6 @@
       <guid isPermaLink="true">https://www.zanian.vip/note/autumn-lotus</guid>
       <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
       <source url="https://zanian.vip/feed.xml">撕心砸念</source>
-    </item>
-    <item>
-      <title>浅学一下C#，顺便做了几个小工具</title>
-      <link>https://ftz.is-a.dev/blog/posts/learncs/</link>
-      <guid isPermaLink="true">https://ftz.is-a.dev/blog/posts/learncs/</guid>
-      <pubDate>Fri, 11 Sep 2026 16:00:00 GMT</pubDate>
-      <source url="https://ftz.is-a.dev/rss.xml">for_the_zero的小站</source>
     </item>
     <item>
       <title>夏天以后</title>
@@ -2898,25 +3052,11 @@
       <source url="https://blog.lui8.cn/feed.xml">zhonger 前端开发者，喜爱运维管理</source>
     </item>
     <item>
-      <title>终端、SSH、launchd、tmux：zsh 启动文件到底读了哪些</title>
-      <link>https://blog.esonwong.com/zsh-startup-files-terminal-ssh-launchd-tmux/</link>
-      <guid isPermaLink="true">https://blog.esonwong.com/zsh-startup-files-terminal-ssh-launchd-tmux/</guid>
-      <pubDate>Mon, 07 Sep 2026 06:56:20 GMT</pubDate>
-      <source url="https://blog.esonwong.com/atom.xml">Eson Wong's Blog</source>
-    </item>
-    <item>
       <title>神奇的首页404事件</title>
       <link>https://bddxg.top/Lives/MysteriousHomepage404.html</link>
       <guid isPermaLink="true">https://bddxg.top/Lives/MysteriousHomepage404.html</guid>
       <pubDate>Mon, 07 Sep 2026 05:11:44 GMT</pubDate>
       <source url="https://bddxg.top/feed.rss">冰冻大西瓜的博客</source>
-    </item>
-    <item>
-      <title>今天开始做一个盈利项目</title>
-      <link>https://www.yysuni.com/blog/linkmind</link>
-      <guid isPermaLink="true">https://www.yysuni.com/blog/linkmind</guid>
-      <pubDate>Sun, 06 Sep 2026 22:34:00 GMT</pubDate>
-      <source url="https://www.yysuni.com/rss.xml">Suni Blog</source>
     </item>
     <item>
       <title>用 ChatGPT 定时任务做一个 Hacker News 中文摘要网站</title>
@@ -2945,13 +3085,6 @@
       <guid isPermaLink="true">https://luenci.com/en/posts/langsmith-agents-md-context-optimization/</guid>
       <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
       <source url="https://luenci.com/en/index.xml">Luenci的技术博客</source>
-    </item>
-    <item>
-      <title>核电定价的逻辑变了：增长靠存量锁定，壁垒靠制造运营</title>
-      <link>https://libuyan.top/posts/china-nuclear-2026-09/</link>
-      <guid isPermaLink="true">https://libuyan.top/posts/china-nuclear-2026-09/</guid>
-      <pubDate>Fri, 04 Sep 2026 13:00:00 GMT</pubDate>
-      <source url="https://libuyan.top/rss.xml">李不言的博客</source>
     </item>
     <item>
       <title>从零实现 GeekAgent —— Day16 插件框架</title>
@@ -3010,25 +3143,11 @@
       <source url="https://www.nansey.me/feeds/posts/default">Nansey的博客</source>
     </item>
     <item>
-      <title>2026 年 8 月新作盘点</title>
-      <link>https://markonreview.com/2026/08/31/2026-aug-upcoming-games/</link>
-      <guid isPermaLink="true">https://markonreview.com/2026/08/31/2026-aug-upcoming-games/</guid>
-      <pubDate>Mon, 31 Aug 2026 15:03:38 GMT</pubDate>
-      <source url="https://markonreview.com/rss/">Markon Review</source>
-    </item>
-    <item>
       <title>组织的最小单位是岗位</title>
       <link>https://www.cssforest.org/2026/08/31/%E7%BB%84%E7%BB%87%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8D%E6%98%AF%E5%B2%97%E4%BD%8D.html</link>
       <guid isPermaLink="true">https://www.cssforest.org/2026/08/31/%E7%BB%84%E7%BB%87%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8D%E6%98%AF%E5%B2%97%E4%BD%8D.html</guid>
       <pubDate>Mon, 31 Aug 2026 14:08:00 GMT</pubDate>
       <source url="https://www.cssforest.org/feed/">CSS森林</source>
-    </item>
-    <item>
-      <title>哇咔财务管家｜理财模块上线，现在记账、基金、股票、理财四合一</title>
-      <link>https://blog.ops-coffee.com/fire/wakaka-bookkeeping-fund-stock-wealth.html</link>
-      <guid isPermaLink="true">https://blog.ops-coffee.com/fire/wakaka-bookkeeping-fund-stock-wealth.html</guid>
-      <pubDate>Mon, 31 Aug 2026 10:20:48 GMT</pubDate>
-      <source url="https://blog.ops-coffee.com/feed.xml">运维咖啡吧</source>
     </item>
     <item>
       <title>WorkBuddy 成功，是因为腾讯办公套件太烂了</title>
@@ -3050,13 +3169,6 @@
       <guid isPermaLink="true">https://blog.movcloud.xyz/posts/github-404/</guid>
       <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
       <source url="https://blog.movcloud.xyz/rss.xml">Sanmussh Blog</source>
-    </item>
-    <item>
-      <title>从生成动画到可编程产物：在 Harness 中构建 Lottie 创作运行时</title>
-      <link>http://www.phodal.com/blog/agentic-programming-artifact/</link>
-      <guid isPermaLink="true">http://www.phodal.com/blog/agentic-programming-artifact/</guid>
-      <pubDate>Sun, 30 Aug 2026 09:48:00 GMT</pubDate>
-      <source url="https://www.phodal.com/blog/feeds/rss/">全栈应用开发:精益实践</source>
     </item>
     <item>
       <title>蓝灯 (Lantern) VPN评测：官网、下载、免费版/专业版和破解版风险</title>
@@ -3155,13 +3267,6 @@
       <guid isPermaLink="true">https://chengpeiquan.com/article/netease-cloud-music-fnnas-music-organizer</guid>
       <pubDate>Wed, 26 Aug 2026 16:00:00 GMT</pubDate>
       <source url="https://chengpeiquan.com/feed/">程沛权 - 养了三只猫</source>
-    </item>
-    <item>
-      <title>安全驾驶的要素：速度差、距离、视野、预判、友善、专注、车况</title>
-      <link>https://cyrusyip.org/zh-cn/posts/2026/08/27/safe-driving/</link>
-      <guid isPermaLink="true">https://cyrusyip.org/zh-cn/posts/2026/08/27/safe-driving/</guid>
-      <pubDate>Wed, 26 Aug 2026 16:00:00 GMT</pubDate>
-      <source url="https://cyrusyip.org/zh-cn/index.xml">叶寻的博客</source>
     </item>
     <item>
       <title>企业业务本体与AI落地</title>
@@ -3283,18 +3388,18 @@
       <source url="https://champhoon.xyz/atom.xml">澄沨的漫游茶记</source>
     </item>
     <item>
+      <title>太原 个人摄影</title>
+      <link>https://fravilion.top/index.php/archives/390/</link>
+      <guid isPermaLink="true">https://fravilion.top/index.php/archives/390/</guid>
+      <pubDate>Tue, 18 Aug 2026 14:36:00 GMT</pubDate>
+      <source url="https://fravilion.top/index.php/feed/">楼船INKFLAKE</source>
+    </item>
+    <item>
       <title>言泉输入法：原创一键补全</title>
       <link>https://nicrosoft.net/blog/2343/</link>
       <guid isPermaLink="true">https://nicrosoft.net/blog/2343/</guid>
       <pubDate>Tue, 18 Aug 2026 11:28:14 GMT</pubDate>
       <source url="https://nicrosoft.net/blog/feed/">农码生涯 无酒无花</source>
-    </item>
-    <item>
-      <title>A fake parcel site, and the six buttons that run it</title>
-      <link>https://blog.sean.taipei/2026/08/parcel-phishing-en</link>
-      <guid isPermaLink="true">https://blog.sean.taipei/2026/08/parcel-phishing-en</guid>
-      <pubDate>Tue, 18 Aug 2026 08:10:00 GMT</pubDate>
-      <source url="https://blog.sean.taipei/feed.xml">Sean's Note</source>
     </item>
     <item>
       <title>《奥德赛》，或曰，青铜时代的《天气之子》</title>
@@ -3374,13 +3479,6 @@
       <source url="https://niracler.com/rss.xml">Niracler's Blog</source>
     </item>
     <item>
-      <title>立秋</title>
-      <link>https://www.jackpu.com/li-qiu-6/</link>
-      <guid isPermaLink="true">https://www.jackpu.com/li-qiu-6/</guid>
-      <pubDate>Thu, 13 Aug 2026 09:29:53 GMT</pubDate>
-      <source url="https://www.jackpu.com/rss/">蒲小花的博客</source>
-    </item>
-    <item>
       <title>Stripe Radar 防盗刷实操：2027 定价变化与规则配置指南</title>
       <link>https://haydenbi.com/posts/stripe-radar-rules</link>
       <guid isPermaLink="true">https://haydenbi.com/posts/stripe-radar-rules</guid>
@@ -3407,104 +3505,6 @@
       <guid isPermaLink="true">https://blog.distjr.top/2026/08/11/galgame-maker-framework/</guid>
       <pubDate>Wed, 12 Aug 2026 02:30:13 GMT</pubDate>
       <source url="https://blog.distjr.top/atom.xml">distjr_'s blog</source>
-    </item>
-    <item>
-      <title>捷径</title>
-      <link>https://limboy.me/posts/shortcut</link>
-      <guid isPermaLink="true">https://limboy.me/posts/shortcut</guid>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
-      <source url="http://feeds.feedburner.com/lzyy">limboy's HQ</source>
-    </item>
-    <item>
-      <title>Claude 给 AI 文本加水印，就能给内容办身份证吗？</title>
-      <link>https://www.mkshell.com/posts/claude-ai-watermark-provenance/</link>
-      <guid isPermaLink="true">https://www.mkshell.com/posts/claude-ai-watermark-provenance/</guid>
-      <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
-      <source url="https://www.mkshell.com/rss.xml">造壳 MkShell</source>
-    </item>
-    <item>
-      <title>直到sw变成一只软件工程师</title>
-      <link>https://blog.shanwer.top/2026/08/%e7%9b%b4%e5%88%b0sw%e5%8f%98%e6%88%90%e4%b8%80%e5%8f%aa%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b%e5%b8%88/</link>
-      <guid isPermaLink="true">https://blog.shanwer.top/2026/08/%e7%9b%b4%e5%88%b0sw%e5%8f%98%e6%88%90%e4%b8%80%e5%8f%aa%e8%bd%af%e4%bb%b6%e5%b7%a5%e7%a8%8b%e5%b8%88/</guid>
-      <pubDate>Tue, 11 Aug 2026 18:25:34 GMT</pubDate>
-      <source url="https://blog.shanwer.top/feed/">Shanwer's Blog</source>
-    </item>
-    <item>
-      <title>S6E08 Reliving San Siro Rossoneri Pride, Decoding Da Vinci Legacy, and Cruising Canals for Masterpieces by Van Gogh</title>
-      <link>https://www.feifun.cn/2024/s6-e08-reliving-san-siro-rossoneri-pride-decoding-da-vinci-legacy-and-cruising-canals-for-masterpieces-by-van-gogh/</link>
-      <guid isPermaLink="true">https://www.feifun.cn/2024/s6-e08-reliving-san-siro-rossoneri-pride-decoding-da-vinci-legacy-and-cruising-canals-for-masterpieces-by-van-gogh/</guid>
-      <pubDate>Tue, 11 Aug 2026 15:23:23 GMT</pubDate>
-      <source url="https://www.feifun.cn/feed.xml">Fei's Tours and Tales</source>
-    </item>
-    <item>
-      <title>心境情感障碍复发</title>
-      <link>https://lhcy.org/archives/xin-jing-qing-gan-zhang-ai-fu-fa.html</link>
-      <guid isPermaLink="true">https://lhcy.org/archives/xin-jing-qing-gan-zhang-ai-fu-fa.html</guid>
-      <pubDate>Tue, 11 Aug 2026 09:00:13 GMT</pubDate>
-      <source url="https://lhcy.org/feed">林海草原</source>
-    </item>
-    <item>
-      <title>辛苦的一天</title>
-      <link>https://allanware.github.io/zh/p/the-odyssey-imax/</link>
-      <guid isPermaLink="true">https://allanware.github.io/zh/p/the-odyssey-imax/</guid>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
-      <source url="https://allanware.github.io/zh/index.xml">文轩的Blog</source>
-    </item>
-    <item>
-      <title>工作总结 7</title>
-      <link>https://iphyer.github.io/blog/2026/08/10/workingSummary7/</link>
-      <guid isPermaLink="true">https://iphyer.github.io/blog/2026/08/10/workingSummary7/</guid>
-      <pubDate>Mon, 10 Aug 2026 20:54:00 GMT</pubDate>
-      <source url="https://iphyer.github.io/feed.xml">桑弧蓬矢射四方</source>
-    </item>
-    <item>
-      <title>从 CallBack 到 Promise，React 框架异步开发学习心得</title>
-      <link>https://icys.top/posts/202302040157.html</link>
-      <guid isPermaLink="true">https://icys.top/posts/202302040157.html</guid>
-      <pubDate>Mon, 10 Aug 2026 09:27:56 GMT</pubDate>
-      <source url="https://icys.top/atom.xml">icy's blog</source>
-    </item>
-    <item>
-      <title>斯特林公式(Stirling's Formula)：我一个阶乘表达式，怎么就和圆扯上关系了呢？</title>
-      <link>https://www.longluo.me/blog/stirlings-formula/</link>
-      <guid isPermaLink="true">https://www.longluo.me/blog/stirlings-formula/</guid>
-      <pubDate>Mon, 10 Aug 2026 09:06:53 GMT</pubDate>
-      <source url="https://www.longluo.me/atom.xml">Long Luo's Life Notes</source>
-    </item>
-    <item>
-      <title>Why Is the Loss Function of Large Models Cross-Entropy</title>
-      <link>https://www.qtmuniao.com//en/2026/03/29/llm-loss/</link>
-      <guid isPermaLink="true">https://www.qtmuniao.com//en/2026/03/29/llm-loss/</guid>
-      <pubDate>Sat, 08 Aug 2026 08:51:32 GMT</pubDate>
-      <source url="https://www.qtmuniao.com/atom.xml">木鸟杂记</source>
-    </item>
-    <item>
-      <title>纽约博物馆打卡记 ｜ Museums in New York</title>
-      <link>https://cheng.st/2026/08/08/new-york-museum-light/</link>
-      <guid isPermaLink="true">https://cheng.st/2026/08/08/new-york-museum-light/</guid>
-      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
-      <source url="https://cheng.st/atom.xml">S T C H E N G</source>
-    </item>
-    <item>
-      <title>在「接缝」的彼岸：横滨观演与日本纪行</title>
-      <link>https://blog.deepchirp.com/2026/08/04/Beyond-the-Connection-Point-Yokohama-Concert-and-Japan-Travels/</link>
-      <guid isPermaLink="true">https://blog.deepchirp.com/2026/08/04/Beyond-the-Connection-Point-Yokohama-Concert-and-Japan-Travels/</guid>
-      <pubDate>Fri, 07 Aug 2026 02:49:08 GMT</pubDate>
-      <source url="https://blog.deepchirp.com/atom.xml">空鸣深语</source>
-    </item>
-    <item>
-      <title>Hello，未来世界的代理人们</title>
-      <link>https://dongjunke.cn/posts/2026/08/06/38672.html</link>
-      <guid isPermaLink="true">https://dongjunke.cn/posts/2026/08/06/38672.html</guid>
-      <pubDate>Thu, 06 Aug 2026 15:30:35 GMT</pubDate>
-      <source url="https://dongjunke.cn/atom.xml">东评西就</source>
-    </item>
-    <item>
-      <title>Apache Parquet FILE Logical Type 如何为 AI 数据湖统一多模态对象</title>
-      <link>https://www.inlighting.org/archives/apache-parquet-file-logical-type</link>
-      <guid isPermaLink="true">https://www.inlighting.org/archives/apache-parquet-file-logical-type</guid>
-      <pubDate>Thu, 06 Aug 2026 02:25:19 GMT</pubDate>
-      <source url="https://www.inlighting.org/feed">沧海明月</source>
     </item>
   </channel>
 </rss>

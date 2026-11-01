@@ -1,11 +1,11 @@
 # 沉睡博客清单（确认 2 年以上未更新）
 
-> 由 `scripts/stale-report.mjs` 于 2026-10-25 生成，每周自动更新。
-> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-10-25（距今 2 年前）。
+> 由 `scripts/stale-report.mjs` 于 2026-11-01 生成，每周自动更新。
+> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-11-01（距今 2 年前）。
 > 这份清单**不会自动删除**，是否剔除由维护者酌情决定；确认要删的，直接删除 `blogs-original.csv` 对应行即可。
-> 另有 145 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
+> 另有 144 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
 
-共 185 个（站点中已自动降低排序优先级并标注 💤）。
+共 188 个（站点中已自动降低排序优先级并标注 💤）。
 
 ## 2016 年
 
@@ -86,6 +86,7 @@
 - [ ] [以梦为马](https://lhymwm.github.io) — 最后更新 2022-07-11 ｜ RSS: https://lhymwm.github.io//atom.xml
 - [ ] [黄琦雲的博客](https://knightyun.github.io/) — 最后更新 2022-07-17 ｜ RSS: https://knightyun.github.io/feed.xml
 - [ ] [小熊写字的地方](https://blog.skrskrskrskr.com) — 最后更新 2022-08-26 ｜ RSS: https://blog.skrskrskrskr.com/atom.xml
+- [ ] [BB酱的博客](https://www.bbbbchan.com/) — 最后更新 2022-09-21 ｜ RSS: https://www.bbbbchan.com/feed/atom/
 - [ ] [Huiliu](https://fucktheworld.top/) — 最后更新 2022-10-06 ｜ RSS: https://fucktheworld.top/atom.xml
 - [ ] [寻渊的博客](http://lzhgy.cn/) — 最后更新 2022-10-27 ｜ RSS: https://www.lzhgy.cn/rss.xml
 - [ ] [FlyingSky's Blog](https://blog.fsky7.com/) — 最后更新 2022-11-01 ｜ RSS: https://blog.fsky7.com/feed
@@ -173,7 +174,6 @@
 - [ ] [lazy_forever's Blog](https://blog.lazyforever.top/) — 最后更新 2024-04-24 ｜ RSS: https://blog.lazyforever.top/atom.xml
 - [ ] [遥远的街市](https://blog.henix.info/) — 最后更新 2024-04-28 ｜ RSS: https://blog.henix.info/rss2.0.xml
 - [ ] [铁匠's blog](http://blog.fengjx.com/) — 最后更新 2024-05-12
-- [ ] [低调小熊猫](https://ilovey.live/) — 最后更新 2024-05-19 ｜ RSS: https://ilovey.live/atom.xml
 - [ ] [Ryan' Lab](https://gaoran.cc/) — 最后更新 2024-05-20 ｜ RSS: https://gaoran.cc/feed
 - [ ] [Ryan' Lab](https://blog.gaoran.xyz/) — 最后更新 2024-05-20 ｜ RSS: https://blog.gaoran.xyz/rss/feed.xml
 - [ ] [Fred Wu's Blog](https://persumi.com/u/fredwu) — 最后更新 2024-06-09 ｜ RSS: https://persumi.com/u/fredwu/feed/atom
@@ -210,3 +210,6 @@
 - [ ] [Peacalm Notes - 双全的网站](https://lishuangquan.cn) — 最后更新 2024-10-22 ｜ RSS: https://lishuangquan.cn/index.xml
 - [ ] [Anillc's blog](https://blog.anil.lc/) — 最后更新 2024-10-25 ｜ RSS: https://blog.anil.lc/atom.xml
 - [ ] [Anillc's blog](https://anillc.cn) — 最后更新 2024-10-25 ｜ RSS: https://anillc.cn/atom.xml
+- [ ] [Wrong.wang](https://wrong.wang/blog/) — 最后更新 2024-10-27 ｜ RSS: https://wrong.wang/index.xml
+- [ ] [从百草园到三味书屋](https://youngforever.tech/) — 最后更新 2024-10-28 ｜ RSS: https://youngforever.tech/index.xml
+- [ ] [穆野霜泉的黑洞](https://muyesq.cn) — 最后更新 2024-10-31 ｜ RSS: https://muyesq.cn/index.xml

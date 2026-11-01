@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://list.bloghao.com/</loc><lastmod>2026-10-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://list.bloghao.com/submit.html</loc><lastmod>2026-10-25</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://list.bloghao.com/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://list.bloghao.com/submit.html</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://blog.xiaowuleyi.com/</loc><lastmod>2026-10-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.t9t.io</loc><lastmod>2025-11-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.ruanyifeng.com/blog/</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -81,7 +81,7 @@
   <url><loc>https://halfrost.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://limboy.me</loc><lastmod>2026-08-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.sunnyxx.com/</loc><lastmod>2016-09-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://xiangwangfeng.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>http://xiangwangfeng.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>http://cnbang.net/</loc><lastmod>2026-01-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://imtx.me</loc><lastmod>2025-07-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://wujunze.com</loc><lastmod>2020-05-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -100,7 +100,6 @@
   <url><loc>https://xiang578.com</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://1a23.com/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://jiajunhuang.com/</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.stackoverflow.wiki/blog/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.p2hp.com/</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.ixiqin.com/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://hateonion.me</loc><lastmod>2026-08-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -330,14 +329,13 @@
   <url><loc>https://asazero.blogspot.com/</loc><lastmod>2020-09-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ddadaal.me</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://dbarobin.com</loc><lastmod>2026-05-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.tcxx.info/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.tcxx.info/</loc><lastmod>2024-11-06</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://luyuhuang.tech/</loc><lastmod>2026-01-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://feizhaojun.com</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.xiaket.org</loc><lastmod>2026-10-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.ponder.work</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.wangxuan.name</loc><lastmod>2025-02-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.gotocoding.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.mihu.live</loc><lastmod>2025-11-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tianheg.co/</loc><lastmod>2026-10-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://jingyig01.github.io/</loc><lastmod>2021-04-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://fourhappylions.com/</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -432,7 +430,6 @@
   <url><loc>https://anthropology.fivest.one/</loc><lastmod>2023-07-19</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.rxliuli.com</loc><lastmod>2026-08-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.zackwu.com/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://markonreview.com/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://kaopubear.top/blog/</loc><lastmod>2025-06-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.gaoyuanshi.com</loc><lastmod>2026-02-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>http://houye.xyz/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -449,7 +446,6 @@
   <url><loc>https://phuker.github.io/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.chenjt.com/</loc><lastmod>2024-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://kefan.me/blog</loc><lastmod>2024-06-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>http://shoyu.top/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://bouquetrender.space/</loc><lastmod>2026-02-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://lorexxar.cn/</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.orange.tw/</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -532,7 +528,6 @@
   <url><loc>http://gtdstudy.com/</loc><lastmod>2026-10-03</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ednovas.xyz</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://wentao.org</loc><lastmod>2023-07-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.jiayuehua.com</loc><lastmod>2024-11-16</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://github.com/aialgorithm/Blog</loc><lastmod>2018-09-02</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.qtmuniao.com</loc><lastmod>2026-08-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://xdym11235.com</loc><lastmod>2026-08-14</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -540,7 +535,6 @@
   <url><loc>https://zinglix.xyz</loc><lastmod>2025-01-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.drpika.com</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://whyes.org</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ilovey.live/</loc><lastmod>2024-05-19</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.xsot.cn</loc><lastmod>2025-08-26</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.linchangyu.com</loc><lastmod>2026-08-29</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://whites.space</loc><lastmod>2024-10-14</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -912,7 +906,7 @@
   <url><loc>https://www.wangdu.site</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.demochen.com/</loc><lastmod>2026-08-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ivanli.cc/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://blog.nemo.cool/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://nemo.cool/</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.happyfou.com/</loc><lastmod>2025-07-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.fallrain.cn/</loc><lastmod>2026-06-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://smj.im</loc><lastmod>2023-08-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1023,13 +1017,12 @@
   <url><loc>https://tevinzhang.com/zh/</loc><lastmod>2026-09-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://simonhe.me/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://keenwon.com</loc><lastmod>2025-06-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://farer.org</loc><lastmod>2026-09-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://luffy.cc</loc><lastmod>2025-05-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://data4fun.cc/</loc><lastmod>2026-08-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.reincarnatey.net/</loc><lastmod>2026-04-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://kerrynotes.com/</loc><lastmod>2026-09-14</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.yasking.org/</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.ruanchaomin.com/</loc><lastmod>2026-10-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.ruanchaomin.com/</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.zair.top/</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://razeen.me</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.qs5.org/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1086,7 +1079,7 @@
   <url><loc>https://cxy0714.github.io/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.liushen.fun</loc><lastmod>2026-09-09</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://peter267.github.io</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://blog.cugxuan.cn</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>http://cugxuan.cn/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.frwalker.top</loc><lastmod>2026-04-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.sunmkt.uk/</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://flowable.me/blog/</loc><lastmod>2025-06-24</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1200,7 +1193,6 @@
   <url><loc>https://www.rsnocsi.cn/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://wmhwiki.cn/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://victor42.eth.limo</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.fengcan.net</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ryanuo.cc</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.momb.top</loc><lastmod>2026-10-10</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://monkeyke.com/</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1240,12 +1232,10 @@
   <url><loc>https://lepture.com/</loc><lastmod>2026-01-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://liqiang.io</loc><lastmod>2026-03-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://xiaozhu.dev</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://scvoet.me</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tingfei.space/</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://renny.ren</loc><lastmod>2024-02-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://Lorde627.xyz</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://megamu.icu/</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://qiu.se/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://yihui.name/cn/</loc><lastmod>2026-09-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.cxyxiaowu.com</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://yuexun.me/</loc><lastmod>2026-01-18</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1255,7 +1245,6 @@
   <url><loc>https://imzm.im</loc><lastmod>2025-04-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://anillc.cn</loc><lastmod>2024-10-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.mokeyjay.com/</loc><lastmod>2026-07-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://taoshu.in/</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.bbing.com.cn/</loc><lastmod>2026-09-13</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>http://cubik65536.top/</loc><lastmod>2026-08-19</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.ops-coffee.cn</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1323,21 +1312,20 @@
   <url><loc>http://lulalap.com/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://wiki.eryajf.net</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://riichiie.net</loc><lastmod>2025-12-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://yifeishu.com/hu@yifeishu.com</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://iloli.moe/</loc><lastmod>2026-12-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://nxysj.top/</loc><lastmod>2026-10-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.voidking.com/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>http://www.ccgxk.com/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ftz.is-a.dev/</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ftz.is-a.dev/</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.leesaitool.com</loc><lastmod>2026-10-17</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.ranjl.cn/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.mws.rocks/</loc><lastmod>2026-04-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.5al.top/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://moyu.blog/</loc><lastmod>2026-10-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moyu.blog/</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.nuan1145.eu.cc/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://popsite.cn/</loc><lastmod>2026-10-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.shuijingwanwq.com/</loc><lastmod>2026-10-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://varzy.me</loc><lastmod>2026-10-18</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://popsite.cn/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.shuijingwanwq.com/</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://varzy.me</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.superdaniel.cn</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://gaoyu.me</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.august.hk</loc><lastmod>2026-08-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1347,11 +1335,11 @@
   <url><loc>https://hencte.top</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://elliothu.me/blog/zh</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://kokorotsuki.com</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://anymesgs.com/</loc><lastmod>2026-10-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://canyuda.top/</loc><lastmod>2026-10-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://u1-lab.xiaoxia.io/</loc><lastmod>2026-10-25</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://2019527.xyz/</loc><lastmod>2026-10-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://blog.xiaohanys.top/</loc><lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://anymesgs.com/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://canyuda.top/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://u1-lab.xiaoxia.io/</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://2019527.xyz/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://blog.xiaohanys.top/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.qizhen.xyz</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://gim.ink/</loc><lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://yujianrx.top/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
@@ -1364,16 +1352,30 @@
   <url><loc>http://www.jdon.com/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://controlnet.space/</loc><lastmod>2026-10-03</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://sjdhome.com/blog/</loc><lastmod>2026-08-08</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.guangweiblog.com/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>http://codeinchinese.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zyzhang.com</loc><lastmod>2026-01-12</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://blog.twomelon.com</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://zzhx.cc/</loc><lastmod>2026-04-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://warpnav.com/newsblog</loc><lastmod>2026-10-23</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://warpnav.com/newsblog</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://aizhiz.com/zh/</loc><lastmod>2026-10-22</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.kzzxisgod.top</loc><lastmod>2026-10-18</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shilongzai.com</loc><lastmod>2026-10-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shilongzai.com</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://mukunjin.com</loc><lastmod>2026-09-26</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://kkuk.dev</loc><lastmod>2026-10-18</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://blog.wordtk.com/</loc><lastmod>2025-04-14</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://blog.wordtk.com/</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>http://www.shuizilong.com/house</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.techug.com</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.liesauer.net/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.bbbbchan.com/</loc><lastmod>2022-09-21</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>http://hugeterry.cn/</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://greniray.org</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.chaoniulian.com</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moonstone.fun</loc><lastmod>2026-10-11</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lyujp.com/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://yangxuan.ai</loc><lastmod>2026-06-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://fravilion.top</loc><lastmod>2026-09-13</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://koimsurai.com</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.legacyvps.com</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://yezhaner.net/</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://yishuai.wang/</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 </urlset>
