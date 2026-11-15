@@ -1,9 +1,9 @@
 # 沉睡博客清单（确认 2 年以上未更新）
 
-> 由 `scripts/stale-report.mjs` 于 2026-11-08 生成，每周自动更新。
-> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-11-08（距今 2 年前）。
+> 由 `scripts/stale-report.mjs` 于 2026-11-15 生成，每周自动更新。
+> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-11-15（距今 2 年前）。
 > 这份清单**不会自动删除**，是否剔除由维护者酌情决定；确认要删的，直接删除 `blogs-original.csv` 对应行即可。
-> 另有 144 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
+> 另有 146 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
 
 共 190 个（站点中已自动降低排序优先级并标注 💤）。
 
@@ -56,7 +56,6 @@
 - [ ] [四方之云](https://jingyig01.github.io/) — 最后更新 2021-04-22 ｜ RSS: https://jingyig01.github.io/atom.xml
 - [ ] [HuoJu's BLOG](https://jhuo.ca/) — 最后更新 2021-04-25 ｜ RSS: https://jhuo.ca/index.xml
 - [ ] [编程随想的博客](https://program-think.blogspot.com) — 最后更新 2021-05-09 ｜ RSS: https://feeds2.feedburner.com/programthink
-- [ ] [RAIS](https://ai.renyuzhuo.cn) — 最后更新 2021-05-22 ｜ RSS: https://ai.renyuzhuo.cn/atom.xml
 - [ ] [前端工程师 Toweave](https://toweave.github.io) — 最后更新 2021-05-28 ｜ RSS: https://toweave.github.io/rss.xml
 - [ ] [郑泽鑫的博客](https://zhengzexin.com/) — 最后更新 2021-06-14 ｜ RSS: https://zhengzexin.com/feed/
 - [ ] [小非的物理小站](https://xiaophy.com/) — 最后更新 2021-07-18 ｜ RSS: https://xiaophy.com/feed.xml
@@ -73,6 +72,7 @@
 ## 2022 年
 
 - [ ] [牛津的博客](https://blog.jinreal.com) — 最后更新 2022-01-01 ｜ RSS: https://blog.jinreal.com/index.xml
+- [ ] [Blog of Music](https://www.blogofmusic.com) — 最后更新 2022-01-26 ｜ RSS: http://www.blogofmusic.com/feed
 - [ ] [Lucifr](https://lucifr.com/) — 最后更新 2022-02-01 ｜ RSS: https://lucifr.com/rss/
 - [ ] [An's Blog](https://zincnode.com) — 最后更新 2022-02-05 ｜ RSS: https://zincnode.com/index.xml
 - [ ] [HansChen 的博客](https://blog.hanschen.site/) — 最后更新 2022-03-04 ｜ RSS: http://blog.hanschen.site/atom.xml
