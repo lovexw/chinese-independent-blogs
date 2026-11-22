@@ -1,11 +1,11 @@
 # 沉睡博客清单（确认 2 年以上未更新）
 
-> 由 `scripts/stale-report.mjs` 于 2026-11-15 生成，每周自动更新。
-> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-11-15（距今 2 年前）。
+> 由 `scripts/stale-report.mjs` 于 2026-11-22 生成，每周自动更新。
+> 判定标准：该博客 RSS 中最新一篇文章的时间早于 2024-11-22（距今 2 年前）。
 > 这份清单**不会自动删除**，是否剔除由维护者酌情决定；确认要删的，直接删除 `blogs-original.csv` 对应行即可。
-> 另有 146 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
+> 另有 150 个博客没有 RSS 或 feed 中无时间，无法判定更新时间（未列入本清单，站点中显示“更新时间未知”并排在沉睡博客之后）。
 
-共 190 个（站点中已自动降低排序优先级并标注 💤）。
+共 189 个（站点中已自动降低排序优先级并标注 💤）。
 
 ## 2016 年
 
@@ -72,7 +72,6 @@
 ## 2022 年
 
 - [ ] [牛津的博客](https://blog.jinreal.com) — 最后更新 2022-01-01 ｜ RSS: https://blog.jinreal.com/index.xml
-- [ ] [Blog of Music](https://www.blogofmusic.com) — 最后更新 2022-01-26 ｜ RSS: http://www.blogofmusic.com/feed
 - [ ] [Lucifr](https://lucifr.com/) — 最后更新 2022-02-01 ｜ RSS: https://lucifr.com/rss/
 - [ ] [An's Blog](https://zincnode.com) — 最后更新 2022-02-05 ｜ RSS: https://zincnode.com/index.xml
 - [ ] [HansChen 的博客](https://blog.hanschen.site/) — 最后更新 2022-03-04 ｜ RSS: http://blog.hanschen.site/atom.xml
@@ -103,7 +102,6 @@
 - [ ] [Livid](https://livid.v2ex.com/) — 最后更新 2023-01-03 ｜ RSS: https://livid.v2ex.com/feed.xml
 - [ ] [TimeMachine Notes](https://timemachine.icu/) — 最后更新 2023-01-10 ｜ RSS: https://timemachine.icu/atom.xml
 - [ ] [diss带码](https://dumplingbao.github.io) — 最后更新 2023-01-11 ｜ RSS: https://dumplingbao.github.io/atom.xml
-- [ ] [Wang's Blog](https://vlight.me/) — 最后更新 2023-01-12 ｜ RSS: https://vlight.me/atom.xml
 - [ ] [瘦人志](http://www.wuqiwen.cn/) — 最后更新 2023-01-15 ｜ RSS: http://www.wuqiwen.cn/feed/
 - [ ] [Ťhinking Null](https://awsl.blog/) — 最后更新 2023-01-22 ｜ RSS: https://awsl.blog/feed
 - [ ] [Eason Yang's Blog](https://easonyang.com/) — 最后更新 2023-02-19 ｜ RSS: https://easonyang.com/atom.xml
@@ -198,7 +196,7 @@
 - [ ] [黑羽的个人博客](https://blog.thetbw.xyz/) — 最后更新 2024-08-23 ｜ RSS: https://blog.thetbw.xyz/atom.xml
 - [ ] [Yuk的部落格](https://blog.yuk7.com/) — 最后更新 2024-08-23 ｜ RSS: https://blog.yuk7.com/atom.xml
 - [ ] [菜皮日记](https://www.lipijin.com/) — 最后更新 2024-08-26 ｜ RSS: https://www.lipijin.com/rss
-- [ ] [翻身猫](https://www.zy99.net) — 最后更新 2024-09-08 ｜ RSS: https://www.zy99.net/feed
+- [ ] [翻身猫](https://zy99.net/) — 最后更新 2024-09-08 ｜ RSS: https://www.zy99.net/feed
 - [ ] [Bingwhispers](https://cyril3.github.io) — 最后更新 2024-09-08 ｜ RSS: https://cyril3.github.io/feed.xml
 - [ ] [静水深流的博客](https://slbyml.github.io/) — 最后更新 2024-09-12 ｜ RSS: https://slbyml.github.io/rss.xml
 - [ ] [s0urce's Lab](https://blog.src.moe) — 最后更新 2024-09-17 ｜ RSS: https://blog.src.moe/index.xml
@@ -215,3 +213,4 @@
 - [ ] [从百草园到三味书屋](https://youngforever.tech/) — 最后更新 2024-10-28 ｜ RSS: https://youngforever.tech/index.xml
 - [ ] [穆野霜泉的黑洞](https://muyesq.cn) — 最后更新 2024-10-31 ｜ RSS: https://muyesq.cn/index.xml
 - [ ] [清风菀月轩](http://qingwan.top) — 最后更新 2024-11-08
+- [ ] [wuxinhua's Blog](https://wuxinhua.com/) — 最后更新 2024-11-22 ｜ RSS: https://wuxinhua.com/atom.xml
